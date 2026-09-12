@@ -84,33 +84,111 @@ export default function ContactPage() {
         {/* =========================================================
             1. PAGE HEADER (MAROON GRADIENT BACKGROUND)
         ========================================================= */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#610D17] via-[#520A13] to-[#3B070D] text-white pt-12 pb-14 sm:pt-16 sm:pb-20 shadow-inner">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Contact Us
-            </h1>
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-12 sm:py-16 lg:py-8 lg:min-h-[calc(100dvh-5rem)] flex flex-col justify-center">
+          {/* Luminous crimson and rose ambient glow */}
+          <div
+            className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-7xl rounded-full bg-[#B81E34]/30 blur-[120px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute -bottom-20 -right-20 h-[450px] w-[450px] rounded-full bg-[#9E1528]/35 blur-[100px]"
+            aria-hidden="true"
+          />
 
-            <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-zinc-200 leading-relaxed font-normal">
-              Have questions about AMP National Talent Search 2026? We&apos;re here to help. Reach
-              out to us through any of the channels below.
-            </p>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center my-auto">
+            {/* Top Text Block (Left-Aligned) */}
+            <div className="max-w-3xl">
+              {/* Pill Badge */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-semibold tracking-wider text-zinc-200 uppercase backdrop-blur-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
+                <span>NTS 2026 · GET IN TOUCH</span>
+              </div>
 
-            {/* Quick Badges */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs font-semibold text-zinc-200">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/15 px-3.5 py-1.5 backdrop-blur-xs">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                Dedicated Student Helplines
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/15 px-3.5 py-1.5 backdrop-blur-xs">
-                <svg className="w-3.5 h-3.5 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Mon–Sat: 11:00 AM – 7:00 PM IST
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/15 px-3.5 py-1.5 backdrop-blur-xs">
-                <span className="h-2 w-2 rounded-full bg-blue-400" />
-                Daily Live Interactive Session (5–6 PM)
-              </span>
+              {/* Main Heading */}
+              <h1 className="mt-3 sm:mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight">
+                Contact Us & Helpdesk
+              </h1>
+
+              {/* Description */}
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-200 leading-relaxed font-normal max-w-2xl">
+                Have questions about AMP National Talent Search 2026? We&apos;re here to help. Reach
+                out to our category helplines, attend our daily live session, or connect via WhatsApp and email.
+              </p>
+            </div>
+
+            {/* 4 Bottom Channel Highlight Cards */}
+            <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {/* Card 1: Featured White Card */}
+              <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between shadow-md">
+                <div>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-zinc-900 leading-tight block">
+                    Mon – Sat
+                  </span>
+                  <span className="text-xs text-zinc-500 font-medium mt-0.5 block">
+                    11:00 AM – 7:00 PM IST
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
+                    SUPPORT HOURS
+                  </span>
+                </div>
+              </div>
+
+              {/* Card 2: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <div>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
+                    3 Categories
+                  </span>
+                  <span className="text-xs text-white/60 font-medium mt-0.5 block">
+                    School, Junior & Degree
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    DEDICATED HELPLINES
+                  </span>
+                </div>
+              </div>
+
+              {/* Card 3: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <div>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
+                    5:00 – 6:00 PM
+                  </span>
+                  <span className="text-xs text-white/60 font-medium mt-0.5 block">
+                    Daily Google Meet Q&A
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    DAILY LIVE SESSIONS
+                  </span>
+                </div>
+              </div>
+
+              {/* Card 4: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <div>
+                  <span className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-white leading-tight block truncate">
+                    nts@ampindia.org
+                  </span>
+                  <span className="text-xs text-white/60 font-medium mt-0.5 block">
+                    Official Support Inbox
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    EMAIL ASSISTANCE
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </section>

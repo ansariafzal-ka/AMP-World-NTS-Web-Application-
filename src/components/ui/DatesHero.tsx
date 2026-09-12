@@ -2,7 +2,7 @@ import React from "react";
 
 export default function DatesHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white min-h-[calc(100dvh-5rem)] flex flex-col justify-center py-8 sm:py-10 lg:py-8">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-12 sm:py-16 lg:py-8 lg:min-h-[calc(100dvh-5rem)] flex flex-col justify-center">
       {/* Luminous crimson and rose ambient glow */}
       <div
         className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-7xl rounded-full bg-[#B81E34]/30 blur-[120px]"

@@ -19,38 +19,90 @@ export default function FaqsPage() {
         {/* =========================================================
             1. PAGE HERO HEADER (MAROON GRADIENT BACKGROUND)
         ========================================================= */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#610D17] via-[#520A13] to-[#3B070D] text-white pt-12 pb-14 sm:pt-16 sm:pb-20 shadow-inner">
-          {/* Ambient Lighting Glows */}
-          <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-red-500/10 blur-3xl" />
-          <div className="pointer-events-none absolute bottom-0 right-10 h-64 w-64 rounded-full bg-amber-500/10 blur-3xl" />
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-12 sm:py-16 lg:py-8 lg:min-h-[calc(100dvh-5rem)] flex flex-col justify-center">
+          {/* Luminous crimson and rose ambient glow */}
+          <div
+            className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-7xl rounded-full bg-[#B81E34]/30 blur-[120px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute -bottom-20 -right-20 h-[450px] w-[450px] rounded-full bg-[#9E1528]/35 blur-[100px]"
+            aria-hidden="true"
+          />
 
-          <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Frequently Asked Questions
-            </h1>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center my-auto">
+            {/* Top Text Block (Left-Aligned) */}
+            <div className="max-w-3xl">
+              {/* Pill Badge */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-semibold tracking-wider text-zinc-200 uppercase backdrop-blur-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
+                <span>NTS 2026 · HELP & FAQS</span>
+              </div>
 
-            <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-zinc-200 leading-relaxed font-normal">
-              Find clear, authoritative answers to questions regarding eligibility, exam structure,
-              scholarships, cash prizes, and institutional partnerships.
-            </p>
+              {/* Main Heading */}
+              <h1 className="mt-3 sm:mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight">
+                Frequently Asked Questions
+              </h1>
 
-            {/* Quick Feature Highlights Bar */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto">
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-3 sm:p-3.5 backdrop-blur-xs text-center">
-                <div className="text-[11px] uppercase tracking-wider text-zinc-300 font-semibold">Exam Mode</div>
-                <div className="text-sm sm:text-base font-bold text-white mt-0.5">Offline / Physical Only</div>
+              {/* Description */}
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-200 leading-relaxed font-normal max-w-2xl">
+                Find clear, authoritative answers to questions regarding eligibility, exam structure,
+                scholarships, cash prizes, and institutional partnerships.
+              </p>
+            </div>
+
+            {/* 4 Bottom Feature Highlight Cards */}
+            <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {/* Card 1: Featured White Card */}
+              <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between shadow-md">
+                <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-zinc-900 leading-tight">
+                  Offline / Physical
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
+                    EXAM MODE
+                  </span>
+                </div>
               </div>
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-3 sm:p-3.5 backdrop-blur-xs text-center">
-                <div className="text-[11px] uppercase tracking-wider text-zinc-300 font-semibold">Marking Policy</div>
-                <div className="text-sm sm:text-base font-bold text-white mt-0.5">Zero Negative Marks</div>
+
+              {/* Card 2: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight">
+                  Zero Negative
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    MARKING POLICY
+                  </span>
+                </div>
               </div>
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-3 sm:p-3.5 backdrop-blur-xs text-center">
-                <div className="text-[11px] uppercase tracking-wider text-zinc-300 font-semibold">Exam Timeline</div>
-                <div className="text-sm sm:text-base font-bold text-white mt-0.5">December 2026</div>
+
+              {/* Card 3: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight">
+                  December 2026
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    EXAM TIMELINE
+                  </span>
+                </div>
               </div>
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-3 sm:p-3.5 backdrop-blur-xs text-center">
-                <div className="text-[11px] uppercase tracking-wider text-zinc-300 font-semibold">Scholarship Pool</div>
-                <div className="text-sm sm:text-base font-bold text-white mt-0.5">₹10 Cr+ for 5,000+</div>
+
+              {/* Card 4: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight">
+                  ₹10 Cr+ Pool
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    SCHOLARSHIPS
+                  </span>
+                </div>
               </div>
             </div>
           </div>

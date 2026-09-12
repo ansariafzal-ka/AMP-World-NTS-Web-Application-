@@ -43,7 +43,7 @@ const registrationLinks: RegistrationLink[] = [
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100dvh-5rem)] lg:h-[calc(100dvh-5rem)] lg:min-h-0 items-center justify-center overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-6 sm:py-8 lg:py-4 xl:py-6">
+    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-12 sm:py-16 lg:py-4 xl:py-6 lg:min-h-[calc(100dvh-5rem)] lg:h-[calc(100dvh-5rem)]">
       {/* Luminous crimson and rose ambient glow */}
       <div
         className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-7xl rounded-full bg-[#B81E34]/30 blur-[120px]"
