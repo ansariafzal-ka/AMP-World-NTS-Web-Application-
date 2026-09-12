@@ -118,7 +118,7 @@ export default function AboutNTSPage() {
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center my-auto">
             {/* Top Text Block (Left-Aligned) */}
-            <div className="max-w-3xl">
+            <div className="max-w-5xl">
               {/* Pill Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-semibold tracking-wider text-zinc-200 uppercase backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
@@ -138,7 +138,7 @@ export default function AboutNTSPage() {
             </div>
 
             {/* 4 Bottom Stat Cards */}
-            <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {/* Card 1: Featured White Card */}
               <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center shadow-md">
                 <div>

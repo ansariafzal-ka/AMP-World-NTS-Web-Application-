@@ -97,7 +97,7 @@ export default function ContactPage() {
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center my-auto">
             {/* Top Text Block (Left-Aligned) */}
-            <div className="max-w-3xl">
+            <div className="max-w-5xl">
               {/* Pill Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-semibold tracking-wider text-zinc-200 uppercase backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
@@ -110,7 +110,7 @@ export default function ContactPage() {
               </h1>
 
               {/* Description */}
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-200 leading-relaxed font-normal max-w-2xl">
+              <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-zinc-200 leading-relaxed font-normal max-w-3xl">
                 Have questions about AMP National Talent Search 2026? We&apos;re here to help. Reach
                 out to our category helplines, attend our daily live session, or connect via WhatsApp and email.
               </p>
