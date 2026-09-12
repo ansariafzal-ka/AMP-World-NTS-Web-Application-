@@ -5,7 +5,7 @@ import FaqInteractive from "@/components/faqs/FaqInteractive";
 import Button from "@/components/common/Button";
 
 export const metadata = {
-  title: "Frequently Asked Questions (FAQs) | AMP NTS 2026",
+  title: "FAQs",
   description:
     "Find answers to all frequently asked questions regarding AMP National Talent Search (NTS) 2026: eligibility, offline exam format, syllabus, ₹10 Cr+ scholarships, cash prizes, and registration.",
 };

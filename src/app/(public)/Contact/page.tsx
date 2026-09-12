@@ -3,7 +3,7 @@ import Footer from "@/components/layout/footer";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Contact Us & Helpdesk | AMP NTS 2026",
+  title: "Contact Us",
   description:
     "Have questions about AMP National Talent Search (NTS) 2026? Connect with our dedicated category helplines, join our daily live meeting, or reach out via email.",
 };

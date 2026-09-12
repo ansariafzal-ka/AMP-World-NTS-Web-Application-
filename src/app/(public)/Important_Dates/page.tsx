@@ -6,7 +6,7 @@ import DatesStudentNotes from "@/components/ui/DatesStudentNotes";
 import DatesCTA from "@/components/ui/DatesCTA";
 
 export const metadata = {
-  title: "Important Dates & Timeline | AMP NTS 2026",
+  title: "Important Dates",
   description:
     "Official schedule and important dates for AMP National Talent Search (NTS) 2026. Mark your calendar for registration deadlines, admit cards, exam day in December 2026, and results.",
 };

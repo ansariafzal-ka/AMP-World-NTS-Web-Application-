@@ -3,7 +3,7 @@ import Footer from "@/components/layout/footer";
 import Button from "@/components/common/Button";
 
 export const metadata = {
-  title: "About NTS — Syllabus & Preparation Guide | AMP NTS 2026",
+  title: "About NTS",
   description:
     "Comprehensive Syllabus, Exam Pattern, and Preparation Guide for AMP National Talent Search (NTS) 2026 for Schools and Colleges.",
 };
