@@ -38,16 +38,16 @@ export default function DatesHero() {
         {/* 4 Bottom Milestone Cards */}
         <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {/* Card 1: Featured White Card */}
-          <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between shadow-md">
+          <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center shadow-md">
             <div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-zinc-900 leading-tight block">
                 5:00 – 6:00 PM
               </span>
-              <span className="text-xs text-zinc-500 font-medium mt-0.5 block">
-                Mon to Sat (IST)
-              </span>
+              <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-snug font-medium max-w-[220px] mx-auto">
+                Daily live orientation & student doubt-clearing sessions
+              </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-zinc-100">
               <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
               <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
                 DAILY SESSIONS
@@ -56,16 +56,16 @@ export default function DatesHero() {
           </div>
 
           {/* Card 2: Translucent Maroon Card */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
             <div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
                 Sep – Nov 2026
               </span>
-              <span className="text-xs text-white/60 font-medium mt-0.5 block">
-                Tentative Schedule
-              </span>
+              <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                Online registration portal open for all categories
+              </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
               <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
               <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                 REGISTRATION WINDOW
@@ -74,16 +74,16 @@ export default function DatesHero() {
           </div>
 
           {/* Card 3: Translucent Maroon Card */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
             <div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
                 December 2026
               </span>
-              <span className="text-xs text-white/60 font-medium mt-0.5 block">
-                Confirmed Offline Exam
-              </span>
+              <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                Nationwide offline pen & paper examination day
+              </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
               <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
               <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                 EXAM DATE
@@ -92,16 +92,16 @@ export default function DatesHero() {
           </div>
 
           {/* Card 4: Translucent Maroon Card */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
             <div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
                 January 2027
               </span>
-              <span className="text-xs text-white/60 font-medium mt-0.5 block">
-                Scholarships Announced
-              </span>
+              <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                National merit ranks & scholarship awardees declared
+              </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
               <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
               <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                 RESULTS & MERIT

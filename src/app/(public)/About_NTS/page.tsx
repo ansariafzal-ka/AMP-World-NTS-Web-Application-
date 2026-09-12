@@ -131,7 +131,7 @@ export default function AboutNTSPage() {
               </h1>
 
               {/* Description */}
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-200 leading-relaxed font-normal max-w-2xl">
+              <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-zinc-200 leading-relaxed font-normal max-w-3xl">
                 The National Talent Search (NTS) 2026 question papers are designed by a team of
                 eminent academicians from prestigious universities and institutes across India.
               </p>
@@ -140,24 +140,34 @@ export default function AboutNTSPage() {
             {/* 4 Bottom Stat Cards */}
             <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {/* Card 1: Featured White Card */}
-              <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between shadow-md">
-                <span className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-900 leading-none">
-                  100
-                </span>
-                <div className="flex items-center gap-2">
+              <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center shadow-md">
+                <div>
+                  <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-zinc-900 leading-tight block">
+                    100
+                  </span>
+                  <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-snug font-medium max-w-[220px] mx-auto">
+                    Comprehensive offline MCQs across all core subjects
+                  </p>
+                </div>
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-zinc-100">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
-                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-500">
                     TOTAL QUESTIONS
                   </span>
                 </div>
               </div>
 
               {/* Card 2: Translucent Maroon Card */}
-              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
-                <span className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-none">
-                  5
-                </span>
-                <div className="flex items-center gap-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
+                <div>
+                  <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white leading-tight block">
+                    5
+                  </span>
+                  <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                    Core subject areas tailored to your specific category
+                  </p>
+                </div>
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
                   <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                     DISTINCT SECTIONS
@@ -166,11 +176,16 @@ export default function AboutNTSPage() {
               </div>
 
               {/* Card 3: Translucent Maroon Card */}
-              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
-                <span className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-none">
-                  20
-                </span>
-                <div className="flex items-center gap-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
+                <div>
+                  <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white leading-tight block">
+                    20
+                  </span>
+                  <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                    Equal weightage across all 5 syllabus domains
+                  </p>
+                </div>
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
                   <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                     QS PER SECTION
@@ -179,11 +194,16 @@ export default function AboutNTSPage() {
               </div>
 
               {/* Card 4: Translucent Maroon Card */}
-              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
-                <span className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-none">
-                  Zero
-                </span>
-                <div className="flex items-center gap-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
+                <div>
+                  <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white leading-tight block">
+                    Zero
+                  </span>
+                  <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                    Attempt every question with confidence & no penalty
+                  </p>
+                </div>
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
                   <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                     NEGATIVE MARKING
@@ -390,9 +410,8 @@ export default function AboutNTSPage() {
               {syllabusSections.map((sec, idx) => (
                 <div
                   key={sec.number}
-                  className={`relative flex flex-col justify-between rounded-2xl border border-zinc-200 bg-white p-6 sm:p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#610D17]/40 hover:shadow-md ${
-                    idx === 4 ? "md:col-span-2 lg:col-span-1" : ""
-                  }`}
+                  className={`relative flex flex-col justify-between rounded-2xl border border-zinc-200 bg-white p-6 sm:p-7 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#610D17]/40 hover:shadow-md ${idx === 4 ? "md:col-span-2 lg:col-span-1" : ""
+                    }`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-5">

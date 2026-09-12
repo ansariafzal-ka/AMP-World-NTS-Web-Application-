@@ -119,16 +119,16 @@ export default function ContactPage() {
             {/* 4 Bottom Channel Highlight Cards */}
             <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {/* Card 1: Featured White Card */}
-              <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between shadow-md">
+              <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center shadow-md">
                 <div>
                   <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-zinc-900 leading-tight block">
                     Mon – Sat
                   </span>
-                  <span className="text-xs text-zinc-500 font-medium mt-0.5 block">
-                    11:00 AM – 7:00 PM IST
-                  </span>
+                  <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-snug font-medium max-w-[220px] mx-auto">
+                    Operational hours from 11:00 AM to 7:00 PM IST
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-zinc-100">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
                   <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
                     SUPPORT HOURS
@@ -137,16 +137,16 @@ export default function ContactPage() {
               </div>
 
               {/* Card 2: Translucent Maroon Card */}
-              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
                 <div>
                   <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
                     3 Categories
                   </span>
-                  <span className="text-xs text-white/60 font-medium mt-0.5 block">
-                    School, Junior & Degree
-                  </span>
+                  <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                    Dedicated lines for School, Junior & Degree students
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
                   <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                     DEDICATED HELPLINES
@@ -155,16 +155,16 @@ export default function ContactPage() {
               </div>
 
               {/* Card 3: Translucent Maroon Card */}
-              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
                 <div>
                   <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
                     5:00 – 6:00 PM
                   </span>
-                  <span className="text-xs text-white/60 font-medium mt-0.5 block">
-                    Daily Google Meet Q&A
-                  </span>
+                  <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                    Daily live interactive student guidance sessions
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
                   <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                     DAILY LIVE SESSIONS
@@ -173,16 +173,16 @@ export default function ContactPage() {
               </div>
 
               {/* Card 4: Translucent Maroon Card */}
-              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
                 <div>
                   <span className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-white leading-tight block truncate">
                     nts@ampindia.org
                   </span>
-                  <span className="text-xs text-white/60 font-medium mt-0.5 block">
-                    Official Support Inbox
-                  </span>
+                  <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+                    Official email desk for institutional & exam queries
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
                   <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
                     EMAIL ASSISTANCE
