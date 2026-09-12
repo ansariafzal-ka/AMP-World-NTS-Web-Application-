@@ -57,39 +57,25 @@ export default function HeroSection() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center my-auto">
         {/* Top Minimal Heading */}
         <div className="mb-4 sm:mb-6 lg:mb-5 text-center max-w-4xl mx-auto">
-          <h1 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold tracking-tight text-white">
-            AMP National Talent Search (NTS) 2026
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            AMP National Talent Search 2026
           </h1>
           <p className="text-xs sm:text-sm lg:text-base text-zinc-200 mt-1 max-w-2xl mx-auto">
-            Connecting young minds with national recognition, scholarships, and opportunities.
+            Discover Your Talent. Compete with the Best. Shape Your Future.
           </p>
         </div>
 
-        {/* 2-Column Grid: Left Video / Right 3 Registration Buttons */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 items-center">
-          {/* Left Side: YouTube Video Embed */}
-          <div className="lg:col-span-7 flex flex-col space-y-2.5">
-            <div className="flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-white shadow-sm">
-                <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </span>
-              <h2 className="text-sm sm:text-base lg:text-lg font-bold text-white tracking-tight">
-                How to Register for NTS 2026
-              </h2>
-            </div>
+        {/* 2-Column Grid: Left Text / Right 3 Registration Buttons */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Side: Text Content */}
+          <div className="lg:col-span-7 flex flex-col space-y-4 pr-0 lg:pr-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              Your Gateway to National Recognition & Scholarships
+            </h2>
 
-            {/* Video Container (16:9 Aspect Ratio with max-height constraint for PC viewports) */}
-            <div className="relative aspect-video w-full max-h-[38vh] lg:max-h-[44vh] overflow-hidden rounded-2xl border-2 border-white/20 bg-black/60 shadow-2xl ring-1 ring-black/40 mx-auto">
-              <iframe
-                src="https://www.youtube.com/embed/R3BPYpBNUTQ"
-                title="How to Register for AMP NTS 2026"
-                className="absolute inset-0 h-full w-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
+            <p className="text-base sm:text-lg text-zinc-200 leading-relaxed">
+              The AMP National Talent Search (NTS) provides students from schools, junior colleges, and universities a national benchmark to test competitive readiness, earn premier scholarships for exams like NEET & IIT-JEE, and gain lifelong mentorship.
+            </p>
           </div>
 
           {/* Right Side: 3 Simple, Clean Registration Buttons */}

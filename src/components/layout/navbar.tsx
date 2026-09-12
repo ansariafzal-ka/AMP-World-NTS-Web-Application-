@@ -40,17 +40,7 @@ export default function Navbar() {
             className="h-14 w-auto object-contain"
             priority
           />
-          <div className="flex flex-col">
-            <span className="text-lg font-bold tracking-tight text-zinc-900 leading-tight">
-              AMP NTS
-            </span>
-            <span className="whitespace-nowrap text-xs font-medium uppercase tracking-wider text-zinc-500">
-              National Talent Search
-            </span>
-          </div>
         </Link>
-
-
 
         {/* Center Navigation Links (Laptop & Desktop: lg+) */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
