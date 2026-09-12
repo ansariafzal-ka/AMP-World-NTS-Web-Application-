@@ -23,7 +23,7 @@ export default function CtaBanner() {
             </Link>
 
             <Link
-              href="/About_NTS"
+              href="https://drive.google.com/drive/folders/1ekUK5HyiD6ZmPLfHs27sFTeOZAGkE9jR"
               className="w-full max-w-xs sm:max-w-none sm:w-72 inline-flex items-center justify-center rounded-xl border border-[#C89D4B]/60 bg-white/5 px-4 py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#E5B869] transition-all duration-200 hover:bg-[#C89D4B]/15 hover:border-[#C89D4B] active:scale-95 text-center whitespace-nowrap"
             >
               DOWNLOAD SYLLABUS
