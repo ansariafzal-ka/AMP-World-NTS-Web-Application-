@@ -32,18 +32,19 @@ export default function Home() {
               />
               <ImageCard
                 title="Student Registration"
-                imageSrc="/exam-centre.jpg"
+                imageSrc="/student-registration.jpg"
                 imageAlt="Student Registration"
                 buttonText="REGISTER"
                 buttonHref="/Student_Registration"
               />
               <ImageCard
                 title="Exam Pattern & Syllabus"
-                imageSrc="/exam-centre.jpg"
+                imageSrc="/nts-hero banner.jpg"
                 imageAlt="Exam Pattern & Syllabus"
                 buttonText="KNOW MORE"
                 buttonHref="/About_NTS"
               />
+
             </div>
           </div>
         </section>
