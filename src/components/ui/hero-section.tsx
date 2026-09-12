@@ -43,39 +43,39 @@ const registrationLinks: RegistrationLink[] = [
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100dvh-5rem)] lg:h-[calc(100dvh-5rem)] lg:min-h-0 items-center justify-center overflow-hidden bg-gradient-to-br from-[#610D17] via-[#520A13] to-[#3B070D] text-white py-6 sm:py-8 lg:py-4 xl:py-6">
-      {/* Decorative ambient background accents */}
+    <section className="relative flex min-h-[calc(100dvh-5rem)] lg:h-[calc(100dvh-5rem)] lg:min-h-0 items-center justify-center overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-6 sm:py-8 lg:py-4 xl:py-6">
+      {/* Luminous crimson and rose ambient glow */}
       <div
-        className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-white/5 blur-3xl"
+        className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-7xl rounded-full bg-[#B81E34]/30 blur-[120px]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#8B1321]/30 blur-3xl"
+        className="pointer-events-none absolute -bottom-20 -right-20 h-[450px] w-[450px] rounded-full bg-[#9E1528]/35 blur-[100px]"
         aria-hidden="true"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center my-auto">
-        {/* Top Minimal Heading */}
-        <div className="mb-4 sm:mb-6 lg:mb-5 text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            AMP National Talent Search 2026
-          </h1>
-          <p className="text-xs sm:text-sm lg:text-base text-zinc-200 mt-1 max-w-2xl mx-auto">
-            Discover Your Talent. Compete with the Best. Shape Your Future.
-          </p>
-        </div>
-
-        {/* 2-Column Grid: Left Text / Right 3 Registration Buttons */}
+        {/* 2-Column Grid: Left Content Hierarchy / Right 3 Registration Buttons */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Side: Text Content */}
+          {/* Left Side: Unified Text Content Hierarchy */}
           <div className="lg:col-span-7 flex flex-col space-y-4 pr-0 lg:pr-6">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Your Gateway to National Recognition & Scholarships
-            </h2>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              AMP National Talent Search 2026
+            </h1>
 
-            <p className="text-base sm:text-lg text-zinc-200 leading-relaxed">
-              The AMP National Talent Search (NTS) provides students from schools, junior colleges, and universities a national benchmark to test competitive readiness, earn premier scholarships for exams like NEET & IIT-JEE, and gain lifelong mentorship.
+            <p className="text-base sm:text-lg lg:text-xl font-medium text-zinc-100">
+              Discover Your Talent. Compete with the Best. Shape Your Future.
             </p>
+
+            <div className="pt-1 space-y-2">
+              <h2 className="text-lg sm:text-xl font-semibold text-zinc-200 tracking-tight">
+                Your Gateway to National Recognition & Scholarships
+              </h2>
+
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-2xl">
+                The AMP National Talent Search (NTS) provides students from schools, junior colleges, and universities a national benchmark to test competitive readiness, earn premier scholarships for exams like NEET & IIT-JEE, and gain lifelong mentorship.
+              </p>
+            </div>
           </div>
 
           {/* Right Side: 3 Simple, Clean Registration Buttons */}

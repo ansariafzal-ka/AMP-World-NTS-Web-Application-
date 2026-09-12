@@ -105,42 +105,90 @@ export default function AboutNTSPage() {
         {/* =========================================================
             1. PAGE HEADER (MAROON BACKGROUND)
         ========================================================= */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#610D17] via-[#520A13] to-[#3B070D] text-white pt-12 pb-14 sm:pt-14 sm:pb-16 shadow-inner">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              About AMP NTS 2026
-            </h1>
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white min-h-[calc(100dvh-5rem)] flex flex-col justify-center py-8 sm:py-10 lg:py-8">
+          {/* Luminous crimson and rose ambient glow */}
+          <div
+            className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-7xl rounded-full bg-[#B81E34]/30 blur-[120px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute -bottom-20 -right-20 h-[450px] w-[450px] rounded-full bg-[#9E1528]/35 blur-[100px]"
+            aria-hidden="true"
+          />
 
-            <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-zinc-200 leading-relaxed font-normal">
-              The National Talent Search (NTS) 2026 question papers are designed by a team of
-              eminent academicians from prestigious universities and institutes across India.
-            </p>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center my-auto">
+            {/* Top Text Block (Left-Aligned) */}
+            <div className="max-w-3xl">
+              {/* Pill Badge */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-semibold tracking-wider text-zinc-200 uppercase backdrop-blur-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
+                <span>NATIONAL TALENT SEARCH · 2026</span>
+              </div>
 
-            {/* Quick Metrics Bar (Frosted Light Badges on Maroon) */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto">
-              <div className="rounded-xl border border-white/15 bg-white/10 p-3.5 backdrop-blur-xs">
-                <span className="block text-2xl font-black text-white">100</span>
-                <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wide">
-                  Total Questions
+              {/* Main Heading */}
+              <h1 className="mt-3 sm:mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight">
+                About AMP NTS 2026
+              </h1>
+
+              {/* Description */}
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-200 leading-relaxed font-normal max-w-2xl">
+                The National Talent Search (NTS) 2026 question papers are designed by a team of
+                eminent academicians from prestigious universities and institutes across India.
+              </p>
+            </div>
+
+            {/* 4 Bottom Stat Cards */}
+            <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {/* Card 1: Featured White Card */}
+              <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between shadow-md">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-900 leading-none">
+                  100
                 </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
+                    TOTAL QUESTIONS
+                  </span>
+                </div>
               </div>
-              <div className="rounded-xl border border-white/15 bg-white/10 p-3.5 backdrop-blur-xs">
-                <span className="block text-2xl font-black text-white">5</span>
-                <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wide">
-                  Distinct Sections
+
+              {/* Card 2: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-none">
+                  5
                 </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    DISTINCT SECTIONS
+                  </span>
+                </div>
               </div>
-              <div className="rounded-xl border border-white/15 bg-white/10 p-3.5 backdrop-blur-xs">
-                <span className="block text-2xl font-black text-white">20 Qs</span>
-                <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wide">
-                  Per Section
+
+              {/* Card 3: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-none">
+                  20
                 </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    QS PER SECTION
+                  </span>
+                </div>
               </div>
-              <div className="rounded-xl border border-white/15 bg-white/10 p-3.5 backdrop-blur-xs">
-                <span className="block text-2xl font-black text-white">Zero</span>
-                <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wide">
-                  Negative Marking
+
+              {/* Card 4: Translucent Maroon Card */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 h-32 sm:h-36 lg:h-40 flex flex-col justify-between backdrop-blur-xs">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-none">
+                  Zero
                 </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+                    NEGATIVE MARKING
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -485,13 +533,13 @@ export default function AboutNTSPage() {
             </div>
 
             {/* Support and Document Link CTA Card */}
-            <div className="mt-8 rounded-2xl bg-gradient-to-r from-[#610D17] to-[#4B0A12] text-white p-6 sm:p-8 shadow-md">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="max-w-xl">
+            <div className="mt-8 rounded-2xl bg-gradient-to-r from-[#420B13] via-[#5E0E1C] to-[#7E1222] text-white p-6 sm:p-8 lg:p-9 shadow-md">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div className="max-w-2xl">
                   <h3 className="text-xl sm:text-2xl font-bold text-white">
                     Check out Detailed Guideline Document
                   </h3>
-                  <p className="mt-2 text-sm text-zinc-200 leading-relaxed">
+                  <p className="mt-2 text-sm sm:text-base text-zinc-200 leading-relaxed">
                     Access the complete document detailing exam day instructions, technical
                     requirements, and coordinator guidelines. Have questions? Our helpdesk team is
                     ready to assist.
@@ -504,6 +552,7 @@ export default function AboutNTSPage() {
                     target="_blank"
                     variant="secondary"
                     size="lg"
+                    className="whitespace-nowrap"
                   >
                     View Guideline Doc
                   </Button>
@@ -512,6 +561,7 @@ export default function AboutNTSPage() {
                     href="mailto:nts@ampindia.org"
                     variant="frosted"
                     size="lg"
+                    className="whitespace-nowrap"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

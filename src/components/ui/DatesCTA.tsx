@@ -5,7 +5,7 @@ export default function DatesCTA() {
   return (
     <section className="bg-white border-t border-zinc-200 py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-6 sm:p-10 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-6 sm:p-10 shadow-xs flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 text-left">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold text-[#610D17] mb-2.5">
               <span className="h-1.5 w-1.5 rounded-full bg-[#610D17]" />
@@ -20,8 +20,8 @@ export default function DatesCTA() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-            <Button variant="primary" size="md" href="/About_NTS">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <Button variant="primary" size="md" href="/About_NTS" className="whitespace-nowrap">
               <span>Explore Syllabus</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
@@ -39,6 +39,7 @@ export default function DatesCTA() {
               href="https://tinyurl.com/HelplineAMPNTS"
               target="_blank"
               rel="noopener noreferrer"
+              className="whitespace-nowrap"
             >
               <svg
                 className="w-4 h-4 text-emerald-600"

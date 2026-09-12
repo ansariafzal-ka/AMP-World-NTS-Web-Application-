@@ -14,7 +14,6 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "About NTS", href: "/About_NTS" },
   { label: "Important Dates", href: "/Important_Dates" },
-  { label: "Student Journey", href: "/Student_Journey" },
   { label: "FAQs", href: "/FAQs" },
   { label: "Contact", href: "/Contact" },
 ];
