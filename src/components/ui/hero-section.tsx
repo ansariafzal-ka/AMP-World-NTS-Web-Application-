@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface RegistrationLink {
   id: string;
@@ -43,7 +44,7 @@ const registrationLinks: RegistrationLink[] = [
 
 export default function HeroSection() {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-12 sm:py-16 lg:py-4 xl:py-6 lg:min-h-[calc(100dvh-5rem)] lg:h-[calc(100dvh-5rem)]">
+    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-10 sm:py-12 md:py-14 lg:py-12 xl:py-16 lg:min-h-[calc(100dvh-5rem)]">
       {/* Luminous crimson and rose ambient glow */}
       <div
         className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-7xl rounded-full bg-[#B81E34]/30 blur-[120px]"
@@ -55,66 +56,81 @@ export default function HeroSection() {
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center my-auto">
-        {/* 2-Column Grid: Left Content Hierarchy / Right 3 Registration Buttons */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Side: Unified Text Content Hierarchy */}
-          <div className="lg:col-span-7 flex flex-col space-y-4 pr-0 lg:pr-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              AMP National Talent Search 2026
-            </h1>
-
-            <p className="text-base sm:text-lg lg:text-xl font-medium text-zinc-100">
-              Discover Your Talent. Compete with the Best. Shape Your Future.
-            </p>
-
-            <div className="pt-1 space-y-2">
-              <h2 className="text-lg sm:text-xl font-semibold text-zinc-200 tracking-tight">
-                Your Gateway to National Recognition & Scholarships
-              </h2>
-
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-2xl">
-                The AMP National Talent Search (NTS) provides students from schools, junior colleges, and universities a national benchmark to test competitive readiness, earn premier scholarships for exams like NEET & IIT-JEE, and gain lifelong mentorship.
-              </p>
+        {/* 2-Column Grid starting on Tablet (md: 768px+) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 md:gap-8 lg:gap-12 xl:gap-14 items-center">
+          {/* Logo Column */}
+          <div className="md:col-span-5 lg:col-span-4 flex items-center justify-center">
+            <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl ring-1 ring-white/15 transition-all duration-300 hover:scale-[1.02] hover:shadow-white/10">
+              <Image
+                src="/nts-logo-2026.jpg"
+                alt="AMP National Talent Search 2026 Logo"
+                width={943}
+                height={1136}
+                className="w-28 sm:w-36 md:w-56 lg:w-68 xl:w-76 h-auto object-cover select-none"
+                priority
+              />
             </div>
           </div>
 
-          {/* Right Side: 3 Simple, Clean Registration Buttons */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-3.5 sm:space-y-4">
-            <div>
-              <h2 className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-extrabold text-white tracking-tight">
-                Register for NTS 2026
-              </h2>
-              <p className="text-xs sm:text-sm text-zinc-300 mt-0.5">
-                Select your category to start your registration:
+          {/* Content & Registration Column */}
+          <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center text-center md:text-left space-y-4 sm:space-y-5 md:space-y-6">
+            <div className="space-y-2.5 sm:space-y-3">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-zinc-100 backdrop-blur-xs border border-white/20 mx-auto md:mx-0">
+                <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
+                India&apos;s Biggest National Talent Search
+              </span>
+
+              <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                AMP National Talent Search 2026
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg font-semibold text-rose-100/95 tracking-tight max-w-2xl mx-auto md:mx-0">
+                Discover Your Talent. Compete with the Best. Shape Your Future.
+              </p>
+              <p className="text-xs sm:text-sm md:text-sm lg:text-base text-zinc-300 leading-relaxed max-w-2xl mx-auto md:mx-0">
+                For School, Junior College, Madarsa &amp; Undergraduate Students across India.
               </p>
             </div>
 
-            {/* The 3 Clean Buttons */}
-            <div className="flex flex-col space-y-2.5 sm:space-y-3 pt-1">
-              {registrationLinks.map((link) => {
-                const Icon = link.icon;
-                return (
-                  <Link
-                    key={link.id}
-                    href={link.href}
-                    className="group flex items-center justify-between rounded-xl bg-white px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base font-bold text-[#610D17] shadow-md transition-all duration-200 hover:bg-zinc-100 hover:shadow-lg hover:translate-x-1"
-                  >
-                    <span className="flex items-center gap-3">
-                      <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-[#610D17] shrink-0" />
-                      <span>{link.title}</span>
-                    </span>
-                    <svg
-                      className="h-5 w-5 text-[#610D17] transition-transform duration-200 group-hover:translate-x-1 shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2.5"
-                      stroke="currentColor"
+            {/* Registration CTA Container */}
+            <div className="pt-3 border-t border-white/15 space-y-3">
+              <div>
+                <h2 className="text-base sm:text-lg md:text-lg lg:text-xl font-bold text-white tracking-tight">
+                  Register for NTS 2026
+                </h2>
+                <p className="text-xs sm:text-sm text-zinc-300">
+                  Select your category to start your registration:
+                </p>
+              </div>
+
+              {/* Action Buttons: Stacked on mobile & tablet, 3-column row on large desktop (lg+) */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-2.5 sm:gap-3">
+                {registrationLinks.map((link) => {
+                  const Icon = link.icon;
+                  return (
+                    <Link
+                      key={link.id}
+                      href={link.href}
+                      className="group flex items-center justify-between gap-3 rounded-xl bg-white px-3.5 sm:px-4 py-3 sm:py-3.5 text-[#610D17] shadow-md transition-all duration-200 hover:bg-zinc-100 hover:shadow-xl hover:translate-x-1 active:translate-x-0"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                  </Link>
-                );
-              })}
+                      <span className="flex items-center gap-2.5 min-w-0">
+                        <Icon className="h-5 w-5 text-[#610D17] shrink-0" />
+                        <span className="text-xs sm:text-sm font-bold leading-tight line-clamp-2 text-left">
+                          {link.title}
+                        </span>
+                      </span>
+                      <svg
+                        className="h-4 w-4 text-[#610D17] transition-transform duration-200 group-hover:translate-x-1 shrink-0 ml-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2.5"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

@@ -14,6 +14,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "About NTS", href: "/About_NTS" },
   { label: "Important Dates", href: "/Important_Dates" },
+  { label: "Institution", href: "/Institution" },
+  { label: "Exam Center", href: "/Become_An_Exam_Center" },
   { label: "FAQs", href: "/FAQs" },
   { label: "Contact", href: "/Contact" },
 ];
@@ -32,11 +34,11 @@ export default function Navbar() {
           className="flex shrink-0 items-center gap-3 transition-opacity hover:opacity-90 focus:outline-none"
         >
           <Image
-            src="/nts-logo.jpeg"
-            alt="AMP NTS Logo"
-            width={58}
-            height={70}
-            className="h-14 w-auto object-contain"
+            src="/amp_Logo.png"
+            alt="Association of Muslim Professionals Logo"
+            width={1740}
+            height={254}
+            className="h-7 sm:h-8 lg:h-9 w-auto object-contain"
             priority
           />
         </Link>
@@ -60,8 +62,34 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right Actions: Desktop Login & Mobile Hamburger (< lg) */}
+        {/* Right Actions: All Documents, Desktop Login & Mobile Hamburger (< lg) */}
         <div className="flex items-center gap-3">
+          {/* Desktop All Documents Redirect Button (lg+) */}
+          <div className="hidden lg:block">
+            <Button
+              href="https://www.tinyurl.com/AllNTSDocument"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="brand-outline"
+              size="sm"
+            >
+              <svg
+                className="w-3.5 h-3.5 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                />
+              </svg>
+              All Documents
+            </Button>
+          </div>
+
           {/* Desktop Login Button (lg+) */}
           <div className="hidden lg:block">
             <Button href="/login" variant="primary" size="sm">
@@ -136,8 +164,32 @@ export default function Navbar() {
             );
           })}
 
-          {/* Mobile Login Button */}
-          <div className="pt-2.5 border-t border-zinc-100 mt-1">
+          {/* Mobile Action Buttons */}
+          <div className="pt-2.5 border-t border-zinc-100 mt-1 flex flex-col gap-2">
+            <Button
+              href="https://www.tinyurl.com/AllNTSDocument"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="brand-outline"
+              size="md"
+              className="w-full justify-center"
+              onClick={() => setIsOpen(false)}
+            >
+              <svg
+                className="w-4 h-4 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                />
+              </svg>
+              All Documents
+            </Button>
             <Button
               href="/login"
               variant="primary"

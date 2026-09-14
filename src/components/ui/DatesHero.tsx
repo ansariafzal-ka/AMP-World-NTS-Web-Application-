@@ -50,7 +50,7 @@ export default function DatesHero() {
             <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-zinc-100">
               <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
               <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
-                DAILY SESSIONS
+                DAILY HELPLINE
               </span>
             </div>
           </div>

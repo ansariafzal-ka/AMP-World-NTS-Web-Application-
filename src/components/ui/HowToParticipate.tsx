@@ -1,10 +1,30 @@
 import React from "react";
 import Ribbon from "@/components/common/Ribbon";
 
-const participationPoints = [
-  "Download the AMP World Mobile App and complete your basic registration.",
+const participationPoints: React.ReactNode[] = [
+  <>
+    <a
+      href="https://www.tinyurl.com/AMPWorldApp"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-bold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
+    >
+      Download the AMP World Mobile App
+    </a>{" "}
+    and complete your basic registration.
+  </>,
   "Select your preferred examination centre from 1,500+ locations across India.",
-  "Download syllabus, exam patterns, and practice test materials.",
+  <>
+    <a
+      href="https://www.tinyurl.com/AllNTSDocument"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
+    >
+      Download syllabus & exam patterns
+    </a>
+    , and access practice test materials.
+  </>,
   "Receive your hall ticket and confirmation details directly through the app.",
   "Appear in-person for the 90-minute offline multiple-choice test.",
   "Access national rank results, scholarships, and reward announcements.",
@@ -14,7 +34,19 @@ const steps = [
   {
     step: "01",
     title: "Register",
-    description: "Download the AMP World App and complete your registration.",
+    description: (
+      <>
+        <a
+          href="https://www.tinyurl.com/AMPWorldApp"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
+        >
+          Download the AMP World App
+        </a>{" "}
+        and complete your registration.
+      </>
+    ),
   },
   {
     step: "02",

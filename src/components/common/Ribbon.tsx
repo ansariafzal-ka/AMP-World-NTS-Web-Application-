@@ -2,7 +2,7 @@ import React from "react";
 
 export interface RibbonProps {
   title: string;
-  description?: string;
+  description?: React.ReactNode;
   icon?: React.ReactNode;
   className?: string;
 }

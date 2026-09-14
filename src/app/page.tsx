@@ -24,13 +24,6 @@ export default function Home() {
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full">
               <ImageCard
-                title="Become an Exam Centre"
-                imageSrc="/exam-centre.jpg"
-                imageAlt="Become an Exam Centre"
-                buttonText="KNOW MORE"
-                buttonHref="/Become_An_Exam_Center"
-              />
-              <ImageCard
                 title="Student Registration"
                 imageSrc="/student-registration.jpg"
                 imageAlt="Student Registration"
@@ -38,7 +31,14 @@ export default function Home() {
                 buttonHref="/Student_Registration"
               />
               <ImageCard
-                title="Exam Pattern & Syllabus"
+                title="Become an Exam Centre"
+                imageSrc="/exam-centre.jpg"
+                imageAlt="Become an Exam Centre"
+                buttonText="KNOW MORE"
+                buttonHref="/Become_An_Exam_Center"
+              />
+              <ImageCard
+                title="Institution"
                 imageSrc="/nts-hero banner.jpg"
                 imageAlt="Exam Pattern & Syllabus"
                 buttonText="KNOW MORE"

@@ -529,9 +529,14 @@ export default function AboutNTSPage() {
                     <span className="rounded-md bg-white border border-zinc-200 px-2.5 py-1">
                       WhatsApp Alerts
                     </span>
-                    <span className="rounded-md bg-white border border-zinc-200 px-2.5 py-1">
+                    <a
+                      href="https://www.tinyurl.com/AMPWorldApp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-md bg-white border border-zinc-200 px-2.5 py-1 text-[#610D17] hover:border-[#610D17] hover:bg-[#fbf2f3] transition-colors"
+                    >
                       AMP World Mobile App
-                    </span>
+                    </a>
                   </div>
                 </div>
 

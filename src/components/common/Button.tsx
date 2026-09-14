@@ -1,7 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-export type ButtonVariant = "primary" | "secondary" | "outline" | "frosted" | "ghost";
+export type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "brand-outline"
+  | "soft"
+  | "frosted"
+  | "ghost";
 export type ButtonSize = "sm" | "md" | "lg";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -21,6 +28,10 @@ const variantStyles: Record<ButtonVariant, string> = {
     "bg-white text-[#610D17] border border-transparent shadow-xs hover:bg-zinc-100 hover:shadow active:bg-zinc-200",
   outline:
     "bg-white text-zinc-800 border border-zinc-300 hover:bg-zinc-100 hover:border-zinc-400 hover:text-zinc-950",
+  "brand-outline":
+    "bg-white text-[#610D17] border border-[#610D17] hover:bg-[#610D17] hover:text-white shadow-xs active:bg-[#4B0A12]",
+  soft:
+    "bg-[#fbf2f3] text-[#610D17] border border-[#f3d3d7] hover:bg-[#f5e3e6] active:bg-[#ebd0d5]",
   frosted:
     "bg-white/10 text-white border border-white/30 backdrop-blur-xs hover:bg-white/20 active:bg-white/25",
   ghost:

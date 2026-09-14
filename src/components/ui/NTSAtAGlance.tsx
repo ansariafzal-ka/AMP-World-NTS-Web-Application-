@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@/components/common/Button";
 
 interface GlanceCard {
   id: string;
@@ -141,6 +142,27 @@ export default function NTSAtAGlance() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Bottom Left Details Redirection Button */}
+                <div className="pt-4 mt-5 border-t border-zinc-100 flex justify-start">
+                  <Button
+                    href="/NTS_Details"
+                    variant="brand-outline"
+                    size="sm"
+                    className="gap-1.5"
+                  >
+                    <span>Details</span>
+                    <svg
+                      className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2.5"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </Button>
+                </div>
               </div>
             );
           })}

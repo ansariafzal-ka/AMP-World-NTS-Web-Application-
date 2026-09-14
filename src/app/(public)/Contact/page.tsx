@@ -17,7 +17,7 @@ export default function ContactPage() {
       phoneRaw: "8657506907",
       phoneFormatted: "+91 86575 06907",
       whatsappUrl: "https://wa.me/918657506907?text=Hello%20AMP%20NTS%20Helpdesk%2C%20I%20have%20a%20query%20regarding%20School%20Category%20(8th%2C%209th%20%26%2010th).",
-      icon: (
+      icon: (  
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
             strokeLinecap="round"
@@ -248,19 +248,16 @@ export default function ContactPage() {
                     <p className="text-xs font-medium text-zinc-500 mt-0.5">{item.subtitle}</p>
 
                     {/* Prominent Phone Display */}
-                    <div className="mt-4 rounded-xl bg-zinc-50 p-2.5 sm:p-3 border border-zinc-100 text-center">
-                      <span className="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-0.5">
+                    <div className="mt-4 rounded-xl bg-zinc-50 p-3 sm:p-3.5 border border-zinc-100 text-center">
+                      <span className="block text-[11px] font-semibold uppercase tracking-wider text-zinc-500 mb-1">
                         Helpline Number
                       </span>
                       <a
                         href={`tel:${item.phoneRaw}`}
                         className="text-xl sm:text-2xl md:text-lg lg:text-2xl font-black text-zinc-900 tracking-tight whitespace-nowrap transition-colors hover:text-[#610D17]"
                       >
-                        {item.phoneRaw}
+                        {item.phoneFormatted}
                       </a>
-                      <span className="block text-[11px] text-zinc-500 mt-0.5">
-                        ({item.phoneFormatted})
-                      </span>
                     </div>
                   </div>
 
@@ -285,7 +282,7 @@ export default function ContactPage() {
                       <svg className="w-4 h-4 text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
-                      <span>Call {item.phoneRaw}</span>
+                      <span>Call Helpline</span>
                     </a>
                   </div>
                 </div>
