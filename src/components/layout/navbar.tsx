@@ -44,17 +44,18 @@ export default function Navbar() {
         </Link>
 
         {/* Center Navigation Links (Laptop & Desktop: lg+) */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`whitespace-nowrap rounded-md px-3.5 py-2 text-base font-bold transition-colors ${isActive
-                  ? "bg-[#fbf2f3] text-[#610D17]"
-                  : "text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950"
-                  }`}
+                className={`whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors ${
+                  isActive
+                    ? "bg-[#fbf2f3] text-[#610D17] font-bold"
+                    : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
+                }`}
               >
                 {item.label}
               </Link>
