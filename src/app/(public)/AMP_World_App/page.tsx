@@ -132,7 +132,7 @@ export default function AMPWorldAppPage() {
       number: "04",
       title: "Receive Hall Ticket & Compete",
       description:
-        "Get your official hall ticket inside the app, prepare using syllabus materials, and attend the 90-minute offline examination on exam day.",
+        "Get your official hall ticket inside the app, prepare using syllabus materials, and attend the 90-minute offline examination on 5th December 2026.",
     },
   ];
 

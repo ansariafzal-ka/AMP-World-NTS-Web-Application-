@@ -51,11 +51,10 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors ${
-                  isActive
+                className={`whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors ${isActive
                     ? "bg-[#fbf2f3] text-[#610D17] font-bold"
                     : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
-                }`}
+                  }`}
               >
                 {item.label}
               </Link>
@@ -68,7 +67,7 @@ export default function Navbar() {
           {/* Desktop All Documents Redirect Button (lg+) */}
           <div className="hidden lg:block">
             <Button
-              href="https://www.tinyurl.com/AllNTSDocument"
+              href="https://drive.google.com/drive/folders/1qzirip8K-OzIRuexnOa7XXH2CAo_B0At"
               target="_blank"
               rel="noopener noreferrer"
               variant="brand-outline"

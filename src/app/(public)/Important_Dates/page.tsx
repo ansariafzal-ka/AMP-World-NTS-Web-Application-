@@ -6,9 +6,9 @@ import DatesStudentNotes from "@/components/ui/DatesStudentNotes";
 import DatesCTA from "@/components/ui/DatesCTA";
 
 export const metadata = {
-  title: "Important Dates",
+  title: "Important Dates - AMP NTS 2026 Schedule",
   description:
-    "Official schedule and important dates for AMP National Talent Search (NTS) 2026. Mark your calendar for registration deadlines, admit cards, exam day in December 2026, and results.",
+    "Official schedule and important dates for AMP National Talent Search 2026: Launch on 20 Sep 2026, Registration Closes on 22 Nov 2026, Exam on 5 Dec 2026, Results on 26 Jan 2027, and Counselling from 27 Jan to 3 Feb 2027.",
 };
 
 export default function ImportantDatesPage() {

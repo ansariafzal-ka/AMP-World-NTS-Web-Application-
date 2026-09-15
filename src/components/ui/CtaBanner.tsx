@@ -11,7 +11,7 @@ export default function CtaBanner() {
           </h2>
 
           <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-zinc-200 max-w-2xl mx-auto font-normal">
-            Join 2 Lakh+ students across India in AMP National Talent Search 2026.
+            Join 2 Lakh+ students across India in AMP National Talent Search 2026. Registrations close on 22nd November 2026 · Exam on 5th December 2026.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">

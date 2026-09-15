@@ -44,14 +44,14 @@ export default function DatesTimeline() {
       isExternal: true,
     },
     {
-      id: "registration-opens",
+      id: "launch-date",
       step: "02",
-      title: "Registration Opens",
-      schedule: "September – October 2026",
-      status: "Tentative",
-      statusType: "tentative",
+      title: "Launch Date & Registration Opens",
+      schedule: "20th September 2026",
+      status: "Confirmed",
+      statusType: "confirmed",
       description:
-        "Students and educational institutions can initiate registration across School, Junior College, and Senior College categories via the AMP World App.",
+        "Official launch of AMP NTS 2026. Online registration portal opens for School, Junior College, and Degree College students across India via the AMP World App.",
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -63,19 +63,43 @@ export default function DatesTimeline() {
         </svg>
       ),
       highlightNote: "Register via the official AMP World Mobile App.",
-      actionLabel: "Registration Details",
-      actionHref: "/#registration-options",
+      actionLabel: "Download AMP World App",
+      actionHref: "/AMP_World_App",
       isExternal: false,
     },
     {
-      id: "registration-deadline",
+      id: "omr-distribution",
       step: "03",
-      title: "Registration Deadline",
-      schedule: "November 2026",
-      status: "Tentative",
-      statusType: "tentative",
+      title: "OMR Sheet Distribution",
+      schedule: "5th November 2026",
+      status: "Confirmed",
+      statusType: "confirmed",
       description:
-        "Final date for submission of student application forms and institutional candidate batches to appear for AMP NTS 2026.",
+        "Physical OMR answer sheets, candidate roll verification lists, and examination materials are dispatched and distributed to 1,500+ verified test centres nationwide.",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.75}
+            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+          />
+        </svg>
+      ),
+      highlightNote: "Coordinated directly with authorized Institutional Exam Centres.",
+      actionLabel: "Exam Centre Portal",
+      actionHref: "/Become_An_Exam_Center",
+      isExternal: false,
+    },
+    {
+      id: "registration-closes",
+      step: "04",
+      title: "Registration Closes",
+      schedule: "22nd November 2026",
+      status: "Confirmed",
+      statusType: "confirmed",
+      description:
+        "Final deadline for submission of student application forms and institutional candidate batches to appear for AMP NTS 2026. Portal closes at midnight.",
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -86,18 +110,18 @@ export default function DatesTimeline() {
           />
         </svg>
       ),
-      highlightNote: "Ensure complete submission before the portal closes.",
+      highlightNote: "Ensure complete registration submission before the portal closes.",
       actionLabel: null,
       actionHref: null,
       isExternal: false,
     },
     {
       id: "admit-card",
-      step: "04",
+      step: "05",
       title: "Admit Card Release",
-      schedule: "November – December 2026",
-      status: "Tentative",
-      statusType: "tentative",
+      schedule: "Late November 2026",
+      status: "Confirmed",
+      statusType: "confirmed",
       description:
         "Download your verified hall ticket containing roll number, category code, reporting instructions, and allocated exam center venue.",
       icon: (
@@ -110,20 +134,20 @@ export default function DatesTimeline() {
           />
         </svg>
       ),
-      highlightNote: "Available on the AMP website and AMP World Mobile App.",
-      actionLabel: null,
-      actionHref: null,
+      highlightNote: "Available on the AMP World Mobile App.",
+      actionLabel: "Get Hall Ticket Info",
+      actionHref: "/AMP_World_App",
       isExternal: false,
     },
     {
       id: "exam-date",
-      step: "05",
+      step: "06",
       title: "AMP National Talent Search 2026 Exam",
-      schedule: "December 2026",
+      schedule: "5th December 2026",
       status: "Confirmed",
       statusType: "confirmed",
       description:
-        "The nationwide physical offline exam will be held simultaneously on a single designated day across all categories nationwide.",
+        "The nationwide physical offline pen & paper examination will be held simultaneously on a single designated day across all categories nationwide.",
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -134,7 +158,7 @@ export default function DatesTimeline() {
           />
         </svg>
       ),
-      highlightNote: "Key flagship milestone — plan your study preparation accordingly!",
+      highlightNote: "Flagship milestone — 90-minute offline test with 100 MCQs (No negative marking).",
       actionLabel: "View Syllabus & Pattern",
       actionHref: "/About_NTS",
       isExternal: false,
@@ -142,26 +166,50 @@ export default function DatesTimeline() {
     },
     {
       id: "results",
-      step: "06",
-      title: "Results & Merit List",
-      schedule: "January 2027",
-      status: "Tentative",
-      statusType: "tentative",
+      step: "07",
+      title: "Results Announcements",
+      schedule: "26th January 2027",
+      status: "Confirmed",
+      statusType: "confirmed",
       description:
-        "Announcement of National & State Rank Merit Lists, followed by distribution of academic scholarships, excellence awards, and verifiable e-certificates.",
+        "Official announcement of National, State, and District Merit Lists, followed by distribution of academic scholarships, excellence awards, and verifiable e-certificates.",
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.75}
-            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z"
           />
         </svg>
       ),
-      highlightNote: "Awards, cash prizes, and scholarships for top performers.",
+      highlightNote: "Declared on Republic Day · Awards, cash prizes & merit ranks.",
       actionLabel: null,
       actionHref: null,
+      isExternal: false,
+    },
+    {
+      id: "counselling",
+      step: "08",
+      title: "Counselling Begins & Closes",
+      schedule: "27th January 2027 – 3rd February 2027",
+      status: "Confirmed",
+      statusType: "confirmed",
+      description:
+        "Comprehensive career guidance, NEET/IIT-JEE coaching seat allocations, and higher education mentorship sessions begin on 27th January 2027 and close on 3rd February 2027.",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.75}
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+      ),
+      highlightNote: "Begins: 27 Jan 2027 · Closes: 3 Feb 2027.",
+      actionLabel: "Helpline & Contact",
+      actionHref: "/Contact",
       isExternal: false,
     },
   ];

@@ -61,7 +61,7 @@ const glanceCards: GlanceCard[] = [
       </svg>
     ),
     points: [
-      "Conducted 100% in Offline/Physical Mode at designated centres.",
+      "Conducted 100% in Offline/Physical Mode on 5th December 2026.",
       "90-minute paper featuring 100 Multiple Choice Questions (MCQs).",
       "No negative marking; crafted by distinguished national academicians.",
     ],

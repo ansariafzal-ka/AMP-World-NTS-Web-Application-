@@ -12,7 +12,7 @@ const registrationLinks: RegistrationLink[] = [
   {
     id: "student",
     title: "Student Registration",
-    href: "/Student_Registration",
+    href: "/student-registration",
     icon: (props) => (
       <svg fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" {...props}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-5.25 6.557c0 1.657 1.343 3 3 3h4.5" />
@@ -22,7 +22,7 @@ const registrationLinks: RegistrationLink[] = [
   {
     id: "exam-center",
     title: "Exam Center Registration",
-    href: "/Exam_Center_Registration",
+    href: "/exam-centre-registration",
     icon: (props) => (
       <svg fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" {...props}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -33,7 +33,7 @@ const registrationLinks: RegistrationLink[] = [
   {
     id: "institute",
     title: "Institute Registration",
-    href: "/Institute_Registration",
+    href: "/institution-registration",
     icon: (props) => (
       <svg fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" {...props}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.333A48.24 48.24 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.583V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
@@ -75,10 +75,15 @@ export default function HeroSection() {
           {/* Content & Registration Column */}
           <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center text-center md:text-left space-y-4 sm:space-y-5 md:space-y-6">
             <div className="space-y-2.5 sm:space-y-3">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-zinc-100 backdrop-blur-xs border border-white/20 mx-auto md:mx-0">
-                <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
-                India&apos;s Biggest National Talent Search
-              </span>
+              <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-zinc-100 backdrop-blur-xs border border-white/20">
+                  <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
+                  India&apos;s Biggest National Talent Search
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-rose-100 backdrop-blur-xs border border-white/15">
+                  Exam Date: 5 Dec 2026
+                </span>
+              </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 AMP National Talent Search 2026
@@ -98,7 +103,7 @@ export default function HeroSection() {
                   Register for NTS 2026
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-300">
-                  Select your category to start your registration:
+                  Select your category to start your registration (Registration Closes: 22 Nov 2026):
                 </p>
               </div>
 

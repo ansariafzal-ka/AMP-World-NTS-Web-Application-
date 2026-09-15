@@ -30,8 +30,9 @@ export default function DatesHero() {
           {/* Description */}
           <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-zinc-200 leading-relaxed font-normal max-w-3xl">
             Stay ahead and mark your calendars! The timeline for the AMP National Talent Search is
-            designed to give you ample time to prepare, register, and excel. Key exam date is set
-            for December 2026.
+            designed to give you ample time to prepare, register, and excel. Registration opens on{" "}
+            <strong>20th September 2026</strong>, closes on <strong>22nd November 2026</strong>, and
+            the nationwide exam takes place on <strong>5th December 2026</strong>.
           </p>
         </div>
 
@@ -59,10 +60,10 @@ export default function DatesHero() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
             <div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
-                Sep – Nov 2026
+                20 Sep – 22 Nov
               </span>
               <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                Online registration portal open for all categories
+                Launch 20 Sep · Registration closes 22 Nov 2026
               </p>
             </div>
             <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
@@ -77,10 +78,10 @@ export default function DatesHero() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
             <div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
-                December 2026
+                5 Dec 2026
               </span>
               <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                Nationwide offline pen & paper examination day
+                Nationwide offline pen & paper OMR examination day
               </p>
             </div>
             <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
@@ -95,10 +96,10 @@ export default function DatesHero() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
             <div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
-                January 2027
+                26 Jan 2027
               </span>
               <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                National merit ranks & scholarship awardees declared
+                Results announced · Counselling 27 Jan – 3 Feb
               </p>
             </div>
             <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">

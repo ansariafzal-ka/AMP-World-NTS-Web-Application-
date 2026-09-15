@@ -37,9 +37,11 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         title: "2. When is AMP NTS 2026 scheduled?",
         content: (
           <p className="text-sm sm:text-base text-zinc-700 leading-relaxed">
-            AMP NTS 2026 is scheduled to be conducted in{" "}
-            <strong className="text-[#610D17]">December 2026</strong> across verified exam centres
-            nationwide.
+            AMP NTS 2026 is scheduled to be conducted in offline physical mode on{" "}
+            <strong className="text-[#610D17]">5th December 2026</strong> across verified exam centres
+            nationwide. Registration opens on <strong>20th September 2026</strong> and closes on{" "}
+            <strong>22nd November 2026</strong>. Results will be announced on{" "}
+            <strong>26th January 2027</strong> followed by counselling from <strong>27th January to 3rd February 2027</strong>.
           </p>
         ),
       },
