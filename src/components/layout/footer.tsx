@@ -200,21 +200,19 @@ export default function Footer() {
                   <span className="block text-[11px] font-semibold uppercase tracking-wider text-zinc-300">
                     Mon to Fri : 11:00 AM – 7:00 PM
                   </span>
-                  <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs sm:text-sm font-semibold text-white">
+                  <div className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm font-semibold text-white">
                     <a
                       href="tel:+918657506907"
                       className="hover:text-zinc-200 hover:underline transition-colors"
                     >
                       +91 86575 06907
                     </a>
-                    <span className="text-zinc-400">,</span>
                     <a
                       href="tel:+918657506909"
                       className="hover:text-zinc-200 hover:underline transition-colors"
                     >
                       +91 86575 06909
                     </a>
-                    <span className="text-zinc-400">,</span>
                     <a
                       href="tel:+918657003085"
                       className="hover:text-zinc-200 hover:underline transition-colors"
