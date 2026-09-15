@@ -163,7 +163,7 @@ export default function Footer() {
             <div className="space-y-2 pt-0.5">
               {/* Mail Us */}
               <a
-                href="mailto:info@ampindia.org"
+                href="mailto:nts@ampindia.org"
                 className="group flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2 transition-all hover:border-white/25 hover:bg-white/10"
               >
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white/10 text-zinc-200 transition-colors group-hover:bg-white group-hover:text-[#610D17]">
@@ -180,17 +180,14 @@ export default function Footer() {
                     Mail Us
                   </span>
                   <span className="truncate text-xs sm:text-sm font-semibold text-white transition-colors group-hover:text-zinc-100">
-                    info@ampindia.org
+                    nts@ampindia.org
                   </span>
                 </div>
               </a>
 
-              {/* Working Hours & Phone */}
-              <a
-                href="tel:+917303116060"
-                className="group flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2 transition-all hover:border-white/25 hover:bg-white/10"
-              >
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white/10 text-zinc-200 transition-colors group-hover:bg-white group-hover:text-[#610D17]">
+              {/* Working Hours & Phone Numbers */}
+              <div className="flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 transition-all hover:border-white/25 hover:bg-white/10">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white/10 text-zinc-200 mt-0.5">
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor">
                     <path
                       strokeLinecap="round"
@@ -203,11 +200,30 @@ export default function Footer() {
                   <span className="block text-[11px] font-semibold uppercase tracking-wider text-zinc-300">
                     Mon to Fri : 11:00 AM – 7:00 PM
                   </span>
-                  <span className="truncate text-xs sm:text-sm font-semibold text-white transition-colors group-hover:text-zinc-100">
-                    +91 7303116060
-                  </span>
+                  <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs sm:text-sm font-semibold text-white">
+                    <a
+                      href="tel:+918657506907"
+                      className="hover:text-zinc-200 hover:underline transition-colors"
+                    >
+                      +91 86575 06907
+                    </a>
+                    <span className="text-zinc-400">,</span>
+                    <a
+                      href="tel:+918657506909"
+                      className="hover:text-zinc-200 hover:underline transition-colors"
+                    >
+                      +91 86575 06909
+                    </a>
+                    <span className="text-zinc-400">,</span>
+                    <a
+                      href="tel:+918657003085"
+                      className="hover:text-zinc-200 hover:underline transition-colors"
+                    >
+                      +91 86570 03085
+                    </a>
+                  </div>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
