@@ -14,7 +14,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "About NTS", href: "/About_NTS" },
   { label: "Important Dates", href: "/Important_Dates" },
-  { label: "Institution", href: "/Institution" },
+  { label: "Mock Papers", href: "/Mock_Papers" },
   { label: "Exam Center", href: "/Become_An_Exam_Center" },
   { label: "FAQs", href: "/FAQs" },
   { label: "Contact", href: "/Contact" },
@@ -52,8 +52,8 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={`whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors ${isActive
-                    ? "bg-[#fbf2f3] text-[#610D17] font-bold"
-                    : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
+                  ? "bg-[#fbf2f3] text-[#610D17] font-bold"
+                  : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
                   }`}
               >
                 {item.label}
