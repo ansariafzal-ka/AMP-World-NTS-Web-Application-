@@ -59,20 +59,28 @@ export default function AllPagesPage() {
     return matchesFilter && matchesSearch;
   });
 
+  const [createError, setCreateError] = useState<string | null>(null);
+
   const handleCreatePage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newPageTitle.trim()) return;
 
+    setCreateError(null);
     const slug =
       newPageSlug.trim().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-_]/g, '') ||
       newPageTitle.trim().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-_]/g, '');
-    const created = await cmsClient.createPage({
-      title: newPageTitle.trim(),
-      slug,
-      status: 'DRAFT',
-      blocks: [],
-    });
-    router.push(`/cms/builder/${created.id}`);
+
+    try {
+      const created = await cmsClient.createPage({
+        title: newPageTitle.trim(),
+        slug,
+        status: 'DRAFT',
+        blocks: [],
+      });
+      router.push(`/cms/builder/${created.id}`);
+    } catch (err: any) {
+      setCreateError(err.message || 'Failed to create page');
+    }
   };
 
   return (
@@ -255,6 +263,12 @@ export default function AllPagesPage() {
             </div>
 
             <form onSubmit={handleCreatePage} className="space-y-4">
+              {createError && (
+                <div className="rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs font-semibold text-rose-700 flex items-center gap-2">
+                  <span>⚠️</span>
+                  <span>{createError}</span>
+                </div>
+              )}
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">
                   Page Title

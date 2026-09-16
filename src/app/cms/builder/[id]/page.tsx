@@ -23,6 +23,7 @@ export default function CmsBuilderPage({
   const [isSaving, setIsSaving] = useState(false);
   const [showSaveToast, setShowSaveToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('Changes saved successfully!');
+  const [isErrorToast, setIsErrorToast] = useState(false);
 
   useEffect(() => {
     cmsClient.getPageById(id).then((data) => {
@@ -68,10 +69,18 @@ export default function CmsBuilderPage({
     try {
       await cmsClient.updatePage(pageToSave.id, pageToSave);
       setToastMessage(message);
+      setIsErrorToast(false);
       setShowSaveToast(true);
       setTimeout(() => setShowSaveToast(false), 3000);
-    } catch (err) {
-      console.error('Failed to save page:', err);
+    } catch (err: any) {
+      const isValidation = err.message?.toLowerCase().includes('slug is already in use');
+      if (!isValidation) {
+        console.error('Failed to save page:', err);
+      }
+      setToastMessage(err.message || 'Failed to save page');
+      setIsErrorToast(true);
+      setShowSaveToast(true);
+      setTimeout(() => setShowSaveToast(false), 4500);
     } finally {
       setIsSaving(false);
     }
@@ -230,10 +239,14 @@ export default function CmsBuilderPage({
         </div>
       </div>
 
-      {/* Floating Save Toast */}
+      {/* Floating Save / Error Toast */}
       {showSaveToast && (
-        <div className="fixed bottom-6 right-6 z-50 rounded-xl bg-zinc-900 text-white px-5 py-3 text-sm font-bold shadow-xl flex items-center gap-2 animate-in slide-in-from-bottom-5">
-          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+        <div
+          className={`fixed bottom-6 right-6 z-50 rounded-xl px-5 py-3 text-sm font-bold shadow-xl flex items-center gap-2.5 animate-in slide-in-from-bottom-5 transition-all ${
+            isErrorToast ? 'bg-rose-600 text-white' : 'bg-zinc-900 text-white'
+          }`}
+        >
+          <span className={`h-2.5 w-2.5 rounded-full ${isErrorToast ? 'bg-white' : 'bg-emerald-400'}`} />
           {toastMessage}
         </div>
       )}

@@ -33,7 +33,11 @@ export async function PUT(
 
     return NextResponse.json({ success: true, data: saved });
   } catch (err: any) {
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    const isConflict = err.message?.toLowerCase().includes('slug is already in use');
+    return NextResponse.json(
+      { success: false, message: err.message || 'Failed to update page' },
+      { status: isConflict ? 409 : 500 }
+    );
   }
 }
 

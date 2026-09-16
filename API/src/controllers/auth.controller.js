@@ -1,10 +1,7 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const pool = require('../config/database');
+const cmsService = require('../services/cms.service');
 const { ApiError } = require('../utils/ApiError');
 const { ApiResponse } = require('../utils/ApiResponse');
 const { asyncHandler } = require('../utils/asyncHandler');
-
 
 const generateAccessAndRefreshTokens = (user) => {
   const payload = {
@@ -14,13 +11,13 @@ const generateAccessAndRefreshTokens = (user) => {
     role: user.role,
   };
 
-  const accessToken = jwt.sign(payload, process.env.JWT_SECRET, {
+  const accessToken = jwt.sign(payload, process.env.JWT_SECRET || 'amp-secret-key-12345', {
     expiresIn: process.env.JWT_ACCESS_EXPIRY || '1d',
   });
 
   const refreshToken = jwt.sign(
     { id: user.id },
-    process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET,
+    process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET || 'amp-refresh-secret-12345',
     { expiresIn: process.env.JWT_REFRESH_EXPIRY || '7d' }
   );
 
@@ -34,35 +31,11 @@ const login = asyncHandler(async (req, res) => {
     throw new ApiError(400, 'Email and password are required');
   }
 
-  const [users] = await pool.query(
-    `SELECT * FROM cms_users WHERE email = ? LIMIT 1`,
-    [email.trim().toLowerCase()]
-  );
+  const user = await cmsService.verifyCredentials(email, password);
 
-  if (users.length === 0) {
+  if (!user) {
     throw new ApiError(401, 'Invalid email or password');
   }
-
-  const user = users[0];
-
-  let isMatch = false;
-  if (user.password.startsWith('$2a$') || user.password.startsWith('$2b$')) {
-    isMatch = await bcrypt.compare(password, user.password);
-  } else {
-    isMatch = user.password === password;
-    if (isMatch) {
-      const newHash = await bcrypt.hash(password, 10);
-      await pool.query(`UPDATE cms_users SET password = ? WHERE id = ?`, [newHash, user.id]);
-    }
-  }
-
-  if (!isMatch) {
-    throw new ApiError(401, 'Invalid email or password');
-  }
-
-  // Update last login
-  const nowStr = new Date().toLocaleString('en-US', { dateStyle: 'short', timeStyle: 'short' });
-  await pool.query(`UPDATE cms_users SET last_login = ? WHERE id = ?`, [nowStr, user.id]);
 
   const { accessToken, refreshToken } = generateAccessAndRefreshTokens(user);
 

@@ -18,6 +18,7 @@ export function getDbPool(): mysql.Pool | null {
         waitForConnections: true,
         connectionLimit: 10,
         queueLimit: 0,
+        multipleStatements: true,
       });
     } catch (e) {
       console.error('Failed to initialize MySQL pool:', e);
