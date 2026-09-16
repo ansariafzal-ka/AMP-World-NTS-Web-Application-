@@ -96,7 +96,7 @@ export async function getMysqlPageBySlug(slug: string): Promise<CMSPage | null> 
   try {
     const cleanSlug = slug.replace(/^\/+/, '');
     const [pages] = await pool.query<RowDataPacket[]>(
-      `SELECT * FROM cms_pages WHERE slug = ? AND status = 'PUBLISHED' LIMIT 1`,
+      `SELECT * FROM cms_pages WHERE LOWER(slug) = LOWER(?) LIMIT 1`,
       [cleanSlug]
     );
 

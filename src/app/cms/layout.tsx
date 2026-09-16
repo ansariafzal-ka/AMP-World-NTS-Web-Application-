@@ -49,9 +49,9 @@ export default function CmsLayout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="flex min-h-screen bg-[#f8fafc] text-zinc-900 font-sans antialiased">
+    <div className="flex min-h-screen bg-[#f8fafc] text-zinc-900 font-sans antialiased flex-col md:flex-row">
       <CmsSidebar />
-      <main className="flex-1 overflow-y-auto">
+      <main className="flex-1 overflow-y-auto min-w-0">
         {children}
       </main>
     </div>

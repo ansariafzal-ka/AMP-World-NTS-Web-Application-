@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { CMSPage } from '@/types/cms.types';
 import { cmsClient } from '@/lib/api/cms.client';
+import { useAuthStore } from '@/store/auth.store';
 
 export default function AllPagesPage() {
   const router = useRouter();
@@ -25,6 +26,8 @@ export default function AllPagesPage() {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [newPageTitle, setNewPageTitle] = useState('');
   const [newPageSlug, setNewPageSlug] = useState('');
+  const user = useAuthStore((state) => state.user);
+  const loadFromStorage = useAuthStore((state) => state.loadFromStorage);
 
   const loadPages = () => {
     setLoading(true);
@@ -35,8 +38,10 @@ export default function AllPagesPage() {
   };
 
   useEffect(() => {
+    loadFromStorage();
     loadPages();
-  }, []);
+  }, [loadFromStorage]);
+
 
   const handleDelete = async (id: string, title: string) => {
     if (confirm(`Are you sure you want to delete "${title}"?`)) {
@@ -58,7 +63,9 @@ export default function AllPagesPage() {
     e.preventDefault();
     if (!newPageTitle.trim()) return;
 
-    const slug = newPageSlug.trim() || newPageTitle.toLowerCase().replace(/[^a-z0-9-_]/g, '-');
+    const slug =
+      newPageSlug.trim().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-_]/g, '') ||
+      newPageTitle.trim().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-_]/g, '');
     const created = await cmsClient.createPage({
       title: newPageTitle.trim(),
       slug,
@@ -69,7 +76,7 @@ export default function AllPagesPage() {
   };
 
   return (
-    <div className="p-6 sm:p-8 lg:p-10 space-y-6 max-w-7xl mx-auto">
+    <div className="p-4 sm:p-8 lg:p-10 space-y-4 sm:space-y-6 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -216,14 +223,16 @@ export default function AllPagesPage() {
                           <Edit3 className="h-3.5 w-3.5" />
                         </Link>
 
-                        <button
-                          type="button"
-                          onClick={() => handleDelete(page.id, page.title)}
-                          className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-200 text-zinc-400 hover:bg-rose-50 hover:text-rose-600 transition-colors"
-                          title="Delete Page"
-                        >
-                          <Trash2 className="h-3.5 w-3.5" />
-                        </button>
+                        {user?.role === 'Admin' && (
+                          <button
+                            type="button"
+                            onClick={() => handleDelete(page.id, page.title)}
+                            className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-200 text-zinc-400 hover:bg-rose-50 hover:text-rose-600 transition-colors"
+                            title="Delete Page"
+                          >
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </button>
+                        )}
                       </div>
                     </td>
                   </tr>

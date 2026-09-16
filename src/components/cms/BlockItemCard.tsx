@@ -9,7 +9,9 @@ import {
   Copy, 
   Trash2, 
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Upload,
+  Loader2
 } from 'lucide-react';
 import { CMSBlock } from '@/types/cms.types';
 
@@ -37,6 +39,43 @@ export default function BlockItemCard({
   onUpdateContent,
 }: BlockItemCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setIsUploading(true);
+    setUploadError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const res = await fetch('/api/cms/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await res.json();
+      if (data.success && data.url) {
+        const c = block.content || {};
+        onUpdateContent({
+          ...c,
+          imageUrl: data.url,
+          alt: c.alt || file.name.replace(/\.[^/.]+$/, ''),
+        });
+      } else {
+        setUploadError(data.error || 'Upload failed');
+      }
+    } catch (err: any) {
+      setUploadError(err.message || 'Error uploading file');
+    } finally {
+      setIsUploading(false);
+      e.target.value = '';
+    }
+  };
 
   // Helper title from block content
   const getBlockSummary = () => {
@@ -168,15 +207,64 @@ export default function BlockItemCard({
         return (
           <div className="space-y-4 pt-4 border-t border-zinc-100">
             <div>
-              <label className="block text-xs font-bold text-zinc-700 uppercase mb-1">Image URL / Path</label>
-              <input
-                type="text"
-                value={c.imageUrl || ''}
-                onChange={(e) => updateField('imageUrl', e.target.value)}
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-mono focus:border-[#610D17] focus:outline-none"
-                placeholder="/nts-logo-2026.jpg or https://..."
-              />
+              <label className="block text-xs font-bold text-zinc-700 uppercase mb-1">Image Source</label>
+              <div className="flex flex-col sm:flex-row gap-3 items-start">
+                <div className="flex-1 w-full space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="text"
+                      value={c.imageUrl || ''}
+                      onChange={(e) => updateField('imageUrl', e.target.value)}
+                      className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-mono focus:border-[#610D17] focus:outline-none"
+                      placeholder="/uploads/my-photo.jpg or https://..."
+                    />
+                    <label className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-lg border border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700 text-xs sm:text-sm font-bold cursor-pointer transition-colors shrink-0 shadow-2xs">
+                      {isUploading ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin text-[#610D17]" />
+                          <span>Uploading...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Upload className="h-4 w-4 text-[#610D17]" />
+                          <span>Upload Image</span>
+                        </>
+                      )}
+                      <input
+                        type="file"
+                        accept="image/*"
+                        disabled={isUploading}
+                        onChange={handleImageUpload}
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
+
+                  {uploadError && (
+                    <p className="text-xs text-rose-600 font-semibold">{uploadError}</p>
+                  )}
+
+                  <p className="text-[11px] text-zinc-400">
+                    Upload from your device (saved to local uploads) or paste an image URL.
+                  </p>
+                </div>
+
+                {/* Thumbnail Preview */}
+                {c.imageUrl && (
+                  <div className="relative h-20 w-28 shrink-0 rounded-xl border border-zinc-200 overflow-hidden bg-zinc-100 flex items-center justify-center group shadow-2xs">
+                    <img
+                      src={c.imageUrl}
+                      alt={c.alt || 'Preview'}
+                      className="h-full w-full object-contain p-1"
+                      onError={(e) => {
+                        (e.target as HTMLElement).style.display = 'none';
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label className="block text-xs font-bold text-zinc-700 uppercase mb-1">Alt Text</label>
@@ -212,6 +300,7 @@ export default function BlockItemCard({
                   type="text"
                   value={c.sectionTitle || ''}
                   onChange={(e) => updateField('sectionTitle', e.target.value)}
+                  placeholder="e.g. Key Highlights"
                   className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
                 />
               </div>
@@ -221,6 +310,7 @@ export default function BlockItemCard({
                   type="text"
                   value={c.sectionSubtitle || ''}
                   onChange={(e) => updateField('sectionSubtitle', e.target.value)}
+                  placeholder="e.g. Explore stages and requirements"
                   className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
                 />
               </div>
@@ -237,11 +327,11 @@ export default function BlockItemCard({
                       ...items,
                       {
                         id: `card-${Date.now()}`,
-                        title: 'New Feature Card',
-                        description: 'Enter short card description here.',
-                        tag: 'Feature',
-                        linkText: 'Learn more →',
-                        linkUrl: '#',
+                        title: '',
+                        description: '',
+                        tag: '',
+                        linkText: '',
+                        linkUrl: '',
                       },
                     ]);
                   }}
@@ -318,6 +408,7 @@ export default function BlockItemCard({
                 type="text"
                 value={c.sectionTitle || ''}
                 onChange={(e) => updateField('sectionTitle', e.target.value)}
+                placeholder="e.g. Program Benefits"
                 className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
               />
             </div>
@@ -333,8 +424,8 @@ export default function BlockItemCard({
                       ...items,
                       {
                         id: `feat-${Date.now()}`,
-                        title: 'New Feature Highlight',
-                        description: 'Detailed description of this milestone or advantage.',
+                        title: '',
+                        description: '',
                       },
                     ]);
                   }}
@@ -395,6 +486,7 @@ export default function BlockItemCard({
                 type="text"
                 value={c.sectionTitle || ''}
                 onChange={(e) => updateField('sectionTitle', e.target.value)}
+                placeholder="e.g. Frequently Asked Questions"
                 className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
               />
             </div>
@@ -410,8 +502,8 @@ export default function BlockItemCard({
                       ...items,
                       {
                         id: `faq-${Date.now()}`,
-                        question: 'Frequently Asked Question',
-                        answer: 'Answer to this question.',
+                        question: '',
+                        answer: '',
                       },
                     ]);
                   }}
@@ -472,6 +564,7 @@ export default function BlockItemCard({
                 type="text"
                 value={c.title || ''}
                 onChange={(e) => updateField('title', e.target.value)}
+                placeholder="e.g. Join The Movement Today"
                 className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
               />
             </div>
@@ -481,6 +574,7 @@ export default function BlockItemCard({
                 value={c.description || ''}
                 onChange={(e) => updateField('description', e.target.value)}
                 rows={2}
+                placeholder="Short motivating description..."
                 className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
               />
             </div>
@@ -491,6 +585,7 @@ export default function BlockItemCard({
                   type="text"
                   value={c.primaryButtonText || ''}
                   onChange={(e) => updateField('primaryButtonText', e.target.value)}
+                  placeholder="e.g. Get Started Now"
                   className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
                 />
               </div>
@@ -500,6 +595,7 @@ export default function BlockItemCard({
                   type="text"
                   value={c.primaryButtonLink || ''}
                   onChange={(e) => updateField('primaryButtonLink', e.target.value)}
+                  placeholder="e.g. /register or #section"
                   className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
                 />
               </div>
@@ -519,25 +615,25 @@ export default function BlockItemCard({
       }`}
     >
       {/* Top Header Row matching screenshot */}
-      <div className="flex items-center justify-between p-4 sm:p-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 sm:p-5 gap-2.5 sm:gap-4">
         {/* Left: Number + Label + Title */}
-        <div className="flex items-center gap-4 min-w-0">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-zinc-100 text-xs font-black text-zinc-600 border border-zinc-200/80">
+        <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+          <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-xl bg-zinc-100 text-xs font-black text-zinc-600 border border-zinc-200/80">
             {index + 1}
           </div>
 
-          <div className="min-w-0">
-            <span className="block text-[11px] font-black uppercase tracking-wider text-[#610D17]">
+          <div className="min-w-0 flex-1">
+            <span className="block text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-[#610D17]">
               {block.type} BLOCK
             </span>
-            <p className="truncate text-sm sm:text-base font-bold text-zinc-900">
+            <p className="truncate text-xs sm:text-base font-bold text-zinc-900">
               {getBlockSummary()}
             </p>
           </div>
         </div>
 
         {/* Right: Actions */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 ml-3">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0 justify-end border-t sm:border-t-0 pt-2 sm:pt-0 border-zinc-100">
           {/* Move Up */}
           <button
             type="button"

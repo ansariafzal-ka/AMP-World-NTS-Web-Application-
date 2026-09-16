@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getMysqlPageById, saveMysqlPage, deleteMysqlPage } from '@/lib/cms-mysql';
+import { verifyAdminAccess } from '@/lib/auth/server-guard';
 
 export async function GET(
   req: Request,
@@ -40,7 +41,16 @@ export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const { authorized } = await verifyAdminAccess(req);
+  if (!authorized) {
+    return NextResponse.json(
+      { success: false, message: 'Forbidden: Only administrators can delete pages.' },
+      { status: 403 }
+    );
+  }
+
   const { id } = await params;
   const success = await deleteMysqlPage(id);
   return NextResponse.json({ success: Boolean(success) });
 }
+

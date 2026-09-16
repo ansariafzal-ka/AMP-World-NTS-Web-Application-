@@ -13,9 +13,8 @@ export default function SlugEditorCard({ slug, onChange }: SlugEditorCardProps) 
 
   const cleanSlug = (input: string) => {
     return input
-      .toLowerCase()
       .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-_]/g, '');
+      .replace(/[^a-zA-Z0-9-_]/g, '');
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,7 +60,7 @@ export default function SlugEditorCard({ slug, onChange }: SlugEditorCardProps) 
       </div>
 
       <p className="text-xs text-zinc-500 mb-4">
-        Customize the slug for direct public routing. Use lowercase letters, numbers, and hyphens.
+        Customize the slug for direct public routing. Use letters, numbers, hyphens, and underscores.
       </p>
 
       <div className="flex items-center rounded-xl border border-zinc-200 bg-zinc-50 px-3.5 py-2.5 focus-within:border-[#610D17] focus-within:bg-white focus-within:ring-1 focus-within:ring-[#610D17] transition-all">

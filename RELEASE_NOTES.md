@@ -1,4 +1,72 @@
 # AMP National Talent Search (NTS) Web Application
+## Release Notes — Version 0.2.0 (CMS & Backend Architecture Release)
+**Release Date:** September 16, 2026
+
+---
+
+### 📌 Version 0.2.0 Overview
+**AMP NTS Web Application (v0.2.0)** introduces a production-ready, fully responsive **Headless Content Management System (CMS)**, a pure **MySQL Workbench database architecture**, and a standalone **Express.js Backend API** conforming strictly to `AMP-NTS-PROJECT-ARCHITECTURE-2026.pdf`.
+
+This release completely eliminates temporary/mock file stores, enforces industry-standard **bcryptjs password hashing**, implements strict **Role-Based Access Control (RBAC)** between Administrators and Editors, supports **case-insensitive dynamic public routing**, provides **drag-and-drop visual page building** with 7 customizable components, and features an **integrated local image upload pipeline**.
+
+---
+
+### 🚀 What's New in Version 0.2.0
+
+#### 1. Dynamic Headless CMS & Visual Block Builder (`/cms`)
+* **Visual Page Builder (`/cms/builder/[id]`):**
+  * Reorderable canvas supporting 7 production components: **Hero Banner**, **Rich Text**, **Media & Image**, **Cards Grid**, **Feature Highlights**, **FAQ Accordion**, and **Call to Action (CTA)**.
+  * Instant auto-save upon toggling page publication status.
+  * Drag-and-drop ordering, duplication, and visibility toggling for all blocks.
+  * Replaced pre-filled dummy content with helpful contextual field placeholders.
+* **All Pages Manager (`/cms/pages`):**
+  * Search, filter by status (`ALL`, `PUBLISHED`, `DRAFT`), and direct shortcuts to page editor or live previews.
+* **Case-Insensitive Dynamic Public Routing (`/[slug]`):**
+  * Pages render dynamically from MySQL using the optimized `BlockRenderer`.
+  * URL matching is 100% case-insensitive (`/Mock_Papers`, `/mock_papers`, or `/MOCK_PAPERS` resolve to the exact same record).
+  * **Draft Preview Mode:** Non-published draft pages remain hidden from public search engines but can be previewed directly by team members with an ambient warning banner.
+* **Local Media & Image Uploader (`/api/cms/upload`):**
+  * Added direct image file uploads from the builder to `/public/uploads/` with 10MB limit and MIME validation.
+  * Responsive uncropped display using `object-contain`, preserving natural image aspect ratios.
+
+#### 2. Security & Role-Based Access Control (RBAC)
+* **Two Granular CMS Roles:**
+  * **Admin:** Complete permissions including user account creation, credential modification, and page deletion.
+  * **Editor:** Content management and publishing access; strictly blocked from deleting pages and accessing `/cms/users`.
+* **API & UI Barriers:** Server-side route handlers enforce 403 Forbidden checks for non-admin actions. The frontend dynamically hides destructive controls and renders administrative access warnings.
+* **Password Hashing:** Industry-standard **bcryptjs** password hashing (10 salt rounds) implemented across both Next.js and Express services, with automatic transparent migration on login for existing accounts.
+* **JWT Token Security:** Stateless JWT tokens (`accessToken`, `refreshToken`) stored in the Zustand store and secure HTTP cookies.
+
+#### 3. Complete Mobile & Tablet Responsiveness
+* **Mobile Topbar & Off-Canvas Drawer (`CmsSidebar.tsx`):**
+  * On mobile viewports (`< md`), the desktop sidebar is hidden to provide 100% screen width to the editor.
+  * A lightweight sticky topbar with a hamburger menu (`Menu` / `X`) triggers a slide-in navigation drawer with backdrop overlay.
+* **Fluid Editor Canvas:**
+  * Expanded container from `max-w-4xl` to `max-w-7xl mx-auto` with responsive padding (`p-4 sm:p-8 lg:p-10`), matching the All Pages table layout.
+  * Responsive action bars with `flex-wrap` and compact button sizing to eliminate horizontal clipping.
+
+#### 4. Standalone Express Backend (`/API/`)
+* **Conforming Architecture Tree:**
+  ```text
+  API/
+  ├── database/mysql_schema.sql
+  ├── src/
+  │   ├── config/database.js
+  │   ├── controllers/ (auth, cms, user)
+  │   ├── middleware/ (auth, error)
+  │   ├── routes/web/ (auth, user, admin/cms)
+  │   ├── services/ (cms.service.js)
+  │   ├── validators/ (cms.validator.js)
+  │   ├── utils/ (ApiError, ApiResponse, asyncHandler)
+  │   └── server.js
+  ├── package.json
+  └── README.md
+  ```
+* Pure MySQL connection pool using `mysql2/promise` with dynamic database resolution (`process.env.DB_NAME || 'amp_nts'`).
+* Clean merge instructions provided in `API/README.md`.
+
+---
+
 ## Release Notes — Version 0.1.0
 
 ---

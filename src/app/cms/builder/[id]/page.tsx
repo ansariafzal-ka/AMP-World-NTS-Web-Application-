@@ -22,6 +22,7 @@ export default function CmsBuilderPage({
   const [loading, setLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [showSaveToast, setShowSaveToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('Changes saved successfully!');
 
   useEffect(() => {
     cmsClient.getPageById(id).then((data) => {
@@ -57,17 +58,41 @@ export default function CmsBuilderPage({
     );
   }
 
+  // Save changes
+  const handleSave = async (target?: any, message = 'Changes saved successfully!') => {
+    // If called directly from an onClick event handler, ignore the DOM click event object
+    const isEvent = target && (target.nativeEvent || target.target || target._reactName);
+    const pageToSave = target && !isEvent && 'blocks' in target ? (target as CMSPage) : page;
+    if (!pageToSave) return;
+    setIsSaving(true);
+    try {
+      await cmsClient.updatePage(pageToSave.id, pageToSave);
+      setToastMessage(message);
+      setShowSaveToast(true);
+      setTimeout(() => setShowSaveToast(false), 3000);
+    } catch (err) {
+      console.error('Failed to save page:', err);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   // Header Handlers
   const handleTitleChange = (newTitle: string) => {
     setPage((prev) => (prev ? { ...prev, title: newTitle } : null));
   };
 
-  const handleStatusToggle = () => {
-    setPage((prev) => {
-      if (!prev) return null;
-      const newStatus = prev.status === 'PUBLISHED' ? 'DRAFT' : 'PUBLISHED';
-      return { ...prev, status: newStatus };
-    });
+  const handleStatusToggle = async () => {
+    if (!page) return;
+    const newStatus = page.status === 'PUBLISHED' ? 'DRAFT' : 'PUBLISHED';
+    const updatedPage: CMSPage = { ...page, status: newStatus };
+    setPage(updatedPage);
+    await handleSave(
+      updatedPage,
+      newStatus === 'PUBLISHED'
+        ? 'Page published and saved successfully!'
+        : 'Page unpublished and saved as draft!'
+    );
   };
 
   const handleSlugChange = (newSlug: string) => {
@@ -155,20 +180,6 @@ export default function CmsBuilderPage({
     setPage({ ...page, blocks: newBlocks });
   };
 
-  // Save changes
-  const handleSave = async () => {
-    if (!page) return;
-    setIsSaving(true);
-    try {
-      await cmsClient.updatePage(page.id, page);
-      setShowSaveToast(true);
-      setTimeout(() => setShowSaveToast(false), 3000);
-    } catch (err) {
-      console.error('Failed to save page:', err);
-    } finally {
-      setIsSaving(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#f8fafc] pb-24">
@@ -180,11 +191,11 @@ export default function CmsBuilderPage({
         isSaving={isSaving}
         onTitleChange={handleTitleChange}
         onStatusToggle={handleStatusToggle}
-        onSave={handleSave}
+        onSave={() => handleSave()}
       />
 
-      {/* Main Content Area: Focused Clean Layout */}
-      <div className="p-6 sm:p-8 max-w-4xl mx-auto space-y-6">
+      {/* Main Content Area: Expanded layout matching Pages Table */}
+      <div className="p-4 sm:p-8 lg:p-10 max-w-7xl mx-auto space-y-4 sm:space-y-6">
         {/* Option to edit slug (replaces Page Layout dropdown per request) */}
         <SlugEditorCard slug={page.slug} onChange={handleSlugChange} />
 
@@ -223,7 +234,7 @@ export default function CmsBuilderPage({
       {showSaveToast && (
         <div className="fixed bottom-6 right-6 z-50 rounded-xl bg-zinc-900 text-white px-5 py-3 text-sm font-bold shadow-xl flex items-center gap-2 animate-in slide-in-from-bottom-5">
           <span className="h-2 w-2 rounded-full bg-emerald-400" />
-          Changes saved successfully!
+          {toastMessage}
         </div>
       )}
     </div>

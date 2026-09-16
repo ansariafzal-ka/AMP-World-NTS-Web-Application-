@@ -790,11 +790,11 @@ export default function MockPapersContent() {
             </div>
 
             {/* Year & Search Filters */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
-                className="bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs font-semibold text-zinc-700 focus:outline-none focus:border-[#610D17]"
+                className="w-full sm:w-auto bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs font-semibold text-zinc-700 focus:outline-none focus:border-[#610D17]"
               >
                 <option value="all">All Years (2020–2025)</option>
                 <option value="2025">2025</option>
@@ -805,13 +805,13 @@ export default function MockPapersContent() {
                 <option value="2020">2020</option>
               </select>
 
-              <div className="relative">
+              <div className="relative w-full sm:w-60">
                 <input
                   type="text"
                   placeholder="Search papers (e.g. Urdu, 10th)..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-white border border-zinc-200 rounded-xl pl-8 pr-3 py-2 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-[#610D17] w-48 sm:w-60"
+                  className="w-full bg-white border border-zinc-200 rounded-xl pl-8 pr-3 py-2 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-[#610D17]"
                 />
                 <svg
                   className="w-4 h-4 text-zinc-400 absolute left-2.5 top-1/2 -translate-y-1/2"

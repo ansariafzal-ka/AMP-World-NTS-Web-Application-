@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getMysqlUsers, saveMysqlUser, deleteMysqlUser } from '@/lib/cms-mysql';
+import { verifyAdminAccess } from '@/lib/auth/server-guard';
 
 export async function GET() {
   const users = await getMysqlUsers();
@@ -8,6 +9,14 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
+    const { authorized } = await verifyAdminAccess(req);
+    if (!authorized) {
+      return NextResponse.json(
+        { success: false, message: 'Forbidden: Only administrators can create or manage CMS users.' },
+        { status: 403 }
+      );
+    }
+
     const body = await req.json();
     const { name, email, role, password } = body;
 
@@ -38,6 +47,14 @@ export async function POST(req: Request) {
 
 export async function DELETE(req: Request) {
   try {
+    const { authorized } = await verifyAdminAccess(req);
+    if (!authorized) {
+      return NextResponse.json(
+        { success: false, message: 'Forbidden: Only administrators can delete CMS users.' },
+        { status: 403 }
+      );
+    }
+
     const { searchParams } = new URL(req.url);
     const id = searchParams.get('id');
     if (!id) {
@@ -50,3 +67,4 @@ export async function DELETE(req: Request) {
     return NextResponse.json({ success: false, message: err.message }, { status: 500 });
   }
 }
+

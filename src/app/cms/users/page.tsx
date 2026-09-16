@@ -1,10 +1,16 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Shield, CheckCircle2, Trash2, Eye, EyeOff, Lock, AlertCircle, Loader2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Plus, Shield, CheckCircle2, Trash2, Eye, EyeOff, Lock, AlertCircle, Loader2, ShieldAlert } from 'lucide-react';
 import { CMSUser } from '@/types/cms.types';
+import { useAuthStore } from '@/store/auth.store';
 
 export default function CmsUsersPage() {
+  const router = useRouter();
+  const currentUser = useAuthStore((state) => state.user);
+  const loadFromStorage = useAuthStore((state) => state.loadFromStorage);
+
   const [users, setUsers] = useState<CMSUser[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -16,6 +22,10 @@ export default function CmsUsersPage() {
   const [newPassword, setNewPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [newRole, setNewRole] = useState<'Admin' | 'Editor'>('Editor');
+
+  useEffect(() => {
+    loadFromStorage();
+  }, [loadFromStorage]);
 
   const fetchUsers = useCallback(async () => {
     try {
@@ -32,8 +42,13 @@ export default function CmsUsersPage() {
   }, []);
 
   useEffect(() => {
+    if (currentUser && currentUser.role !== 'Admin') {
+      setIsLoading(false);
+      return;
+    }
     fetchUsers();
-  }, [fetchUsers]);
+  }, [fetchUsers, currentUser]);
+
 
   const handleOpenModal = () => {
     setNewName('');
@@ -104,8 +119,31 @@ export default function CmsUsersPage() {
     }
   };
 
+  if (currentUser && currentUser.role !== 'Admin') {
+    return (
+      <div className="p-8 sm:p-12 max-w-xl mx-auto my-16 text-center space-y-5 rounded-3xl border border-zinc-200 bg-white shadow-xs">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-amber-600">
+          <ShieldAlert className="h-7 w-7" />
+        </div>
+        <div className="space-y-1.5">
+          <h2 className="text-xl font-bold text-zinc-900">Administrative Access Required</h2>
+          <p className="text-sm text-zinc-500 max-w-md mx-auto leading-relaxed">
+            Your account has <strong>Editor</strong> permissions. User management and security credentials can only be accessed by <strong>Administrators</strong>.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => router.push('/cms')}
+          className="inline-flex items-center gap-2 rounded-xl bg-[#610D17] text-white px-5 py-2.5 text-sm font-bold shadow-xs hover:bg-[#4D0911] transition-colors cursor-pointer"
+        >
+          Return to CMS Dashboard
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <div className="p-6 sm:p-8 lg:p-10 space-y-6 max-w-7xl mx-auto">
+    <div className="p-4 sm:p-8 lg:p-10 space-y-4 sm:space-y-6 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

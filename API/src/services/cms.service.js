@@ -82,12 +82,12 @@ class CmsService {
   async getPageBySlug(slug) {
     const cleanSlug = slug.replace(/^\/+/, '');
     const [pages] = await pool.query(
-      `SELECT * FROM cms_pages WHERE slug = ? AND status = 'PUBLISHED' LIMIT 1`,
+      `SELECT * FROM cms_pages WHERE LOWER(slug) = LOWER(?) LIMIT 1`,
       [cleanSlug]
     );
 
     if (pages.length === 0) {
-      throw new ApiError(404, `Published page not found for slug "${cleanSlug}"`);
+      throw new ApiError(404, `Page not found for slug "${cleanSlug}"`);
     }
 
     const page = pages[0];
@@ -122,7 +122,7 @@ class CmsService {
     try {
       const pageId = pageData.id || `pg-${Date.now()}`;
       const title = pageData.title.trim();
-      const slug = (pageData.slug || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''))
+      const slug = (pageData.slug || title.replace(/[^a-zA-Z0-9-_]+/g, '-').replace(/(^-|-$)/g, ''))
         .replace(/^\/+/, '');
       const status = pageData.status === 'PUBLISHED' ? 'PUBLISHED' : 'DRAFT';
       const metaTitle = pageData.metaTitle || title;
