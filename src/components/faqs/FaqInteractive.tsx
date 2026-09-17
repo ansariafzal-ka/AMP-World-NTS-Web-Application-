@@ -49,16 +49,11 @@ export default function FaqInteractive() {
         {displayedCategories.map((category) => (
           <section key={category.id} id={category.id} className="scroll-mt-24">
             {/* Category Header */}
-            <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 border-b border-zinc-200/80 pb-3">
-              <div className="flex items-center gap-2.5">
-                <span className="h-2 w-2 rounded-full bg-[#610D17]" />
-                <h2 className="text-xl sm:text-2xl font-black tracking-tight text-zinc-900">
-                  {category.name}
-                </h2>
-              </div>
-              <p className="text-xs sm:text-sm text-zinc-500 max-w-md sm:text-right">
-                {category.description}
-              </p>
+            <div className="mb-4 sm:mb-6 flex items-center gap-2.5 border-b border-zinc-200/80 pb-3">
+              <span className="h-2 w-2 rounded-full bg-[#610D17]" />
+              <h2 className="text-xl sm:text-2xl font-black tracking-tight text-zinc-900">
+                {category.name}
+              </h2>
             </div>
 
             {/* Category Accordion */}
