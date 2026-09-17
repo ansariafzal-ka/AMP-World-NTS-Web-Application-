@@ -5,7 +5,7 @@ import React, { useState } from "react";
 export interface AccordionItem {
   id: string;
   title: string;
-  points?: string[];
+  points?: (string | React.ReactNode)[];
   content?: React.ReactNode;
   icon?: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element;
 }

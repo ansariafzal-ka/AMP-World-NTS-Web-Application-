@@ -13,7 +13,7 @@ export default function FaqInteractive() {
       {
         value: "all",
         label: "All Categories",
-        description: "Browse all 40 questions across all categories",
+        description: "Browse all 32 questions across all categories",
       },
       ...FAQ_CATEGORIES.map((cat) => ({
         value: cat.id,
@@ -69,8 +69,8 @@ export default function FaqInteractive() {
               defaultOpenIds={
                 selectedCategory !== "all"
                   ? [category.items[0].id]
-                  : category.id === "general"
-                    ? ["gen-1"]
+                  : category.id === "overview"
+                    ? ["faq-1"]
                     : []
               }
             />
