@@ -97,34 +97,34 @@ export default function HeroSection() {
               {/* High-Focus Key Dates Panel */}
               <div className="pt-2 flex flex-wrap items-center gap-3 justify-center md:justify-start">
                 {/* Registration Closes */}
-                <div className="relative group flex items-center gap-3 rounded-2xl border border-white/25 border-b-[3px] border-b-black/40 bg-gradient-to-b from-white/[0.18] via-white/[0.10] to-white/[0.04] px-4 py-2.5 backdrop-blur-md shadow-[0_8px_20px_-4px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-4px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.5)]">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-b from-white/25 to-white/10 text-rose-200 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.3)] border border-white/20">
+                <div className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-3.5 py-2 backdrop-blur-xs shadow-md shadow-black/20 hover:bg-white/[0.14] hover:-translate-y-0.5 transition-all duration-200">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 text-rose-200 shrink-0 shadow-xs">
                     <svg className="w-4 h-4 text-rose-100" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                   </div>
                   <div className="text-left">
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-rose-200 drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-rose-200">
                       Registration Closes
                     </span>
-                    <span className="text-sm sm:text-base font-extrabold text-white tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                    <span className="text-sm sm:text-base font-extrabold text-white tracking-tight">
                       22 Nov 2026
                     </span>
                   </div>
                 </div>
 
                 {/* Exam Date */}
-                <div className="relative group flex items-center gap-3 rounded-2xl border border-white/25 border-b-[3px] border-b-black/40 bg-gradient-to-b from-white/[0.18] via-white/[0.10] to-white/[0.04] px-4 py-2.5 backdrop-blur-md shadow-[0_8px_20px_-4px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-4px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.5)]">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-b from-white/25 to-white/10 text-rose-200 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.3)] border border-white/20">
+                <div className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-3.5 py-2 backdrop-blur-xs shadow-md shadow-black/20 hover:bg-white/[0.14] hover:-translate-y-0.5 transition-all duration-200">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 text-rose-200 shrink-0 shadow-xs">
                     <svg className="w-4 h-4 text-rose-100" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.253M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                     </svg>
                   </div>
                   <div className="text-left">
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-rose-200 drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-rose-200">
                       Exam Date
                     </span>
-                    <span className="text-sm sm:text-base font-extrabold text-white tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                    <span className="text-sm sm:text-base font-extrabold text-white tracking-tight">
                       5 Dec 2026
                     </span>
                   </div>
