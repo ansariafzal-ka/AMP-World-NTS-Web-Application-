@@ -16,24 +16,24 @@ export default function CtaBanner() {
 
           <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
             <Link
-              href="/Student_Registration"
-              className="w-full max-w-xs sm:max-w-none sm:w-72 inline-flex items-center justify-center rounded-xl bg-[#C89D4B] px-4 py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-zinc-950 shadow-md transition-all duration-200 hover:bg-[#d4a854] hover:shadow-lg active:scale-95 text-center whitespace-nowrap"
+              href="/student-registration"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-[#C89D4B] px-5 sm:px-6 py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-zinc-950 shadow-md transition-all duration-200 hover:bg-[#d4a854] hover:shadow-lg active:scale-95 text-center"
             >
-              REGISTER NOW
+              STUDENT REGISTRATION
             </Link>
 
             <Link
-              href="https://drive.google.com/drive/folders/1ekUK5HyiD6ZmPLfHs27sFTeOZAGkE9jR"
-              className="w-full max-w-xs sm:max-w-none sm:w-72 inline-flex items-center justify-center rounded-xl border border-[#C89D4B]/60 bg-white/5 px-4 py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#E5B869] transition-all duration-200 hover:bg-[#C89D4B]/15 hover:border-[#C89D4B] active:scale-95 text-center whitespace-nowrap"
+              href="/exam-centre-registration"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border border-[#C89D4B]/60 bg-white/5 px-5 sm:px-6 py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#E5B869] transition-all duration-200 hover:bg-[#C89D4B]/15 hover:border-[#C89D4B] active:scale-95 text-center"
             >
-              DOWNLOAD SYLLABUS
+              EXAM CENTER REGISTRATION
             </Link>
 
             <Link
-              href="/Become_An_Exam_Center"
-              className="w-full max-w-xs sm:max-w-none sm:w-72 inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/5 px-4 py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white transition-all duration-200 hover:bg-white/10 hover:border-white/50 active:scale-95 text-center whitespace-nowrap"
+              href="/institution-registration"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/5 px-5 sm:px-6 py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white transition-all duration-200 hover:bg-white/10 hover:border-white/50 active:scale-95 text-center"
             >
-              BECOME AN EXAM CENTRE
+              PARTICIPATING INSTITUTION REGISTRATION
             </Link>
           </div>
         </div>
