@@ -74,41 +74,31 @@ export default function HeroSection() {
 
           {/* Content & Registration Column */}
           <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center text-center md:text-left space-y-4 sm:space-y-5 md:space-y-6">
-            <div className="space-y-3 sm:space-y-3.5">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            <div className="space-y-2.5 sm:space-y-3">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 AMP National Talent Search 2026
               </h1>
 
-              <p className="text-lg sm:text-xl md:text-2xl font-bold text-rose-200 tracking-tight">
+              <p className="text-base sm:text-lg md:text-xl font-bold text-rose-200 tracking-tight">
                 India&apos;s Biggest National Talent Search
               </p>
 
-              <p className="text-base sm:text-lg md:text-xl font-semibold text-rose-100/95 tracking-tight max-w-3xl mx-auto md:mx-0">
+              <p className="text-sm sm:text-base md:text-lg font-semibold text-rose-100/95 tracking-tight max-w-2xl mx-auto md:mx-0">
                 Discover Your Talent. Compete with the Best. Shape Your Future.
               </p>
 
-              <p className="text-sm sm:text-base md:text-lg text-zinc-200 leading-relaxed max-w-3xl mx-auto md:mx-0">
+              <p className="text-xs sm:text-sm md:text-base text-zinc-300 leading-relaxed max-w-2xl mx-auto md:mx-0">
                 For School, Junior College, Madarsa &amp; Undergraduate Students across India.
               </p>
 
-              <p className="pt-1 text-base sm:text-lg md:text-xl font-bold text-white tracking-tight">
+              <p className="pt-1 text-sm sm:text-base md:text-lg font-bold text-white tracking-tight">
                 <span className="inline-block mr-3 sm:mr-5">Registration Closes: 22 Nov 2026</span>
                 <span className="inline-block">Exam Date: 5 Dec 2026</span>
               </p>
             </div>
 
-            {/* Registration CTA Container */}
-            <div className="pt-3 border-t border-white/15 space-y-3">
-              <div>
-                <h2 className="text-base sm:text-lg md:text-lg lg:text-xl font-bold text-white tracking-tight">
-                  Register for NTS 2026
-                </h2>
-                <p className="text-xs sm:text-sm text-zinc-300">
-                  Select your category to start your registration:
-                </p>
-              </div>
-
-              {/* Action Buttons: Stacked on mobile & tablet, 3-column row on large desktop (lg+) */}
+            {/* Action Buttons: Stacked on mobile & tablet, 3-column row on large desktop (lg+) */}
+            <div className="pt-2 border-t border-white/15">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-2.5 sm:gap-3">
                 {registrationLinks.map((link) => {
                   const Icon = link.icon;
