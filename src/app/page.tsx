@@ -52,16 +52,16 @@ export default function Home() {
                   buttonHref="/Student_Registration"
                 />
                 <ImageCard
-                  title="Become an Exam Centre"
+                  title="Exam Center Registration"
                   imageSrc="/exam-centre.jpg"
-                  imageAlt="Become an Exam Centre"
+                  imageAlt="Exam Center Registration"
                   buttonText="KNOW MORE"
                   buttonHref="/Become_An_Exam_Center"
                 />
                 <ImageCard
-                  title="Institution"
+                  title="Participating Institution Registration"
                   imageSrc="/nts-hero banner.jpg"
-                  imageAlt="Exam Pattern & Syllabus"
+                  imageAlt="Participating Institution Registration"
                   buttonText="KNOW MORE"
                   buttonHref="/About_NTS"
                 />

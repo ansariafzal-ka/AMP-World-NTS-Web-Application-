@@ -26,7 +26,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
       className={`group relative bg-white rounded-[24px] sm:rounded-[28px] p-3.5 sm:p-5 pb-6 sm:pb-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.12)] border border-zinc-100/80 transition-all duration-300 w-full flex flex-col items-center ${className}`}
     >
       {/* Title */}
-      <h3 className="text-base sm:text-lg lg:text-[17px] xl:text-[19px] font-bold text-[#9B2C2C] text-center tracking-tight mb-5 w-full">
+      <h3 className="text-base sm:text-lg lg:text-[17px] xl:text-[19px] font-bold text-[#9B2C2C] text-center tracking-tight mb-4 sm:mb-5 w-full min-h-[48px] sm:min-h-[56px] flex items-center justify-center">
         {title}
       </h3>
 

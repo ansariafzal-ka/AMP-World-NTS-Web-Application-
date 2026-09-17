@@ -32,7 +32,7 @@ const registrationLinks: RegistrationLink[] = [
   },
   {
     id: "institute",
-    title: "Institute Registration",
+    title: "Participating Institution Registration",
     href: "/institution-registration",
     icon: (props) => (
       <svg fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" {...props}>
