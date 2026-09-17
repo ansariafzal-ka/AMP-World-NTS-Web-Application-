@@ -62,11 +62,11 @@ export default function HeroSection() {
           <div className="md:col-span-5 lg:col-span-4 flex items-center justify-center">
             <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl ring-1 ring-white/15 transition-all duration-300 hover:scale-[1.02] hover:shadow-white/10">
               <Image
-                src="/nts-logo-2026.jpg"
+                src="/nts-logo-white.jpeg"
                 alt="AMP National Talent Search 2026 Logo"
-                width={943}
-                height={1136}
-                className="w-28 sm:w-36 md:w-56 lg:w-68 xl:w-76 h-auto object-cover select-none"
+                width={536}
+                height={648}
+                className="w-32 sm:w-40 md:w-56 lg:w-68 xl:w-76 h-auto object-contain select-none"
                 priority
               />
             </div>
