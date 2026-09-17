@@ -97,14 +97,14 @@ export default function HeroSection() {
               {/* High-Focus Key Dates Panel */}
               <div className="pt-2 flex flex-wrap items-center gap-3 justify-center md:justify-start">
                 {/* Registration Closes */}
-                <div className="flex items-center gap-3 rounded-xl border border-amber-400/35 bg-amber-400/10 px-3.5 py-2 backdrop-blur-xs">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400/20 text-amber-300 shrink-0">
+                <div className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-3.5 py-2 backdrop-blur-xs">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 text-rose-200 shrink-0">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                   </div>
                   <div className="text-left">
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-amber-200">
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-rose-200">
                       Registration Closes
                     </span>
                     <span className="text-sm sm:text-base font-extrabold text-white">
