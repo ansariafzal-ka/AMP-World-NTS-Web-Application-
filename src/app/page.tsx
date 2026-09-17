@@ -55,14 +55,14 @@ export default function Home() {
                   title="Exam Center Registration"
                   imageSrc="/exam-centre.jpg"
                   imageAlt="Exam Center Registration"
-                  buttonText="KNOW MORE"
+                  buttonText="REGISTER"
                   buttonHref="/exam-centre-registration"
                 />
                 <ImageCard
                   title="Participating Institution Registration"
                   imageSrc="/nts-hero banner.jpg"
                   imageAlt="Participating Institution Registration"
-                  buttonText="KNOW MORE"
+                  buttonText="REGISTER"
                   buttonHref="/institution-registration"
                 />
               </div>
