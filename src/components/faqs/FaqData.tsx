@@ -388,12 +388,12 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
                 <span>
                   Join Link:{" "}
                   <a
-                    href="https://tinyurl.com/HelplineNTS2026"
+                    href="https://tinyurl.com/HelplineAMPNTS"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={linkClass}
                   >
-                    Google Meet
+                    Join Live Meeting
                   </a>
                 </span>
               </li>
@@ -423,12 +423,12 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
                 <span>
                   Join Link:{" "}
                   <a
-                    href="https://tinyurl.com/HelplineNTS2026"
+                    href="https://tinyurl.com/HelplineAMPNTS"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={linkClass}
                   >
-                    Google Meet
+                    Join Live Meeting
                   </a>
                 </span>
               </li>
