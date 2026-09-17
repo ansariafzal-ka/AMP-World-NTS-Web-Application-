@@ -1,10 +1,10 @@
-const pool = require('../config/database');
+const { sql, getPool } = require('../config/database');
 const { ApiError } = require('../utils/ApiError');
 const bcrypt = require('bcryptjs');
 
 /**
  * CMS Service
- * Interacts with MySQL exclusively via pre-compiled Stored Procedures (amp_nts)
+ * Interacts with Microsoft SQL Server exclusively via T-SQL Stored Procedures under the CMS schema.
  */
 class CmsService {
   // ==========================================
@@ -12,8 +12,9 @@ class CmsService {
   // ==========================================
 
   async getAllPages() {
-    const [results] = await pool.query('CALL sp_cms_get_all_pages()');
-    const rows = (results && results[0]) || [];
+    const pool = await getPool();
+    const result = await pool.request().execute('CMS.SP_Get_All_Pages');
+    const rows = result.recordset || [];
 
     return rows.map((r) => ({
       id: r.page_id,
@@ -29,15 +30,18 @@ class CmsService {
   }
 
   async getPageById(pageId) {
-    const [results] = await pool.query('CALL sp_cms_get_page_by_id(?)', [pageId]);
-    const pages = (results && results[0]) || [];
+    const pool = await getPool();
+    const result = await pool.request()
+      .input('PageId', sql.NVarChar(64), String(pageId))
+      .execute('CMS.SP_Get_Page_By_Id');
 
-    if (!pages || pages.length === 0) {
+    const pages = result.recordsets[0] || [];
+    if (pages.length === 0) {
       throw new ApiError(404, `Page not found for id "${pageId}"`);
     }
 
     const page = pages[0];
-    const blocks = (results && results[1]) || [];
+    const blocks = result.recordsets[1] || [];
 
     return {
       id: page.page_id,
@@ -48,27 +52,38 @@ class CmsService {
       metaDescription: page.meta_description || '',
       updatedAt: page.updated_at,
       createdAt: page.created_at,
-      blocks: blocks.map((b) => ({
-        id: b.id,
-        type: b.block_type,
-        data: typeof b.content_json === 'string' ? JSON.parse(b.content_json) : b.content_json,
-        isVisible: Boolean(b.is_visible),
-        sortOrder: b.sort_order,
-      })),
+      blocks: blocks.map((b) => {
+        let parsedContent = {};
+        try {
+          parsedContent = typeof b.content_json === 'string' ? JSON.parse(b.content_json) : (b.content_json || {});
+        } catch {
+          parsedContent = {};
+        }
+        return {
+          id: b.id,
+          type: b.block_type,
+          content: parsedContent,
+          isVisible: Boolean(b.is_visible),
+          sortOrder: b.sort_order,
+        };
+      }),
     };
   }
 
   async getPageBySlug(slug) {
     const cleanSlug = slug.replace(/^\/+/, '');
-    const [results] = await pool.query('CALL sp_cms_get_page_by_slug(?)', [cleanSlug]);
-    const pages = (results && results[0]) || [];
+    const pool = await getPool();
+    const result = await pool.request()
+      .input('Slug', sql.NVarChar(255), cleanSlug)
+      .execute('CMS.SP_Get_Page_By_Slug');
 
-    if (!pages || pages.length === 0) {
+    const pages = result.recordsets[0] || [];
+    if (pages.length === 0) {
       throw new ApiError(404, `Page not found for slug "${cleanSlug}"`);
     }
 
     const page = pages[0];
-    const blocks = (results && results[1]) || [];
+    const blocks = result.recordsets[1] || [];
 
     return {
       id: page.page_id,
@@ -79,55 +94,74 @@ class CmsService {
       metaDescription: page.meta_description || '',
       updatedAt: page.updated_at,
       createdAt: page.created_at,
-      blocks: blocks.map((b) => ({
-        id: b.id,
-        type: b.block_type,
-        data: typeof b.content_json === 'string' ? JSON.parse(b.content_json) : b.content_json,
-        isVisible: Boolean(b.is_visible),
-        sortOrder: b.sort_order,
-      })),
+      blocks: blocks.map((b) => {
+        let parsedContent = {};
+        try {
+          parsedContent = typeof b.content_json === 'string' ? JSON.parse(b.content_json) : (b.content_json || {});
+        } catch {
+          parsedContent = {};
+        }
+        return {
+          id: b.id,
+          type: b.block_type,
+          content: parsedContent,
+          isVisible: Boolean(b.is_visible),
+          sortOrder: b.sort_order,
+        };
+      }),
     };
   }
 
   async savePage(pageData) {
     const pageId = pageData.id || `pg-${Date.now()}`;
-    const title = pageData.title.trim();
+    const title = (pageData.title || 'Untitled Page').trim();
     const slug = (pageData.slug || title.replace(/[^a-zA-Z0-9-_]+/g, '-').replace(/(^-|-$)/g, ''))
       .replace(/^\/+/, '');
     const status = pageData.status === 'PUBLISHED' ? 'PUBLISHED' : 'DRAFT';
     const metaTitle = pageData.metaTitle || title;
     const metaDescription = pageData.metaDescription || '';
 
-    // Delegate page upsert & uniqueness validation to stored procedure
-    await pool.query('CALL sp_cms_upsert_page(?, ?, ?, ?, ?, ?)', [
-      pageId,
-      title,
-      slug,
-      status,
-      metaTitle,
-      metaDescription,
-    ]);
+    const pool = await getPool();
+
+    // Delegate page upsert & uniqueness validation to SQL Server procedure
+    try {
+      await pool.request()
+        .input('PageId', sql.NVarChar(64), pageId)
+        .input('Title', sql.NVarChar(255), title)
+        .input('Slug', sql.NVarChar(255), slug)
+        .input('Status', sql.NVarChar(20), status)
+        .input('MetaTitle', sql.NVarChar(255), metaTitle)
+        .input('MetaDescription', sql.NVarChar(sql.MAX), metaDescription)
+        .execute('CMS.SP_Upsert_Page');
+    } catch (err) {
+      if (err.number === 50001 || (err.message && err.message.toLowerCase().includes('slug is already in use'))) {
+        throw new ApiError(409, 'Slug is already in use by another page');
+      }
+      throw err;
+    }
 
     // Synchronize blocks via stored procedures
     if (Array.isArray(pageData.blocks)) {
-      await pool.query('CALL sp_cms_delete_page_blocks(?)', [pageId]);
+      await pool.request()
+        .input('PageId', sql.NVarChar(64), pageId)
+        .execute('CMS.SP_Delete_Page_Blocks');
 
       for (let i = 0; i < pageData.blocks.length; i++) {
         const b = pageData.blocks[i];
         const blockId = b.id || `blk-${Date.now()}-${i}`;
         const blockType = b.type || 'Text';
-        const contentJson = JSON.stringify(b.data || {});
+        const contentJson = JSON.stringify(b.data || b.content || {});
         const isVisible = b.isVisible !== false ? 1 : 0;
         const sortOrder = typeof b.sortOrder === 'number' ? b.sortOrder : i;
 
-        await pool.query('CALL sp_cms_save_page_block(?, ?, ?, ?, ?, ?)', [
-          blockId,
-          pageId,
-          blockType,
-          sortOrder,
-          contentJson,
-          isVisible,
-        ]);
+        await pool.request()
+          .input('BlockId', sql.NVarChar(64), blockId)
+          .input('PageId', sql.NVarChar(64), pageId)
+          .input('BlockType', sql.NVarChar(50), blockType)
+          .input('SortOrder', sql.Int, sortOrder)
+          .input('ContentJson', sql.NVarChar(sql.MAX), contentJson)
+          .input('IsVisible', sql.TinyInt, isVisible)
+          .execute('CMS.SP_Save_Page_Block');
       }
     }
 
@@ -143,8 +177,11 @@ class CmsService {
   }
 
   async deletePage(pageId) {
-    const [results] = await pool.query('CALL sp_cms_delete_page(?)', [pageId]);
-    const affected = results?.[0]?.[0]?.affected_rows || 0;
+    const pool = await getPool();
+    const result = await pool.request()
+      .input('PageId', sql.NVarChar(64), String(pageId))
+      .execute('CMS.SP_Delete_Page');
+    const affected = result.recordset?.[0]?.affected_rows || 0;
     return affected > 0;
   }
 
@@ -153,8 +190,9 @@ class CmsService {
   // ==========================================
 
   async getAllUsers() {
-    const [results] = await pool.query('CALL sp_cms_get_all_users()');
-    const rows = (results && results[0]) || [];
+    const pool = await getPool();
+    const result = await pool.request().execute('CMS.SP_Get_All_Users');
+    const rows = result.recordset || [];
 
     return rows.map((u) => ({
       id: u.id,
@@ -168,9 +206,11 @@ class CmsService {
   }
 
   async getUserByEmail(email) {
-    const [results] = await pool.query('CALL sp_cms_get_user_by_email(?)', [email.trim().toLowerCase()]);
-    const users = (results && results[0]) || [];
-    return users[0] || null;
+    const pool = await getPool();
+    const result = await pool.request()
+      .input('Email', sql.NVarChar(255), email.trim().toLowerCase())
+      .execute('CMS.SP_Get_User_By_Email');
+    return result.recordset?.[0] || null;
   }
 
   async saveUser({ id, name, email, role, password }) {
@@ -181,14 +221,15 @@ class CmsService {
     const hasPassword = Boolean(password);
     const hashedPassword = password ? await bcrypt.hash(password.trim(), 10) : '';
 
-    await pool.query('CALL sp_cms_upsert_user(?, ?, ?, ?, ?, ?)', [
-      userId,
-      cleanName,
-      cleanEmail,
-      userRole,
-      hashedPassword,
-      hasPassword ? 1 : 0,
-    ]);
+    const pool = await getPool();
+    await pool.request()
+      .input('UserId', sql.NVarChar(64), userId)
+      .input('Name', sql.NVarChar(255), cleanName)
+      .input('Email', sql.NVarChar(255), cleanEmail)
+      .input('Role', sql.NVarChar(20), userRole)
+      .input('Password', sql.NVarChar(255), hashedPassword)
+      .input('HasPassword', sql.TinyInt, hasPassword ? 1 : 0)
+      .execute('CMS.SP_Upsert_User');
 
     return {
       id: userId,
@@ -201,8 +242,11 @@ class CmsService {
   }
 
   async deleteUser(userId) {
-    const [results] = await pool.query('CALL sp_cms_delete_user(?)', [userId]);
-    const affected = results?.[0]?.[0]?.affected_rows || 0;
+    const pool = await getPool();
+    const result = await pool.request()
+      .input('UserId', sql.NVarChar(64), String(userId))
+      .execute('CMS.SP_Delete_User');
+    const affected = result.recordset?.[0]?.affected_rows || 0;
     return affected > 0;
   }
 
@@ -217,7 +261,11 @@ class CmsService {
       isMatch = user.password === password;
       if (isMatch) {
         const newHash = await bcrypt.hash(password, 10);
-        await pool.query('CALL sp_cms_update_user_password(?, ?)', [user.id, newHash]);
+        const pool = await getPool();
+        await pool.request()
+          .input('UserId', sql.NVarChar(64), user.id)
+          .input('NewPassword', sql.NVarChar(255), newHash)
+          .execute('CMS.SP_Update_User_Password');
       }
     }
 
@@ -225,7 +273,11 @@ class CmsService {
 
     // Update last login via procedure
     const nowStr = new Date().toLocaleString('en-US', { dateStyle: 'short', timeStyle: 'short' });
-    await pool.query('CALL sp_cms_update_user_login(?, ?)', [user.id, nowStr]);
+    const pool = await getPool();
+    await pool.request()
+      .input('UserId', sql.NVarChar(64), user.id)
+      .input('LastLogin', sql.NVarChar(100), nowStr)
+      .execute('CMS.SP_Update_User_Login');
 
     return {
       id: user.id,

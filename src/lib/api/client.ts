@@ -4,7 +4,7 @@
  * Native fetch through a centralized API client with automatic JWT bearer token handling.
  */
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 interface RequestOptions extends RequestInit {
   params?: Record<string, string | number | boolean>;

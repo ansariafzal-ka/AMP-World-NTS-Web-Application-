@@ -1,17 +1,16 @@
 require('dotenv').config();
 const app = require('./app');
-const pool = require('./config/database');
+const { getPool } = require('./config/database');
 
 const PORT = process.env.PORT || 5000;
 
 async function startServer() {
   try {
-    const connection = await pool.getConnection();
-    console.log(' Successfully connected to MySQL Database:', process.env.DB_NAME || 'amp_nts');
-    connection.release();
+    await getPool();
+    console.log(' Successfully connected to Microsoft SQL Server Database:', process.env.DB_NAME || 'AMP_NTS');
   } catch (err) {
-    console.error(' MySQL Connection Warning:', err.message);
-    console.log(' Note: Ensure MySQL is running in Workbench and credentials are set in API/.env');
+    console.error(' SQL Server Connection Warning:', err.message);
+    console.log(' Note: Ensure SQL Server is running and credentials in API/.env are correct');
   }
 
   app.listen(PORT, () => {

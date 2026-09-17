@@ -8,9 +8,9 @@ This directory contains the CMS module for the AMP NTS Web Application, structur
 |------------------------|-----------------------------------|---------|
 | `API/src/routes/web/admin/cms.routes.js` | `src/routes/web/admin/cms.routes.js` | Routes for CMS pages, blocks & users |
 | `API/src/controllers/cms.controller.js` | `src/controllers/cms.controller.js` | Request handler methods |
-| `API/src/services/cms.service.js` | `src/services/cms.service.js` | Direct MySQL queries |
+| `API/src/services/cms.service.js` | `src/services/cms.service.js` | T-SQL Stored Procedure execution (`CMS.SP_*`) |
 | `API/src/validators/cms.validator.js` | `src/validators/cms.validator.js` | Request validation |
-| `database/mysql_schema.sql` | `database/mysql_schema.sql` | MySQL Schema (executed in Workbench) |
+| `database/schema_mssql.sql` | `database/schema_mssql.sql` | Microsoft SQL Server Schema & Stored Procedures |
 
 ## 2. Mounting the Route
 
@@ -29,14 +29,14 @@ This exposes:
 - `PUT    /api/web/admin/cms/pages/:id`
 - `DELETE /api/web/admin/cms/pages/:id`
 - `GET    /api/web/admin/cms/public/pages/:slug`
-- `GET    /api/web/admin/cms/users`
-- `POST   /api/web/admin/cms/users`
-- `DELETE /api/web/admin/cms/users/:id`
-- `POST   /api/web/admin/cms/auth/login`
+- `GET    /api/web/users`
+- `POST   /api/web/users`
+- `DELETE /api/web/users/:id`
+- `POST   /api/web/auth/login`
 
 ## 3. Database Schema
 
-Execute `database/mysql_schema.sql` in MySQL Workbench on your `amp_nts` database. It creates:
-- `cms_pages`
-- `cms_page_blocks`
-- `cms_users`
+Execute `database/schema_mssql.sql` in SQL Server Management Studio (SSMS) on your local SQL Server instance. It creates:
+- `CMS` schema namespace
+- Tables: `CMS.Pages`, `CMS.PageBlocks`, `CMS.Users`
+- 13 T-SQL Stored Procedures (`CMS.SP_*`)

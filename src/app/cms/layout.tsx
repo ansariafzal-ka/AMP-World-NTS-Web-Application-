@@ -3,11 +3,13 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import CmsSidebar from '@/components/cms/CmsSidebar';
+import { useAuthStore } from '@/store/auth.store';
 
 export default function CmsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [checkingAuth, setCheckingAuth] = useState<boolean>(true);
+  const loadFromStorage = useAuthStore((state) => state.loadFromStorage);
 
   useEffect(() => {
     if (pathname === '/cms/login') {
@@ -15,26 +17,17 @@ export default function CmsLayout({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    // Verify session from server endpoint
-    fetch('/api/cms/auth', { cache: 'no-store' })
-      .then((res) => {
-        if (res.ok) {
-          setIsAuthenticated(true);
-          setCheckingAuth(false);
-        } else {
-          localStorage.removeItem('cms_authenticated');
-          setIsAuthenticated(false);
-          setCheckingAuth(false);
-          window.location.href = '/cms/login';
-        }
-      })
-      .catch(() => {
-        localStorage.removeItem('cms_authenticated');
-        setIsAuthenticated(false);
-        setCheckingAuth(false);
-        window.location.href = '/cms/login';
-      });
-  }, [pathname]);
+    loadFromStorage();
+    const token = typeof window !== 'undefined' ? localStorage.getItem('amp_auth_token') : null;
+    if (token) {
+      setIsAuthenticated(true);
+      setCheckingAuth(false);
+    } else {
+      setIsAuthenticated(false);
+      setCheckingAuth(false);
+      window.location.href = '/cms/login';
+    }
+  }, [pathname, loadFromStorage]);
 
   if (pathname === '/cms/login') {
     return <>{children}</>;

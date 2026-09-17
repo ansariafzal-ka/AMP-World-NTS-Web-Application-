@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 import BlockRenderer from '@/components/cms/renderer/BlockRenderer';
-import { getMysqlPageBySlug } from '@/lib/cms-mysql';
+import { cmsClient } from '@/lib/api/cms.client';
 
 export async function generateMetadata({
   params,
@@ -12,7 +12,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
-  const page = await getMysqlPageBySlug(slug);
+  const page = await cmsClient.getPageBySlug(slug);
 
   if (!page) {
     return {
@@ -33,7 +33,7 @@ export default async function DynamicCmsPage({
 }) {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
-  const page = await getMysqlPageBySlug(slug);
+  const page = await cmsClient.getPageBySlug(slug);
 
   if (!page) {
     return notFound();

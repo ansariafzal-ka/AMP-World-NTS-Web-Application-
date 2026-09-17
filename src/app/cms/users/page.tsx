@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Plus, Shield, CheckCircle2, Trash2, Eye, EyeOff, Lock, AlertCircle, Loader2, ShieldAlert } from 'lucide-react';
 import { CMSUser } from '@/types/cms.types';
 import { useAuthStore } from '@/store/auth.store';
+import { cmsClient } from '@/lib/api/cms.client';
 
 export default function CmsUsersPage() {
   const router = useRouter();
@@ -29,10 +30,9 @@ export default function CmsUsersPage() {
 
   const fetchUsers = useCallback(async () => {
     try {
-      const res = await fetch('/api/cms/users');
-      const data = await res.json();
-      if (data.success && Array.isArray(data.data)) {
-        setUsers(data.data);
+      const data = await cmsClient.getAllUsers();
+      if (Array.isArray(data)) {
+        setUsers(data);
       }
     } catch (err) {
       console.error('Failed to load CMS users:', err);
@@ -76,24 +76,14 @@ export default function CmsUsersPage() {
     setFormError(null);
 
     try {
-      const res = await fetch('/api/cms/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: newName.trim(),
-          email: newEmail.trim(),
-          role: newRole,
-          password: newPassword.trim(),
-        }),
+      await cmsClient.createUser({
+        name: newName.trim(),
+        email: newEmail.trim(),
+        role: newRole,
+        password: newPassword.trim(),
       });
-
-      const data = await res.json();
-      if (data.success) {
-        await fetchUsers();
-        setIsAddModalOpen(false);
-      } else {
-        setFormError(data.message || 'Failed to create user');
-      }
+      await fetchUsers();
+      setIsAddModalOpen(false);
     } catch (err: any) {
       setFormError(err.message || 'A network error occurred');
     } finally {
@@ -104,17 +94,15 @@ export default function CmsUsersPage() {
   const handleDeleteUser = async (id: string, name: string) => {
     if (confirm(`Are you sure you want to remove user "${name}"?`)) {
       try {
-        const res = await fetch(`/api/cms/users?id=${encodeURIComponent(id)}`, {
-          method: 'DELETE',
-        });
-        const data = await res.json();
-        if (data.success) {
+        const success = await cmsClient.deleteUser(id);
+        if (success) {
           setUsers((prev) => prev.filter((u) => u.id !== id));
         } else {
-          alert(data.message || 'Failed to delete user');
+          alert('Failed to delete user');
         }
-      } catch (err) {
+      } catch (err: any) {
         console.error('Failed to delete user:', err);
+        alert(err.message || 'Failed to delete user');
       }
     }
   };

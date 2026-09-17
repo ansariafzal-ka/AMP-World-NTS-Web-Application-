@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const cmsService = require('../services/cms.service');
 const { ApiError } = require('../utils/ApiError');
 const { ApiResponse } = require('../utils/ApiResponse');

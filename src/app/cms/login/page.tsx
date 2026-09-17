@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Lock, Mail, ArrowRight } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
 import { API_ENDPOINTS } from '@/lib/api/endpoints';
+import { apiClient } from '@/lib/api/client';
 
 export default function CmsLoginPage() {
   const [email, setEmail] = useState('');
@@ -17,8 +18,7 @@ export default function CmsLoginPage() {
   // Clear any existing session immediately when viewing login page
   useEffect(() => {
     clearAuth();
-    fetch('/api/web/auth/logout', { method: 'POST' }).catch(() => {});
-    fetch('/api/cms/auth', { method: 'DELETE' }).catch(() => {});
+    apiClient.post(API_ENDPOINTS.AUTH.LOGOUT).catch(() => {});
   }, [clearAuth]);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -27,22 +27,8 @@ export default function CmsLoginPage() {
     setIsLoading(true);
 
     try {
-      // Authenticate against /api/web/auth/login
-      const res = await fetch(API_ENDPOINTS.AUTH.LOGIN, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
+      const data = await apiClient.post<any>(API_ENDPOINTS.AUTH.LOGIN, { email, password });
 
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        setError(data.message || 'Invalid email or password. Access denied.');
-        setIsLoading(false);
-        return;
-      }
-
-      // Store JWT token and user profile in Zustand auth store & localStorage
       const token = data.data?.accessToken || data.token;
       const user = data.data?.user || data.user;
 
@@ -51,9 +37,8 @@ export default function CmsLoginPage() {
       }
 
       window.location.href = '/cms';
-    } catch (err) {
-      console.error(err);
-      setError('An unexpected error occurred. Please try again.');
+    } catch (err: any) {
+      setError(err.message || 'Invalid email or password. Access denied.');
       setIsLoading(false);
     }
   };

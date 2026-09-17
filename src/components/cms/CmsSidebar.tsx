@@ -17,6 +17,8 @@ import {
   X
 } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
+import { apiClient } from '@/lib/api/client';
+import { API_ENDPOINTS } from '@/lib/api/endpoints';
 
 interface SidebarProps {
   onLogout?: () => void;
@@ -29,6 +31,7 @@ export default function CmsSidebar({ onLogout }: SidebarProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const user = useAuthStore((state) => state.user);
   const loadFromStorage = useAuthStore((state) => state.loadFromStorage);
+  const clearAuth = useAuthStore((state) => state.clearAuth);
 
   useEffect(() => {
     loadFromStorage();
@@ -41,17 +44,13 @@ export default function CmsSidebar({ onLogout }: SidebarProps) {
 
   const handleLogout = async () => {
     try {
-      await fetch('/api/web/auth/logout', { method: 'POST' });
-      await fetch('/api/cms/auth', { method: 'DELETE' }).catch(() => {});
+      await apiClient.post(API_ENDPOINTS.AUTH.LOGOUT).catch(() => {});
     } catch (e) {
       console.error(e);
     }
+    clearAuth();
+    if (onLogout) onLogout();
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('amp_auth_token');
-      localStorage.removeItem('amp_auth_user');
-      localStorage.removeItem('cms_authenticated');
-      document.cookie = 'amp_auth_token=; path=/; max-age=0; SameSite=Lax';
-      document.cookie = 'cms_session=; path=/; max-age=0; SameSite=Lax';
       window.location.href = '/cms/login';
     }
   };
