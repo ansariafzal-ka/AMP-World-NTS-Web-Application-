@@ -20,6 +20,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     label: "About NTS",
+    href: "/About_NTS",
     children: [
       { label: "NTS Details", href: "/NTS_Details" },
       { label: "Become an Exam Center", href: "/Become_An_Exam_Center" },
@@ -75,7 +76,9 @@ export default function Navbar() {
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {navItems.map((item) => {
             if (item.children) {
-              const isParentActive = item.children.some((child) => pathname === child.href);
+              const isParentActive =
+                (item.href && pathname === item.href) ||
+                item.children.some((child) => pathname === child.href);
               const isDropdownOpen = openDropdown === item.label;
 
               return (
@@ -85,29 +88,54 @@ export default function Navbar() {
                   onMouseEnter={() => setOpenDropdown(item.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setOpenDropdown(isDropdownOpen ? null : item.label)}
-                    aria-expanded={isDropdownOpen}
-                    className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors cursor-pointer ${
-                      isParentActive || isDropdownOpen
-                        ? "bg-[#fbf2f3] text-[#610D17] font-bold"
-                        : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
-                    }`}
-                  >
-                    <span>{item.label}</span>
-                    <svg
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        isDropdownOpen ? "rotate-180 text-[#610D17]" : "text-zinc-400"
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpenDropdown(null)}
+                      className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors cursor-pointer ${
+                        isParentActive || isDropdownOpen
+                          ? "bg-[#fbf2f3] text-[#610D17] font-bold"
+                          : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
                       }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2.5"
-                      stroke="currentColor"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                    </svg>
-                  </button>
+                      <span>{item.label}</span>
+                      <svg
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          isDropdownOpen ? "rotate-180 text-[#610D17]" : "text-zinc-400"
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2.5"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setOpenDropdown(isDropdownOpen ? null : item.label)}
+                      aria-expanded={isDropdownOpen}
+                      className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors cursor-pointer ${
+                        isParentActive || isDropdownOpen
+                          ? "bg-[#fbf2f3] text-[#610D17] font-bold"
+                          : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <svg
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          isDropdownOpen ? "rotate-180 text-[#610D17]" : "text-zinc-400"
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2.5"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </button>
+                  )}
 
                   {/* Dropdown Menu Popover */}
                   <div
@@ -247,32 +275,58 @@ export default function Navbar() {
           {navItems.map((item) => {
             if (item.children) {
               const isExpanded = !!mobileExpanded[item.label];
-              const isParentActive = item.children.some((child) => pathname === child.href);
+              const isParentActive =
+                (item.href && pathname === item.href) ||
+                item.children.some((child) => pathname === child.href);
 
               return (
                 <div key={item.label} className="flex flex-col border-b border-zinc-100 pb-1">
-                  <button
-                    type="button"
-                    onClick={() => toggleMobileDropdown(item.label)}
-                    className={`flex items-center justify-between rounded-lg px-3.5 py-3 text-base font-bold transition-colors cursor-pointer ${
-                      isParentActive
-                        ? "text-[#610D17]"
-                        : "text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950"
-                    }`}
-                  >
-                    <span>{item.label}</span>
-                    <svg
-                      className={`w-4 h-4 text-zinc-500 transition-transform duration-200 ${
-                        isExpanded ? "rotate-180 text-[#610D17]" : ""
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2.5"
-                      stroke="currentColor"
+                  <div className="flex items-center justify-between">
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`flex-1 rounded-lg px-3.5 py-3 text-base font-bold transition-colors ${
+                          pathname === item.href
+                            ? "bg-[#fbf2f3] text-[#610D17]"
+                            : "text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => toggleMobileDropdown(item.label)}
+                        className={`flex-1 text-left rounded-lg px-3.5 py-3 text-base font-bold transition-colors cursor-pointer ${
+                          isParentActive
+                            ? "text-[#610D17]"
+                            : "text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    )}
+
+                    <button
+                      type="button"
+                      aria-label={`Toggle ${item.label} sub-menu`}
+                      onClick={() => toggleMobileDropdown(item.label)}
+                      className="p-3 text-zinc-500 hover:text-[#610D17] transition-colors cursor-pointer"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                    </svg>
-                  </button>
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          isExpanded ? "rotate-180 text-[#610D17]" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2.5"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </button>
+                  </div>
 
                   {isExpanded && (
                     <div className="ml-3 pl-3 border-l-2 border-[#610D17]/25 flex flex-col space-y-1 my-1">
