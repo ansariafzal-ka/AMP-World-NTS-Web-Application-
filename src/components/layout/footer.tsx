@@ -95,7 +95,7 @@ export default function Footer() {
                   </div>
 
                   <p className="text-sm sm:text-base lg:text-lg text-zinc-600 font-normal mt-1.5 sm:mt-2 leading-relaxed">
-                    Register &amp; choose from 1,500+ centres across India on the AMP World App
+                    Register &amp; choose from 1,500+ centres across 1,200+ locations on the AMP World App or website
                   </p>
 
                   <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm text-zinc-500 font-medium">
@@ -110,7 +110,7 @@ export default function Footer() {
                       <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                       </svg>
-                      1,500+ Exam Centres
+                      1,500+ Centres across 1,200+ Locations
                     </span>
                     <span className="hidden sm:inline text-zinc-300">•</span>
                     <span className="flex items-center gap-1.5">

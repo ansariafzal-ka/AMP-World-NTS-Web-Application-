@@ -3,17 +3,27 @@ import Ribbon from "@/components/common/Ribbon";
 
 const participationPoints: React.ReactNode[] = [
   <>
+    Register via the{" "}
     <a
       href="https://www.tinyurl.com/AMPWorldApp"
       target="_blank"
       rel="noopener noreferrer"
       className="font-bold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
     >
-      Download the AMP World Mobile App
+      AMP World Mobile App
+    </a>{" "}
+    or online at{" "}
+    <a
+      href="https://ampworld.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-bold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
+    >
+      ampworld.in
     </a>{" "}
     and complete your basic registration.
   </>,
-  "Select your preferred examination centre from 1,500+ locations across India.",
+  "Select your preferred examination centre from 1,500+ Centres across 1,200+ locations in India.",
   <>
     <a
       href="https://www.tinyurl.com/AllNTSDocument"
@@ -25,9 +35,9 @@ const participationPoints: React.ReactNode[] = [
     </a>
     , and access practice test materials.
   </>,
-  "Receive your hall ticket and confirmation details directly through the app.",
+  "Receive your hall ticket and confirmation details directly through the app or website portal.",
   "Appear in-person for the 90-minute offline multiple-choice test.",
-  "Access national rank results, scholarships, and reward announcements.",
+  "Access national rank results, scholarships, and reward announcements on the app and web portal.",
 ];
 
 const steps = [
@@ -36,15 +46,25 @@ const steps = [
     title: "Register",
     description: (
       <>
+        Register via the{" "}
         <a
           href="https://www.tinyurl.com/AMPWorldApp"
           target="_blank"
           rel="noopener noreferrer"
           className="font-bold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
         >
-          Download the AMP World App
+          AMP World App
         </a>{" "}
-        and complete your registration.
+        or on the web at{" "}
+        <a
+          href="https://ampworld.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
+        >
+          ampworld.in
+        </a>
+        .
       </>
     ),
   },
