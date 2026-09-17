@@ -75,25 +75,35 @@ export default function HeroSection() {
           {/* Content & Registration Column */}
           <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center text-center md:text-left space-y-4 sm:space-y-5 md:space-y-6">
             <div className="space-y-2.5 sm:space-y-3">
+              <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                AMP National Talent Search 2026
+              </h1>
+
               <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-zinc-100 backdrop-blur-xs border border-white/20">
                   <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
                   India&apos;s Biggest National Talent Search
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-rose-100 backdrop-blur-xs border border-white/15">
-                  Exam Date: 5 Dec 2026
-                </span>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                AMP National Talent Search 2026
-              </h1>
               <p className="text-sm sm:text-base md:text-lg font-semibold text-rose-100/95 tracking-tight max-w-2xl mx-auto md:mx-0">
                 Discover Your Talent. Compete with the Best. Shape Your Future.
               </p>
+
               <p className="text-xs sm:text-sm md:text-sm lg:text-base text-zinc-300 leading-relaxed max-w-2xl mx-auto md:mx-0">
                 For School, Junior College, Madarsa &amp; Undergraduate Students across India.
               </p>
+
+              <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start pt-1">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-rose-100 backdrop-blur-xs border border-white/20">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A]" />
+                  Registration Closes: 22 Nov 2026
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs sm:text-sm font-semibold text-rose-100 backdrop-blur-xs border border-white/15">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A]" />
+                  Exam Date: 5 Dec 2026
+                </span>
+              </div>
             </div>
 
             {/* Registration CTA Container */}
@@ -103,7 +113,7 @@ export default function HeroSection() {
                   Register for NTS 2026
                 </h2>
                 <p className="text-xs sm:text-sm text-zinc-300">
-                  Select your category to start your registration (Registration Closes: 22 Nov 2026):
+                  Select your category to start your registration:
                 </p>
               </div>
 
