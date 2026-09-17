@@ -162,27 +162,24 @@ export default function FaqsPage() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col justify-between rounded-xl border border-zinc-200/90 bg-white p-4 shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#610D17]/40 hover:shadow-md"
+                  className="group flex flex-col justify-between rounded-2xl border border-zinc-200/90 bg-white p-4 sm:p-5 shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#610D17]/40 hover:shadow-md"
                 >
-                  <div>
-                    <h3 className="text-sm font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
-                      {link.title}
-                    </h3>
-                    <p className="text-xs text-zinc-500 mt-1 break-all">
-                      {link.linkText}
-                    </p>
-                  </div>
-                  <div className="mt-3 flex items-center gap-1 text-xs font-semibold text-[#610D17]">
-                    <span>Open link</span>
-                    <svg
-                      className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2.5"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                    </svg>
+                  <h3 className="text-sm sm:text-base font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors leading-snug">
+                    {link.title}
+                  </h3>
+                  <div className="mt-4">
+                    <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl border border-[#610D17] bg-white px-3.5 py-2 text-xs sm:text-sm font-bold text-[#610D17] shadow-xs transition-all duration-200 group-hover:bg-[#610D17] group-hover:text-white">
+                      <span>Open Link</span>
+                      <svg
+                        className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2.5"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                      </svg>
+                    </span>
                   </div>
                 </a>
               ))}
