@@ -6,23 +6,51 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Button from "@/components/common/Button";
 
-interface NavItem {
+interface NavSubItem {
   label: string;
   href: string;
 }
 
+interface NavItem {
+  label: string;
+  href?: string;
+  children?: NavSubItem[];
+}
+
 const navItems: NavItem[] = [
-  { label: "About NTS", href: "/About_NTS" },
+  {
+    label: "About NTS",
+    children: [
+      { label: "NTS Details", href: "/NTS_Details" },
+      { label: "Become an Exam Center", href: "/Become_An_Exam_Center" },
+      { label: "Mock Papers", href: "/Mock_Papers" },
+    ],
+  },
   { label: "Important Dates", href: "/Important_Dates" },
-  { label: "Mock Papers", href: "/Mock_Papers" },
-  { label: "Exam Center", href: "/Become_An_Exam_Center" },
+  {
+    label: "Registration",
+    children: [
+      { label: "Student Registration", href: "/student-registration" },
+      { label: "Exam Centre Registration", href: "/exam-centre-registration" },
+      { label: "Participating Institution Registration", href: "/institution-registration" },
+    ],
+  },
   { label: "FAQs", href: "/FAQs" },
   { label: "Contact", href: "/Contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({
+    "About NTS": true,
+    Registration: true,
+  });
   const pathname = usePathname();
+
+  const toggleMobileDropdown = (label: string) => {
+    setMobileExpanded((prev) => ({ ...prev, [label]: !prev[label] }));
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white shadow-sm">
@@ -44,17 +72,85 @@ export default function Navbar() {
         </Link>
 
         {/* Center Navigation Links (Laptop & Desktop: lg+) */}
-        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {navItems.map((item) => {
+            if (item.children) {
+              const isParentActive = item.children.some((child) => pathname === child.href);
+              const isDropdownOpen = openDropdown === item.label;
+
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(item.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenDropdown(isDropdownOpen ? null : item.label)}
+                    aria-expanded={isDropdownOpen}
+                    className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors cursor-pointer ${
+                      isParentActive || isDropdownOpen
+                        ? "bg-[#fbf2f3] text-[#610D17] font-bold"
+                        : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <svg
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        isDropdownOpen ? "rotate-180 text-[#610D17]" : "text-zinc-400"
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2.5"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </button>
+
+                  {/* Dropdown Menu Popover */}
+                  <div
+                    className={`absolute left-0 top-full pt-1.5 z-50 transition-all duration-150 ${
+                      isDropdownOpen
+                        ? "opacity-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 -translate-y-1 pointer-events-none"
+                    }`}
+                  >
+                    <div className="min-w-[270px] rounded-2xl border border-zinc-200/90 bg-white/95 backdrop-blur-md p-1.5 shadow-xl ring-1 ring-black/5">
+                      {item.children.map((subItem) => {
+                        const isSubActive = pathname === subItem.href;
+                        return (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            onClick={() => setOpenDropdown(null)}
+                            className={`block rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold transition-colors ${
+                              isSubActive
+                                ? "bg-[#fbf2f3] text-[#610D17] font-bold"
+                                : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
+                            }`}
+                          >
+                            {subItem.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
-                href={item.href}
-                className={`whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors ${isActive
-                  ? "bg-[#fbf2f3] text-[#610D17] font-bold"
-                  : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
-                  }`}
+                href={item.href!}
+                className={`whitespace-nowrap rounded-md px-2.5 xl:px-3 py-1.5 text-sm font-semibold transition-colors ${
+                  isActive
+                    ? "bg-[#fbf2f3] text-[#610D17] font-bold"
+                    : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
+                }`}
               >
                 {item.label}
               </Link>
@@ -143,21 +239,77 @@ export default function Navbar() {
 
       {/* Mobile & Tablet Dropdown Menu (< lg) */}
       <div
-        className={`${isOpen ? "block" : "hidden"
-          } relative z-20 w-full border-t border-zinc-200 bg-white px-4 pt-2 pb-5 shadow-lg lg:hidden`}
+        className={`${
+          isOpen ? "block" : "hidden"
+        } relative z-20 w-full border-t border-zinc-200 bg-white px-4 pt-2 pb-5 shadow-lg lg:hidden`}
       >
         <div className="flex flex-col space-y-1">
           {navItems.map((item) => {
+            if (item.children) {
+              const isExpanded = !!mobileExpanded[item.label];
+              const isParentActive = item.children.some((child) => pathname === child.href);
+
+              return (
+                <div key={item.label} className="flex flex-col border-b border-zinc-100 pb-1">
+                  <button
+                    type="button"
+                    onClick={() => toggleMobileDropdown(item.label)}
+                    className={`flex items-center justify-between rounded-lg px-3.5 py-3 text-base font-bold transition-colors cursor-pointer ${
+                      isParentActive
+                        ? "text-[#610D17]"
+                        : "text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <svg
+                      className={`w-4 h-4 text-zinc-500 transition-transform duration-200 ${
+                        isExpanded ? "rotate-180 text-[#610D17]" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2.5"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </button>
+
+                  {isExpanded && (
+                    <div className="ml-3 pl-3 border-l-2 border-[#610D17]/25 flex flex-col space-y-1 my-1">
+                      {item.children.map((subItem) => {
+                        const isSubActive = pathname === subItem.href;
+                        return (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            onClick={() => setIsOpen(false)}
+                            className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                              isSubActive
+                                ? "bg-[#fbf2f3] text-[#610D17] font-bold"
+                                : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950"
+                            }`}
+                          >
+                            {subItem.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={item.href!}
                 onClick={() => setIsOpen(false)}
-                className={`rounded-lg px-3.5 py-3 text-base font-bold transition-colors ${isActive
-                  ? "bg-[#fbf2f3] text-[#610D17]"
-                  : "text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950"
-                  }`}
+                className={`rounded-lg px-3.5 py-3 text-base font-bold transition-colors ${
+                  isActive
+                    ? "bg-[#fbf2f3] text-[#610D17]"
+                    : "text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950"
+                }`}
               >
                 {item.label}
               </Link>
