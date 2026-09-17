@@ -70,20 +70,20 @@ export default function Footer() {
     <>
       {/* Subtle Pre-Footer Callout Strip Redirecting to AMP_World_App (Hidden on /AMP_World_App) */}
       {!isAppPage && (
-        <aside aria-label="AMP World App Download" className="border-t border-zinc-200 bg-white py-3 sm:py-3.5">
+        <aside aria-label="AMP World App Download" className="border-t border-zinc-200 bg-white py-4 sm:py-5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Link
               href="/AMP_World_App"
-              className="group flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 rounded-xl border border-zinc-200/80 bg-zinc-50/70 hover:bg-[#FBF2F3]/40 px-3.5 py-2 sm:px-4 sm:py-2.5 transition-all duration-200 hover:border-[#610D17]/30 shadow-2xs"
+              className="group flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 rounded-2xl border border-zinc-200/90 bg-zinc-50/80 hover:bg-[#FBF2F3]/50 px-4 sm:px-6 py-3.5 sm:py-4 transition-all duration-200 hover:border-[#610D17]/30 shadow-xs hover:shadow-sm"
             >
-              <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 min-w-0">
-                <span className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg bg-[#610D17]/10 text-[#610D17] group-hover:scale-105 transition-transform mt-0.5 sm:mt-0">
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <div className="flex items-start sm:items-center gap-3 sm:gap-3.5 min-w-0">
+                <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-[#610D17]/10 text-[#610D17] group-hover:scale-105 transition-transform mt-0.5 sm:mt-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 </span>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm">
+                  <div className="flex flex-wrap items-center gap-x-2 text-sm sm:text-base">
                     <span className="font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
                       NTS 2026 Student Registration
                     </span>
@@ -92,13 +92,13 @@ export default function Footer() {
                       Register &amp; choose from 1,500+ centres on the AMP World App
                     </span>
                   </div>
-                  <p className="text-[11px] text-zinc-500 md:hidden">
+                  <p className="text-xs text-zinc-500 md:hidden mt-0.5">
                     Register &amp; choose exam centre on the AMP World App
                   </p>
                   {/* Left-aligned link on mobile directly below description */}
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#610D17] mt-1.5 sm:hidden">
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#610D17] mt-2 sm:hidden">
                     <span>Download App &amp; Details</span>
-                    <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </div>
@@ -106,9 +106,9 @@ export default function Footer() {
               </div>
 
               {/* Desktop / Tablet link on the right */}
-              <div className="hidden sm:flex items-center justify-end gap-1.5 text-xs font-bold text-[#610D17] shrink-0">
+              <div className="hidden sm:flex items-center justify-end gap-2 text-xs sm:text-sm font-bold text-[#610D17] shrink-0">
                 <span>Download App &amp; Details</span>
-                <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </div>
