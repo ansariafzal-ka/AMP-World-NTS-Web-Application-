@@ -79,11 +79,11 @@ export default function HeroSection() {
                 AMP National Talent Search 2026
               </h1>
 
-              <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-zinc-100 backdrop-blur-xs border border-white/20">
-                  <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
+              <div className="flex items-center gap-2 justify-center md:justify-start">
+                <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
+                <p className="text-base sm:text-lg md:text-xl font-bold text-rose-200 tracking-tight">
                   India&apos;s Biggest National Talent Search
-                </span>
+                </p>
               </div>
 
               <p className="text-sm sm:text-base md:text-lg font-semibold text-rose-100/95 tracking-tight max-w-2xl mx-auto md:mx-0">
@@ -94,15 +94,41 @@ export default function HeroSection() {
                 For School, Junior College, Madarsa &amp; Undergraduate Students across India.
               </p>
 
-              <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start pt-1">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-rose-100 backdrop-blur-xs border border-white/20">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A]" />
-                  Registration Closes: 22 Nov 2026
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs sm:text-sm font-semibold text-rose-100 backdrop-blur-xs border border-white/15">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A]" />
-                  Exam Date: 5 Dec 2026
-                </span>
+              {/* High-Focus Key Dates Panel */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 justify-center md:justify-start">
+                {/* Registration Closes */}
+                <div className="flex items-center gap-3 rounded-xl border border-amber-400/35 bg-amber-400/10 px-3.5 py-2 backdrop-blur-xs">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400/20 text-amber-300 shrink-0">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-amber-200">
+                      Registration Closes
+                    </span>
+                    <span className="text-sm sm:text-base font-extrabold text-white">
+                      22 Nov 2026
+                    </span>
+                  </div>
+                </div>
+
+                {/* Exam Date */}
+                <div className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-3.5 py-2 backdrop-blur-xs">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 text-rose-200 shrink-0">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.253M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-rose-200">
+                      Exam Date
+                    </span>
+                    <span className="text-sm sm:text-base font-extrabold text-white">
+                      5 Dec 2026
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
