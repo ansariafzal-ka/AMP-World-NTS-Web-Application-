@@ -90,29 +90,27 @@ export default function HomeQuickNav() {
   return (
     <nav
       aria-label="Quick Section Navigation"
-      className="sticky top-20 z-30 border-y border-zinc-200/90 bg-white/95 backdrop-blur-md shadow-xs py-3.5 sm:py-4 transition-all"
+      className="sticky top-20 z-30 border-y border-zinc-200/90 bg-white/95 backdrop-blur-md shadow-xs py-3 sm:py-3.5 transition-all"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center">
-          {/* Nav Pills Container */}
-          <div className="flex items-center justify-start md:justify-center gap-2.5 sm:gap-3 overflow-x-auto no-scrollbar py-0.5 w-full scroll-smooth">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={(e) => handleScroll(e, item.id)}
-                  className="group inline-flex items-center gap-2 rounded-full border border-zinc-200/90 bg-zinc-50/90 hover:bg-[#610D17] hover:border-[#610D17] px-3.5 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-[13px] font-bold text-zinc-700 hover:text-white transition-all duration-200 shrink-0 shadow-2xs hover:shadow-xs"
-                >
-                  <Icon className="w-4 h-4 text-[#610D17] group-hover:text-rose-200 transition-colors shrink-0" />
-                  <span className="whitespace-nowrap">
-                    {item.label}
-                  </span>
-                </a>
-              );
-            })}
-          </div>
+        {/* Nav Pills Container - safely aligns to start on mobile/laptop to prevent left-side clipping */}
+        <div className="flex items-center justify-start 2xl:justify-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 w-full scroll-smooth">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => handleScroll(e, item.id)}
+                className="group inline-flex items-center gap-2 rounded-full border border-zinc-200/90 bg-zinc-50/90 hover:bg-[#610D17] hover:border-[#610D17] px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-[13px] font-bold text-zinc-700 hover:text-white transition-all duration-200 shrink-0 shadow-2xs hover:shadow-xs"
+              >
+                <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#610D17] group-hover:text-rose-200 transition-colors shrink-0" />
+                <span className="whitespace-nowrap">
+                  {item.label}
+                </span>
+              </a>
+            );
+          })}
         </div>
       </div>
     </nav>
