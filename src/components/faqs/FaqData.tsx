@@ -509,18 +509,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         title: "22. What other benefits are available to students?",
         points: [
           "Guidance for scholarship applications (national and international) through AMP’s platform.",
-          <span>
-            Mentorship from experts via{" "}
-            <a
-              href="https://theindiamentors.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={linkClass}
-            >
-              TheIndiaMentors.com
-            </a>
-            .
-          </span>,
+          "Mentorship from experts via TheIndiaMentors.com.",
           <span>
             Employment support through{" "}
             <a
