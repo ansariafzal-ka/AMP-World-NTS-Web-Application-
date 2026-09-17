@@ -85,18 +85,20 @@ const glanceCards: GlanceCard[] = [
     linkText: "View Syllabus",
   },
   {
-    id: "cash-prizes",
-    title: "Cash Prizes & Awards",
+    id: "mock-papers",
+    title: "Mock Papers",
     icon: (props) => (
       <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" {...props}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
       </svg>
     ),
     points: [
-      "₹30,000 for 1st Rankers in each student category.",
-      "₹20,000 and ₹10,000 for 2nd and 3rd rankers respectively.",
-      "Cash awards for top 50 rankers and individual State Toppers.",
+      "Previous years' official question papers (2020–2025) and master answer keys.",
+      "Dedicated practice sets for School, Junior College & Senior Degree students.",
+      "Available in English, Hindi & Urdu mediums for real offline exam simulation.",
     ],
+    href: "/Mock_Papers",
+    linkText: "View Mock Papers",
   },
 ];
 
