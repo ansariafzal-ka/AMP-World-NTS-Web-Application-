@@ -28,6 +28,18 @@ const navItems: QuickNavItem[] = [
     ),
   },
   {
+    id: "certificates-beyond",
+    label: "Certificates & Beyond",
+    icon: (props) => (
+      <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" {...props}>
+        <rect x="4" y="3" width="16" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h8M8 11h8M8 15h4" />
+        <circle cx="16" cy="15.5" r="1.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 17 14 19.5l2-1 2 1-1-2.5" />
+      </svg>
+    ),
+  },
+  {
     id: "glance",
     label: "At a Glance",
     icon: (props) => (

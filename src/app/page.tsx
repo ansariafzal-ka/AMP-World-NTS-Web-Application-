@@ -3,6 +3,7 @@ import HeroSection from "@/components/ui/hero-section";
 import HomeQuickNav from "@/components/ui/HomeQuickNav";
 import HomeVideoSection from "@/components/ui/HomeVideoSection";
 import ScholarshipsRewards from "@/components/ui/ScholarshipsRewards";
+import CertificatesBeyond from "@/components/ui/CertificatesBeyond";
 import NTSAtAGlance from "@/components/ui/NTSAtAGlance";
 import HowToParticipate from "@/components/ui/HowToParticipate";
 import VideoHighlights from "@/components/ui/VideoHighlights";
@@ -25,6 +26,10 @@ export default function Home() {
 
         <div id="scholarships" className="scroll-mt-32 sm:scroll-mt-36">
           <ScholarshipsRewards />
+        </div>
+
+        <div id="certificates-beyond" className="scroll-mt-32 sm:scroll-mt-36">
+          <CertificatesBeyond />
         </div>
 
         <div id="glance" className="scroll-mt-32 sm:scroll-mt-36">
