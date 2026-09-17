@@ -75,16 +75,16 @@ export default function HeroSection() {
           {/* Content & Registration Column */}
           <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center text-center md:text-left space-y-4 sm:space-y-5 md:space-y-6">
             <div className="space-y-2.5 sm:space-y-3">
+              <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-zinc-100 backdrop-blur-xs border border-white/20">
+                  <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
+                  India&apos;s Biggest National Talent Search
+                </span>
+              </div>
+
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 AMP National Talent Search 2026
               </h1>
-
-              <div className="flex items-center gap-2 justify-center md:justify-start">
-                <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
-                <p className="text-base sm:text-lg md:text-xl font-bold text-rose-200 tracking-tight">
-                  India&apos;s Biggest National Talent Search
-                </p>
-              </div>
 
               <p className="text-sm sm:text-base md:text-lg font-semibold text-rose-100/95 tracking-tight max-w-2xl mx-auto md:mx-0">
                 Discover Your Talent. Compete with the Best. Shape Your Future.
