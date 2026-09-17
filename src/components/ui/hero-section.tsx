@@ -79,9 +79,12 @@ export default function HeroSection() {
                 AMP National Talent Search 2026
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl font-bold text-rose-200 tracking-tight">
-                India&apos;s Biggest National Talent Search
-              </p>
+              <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-zinc-100 backdrop-blur-xs border border-white/20">
+                  <span className="h-2 w-2 rounded-full bg-[#E06D7A] animate-pulse" />
+                  India&apos;s Biggest National Talent Search
+                </span>
+              </div>
 
               <p className="text-sm sm:text-base md:text-lg font-semibold text-rose-100/95 tracking-tight max-w-2xl mx-auto md:mx-0">
                 Discover Your Talent. Compete with the Best. Shape Your Future.
@@ -91,10 +94,16 @@ export default function HeroSection() {
                 For School, Junior College, Madarsa &amp; Undergraduate Students across India.
               </p>
 
-              <p className="pt-1 text-sm sm:text-base md:text-lg font-bold text-white tracking-tight">
-                <span className="inline-block mr-3 sm:mr-5">Registration Closes: 22 Nov 2026</span>
-                <span className="inline-block">Exam Date: 5 Dec 2026</span>
-              </p>
+              <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start pt-1">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs sm:text-sm font-semibold text-rose-100 backdrop-blur-xs border border-white/20">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A]" />
+                  Registration Closes: 22 Nov 2026
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs sm:text-sm font-semibold text-rose-100 backdrop-blur-xs border border-white/15">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A]" />
+                  Exam Date: 5 Dec 2026
+                </span>
+              </div>
             </div>
 
             {/* Action Buttons: Stacked on mobile & tablet, 3-column row on large desktop (lg+) */}
