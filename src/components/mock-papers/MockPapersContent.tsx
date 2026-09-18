@@ -499,9 +499,9 @@ export default function MockPapersContent() {
             </a>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
             {/* Category Card 1: Schools */}
-            <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 sm:p-6 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
               <div>
                 <div className="flex items-center justify-between">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#610D17]/10 text-[#610D17] transition-transform group-hover:scale-105">
@@ -509,32 +509,65 @@ export default function MockPapersContent() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
-                  <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-bold text-amber-800 border border-amber-200">
+                  <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-bold text-amber-800 border border-amber-200">
                     Classes VIII, IX, X
                   </span>
                 </div>
-                <h3 className="mt-3 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
+                <h3 className="mt-3.5 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
                   School Category Papers
                 </h3>
-                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
+                <p className="mt-1.5 text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Question papers for 8th, 9th, and 10th in 5 languages (English, Urdu, Hindi, Gujarati, Bengali).
                 </p>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-zinc-200">
+              <div className="mt-5 pt-3.5 border-t border-zinc-200">
                 <a
                   href="https://drive.google.com/drive/folders/1uh9ZFUVT_WviWdCy3Wo0aZW_dba9VCsZ"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2.5 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
                 >
                   Access School Papers →
                 </a>
               </div>
             </div>
 
+            {/* Category Card 4: NTS 2025 Latest Edition */}
+            <div className="rounded-2xl border border-emerald-300 bg-emerald-50/50 p-5 sm:p-6 flex flex-col justify-between hover:border-emerald-500 hover:shadow-md transition-all group">
+              <div>
+                <div className="flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-800 transition-transform group-hover:scale-105">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                    </svg>
+                  </div>
+                  <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-800 border border-emerald-300">
+                    Latest 2025 Edition
+                  </span>
+                </div>
+                <h3 className="mt-3.5 text-lg font-bold text-zinc-900 group-hover:text-emerald-900 transition-colors">
+                  NTS 2025 Latest Edition
+                </h3>
+                <p className="mt-1.5 text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                  The latest examination papers with official master solutions and verified scoring keys.
+                </p>
+              </div>
+
+              <div className="mt-5 pt-3.5 border-t border-emerald-200">
+                <a
+                  href="https://drive.google.com/drive/folders/1qRF44TNFmtmJ1yDGDJBDOY8GMHbU88ik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-emerald-700 text-white py-2.5 text-xs font-bold hover:bg-emerald-800 transition-colors"
+                >
+                  Access 2025 Collection →
+                </a>
+              </div>
+            </div>
+
             {/* Category Card 2: Junior College */}
-            <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 sm:p-6 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
               <div>
                 <div className="flex items-center justify-between">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition-transform group-hover:scale-105">
@@ -542,14 +575,14 @@ export default function MockPapersContent() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-bold text-blue-800 border border-blue-200">
+                  <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] font-bold text-blue-800 border border-blue-200">
                     Classes XI & XII
                   </span>
                 </div>
-                <h3 className="mt-3 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
+                <h3 className="mt-3.5 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
                   Junior College Papers
                 </h3>
-                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
+                <p className="mt-1.5 text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Science, Commerce & Arts intermediate papers covering 2020 through 2025.
                 </p>
 
@@ -566,12 +599,12 @@ export default function MockPapersContent() {
                 </div>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-zinc-200">
+              <div className="mt-5 pt-3.5 border-t border-zinc-200">
                 <a
                   href="https://drive.google.com/drive/folders/1Y7FoYmq1uoi204gIbIo2kHjxkaIELUSb"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2.5 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
                 >
                   Access Junior College Papers →
                 </a>
@@ -579,7 +612,7 @@ export default function MockPapersContent() {
             </div>
 
             {/* Category Card 3: Senior College */}
-            <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 sm:p-6 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
               <div>
                 <div className="flex items-center justify-between">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-50 text-purple-700 transition-transform group-hover:scale-105">
@@ -587,14 +620,14 @@ export default function MockPapersContent() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-5.25 6.557c.75.25 1.5.47 2.25.66" />
                     </svg>
                   </div>
-                  <span className="rounded-full bg-purple-50 px-2 py-0.5 text-[11px] font-bold text-purple-800 border border-purple-200">
+                  <span className="rounded-full bg-purple-50 px-2.5 py-0.5 text-[11px] font-bold text-purple-800 border border-purple-200">
                     Undergraduate (UG)
                   </span>
                 </div>
-                <h3 className="mt-3 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
+                <h3 className="mt-3.5 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
                   Senior College Papers
                 </h3>
-                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
+                <p className="mt-1.5 text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   General Degree & Technical student question papers focusing on aptitude and career exams.
                 </p>
 
@@ -611,47 +644,14 @@ export default function MockPapersContent() {
                 </div>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-zinc-200">
+              <div className="mt-5 pt-3.5 border-t border-zinc-200">
                 <a
                   href="https://drive.google.com/drive/folders/1P0w5m9OGgBIqB9lRfrQKCPjzcW9BJM0T"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2.5 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
                 >
                   Access Senior College Papers →
-                </a>
-              </div>
-            </div>
-
-            {/* Category Card 4: NTS 2025 Latest Edition */}
-            <div className="rounded-2xl border border-emerald-300 bg-emerald-50/50 p-5 flex flex-col justify-between hover:border-emerald-500 hover:shadow-md transition-all group">
-              <div>
-                <div className="flex items-center justify-between">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-800 transition-transform group-hover:scale-105">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                    </svg>
-                  </div>
-                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-bold text-emerald-800 border border-emerald-300">
-                    Latest 2025 Edition
-                  </span>
-                </div>
-                <h3 className="mt-3 text-lg font-bold text-zinc-900 group-hover:text-emerald-900 transition-colors">
-                  NTS 2025 Latest Edition
-                </h3>
-                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
-                  The latest examination papers with official master solutions and verified scoring keys.
-                </p>
-              </div>
-
-              <div className="mt-5 pt-3 border-t border-emerald-200">
-                <a
-                  href="https://drive.google.com/drive/folders/1qRF44TNFmtmJ1yDGDJBDOY8GMHbU88ik"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-emerald-700 text-white py-2 text-xs font-bold hover:bg-emerald-800 transition-colors"
-                >
-                  Access 2025 Collection →
                 </a>
               </div>
             </div>
