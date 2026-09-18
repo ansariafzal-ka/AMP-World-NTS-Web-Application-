@@ -106,7 +106,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         title: "4. How will the exam be conducted?",
         content: (
           <p className="text-sm sm:text-base text-zinc-700 leading-relaxed">
-            Offline (physical) mode at 1200+ centers in 600+ districts across India.
+            Offline (physical) mode at 1500+ centers in 600+ districts across India.
           </p>
         ),
       },

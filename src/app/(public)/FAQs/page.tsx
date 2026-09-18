@@ -61,7 +61,7 @@ export default function FaqsPage() {
                     Offline / Physical
                   </span>
                   <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-snug font-medium max-w-[220px] mx-auto">
-                    1200+ centers in 600+ districts across India
+                    1500+ centers in 600+ districts across India
                   </p>
                 </div>
                 <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-zinc-100">
