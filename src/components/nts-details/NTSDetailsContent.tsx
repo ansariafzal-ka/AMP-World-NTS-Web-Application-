@@ -1384,7 +1384,7 @@ export default function NTSDetailsContent() {
                   className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-zinc-200 hover:border-emerald-500 hover:shadow-xs transition-all"
                 >
                   <div>
-                    <span className="text-xs font-bold text-zinc-900 block">School Students (VIII, IX & X)</span>
+                    <span className="text-xs font-bold text-zinc-900 block">School Students (8th, IX & X)</span>
                     <span className="text-xs text-zinc-500 font-medium">Helpline: +91 8657506907</span>
                   </div>
                   <span className="rounded-lg bg-emerald-50 text-emerald-700 px-3 py-1.5 text-xs font-bold border border-emerald-200">

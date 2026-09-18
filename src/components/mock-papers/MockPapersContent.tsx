@@ -43,7 +43,7 @@ const ALL_PAPERS: PaperItem[] = [
   },
   {
     id: "school-2025-folder",
-    title: "NTS 2025 School Question Papers (VIII, IX & X)",
+    title: "NTS 2025 School Question Papers (8th, IX & X)",
     category: "school",
     subCategory: "Class 8th, 9th & 10th",
     year: "2025",
@@ -420,7 +420,7 @@ export default function MockPapersContent() {
                   3 Tiers
                 </span>
                 <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                  Schools (VIII–X), Junior College & Degree (UG) levels
+                  Schools (8th–X), Junior College & Degree (UG) levels
                 </p>
               </div>
               <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
@@ -510,7 +510,7 @@ export default function MockPapersContent() {
                     </svg>
                   </div>
                   <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-bold text-amber-800 border border-amber-200">
-                    Classes VIII, IX, X
+                    Classes 8th, IX, X
                   </span>
                 </div>
                 <h3 className="mt-3.5 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
@@ -698,7 +698,7 @@ export default function MockPapersContent() {
                     : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100"
                 }`}
               >
-                Schools (VIII–X)
+                Schools (8th–X)
               </button>
               <button
                 onClick={() => setActiveTab("junior")}
