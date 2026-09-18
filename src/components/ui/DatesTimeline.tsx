@@ -191,12 +191,12 @@ export default function DatesTimeline() {
     {
       id: "counselling",
       step: "08",
-      title: "Counselling Begins & Closes",
-      schedule: "27th January 2027 – 3rd February 2027",
+      title: "Career Counselling Session",
+      schedule: "1st February 2027",
       status: "Confirmed",
       statusType: "confirmed",
       description:
-        "Comprehensive career guidance, NEET/IIT-JEE coaching seat allocations, and higher education mentorship sessions begin on 27th January 2027 and close on 3rd February 2027.",
+        "Comprehensive career guidance, NEET/IIT-JEE coaching seat allocations, and higher education mentorship sessions on 1st February 2027.",
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -207,7 +207,7 @@ export default function DatesTimeline() {
           />
         </svg>
       ),
-      highlightNote: "Begins: 27 Jan 2027 · Closes: 3 Feb 2027.",
+      highlightNote: "Counselling Date: 1 Feb 2027.",
       actionLabel: "Helpline & Contact",
       actionHref: "/Contact",
       isExternal: false,

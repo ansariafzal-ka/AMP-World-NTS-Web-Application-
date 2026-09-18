@@ -99,7 +99,7 @@ export default function DatesHero() {
                 26 Jan 2027
               </span>
               <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                Results announced · Counselling 27 Jan – 3 Feb
+                Results announced · Counselling on 1 Feb
               </p>
             </div>
             <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
