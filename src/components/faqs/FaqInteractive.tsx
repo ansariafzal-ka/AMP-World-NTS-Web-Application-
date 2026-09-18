@@ -13,7 +13,7 @@ export default function FaqInteractive() {
       {
         value: "all",
         label: "All Categories",
-        description: "Browse all 32 questions across all categories",
+        description: "Browse all 25 questions across all categories",
       },
       ...FAQ_CATEGORIES.map((cat) => ({
         value: cat.id,

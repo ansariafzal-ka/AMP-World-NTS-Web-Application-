@@ -8,7 +8,7 @@ import Button from "@/components/common/Button";
 export const metadata = {
   title: "FAQs",
   description:
-    "Find answers to all 32 frequently asked questions regarding AMP National Talent Search (NTS) 2026: eligibility, offline exam format, syllabus, ₹10 Cr+ scholarships, cash prizes, and registration.",
+    "Find answers to all 25 frequently asked questions regarding AMP National Talent Search (NTS) 2026: eligibility, offline exam format, syllabus, ₹10 Cr+ scholarships, cash prizes, and registration.",
 };
 
 export default function FaqsPage() {
@@ -206,7 +206,7 @@ export default function FaqsPage() {
                   Still have a question?
                 </h3>
                 <p className="text-sm sm:text-base text-zinc-200 max-w-lg leading-relaxed">
-                  Join our online guidance sessions (Monday–Friday, 5:00 PM – 6:00 PM IST) or reach out directly to the NTS Student Helpline (8657506907 / 8657506909).
+                  Join our daily live guidance sessions (Monday–Friday, 5:00 PM – 7:00 PM IST) or reach out directly to the NTS Student Helpline (8657506907 / 8657506909 / 8657003085).
                 </p>
               </div>
 
