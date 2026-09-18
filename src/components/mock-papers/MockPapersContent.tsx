@@ -553,16 +553,16 @@ export default function MockPapersContent() {
                   Science, Commerce & Arts intermediate papers covering 2020 through 2025.
                 </p>
 
-                <div className="mt-4 space-y-1.5 text-xs text-zinc-700 font-medium">
-                  <div className="p-2 rounded-lg bg-white border border-zinc-200">
-                    <span>2020 (Set A & B)</span>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white border border-zinc-200">
-                    <span>2021 & 2022 Annuals</span>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white border border-zinc-200">
-                    <span>2023 (Dec 2 & 25)</span>
-                  </div>
+                <div className="mt-3.5 flex flex-wrap gap-1.5">
+                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
+                    2020 (Set A & B)
+                  </span>
+                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
+                    2021 & 2022 Annuals
+                  </span>
+                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
+                    2023 (Dec 2 & 25)
+                  </span>
                 </div>
               </div>
 
@@ -598,16 +598,16 @@ export default function MockPapersContent() {
                   General Degree & Technical student question papers focusing on aptitude and career exams.
                 </p>
 
-                <div className="mt-4 space-y-1.5 text-xs text-zinc-700 font-medium">
-                  <div className="p-2 rounded-lg bg-white border border-zinc-200">
-                    <span>2020 (Set A & B)</span>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white border border-zinc-200">
-                    <span>2021 & 2022 Actuals</span>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white border border-zinc-200">
-                    <span>2023 (Nov 25 & Dec 2)</span>
-                  </div>
+                <div className="mt-3.5 flex flex-wrap gap-1.5">
+                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
+                    2020 (Set A & B)
+                  </span>
+                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
+                    2021 & 2022 Actuals
+                  </span>
+                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
+                    2023 (Nov 25 & Dec 2)
+                  </span>
                 </div>
               </div>
 
