@@ -502,7 +502,7 @@ export default function MockPapersContent() {
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Category Card 1: Schools */}
             <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
-              <div className="flex-1 flex flex-col">
+              <div>
                 <div className="flex items-center justify-between">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#610D17]/10 text-[#610D17] transition-transform group-hover:scale-105">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
@@ -516,9 +516,39 @@ export default function MockPapersContent() {
                 <h3 className="mt-3 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
                   School Category Papers
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-relaxed flex-1">
+                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
                   Question papers for 8th, 9th, and 10th in 5 languages (English, Urdu, Hindi, Gujarati, Bengali).
                 </p>
+
+                <div className="mt-4 space-y-1.5 text-xs text-zinc-600">
+                  <a
+                    href="https://drive.google.com/drive/folders/14BYedE007saHdPHDbBcT9f90LDH5DfUk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-2 rounded-lg bg-white border border-zinc-200 hover:border-zinc-400 text-zinc-800 transition-colors"
+                  >
+                    <span>Class 8th Papers</span>
+                    <span className="text-[#610D17] font-bold">↗</span>
+                  </a>
+                  <a
+                    href="https://drive.google.com/drive/folders/1jZ1Rcmerw0DB7DpXaC05kcJcfXcLw6SU"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-2 rounded-lg bg-white border border-zinc-200 hover:border-zinc-400 text-zinc-800 transition-colors"
+                  >
+                    <span>Class 9th Papers</span>
+                    <span className="text-[#610D17] font-bold">↗</span>
+                  </a>
+                  <a
+                    href="https://drive.google.com/drive/folders/1m6pYNt8ebwtztgJkaluLGd0lUITY_odG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-2 rounded-lg bg-white border border-zinc-200 hover:border-zinc-400 text-zinc-800 transition-colors"
+                  >
+                    <span>Class 10th Papers</span>
+                    <span className="text-[#610D17] font-bold">↗</span>
+                  </a>
+                </div>
               </div>
 
               <div className="mt-5 pt-3 border-t border-zinc-200">
@@ -526,7 +556,7 @@ export default function MockPapersContent() {
                   href="https://drive.google.com/drive/folders/1uh9ZFUVT_WviWdCy3Wo0aZW_dba9VCsZ"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2.5 text-xs sm:text-sm font-bold hover:bg-[#4a0a12] transition-colors shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
                 >
                   Access School Papers →
                 </a>
@@ -535,7 +565,7 @@ export default function MockPapersContent() {
 
             {/* Category Card 2: Junior College */}
             <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
-              <div className="flex-1 flex flex-col">
+              <div>
                 <div className="flex items-center justify-between">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition-transform group-hover:scale-105">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
@@ -549,20 +579,23 @@ export default function MockPapersContent() {
                 <h3 className="mt-3 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
                   Junior College Papers
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
                   Science, Commerce & Arts intermediate papers covering 2020 through 2025.
                 </p>
 
-                <div className="mt-3.5 flex flex-wrap gap-1.5">
-                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
-                    2020 (Set A & B)
-                  </span>
-                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
-                    2021 & 2022 Annuals
-                  </span>
-                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
-                    2023 (Dec 2 & 25)
-                  </span>
+                <div className="mt-4 space-y-1.5 text-xs text-zinc-600">
+                  <div className="p-2 rounded-lg bg-white border border-zinc-200 flex items-center justify-between">
+                    <span>2020 (Set A & B)</span>
+                    <span className="text-emerald-600 font-semibold">Included</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white border border-zinc-200 flex items-center justify-between">
+                    <span>2021 & 2022 Annuals</span>
+                    <span className="text-emerald-600 font-semibold">Included</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white border border-zinc-200 flex items-center justify-between">
+                    <span>2023 (Dec 2 & 25)</span>
+                    <span className="text-emerald-600 font-semibold">Included</span>
+                  </div>
                 </div>
               </div>
 
@@ -571,7 +604,7 @@ export default function MockPapersContent() {
                   href="https://drive.google.com/drive/folders/1Y7FoYmq1uoi204gIbIo2kHjxkaIELUSb"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2.5 text-xs sm:text-sm font-bold hover:bg-[#4a0a12] transition-colors shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
                 >
                   Access Junior College Papers →
                 </a>
@@ -580,7 +613,7 @@ export default function MockPapersContent() {
 
             {/* Category Card 3: Senior College */}
             <div className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5 flex flex-col justify-between hover:border-[#610D17]/40 hover:shadow-md transition-all group">
-              <div className="flex-1 flex flex-col">
+              <div>
                 <div className="flex items-center justify-between">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-50 text-purple-700 transition-transform group-hover:scale-105">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
@@ -594,20 +627,23 @@ export default function MockPapersContent() {
                 <h3 className="mt-3 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
                   Senior College Papers
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
                   General Degree & Technical student question papers focusing on aptitude and career exams.
                 </p>
 
-                <div className="mt-3.5 flex flex-wrap gap-1.5">
-                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
-                    2020 (Set A & B)
-                  </span>
-                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
-                    2021 & 2022 Actuals
-                  </span>
-                  <span className="inline-flex items-center rounded-lg bg-white border border-zinc-200/90 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 shadow-2xs">
-                    2023 (Nov 25 & Dec 2)
-                  </span>
+                <div className="mt-4 space-y-1.5 text-xs text-zinc-600">
+                  <div className="p-2 rounded-lg bg-white border border-zinc-200 flex items-center justify-between">
+                    <span>2020 (Set A & B)</span>
+                    <span className="text-emerald-600 font-semibold">Included</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white border border-zinc-200 flex items-center justify-between">
+                    <span>2021 & 2022 Actuals</span>
+                    <span className="text-emerald-600 font-semibold">Included</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white border border-zinc-200 flex items-center justify-between">
+                    <span>2023 (Nov 25 & Dec 2)</span>
+                    <span className="text-emerald-600 font-semibold">Included</span>
+                  </div>
                 </div>
               </div>
 
@@ -616,7 +652,7 @@ export default function MockPapersContent() {
                   href="https://drive.google.com/drive/folders/1P0w5m9OGgBIqB9lRfrQKCPjzcW9BJM0T"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2.5 text-xs sm:text-sm font-bold hover:bg-[#4a0a12] transition-colors shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
                 >
                   Access Senior College Papers →
                 </a>
@@ -625,7 +661,7 @@ export default function MockPapersContent() {
 
             {/* Category Card 4: NTS 2025 Latest Edition */}
             <div className="rounded-2xl border border-emerald-300 bg-emerald-50/50 p-5 flex flex-col justify-between hover:border-emerald-500 hover:shadow-md transition-all group">
-              <div className="flex-1 flex flex-col">
+              <div>
                 <div className="flex items-center justify-between">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-800 transition-transform group-hover:scale-105">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
@@ -639,9 +675,30 @@ export default function MockPapersContent() {
                 <h3 className="mt-3 text-lg font-bold text-zinc-900 group-hover:text-emerald-900 transition-colors">
                   NTS 2025 Latest Edition
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-relaxed flex-1">
+                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
                   The latest examination papers with official master solutions and verified scoring keys.
                 </p>
+
+                <div className="mt-4 space-y-1.5 text-xs text-zinc-700">
+                  <a
+                    href="https://drive.google.com/file/d/1XqQflG4hy0loE_2UkEV6jJ-x1t54IRw6/view?usp=drive_web"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-2 rounded-lg bg-white border border-emerald-200 hover:border-emerald-400 font-semibold text-emerald-800 transition-colors"
+                  >
+                    <span>2025 Master Answer Key</span>
+                    <span>PDF ↗</span>
+                  </a>
+                  <a
+                    href="https://drive.google.com/drive/folders/1qRF44TNFmtmJ1yDGDJBDOY8GMHbU88ik"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-2 rounded-lg bg-white border border-emerald-200 hover:border-emerald-400 text-zinc-800 transition-colors"
+                  >
+                    <span>2025 Question Papers</span>
+                    <span className="text-emerald-700 font-bold">↗</span>
+                  </a>
+                </div>
               </div>
 
               <div className="mt-5 pt-3 border-t border-emerald-200">
@@ -649,7 +706,7 @@ export default function MockPapersContent() {
                   href="https://drive.google.com/drive/folders/1qRF44TNFmtmJ1yDGDJBDOY8GMHbU88ik"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-emerald-700 text-white py-2.5 text-xs sm:text-sm font-bold hover:bg-emerald-800 transition-colors shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-emerald-700 text-white py-2 text-xs font-bold hover:bg-emerald-800 transition-colors"
                 >
                   Access 2025 Collection →
                 </a>
