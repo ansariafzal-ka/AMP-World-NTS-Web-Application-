@@ -74,19 +74,19 @@ export default function DatesHero() {
             </div>
           </div>
 
-          {/* Card 3: Translucent Maroon Card */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
+          {/* Card 3: Featured White Card */}
+          <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center shadow-md">
             <div>
-              <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
+              <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-zinc-900 leading-tight block">
                 5 Dec 2026
               </span>
-              <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
+              <p className="mt-2 text-xs sm:text-sm text-zinc-600 leading-snug font-medium max-w-[220px] mx-auto">
                 Nationwide offline pen & paper OMR examination day
               </p>
             </div>
-            <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
-              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
+            <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-zinc-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
+              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
                 EXAM DATE
               </span>
             </div>
