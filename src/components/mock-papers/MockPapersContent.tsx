@@ -664,7 +664,7 @@ export default function MockPapersContent() {
                   </span>
                 </div>
                 <h3 className="mt-3.5 text-lg font-bold text-zinc-900 group-hover:text-[#610D17] transition-colors">
-                  College Papers
+                  Senior College Papers
                 </h3>
                 <p className="mt-1.5 text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   General Degree & Technical student question papers focusing on aptitude and career exams.
@@ -678,7 +678,7 @@ export default function MockPapersContent() {
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#610D17] text-white py-2.5 text-xs font-bold hover:bg-[#4a0a12] transition-colors"
                 >
-                  Access College Papers →
+                  Access Senior College Papers →
                 </a>
               </div>
             </div>
