@@ -1,6 +1,12 @@
 import React from "react";
 import Link from "next/link";
 
+export interface TimelineAction {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+}
+
 export interface TimelineEvent {
   id: string;
   step: string;
@@ -11,6 +17,7 @@ export interface TimelineEvent {
   description: string;
   icon: React.ReactNode;
   highlightNote: string;
+  actions?: TimelineAction[];
   actionLabel?: string | null;
   actionHref?: string | null;
   isExternal?: boolean;
@@ -63,8 +70,20 @@ export default function DatesTimeline() {
         </svg>
       ),
       highlightNote: "Register via the official AMP World Mobile App.",
-      actionLabel: "Download AMP World App",
-      actionHref: "/AMP_World_App",
+      actions: [
+        {
+          label: "Download AMP World App",
+          href: "/AMP_World_App",
+          isExternal: false,
+        },
+        {
+          label: "Student Registration",
+          href: "/student-registration",
+          isExternal: false,
+        },
+      ],
+      actionLabel: null,
+      actionHref: null,
       isExternal: false,
     },
     {
@@ -87,8 +106,8 @@ export default function DatesTimeline() {
         </svg>
       ),
       highlightNote: "Coordinated directly with authorized Institutional Exam Centres.",
-      actionLabel: "Exam Centre Portal",
-      actionHref: "/Become_An_Exam_Center",
+      actionLabel: null,
+      actionHref: null,
       isExternal: false,
     },
     {
@@ -119,7 +138,7 @@ export default function DatesTimeline() {
       id: "admit-card",
       step: "05",
       title: "Admit Card Release",
-      schedule: "Late November 2026",
+      schedule: "30 November 2026",
       status: "Confirmed",
       statusType: "confirmed",
       description:
@@ -135,8 +154,8 @@ export default function DatesTimeline() {
         </svg>
       ),
       highlightNote: "Available on the AMP World Mobile App.",
-      actionLabel: "Get Hall Ticket Info",
-      actionHref: "/AMP_World_App",
+      actionLabel: null,
+      actionHref: null,
       isExternal: false,
     },
     {
@@ -333,7 +352,57 @@ export default function DatesTimeline() {
                     <span>{event.highlightNote}</span>
                   </div>
 
-                  {event.actionLabel && event.actionHref && (
+                  {event.actions && event.actions.length > 0 ? (
+                    <div className="flex flex-wrap items-center gap-2">
+                      {event.actions.map((act) =>
+                        act.isExternal ? (
+                          <a
+                            key={act.label}
+                            href={act.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#610D17] hover:text-[#4B0A12] bg-[#FBF2F3] hover:bg-[#F3E2E5] px-3 py-1.5 rounded-lg transition-colors"
+                          >
+                            <span>{act.label}</span>
+                            <svg
+                              className="w-3.5 h-3.5"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          </a>
+                        ) : (
+                          <Link
+                            key={act.label}
+                            href={act.href}
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#610D17] hover:text-[#4B0A12] bg-[#FBF2F3] hover:bg-[#F3E2E5] px-3 py-1.5 rounded-lg transition-colors"
+                          >
+                            <span>{act.label}</span>
+                            <svg
+                              className="w-3.5 h-3.5"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  ) : event.actionLabel && event.actionHref ? (
                     <div>
                       {event.isExternal ? (
                         <a
@@ -379,7 +448,7 @@ export default function DatesTimeline() {
                         </Link>
                       )}
                     </div>
-                  )}
+                  ) : null}
                 </div>
               </div>
             </div>

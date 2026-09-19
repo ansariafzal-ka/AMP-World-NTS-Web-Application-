@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Button from "@/components/common/Button";
 
 interface PlatformLink {
@@ -63,79 +62,84 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const pathname = usePathname();
-  const isAppPage = pathname === "/AMP_World_App";
-
   return (
     <>
-      {/* Subtle Pre-Footer Callout Strip Redirecting to AMP_World_App (Hidden on /AMP_World_App) */}
-      {!isAppPage && (
-        <aside aria-label="AMP World App Download" className="border-t border-zinc-200 bg-zinc-50 py-10 sm:py-14">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="relative flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8 rounded-3xl border border-zinc-200/90 bg-white p-6 sm:p-8 lg:p-10 shadow-sm">
-              <div className="flex items-start sm:items-center gap-5 sm:gap-6 min-w-0">
-                {/* Large App Phone Icon Emblem */}
-                <div className="flex h-16 w-16 sm:h-20 sm:w-20 shrink-0 items-center justify-center rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#7D111E] via-[#610D17] to-[#420B13] text-white shadow-lg shadow-[#610D17]/25">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                  </svg>
-                </div>
-
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-zinc-900 tracking-tight">
-                      NTS 2026 Student Registration
-                    </h3>
-                    <span className="inline-flex items-center rounded-full bg-rose-50 border border-rose-200/80 px-3 py-0.5 text-xs font-bold text-[#610D17] uppercase tracking-wider">
-                      Official Mobile App
-                    </span>
-                  </div>
-
-                  <p className="text-sm sm:text-base lg:text-lg text-zinc-600 font-normal mt-1.5 sm:mt-2 leading-relaxed">
-                    Register &amp; choose from 1,500+ centres across 1,200+ locations on the AMP World App or website
-                  </p>
-
-                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm text-zinc-500 font-medium">
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
-                      Instant Registration
-                    </span>
-                    <span className="hidden sm:inline text-zinc-300">•</span>
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
-                      1,500+ Centres across 1,200+ Locations
-                    </span>
-                    <span className="hidden sm:inline text-zinc-300">•</span>
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
-                      Direct Admit Card Download
-                    </span>
-                  </div>
-                </div>
+      {/* Pre-Footer Callout Strip with Download AMP World App & Student Registration */}
+      <aside aria-label="AMP World App Download and Student Registration" className="border-t border-zinc-200 bg-zinc-50 py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative flex flex-col xl:flex-row xl:items-center justify-between gap-6 lg:gap-8 rounded-3xl border border-zinc-200/90 bg-white p-6 sm:p-8 lg:p-10 shadow-sm">
+            <div className="flex items-start sm:items-center gap-5 sm:gap-6 min-w-0">
+              {/* Large App Phone Icon Emblem */}
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 shrink-0 items-center justify-center rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#7D111E] via-[#610D17] to-[#420B13] text-white shadow-lg shadow-[#610D17]/25">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                </svg>
               </div>
 
-              {/* Prominent Action Button */}
-              <div className="flex items-center justify-start lg:justify-end shrink-0 pt-2 lg:pt-0">
-                <Link
-                  href="/AMP_World_App"
-                  className="group/btn inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#610D17] px-6 sm:px-8 py-4 text-sm sm:text-base font-extrabold text-white shadow-md shadow-[#610D17]/20 transition-all duration-200 hover:bg-[#520A13] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 w-full sm:w-auto text-center"
-                >
-                  <span>Download App &amp; Details</span>
-                  <svg className="w-5 h-5 transition-transform duration-200 group-hover/btn:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-zinc-900 tracking-tight">
+                    NTS 2026 Student Registration
+                  </h3>
+                  <span className="inline-flex items-center rounded-full bg-rose-50 border border-rose-200/80 px-3 py-0.5 text-xs font-bold text-[#610D17] uppercase tracking-wider">
+                    Official Mobile App
+                  </span>
+                </div>
+
+                <p className="text-sm sm:text-base lg:text-lg text-zinc-600 font-normal mt-1.5 sm:mt-2 leading-relaxed">
+                  Register &amp; choose from 1,500+ centres across 1,200+ locations on the AMP World App or website
+                </p>
+
+                <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm text-zinc-500 font-medium">
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Instant Registration
+                  </span>
+                  <span className="hidden sm:inline text-zinc-300">•</span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    1,500+ Centres across 1,200+ Locations
+                  </span>
+                  <span className="hidden sm:inline text-zinc-300">•</span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Direct Admit Card Download
+                  </span>
+                </div>
               </div>
             </div>
+
+            {/* Action Buttons: Download App & Student Registration side-by-side */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start xl:justify-end gap-3 shrink-0 pt-2 xl:pt-0">
+              <Link
+                href="/AMP_World_App"
+                className="group/btn inline-flex items-center justify-center gap-2 rounded-2xl bg-[#610D17] px-5 sm:px-6 py-3.5 text-xs sm:text-sm md:text-base font-extrabold text-white shadow-md shadow-[#610D17]/20 transition-all duration-200 hover:bg-[#520A13] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 text-center whitespace-nowrap"
+              >
+                <span>Download AMP World App</span>
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+
+              <Link
+                href="/student-registration"
+                className="group/btn inline-flex items-center justify-center gap-2 rounded-2xl bg-[#610D17] px-5 sm:px-6 py-3.5 text-xs sm:text-sm md:text-base font-extrabold text-white shadow-md shadow-[#610D17]/20 transition-all duration-200 hover:bg-[#520A13] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 text-center whitespace-nowrap"
+              >
+                <span>Student Registration</span>
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
-        </aside>
-      )}
+        </div>
+      </aside>
 
       <footer className="relative w-full overflow-hidden bg-gradient-to-br from-[#610D17] via-[#520A13] to-[#3B070D] text-white">
         {/* Decorative ambient background glows */}

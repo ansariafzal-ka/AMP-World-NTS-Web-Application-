@@ -692,8 +692,8 @@ export interface ImportantLinkItem {
 export const IMPORTANT_LINKS: ImportantLinkItem[] = [
   {
     title: "Official NTS Page",
-    url: "https://www.ampindia.org/National_Talent_Search",
-    linkText: "www.ampindia.org/National_Talent_Search",
+    url: "https://www.ampindia.org/national_talent_search",
+    linkText: "www.ampindia.org/national_talent_search",
   },
   {
     title: "Download AMP World App",
@@ -701,9 +701,9 @@ export const IMPORTANT_LINKS: ImportantLinkItem[] = [
     linkText: "www.tinyurl.com/AMPWorldApp",
   },
   {
-    title: "Institution Registration",
-    url: "http://www.tinyurl.com/AMP-Institute-Connect",
-    linkText: "www.tinyurl.com/AMP-Institute-Connect",
+    title: "Participating Institution Registration",
+    url: "/institution-registration",
+    linkText: "/institution-registration",
   },
   {
     title: "Volunteer Registration",

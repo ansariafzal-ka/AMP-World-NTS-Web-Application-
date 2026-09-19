@@ -469,9 +469,7 @@ export default function BecomeAnExamCenterPage() {
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
                   <Button
-                    href="https://www.tinyurl.com/NTSExamCenter"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/exam-centre-registration"
                     variant="secondary"
                     size="lg"
                     className="whitespace-nowrap font-bold"
@@ -480,7 +478,7 @@ export default function BecomeAnExamCenterPage() {
                   </Button>
 
                   <Button
-                    href="https://www.tinyurl.com/NTSExamCenter"
+                    href="https://drive.google.com/drive/folders/181G2tsjfI4HCQXkcGi-J9uZYTAunB0iJ"
                     target="_blank"
                     rel="noopener noreferrer"
                     variant="frosted"

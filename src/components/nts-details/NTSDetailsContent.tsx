@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import Button from "@/components/common/Button";
 
 export default function NTSDetailsContent() {
@@ -586,7 +587,23 @@ export default function NTSDetailsContent() {
                   Hall Tickets Release: Tuesday, 1st December 2026
                 </h2>
                 <p className="mt-1 text-xs sm:text-sm text-zinc-600 max-w-2xl">
-                  Available for all registered candidates under the <em>“My Registration”</em> tab on the <strong>AMP World Mobile App</strong> and directly downloadable from <strong>www.ampworld.in</strong>.
+                  Available for all registered candidates under the <em>“My Registration”</em> tab on the{" "}
+                  <Link
+                    href="/AMP_World_App"
+                    className="font-bold text-[#610D17] underline decoration-[#610D17]/40 underline-offset-2 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
+                  >
+                    AMP World Mobile App
+                  </Link>{" "}
+                  and directly downloadable from{" "}
+                  <a
+                    href="https://www.ampworld.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-[#610D17] underline decoration-[#610D17]/40 underline-offset-2 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
+                  >
+                    www.ampworld.in
+                  </a>
+                  .
                 </p>
               </div>
             </div>
@@ -795,7 +812,7 @@ export default function NTSDetailsContent() {
                     : "text-zinc-600 hover:text-zinc-900"
                 }`}
               >
-                School (Classes 8, 9, 10)
+                School (Classes 8th, 9th, 10th)
               </button>
               <button
                 onClick={() => setSyllabusTab("college")}
@@ -814,7 +831,7 @@ export default function NTSDetailsContent() {
           {syllabusTab === "school" && (
             <div className="mt-8 space-y-6">
               <div className="rounded-xl border border-[#610D17]/20 bg-[#fbf2f3] p-4 text-xs sm:text-sm text-zinc-800">
-                <strong>NCERT NTSE Model:</strong> Divided into <strong>MAT (Mental Ability Test)</strong> and <strong>SAT (Scholastic Aptitude Test)</strong>. Separate question papers are prepared for Class 8, 9, and 10. The MAT section is common for all classes; SAT varies by grade.
+                <strong>NCERT NTSE Model:</strong> Divided into <strong>MAT (Mental Ability Test)</strong> and <strong>SAT (Scholastic Aptitude Test)</strong>. Separate question papers are prepared for Class 8th, 9th, and 10th. The MAT section is common for all classes; SAT varies by grade.
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -830,7 +847,7 @@ export default function NTSDetailsContent() {
                     </span>
                   </div>
                   <p className="mt-3 text-xs text-zinc-500">
-                    Common test paper across Classes 8, 9, and 10 evaluating core cognitive power.
+                    Common test paper across Classes 8th, 9th, and 10th evaluating core cognitive power.
                   </p>
 
                   <div className="mt-5 space-y-4">
@@ -1103,7 +1120,7 @@ export default function NTSDetailsContent() {
                   <span className="text-xs font-bold text-[#610D17] uppercase">Mathematics</span>
                   <h3 className="mt-1 font-bold text-zinc-900 text-sm">NCERT & Foundation Guides</h3>
                   <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• NCERT Mathematics Textbooks (Class 8, 9 & 10)</li>
+                    <li>• NCERT Mathematics Textbooks (Class 8th, 9th & 10th)</li>
                     <li>• Mathematics for Class 9 & 10 – R.D. Sharma</li>
                     <li>• Comprehensive Mathematics for NTSE – Tata McGraw Hill</li>
                   </ul>
@@ -1112,7 +1129,7 @@ export default function NTSDetailsContent() {
                   <span className="text-xs font-bold text-[#610D17] uppercase">Science</span>
                   <h3 className="mt-1 font-bold text-zinc-900 text-sm">Physics, Chemistry, Biology</h3>
                   <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• NCERT Science Textbooks (Class 8, 9 & 10)</li>
+                    <li>• NCERT Science Textbooks (Class 8th, 9th & 10th)</li>
                     <li>• Foundation Science – Lakhmir Singh & Manjit Kaur</li>
                     <li>• Concepts of Physics (Vol I & II) – H.C. Verma</li>
                   </ul>
@@ -1121,7 +1138,7 @@ export default function NTSDetailsContent() {
                   <span className="text-xs font-bold text-[#610D17] uppercase">Social Science</span>
                   <h3 className="mt-1 font-bold text-zinc-900 text-sm">History, Civics, Geography</h3>
                   <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• NCERT Social Science Textbooks (Class 8, 9 & 10)</li>
+                    <li>• NCERT Social Science Textbooks (Class 8th, 9th & 10th)</li>
                     <li>• Guide to NTSE Social Science – Arihant</li>
                     <li>• Comprehensive Social Science for NTSE – McGraw Hill</li>
                   </ul>
@@ -1476,7 +1493,7 @@ export default function NTSDetailsContent() {
               </ul>
 
               <div className="mt-5 pt-4 border-t border-zinc-100">
-                <Button href="/Become_An_Exam_Center" variant="outline" size="sm" className="w-full justify-center">
+                <Button href="/institution-registration" variant="outline" size="sm" className="w-full justify-center">
                   Partner Details →
                 </Button>
               </div>
@@ -1507,9 +1524,7 @@ export default function NTSDetailsContent() {
 
               <div className="mt-5 pt-4 border-t border-zinc-100">
                 <Button
-                  href="https://www.tinyurl.com/NTSExamCenter"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/Become_An_Exam_Center"
                   variant="outline"
                   size="sm"
                   className="w-full justify-center"
@@ -1626,7 +1641,7 @@ export default function NTSDetailsContent() {
             <Button href="/student-registration" variant="primary" size="md">
               Register as Student
             </Button>
-            <Button href="/Become_An_Exam_Center" variant="outline" size="md">
+            <Button href="/institution-registration" variant="outline" size="md">
               Register Institution
             </Button>
             <Button href="/Contact" variant="outline" size="md">
