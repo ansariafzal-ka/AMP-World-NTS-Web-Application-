@@ -476,7 +476,7 @@ export default function ContactPage() {
                   </Link>
 
                   <a
-                    href="https://www.tinyurl.com/AllNTSDocument"
+                    href="https://drive.google.com/drive/folders/1qzirip8K-OzIRuexnOa7XXH2CAo_B0At"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between rounded-xl bg-white px-4 py-3 text-xs font-bold text-[#610D17] transition-all hover:bg-zinc-100"

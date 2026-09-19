@@ -572,7 +572,7 @@ export default function AboutNTSPage() {
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
                   <Button
-                    href="https://www.tinyurl.com/AllNTSDocument"
+                    href="https://drive.google.com/drive/folders/1qzirip8K-OzIRuexnOa7XXH2CAo_B0At"
                     target="_blank"
                     variant="secondary"
                     size="lg"
