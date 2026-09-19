@@ -891,6 +891,7 @@ export default function MockPapersContent() {
       {/* =========================================================
           4. EXAM PATTERN & PREPARATION TIPS
       ========================================================= */}
+      {/* 4A. School Structure */}
       <section className="py-12 sm:py-16 bg-white border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -927,6 +928,116 @@ export default function MockPapersContent() {
               <div className="mt-4 pt-3 border-t border-zinc-200 text-xs font-semibold text-zinc-700 flex items-center justify-between">
                 <span>Weightage: 50 Marks</span>
                 <span className="text-emerald-700">NCERT/State Syllabus</span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#610D17]/30 bg-[#fbf2f3]/40 p-5">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#610D17]">Marking Guidelines</span>
+              <h3 className="mt-1.5 text-lg font-bold text-zinc-900">Zero Negative Marking</h3>
+              <p className="mt-1 text-xs text-zinc-700 leading-relaxed">
+                Total 100 MCQs in 90 Minutes. +1 mark for each correct answer. 0 marks deducted for wrong answers. Attempt all 100 questions!
+              </p>
+              <div className="mt-4 pt-3 border-t border-zinc-200 text-xs font-semibold text-zinc-800 flex items-center justify-between">
+                <span>Exam Format: Pen & Paper</span>
+                <span className="text-[#610D17] font-bold">OMR Sheet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4B. Junior College Structure */}
+      <section className="py-12 sm:py-16 bg-zinc-50/60 border-t border-zinc-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#610D17]">
+              Junior College Structure
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
+              Junior College Pattern (Classes 11th & 12th)
+            </h2>
+            <p className="mt-1 text-sm text-zinc-600">
+              Benchmarked on CUET (UG) and national entrance aptitude examinations (100 MCQs in 90 Minutes).
+            </p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-2xl border border-zinc-200 bg-white p-5">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#610D17]">Sections 1 & 2</span>
+              <h3 className="mt-1.5 text-lg font-bold text-zinc-900">Quantitative & Data Interpretation</h3>
+              <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
+                40 Questions (20 Qs each) covering Arithmetic, Algebra, Ratio, Charts, Graphs, Seating Arrangements, and Logical Reasoning.
+              </p>
+              <div className="mt-4 pt-3 border-t border-zinc-200 text-xs font-semibold text-zinc-700 flex items-center justify-between">
+                <span>Weightage: 40 Marks</span>
+                <span className="text-emerald-700">Analytical Aptitude</span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-200 bg-white p-5">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#610D17]">Sections 3, 4 & 5</span>
+              <h3 className="mt-1.5 text-lg font-bold text-zinc-900">Language, Awareness & Deeniyat</h3>
+              <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
+                60 Questions (20 Qs each) evaluating Reading Comprehension, Vocabulary, National/International Current Affairs, and General Knowledge & Ethics.
+              </p>
+              <div className="mt-4 pt-3 border-t border-zinc-200 text-xs font-semibold text-zinc-700 flex items-center justify-between">
+                <span>Weightage: 60 Marks</span>
+                <span className="text-emerald-700">CUET Foundation</span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#610D17]/30 bg-[#fbf2f3]/40 p-5">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#610D17]">Marking Guidelines</span>
+              <h3 className="mt-1.5 text-lg font-bold text-zinc-900">Zero Negative Marking</h3>
+              <p className="mt-1 text-xs text-zinc-700 leading-relaxed">
+                Total 100 MCQs in 90 Minutes. +1 mark for each correct answer. 0 marks deducted for wrong answers. Attempt all 100 questions!
+              </p>
+              <div className="mt-4 pt-3 border-t border-zinc-200 text-xs font-semibold text-zinc-800 flex items-center justify-between">
+                <span>Exam Format: Pen & Paper</span>
+                <span className="text-[#610D17] font-bold">OMR Sheet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4C. Senior College Structure */}
+      <section className="py-12 sm:py-16 bg-white border-t border-zinc-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#610D17]">
+              Senior College Structure
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
+              Senior College Pattern (Undergraduate / Degree)
+            </h2>
+            <p className="mt-1 text-sm text-zinc-600">
+              Benchmarked on UPSC CSAT, CAT, CUET-PG, GRE, and IT Campus Placement Aptitude (TCS, Infosys, Wipro).
+            </p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#610D17]">Sections 1 & 2</span>
+              <h3 className="mt-1.5 text-lg font-bold text-zinc-900">Higher Quantitative & Critical Reasoning</h3>
+              <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
+                40 Questions (20 Qs each) covering Higher Mathematics, Probability, Permutations, Data Sufficiency, Caselets, and Analytical Deductions.
+              </p>
+              <div className="mt-4 pt-3 border-t border-zinc-200 text-xs font-semibold text-zinc-700 flex items-center justify-between">
+                <span>Weightage: 40 Marks</span>
+                <span className="text-emerald-700">CSAT & Placement Level</span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#610D17]">Sections 3, 4 & 5</span>
+              <h3 className="mt-1.5 text-lg font-bold text-zinc-900">Verbal Command, Affairs & Heritage</h3>
+              <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
+                60 Questions (20 Qs each) testing Inference-based Reading Comprehension, Error Spotting, National/Global Affairs, Economy, and Islamic Heritage & Values.
+              </p>
+              <div className="mt-4 pt-3 border-t border-zinc-200 text-xs font-semibold text-zinc-700 flex items-center justify-between">
+                <span>Weightage: 60 Marks</span>
+                <span className="text-emerald-700">Competitive Benchmark</span>
               </div>
             </div>
 
