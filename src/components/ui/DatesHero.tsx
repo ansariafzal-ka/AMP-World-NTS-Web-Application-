@@ -31,7 +31,7 @@ export default function DatesHero() {
           <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-zinc-200 leading-relaxed font-normal max-w-3xl">
             Stay ahead and mark your calendars! The timeline for the AMP National Talent Search is
             designed to give you ample time to prepare, register, and excel. Registration opens on{" "}
-            <strong>20th September 2026</strong>, closes on <strong>22nd November 2026</strong>, and
+            <strong>20th September 2026</strong>, closes on <strong>20th November 2026</strong>, and
             the nationwide exam takes place on <strong>5th December 2026</strong>.
           </p>
         </div>
@@ -60,10 +60,10 @@ export default function DatesHero() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
             <div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-tight block">
-                20 Sep – 22 Nov
+                20 Sep – 20 Nov
               </span>
               <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                Launch 20 Sep · Registration closes 22 Nov 2026
+                Launch 20 Sep · Registration closes 20 Nov 2026
               </p>
             </div>
             <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">

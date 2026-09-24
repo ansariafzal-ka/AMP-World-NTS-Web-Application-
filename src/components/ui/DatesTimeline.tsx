@@ -114,7 +114,7 @@ export default function DatesTimeline() {
       id: "registration-closes",
       step: "04",
       title: "Registration Closes",
-      schedule: "22nd November 2026",
+      schedule: "20th November 2026",
       status: "Confirmed",
       statusType: "confirmed",
       description:

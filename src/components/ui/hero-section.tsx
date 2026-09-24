@@ -108,7 +108,7 @@ export default function HeroSection() {
                       Registration Closes
                     </span>
                     <span className="text-sm sm:text-base font-extrabold text-white tracking-tight">
-                      22 Nov 2026
+                      20 Nov 2026
                     </span>
                   </div>
                 </div>

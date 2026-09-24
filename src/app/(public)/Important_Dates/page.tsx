@@ -8,7 +8,7 @@ import DatesCTA from "@/components/ui/DatesCTA";
 export const metadata = {
   title: "Important Dates - AMP NTS 2026 Schedule",
   description:
-    "Official schedule and important dates for AMP National Talent Search 2026: Launch on 20 Sep 2026, Registration Closes on 22 Nov 2026, Exam on 5 Dec 2026, Results on 26 Jan 2027, and Counselling on 1 Feb 2027.",
+    "Official schedule and important dates for AMP National Talent Search 2026: Launch on 20 Sep 2026, Registration Closes on 20 Nov 2026, Exam on 5 Dec 2026, Results on 26 Jan 2027, and Counselling on 1 Feb 2027.",
 };
 
 export default function ImportantDatesPage() {

@@ -343,7 +343,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
               Yes, simply go to <strong>My Registration Details Tab</strong> on AMP World mobile app, and click edit to make the relevant changes.
             </p>
             <p className="font-semibold text-[#610D17]">
-              The edit can only be done till the last date of Registration i.e., Sunday, 22nd November 2026.
+              The edit can only be done till the last date of Registration i.e., Friday, 20th November 2026.
             </p>
           </div>
         ),
