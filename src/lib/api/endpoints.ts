@@ -21,4 +21,10 @@ export const API_ENDPOINTS = {
     PAGE_BY_ID: (id: string) => `/api/web/admin/cms/pages/${id}`,
     PUBLIC_PAGE_BY_SLUG: (slug: string) => `/api/web/admin/cms/public/pages/${slug}`,
   },
+  EXAM_CENTER: {
+    DASHBOARD: '/api/web/exam-center/dashboard',
+    ATTENDANCE_SUMMARY: '/api/web/exam-center/attendance-summary',
+    ATTENDANCE_STUDENTS: '/api/web/exam-center/attendance/students',
+    ATTENDANCE_SAVE: '/api/web/exam-center/attendance/save',
+  },
 } as const;

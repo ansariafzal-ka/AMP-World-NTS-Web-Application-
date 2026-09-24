@@ -1,0 +1,15 @@
+export * from "./dashboardData";
+export { default as SectionCard } from "./SectionCard";
+export { default as DashboardHeader } from "./DashboardHeader";
+export { default as CentreDetailsSection } from "./CentreDetailsSection";
+export { default as ObserverDetailsSection } from "./ObserverDetailsSection";
+export { default as ExamGuidelinesSection } from "./ExamGuidelinesSection";
+export { default as StudentAllocationSection } from "./StudentAllocationSection";
+export { default as QuestionPapersSection } from "./QuestionPapersSection";
+export { default as OmrSheetSection } from "./OmrSheetSection";
+export { default as SeatingArrangementSection } from "./SeatingArrangementSection";
+export { default as AttendanceSheetSection } from "./AttendanceSheetSection";
+export { default as AttendanceSummarySection } from "./AttendanceSummarySection";
+export { default as AmpOfficeAddressSection } from "./AmpOfficeAddressSection";
+export { default as AttendanceSummaryModal } from "./AttendanceSummaryModal";
+export { default as WebAttendanceSheetModal } from "./WebAttendanceSheetModal";
