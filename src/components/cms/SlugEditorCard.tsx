@@ -34,7 +34,7 @@ export default function SlugEditorCard({ slug, onChange }: SlugEditorCardProps) 
     <div className="rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-2xs">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#fbf2f3] text-[#610D17]">
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#4A0E17]/10 text-[#4A0E17]">
             <Link2 className="h-4 w-4" />
           </div>
           <h2 className="text-base font-bold text-zinc-900">Page Slug & URL</h2>
@@ -63,7 +63,7 @@ export default function SlugEditorCard({ slug, onChange }: SlugEditorCardProps) 
         Customize the slug for direct public routing. Use letters, numbers, hyphens, and underscores.
       </p>
 
-      <div className="flex items-center rounded-xl border border-zinc-200 bg-zinc-50 px-3.5 py-2.5 focus-within:border-[#610D17] focus-within:bg-white focus-within:ring-1 focus-within:ring-[#610D17] transition-all">
+      <div className="flex items-center rounded-xl border border-zinc-200 bg-zinc-50 px-3.5 py-2.5 focus-within:border-[#4A0E17] focus-within:bg-white focus-within:ring-1 focus-within:ring-[#4A0E17] transition-all">
         <span className="select-none font-mono text-xs sm:text-sm font-semibold text-zinc-400">
           /
         </span>

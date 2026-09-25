@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { cookies } from 'next/headers';
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
@@ -20,6 +21,17 @@ export async function generateMetadata({
     };
   }
 
+  // If page is draft, hide metadata from unauthenticated public visitors
+  if (page.status === 'DRAFT') {
+    const cookieStore = await cookies();
+    const token = cookieStore.get('amp_auth_token')?.value;
+    if (!token) {
+      return {
+        title: 'Page Not Found — AMP NTS',
+      };
+    }
+  }
+
   return {
     title: page.metaTitle || `${page.title} — AMP NTS`,
     description: page.metaDescription || undefined,
@@ -39,6 +51,15 @@ export default async function DynamicCmsPage({
     return notFound();
   }
 
+  // If page is in DRAFT status, strictly restrict preview access to authenticated CMS users
+  if (page.status === 'DRAFT') {
+    const cookieStore = await cookies();
+    const token = cookieStore.get('amp_auth_token')?.value;
+    if (!token) {
+      return notFound();
+    }
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans antialiased">
       <Navbar />
@@ -54,7 +75,7 @@ export default async function DynamicCmsPage({
         <BlockRenderer blocks={page.blocks} />
       </main>
 
-      <Footer />
+      <Footer hidePreFooter />
     </div>
   );
 }

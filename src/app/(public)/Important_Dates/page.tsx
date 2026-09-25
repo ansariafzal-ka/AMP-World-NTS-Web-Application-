@@ -29,7 +29,6 @@ export default function ImportantDatesPage() {
         {/* 4. Bottom Preparation Call to Action */}
         <DatesCTA />
       </main>
-
       <Footer />
     </div>
   );

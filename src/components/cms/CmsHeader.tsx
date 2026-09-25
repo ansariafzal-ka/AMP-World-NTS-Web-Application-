@@ -31,7 +31,7 @@ export default function CmsHeader({
         {/* Left: Back, Editable Title, Slug */}
         <div className="flex items-start gap-3 min-w-0">
           <Link
-            href="/cms/pages"
+            href="/portal/cms/pages"
             className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-zinc-200 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 transition-colors"
             title="Back to All Pages"
           >
@@ -45,7 +45,7 @@ export default function CmsHeader({
                 value={title}
                 onChange={(e) => onTitleChange(e.target.value)}
                 placeholder="Page Title"
-                className="text-lg sm:text-2xl font-black text-zinc-900 tracking-tight bg-transparent hover:bg-zinc-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#610D17] rounded-md px-1.5 py-0.5 -ml-1.5 transition-colors w-full max-w-full sm:max-w-md truncate"
+                className="text-lg sm:text-2xl font-black text-zinc-900 tracking-tight bg-transparent hover:bg-zinc-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#4A0E17] rounded-md px-1.5 py-0.5 -ml-1.5 transition-colors w-full max-w-full sm:max-w-md truncate"
               />
             </div>
 
@@ -56,7 +56,7 @@ export default function CmsHeader({
         </div>
 
         {/* Right: Actions */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 shrink-0 flex-nowrap">
           <span
             className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-wider shrink-0 ${
               isPublished
@@ -101,7 +101,7 @@ export default function CmsHeader({
             type="button"
             onClick={() => onSave()}
             disabled={isSaving}
-            className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-[#610D17] hover:bg-[#4D0911] text-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold shadow-sm transition-all duration-150 disabled:opacity-70 active:scale-95 shrink-0"
+            className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-[#4A0E17] hover:bg-[#380910] text-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold shadow-sm transition-all duration-150 disabled:opacity-70 active:scale-95 shrink-0"
           >
             {isSaving ? (
               <>

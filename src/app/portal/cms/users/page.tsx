@@ -121,8 +121,8 @@ export default function CmsUsersPage() {
         </div>
         <button
           type="button"
-          onClick={() => router.push('/cms')}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#610D17] text-white px-5 py-2.5 text-sm font-bold shadow-xs hover:bg-[#4D0911] transition-colors cursor-pointer"
+          onClick={() => router.push('/portal/cms')}
+          className="inline-flex items-center gap-2 rounded-xl bg-[#4A0E17] text-white px-5 py-2.5 text-sm font-bold shadow-xs hover:bg-[#380910] transition-colors cursor-pointer"
         >
           Return to CMS Dashboard
         </button>
@@ -146,7 +146,7 @@ export default function CmsUsersPage() {
         <button
           type="button"
           onClick={handleOpenModal}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#610D17] hover:bg-[#4D0911] text-white px-4 py-2.5 text-sm font-bold shadow-sm transition-all duration-150 active:scale-95 self-start sm:self-auto cursor-pointer"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#4A0E17] hover:bg-[#380910] text-white px-4 py-2.5 text-sm font-bold shadow-sm transition-all duration-150 active:scale-95 self-start sm:self-auto cursor-pointer"
         >
           <Plus className="h-4 w-4" />
           Add New User
@@ -171,7 +171,7 @@ export default function CmsUsersPage() {
               {isLoading ? (
                 <tr>
                   <td colSpan={6} className="py-8 text-center text-zinc-400">
-                    <Loader2 className="h-5 w-5 animate-spin mx-auto text-[#610D17] mb-2" />
+                    <Loader2 className="h-5 w-5 animate-spin mx-auto text-[#4A0E17] mb-2" />
                     Loading CMS users...
                   </td>
                 </tr>
@@ -186,7 +186,7 @@ export default function CmsUsersPage() {
                   <tr key={user.id} className="hover:bg-zinc-50/80 transition-colors">
                     <td className="py-4 px-5">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#fbf2f3] text-sm font-black text-[#610D17]">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#4A0E17]/10 text-sm font-black text-[#4A0E17]">
                           {user.name.charAt(0)}
                         </div>
                         <span className="font-bold text-zinc-900">{user.name}</span>
@@ -199,7 +199,7 @@ export default function CmsUsersPage() {
 
                     <td className="py-4 px-5">
                       <span className="inline-flex items-center gap-1.5 rounded-md bg-zinc-100 px-2.5 py-1 text-xs font-bold text-zinc-800">
-                        <Shield className="h-3 w-3 text-[#610D17]" />
+                        <Shield className="h-3 w-3 text-[#4A0E17]" />
                         {user.role}
                       </span>
                     </td>
@@ -262,7 +262,7 @@ export default function CmsUsersPage() {
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
                   placeholder="e.g. Sarah Khan"
-                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#4A0E17] focus:outline-none"
                   autoFocus
                 />
               </div>
@@ -277,7 +277,7 @@ export default function CmsUsersPage() {
                   value={newEmail}
                   onChange={(e) => setNewEmail(e.target.value)}
                   placeholder="e.g. sarah@ampindia.org"
-                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#4A0E17] focus:outline-none"
                 />
               </div>
 
@@ -296,7 +296,7 @@ export default function CmsUsersPage() {
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     placeholder="Enter password (min. 6 characters)"
-                    className="w-full rounded-xl border border-zinc-200 pl-9 pr-10 py-2 text-sm text-zinc-900 focus:border-[#610D17] focus:outline-none"
+                    className="w-full rounded-xl border border-zinc-200 pl-9 pr-10 py-2 text-sm text-zinc-900 focus:border-[#4A0E17] focus:outline-none"
                   />
                   <button
                     type="button"
@@ -307,7 +307,7 @@ export default function CmsUsersPage() {
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
-                <p className="text-[11px] text-zinc-400 mt-1">Used by the user to authenticate at /cms/login</p>
+                <p className="text-[11px] text-zinc-400 mt-1">Used by the user to authenticate at /portal/cms/login</p>
               </div>
 
               <div>
@@ -317,7 +317,7 @@ export default function CmsUsersPage() {
                 <select
                   value={newRole}
                   onChange={(e) => setNewRole(e.target.value as 'Admin' | 'Editor')}
-                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#4A0E17] focus:outline-none"
                 >
                   <option value="Editor">Editor (Can edit and manage pages)</option>
                   <option value="Admin">Admin (Full administrative privileges)</option>
@@ -336,7 +336,7 @@ export default function CmsUsersPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-[#610D17] hover:bg-[#4D0911] text-white px-4 py-2 text-xs font-bold shadow-xs transition-colors cursor-pointer disabled:opacity-50"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-[#4A0E17] hover:bg-[#380910] text-white px-4 py-2 text-xs font-bold shadow-xs transition-colors cursor-pointer disabled:opacity-50"
                 >
                   {isSubmitting && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
                   {isSubmitting ? 'Saving...' : 'Save User'}

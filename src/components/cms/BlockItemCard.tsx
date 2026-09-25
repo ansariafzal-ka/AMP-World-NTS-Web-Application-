@@ -117,7 +117,7 @@ export default function BlockItemCard({
                 type="text"
                 value={c.tag || ''}
                 onChange={(e) => updateField('tag', e.target.value)}
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                 placeholder="e.g. Teachers' Appreciation Award"
               />
             </div>
@@ -127,7 +127,7 @@ export default function BlockItemCard({
                 type="text"
                 value={c.title || ''}
                 onChange={(e) => updateField('title', e.target.value)}
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#4A0E17] focus:outline-none"
                 placeholder="Enter headline"
               />
             </div>
@@ -137,7 +137,7 @@ export default function BlockItemCard({
                 value={c.subtitle || ''}
                 onChange={(e) => updateField('subtitle', e.target.value)}
                 rows={2}
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                 placeholder="Enter descriptive subtitle"
               />
             </div>
@@ -148,7 +148,7 @@ export default function BlockItemCard({
                   type="text"
                   value={c.buttonText || ''}
                   onChange={(e) => updateField('buttonText', e.target.value)}
-                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                   placeholder="e.g. Submit Nomination"
                 />
               </div>
@@ -158,7 +158,7 @@ export default function BlockItemCard({
                   type="text"
                   value={c.buttonLink || ''}
                   onChange={(e) => updateField('buttonLink', e.target.value)}
-                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                   placeholder="#section or /url"
                 />
               </div>
@@ -175,7 +175,7 @@ export default function BlockItemCard({
                 type="text"
                 value={c.heading || ''}
                 onChange={(e) => updateField('heading', e.target.value)}
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#4A0E17] focus:outline-none"
                 placeholder="Section heading"
               />
             </div>
@@ -185,7 +185,7 @@ export default function BlockItemCard({
                 value={c.body || ''}
                 onChange={(e) => updateField('body', e.target.value)}
                 rows={4}
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                 placeholder="Enter text paragraphs..."
               />
             </div>
@@ -194,7 +194,7 @@ export default function BlockItemCard({
               <select
                 value={c.alignment || 'left'}
                 onChange={(e) => updateField('alignment', e.target.value)}
-                className="rounded-lg border border-zinc-200 px-3 py-1.5 text-sm focus:border-[#610D17] focus:outline-none"
+                className="rounded-lg border border-zinc-200 px-3 py-1.5 text-sm focus:border-[#4A0E17] focus:outline-none"
               >
                 <option value="left">Left Aligned</option>
                 <option value="center">Centered</option>
@@ -215,18 +215,18 @@ export default function BlockItemCard({
                       type="text"
                       value={c.imageUrl || ''}
                       onChange={(e) => updateField('imageUrl', e.target.value)}
-                      className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-mono focus:border-[#610D17] focus:outline-none"
+                      className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-mono focus:border-[#4A0E17] focus:outline-none"
                       placeholder="/uploads/my-photo.jpg or https://..."
                     />
                     <label className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-lg border border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700 text-xs sm:text-sm font-bold cursor-pointer transition-colors shrink-0 shadow-2xs">
                       {isUploading ? (
                         <>
-                          <Loader2 className="h-4 w-4 animate-spin text-[#610D17]" />
+                          <Loader2 className="h-4 w-4 animate-spin text-[#4A0E17]" />
                           <span>Uploading...</span>
                         </>
                       ) : (
                         <>
-                          <Upload className="h-4 w-4 text-[#610D17]" />
+                          <Upload className="h-4 w-4 text-[#4A0E17]" />
                           <span>Upload Image</span>
                         </>
                       )}
@@ -272,7 +272,7 @@ export default function BlockItemCard({
                   type="text"
                   value={c.alt || ''}
                   onChange={(e) => updateField('alt', e.target.value)}
-                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                   placeholder="Image description"
                 />
               </div>
@@ -282,7 +282,7 @@ export default function BlockItemCard({
                   type="text"
                   value={c.caption || ''}
                   onChange={(e) => updateField('caption', e.target.value)}
-                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                   placeholder="Visible caption below image"
                 />
               </div>
@@ -301,7 +301,7 @@ export default function BlockItemCard({
                   value={c.sectionTitle || ''}
                   onChange={(e) => updateField('sectionTitle', e.target.value)}
                   placeholder="e.g. Key Highlights"
-                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#4A0E17] focus:outline-none"
                 />
               </div>
               <div>
@@ -311,7 +311,7 @@ export default function BlockItemCard({
                   value={c.sectionSubtitle || ''}
                   onChange={(e) => updateField('sectionSubtitle', e.target.value)}
                   placeholder="e.g. Explore stages and requirements"
-                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                 />
               </div>
             </div>
@@ -335,7 +335,7 @@ export default function BlockItemCard({
                       },
                     ]);
                   }}
-                  className="text-xs font-bold text-[#610D17] hover:underline"
+                  className="text-xs font-bold text-[#4A0E17] hover:underline"
                 >
                   + Add Card
                 </button>
@@ -409,7 +409,7 @@ export default function BlockItemCard({
                 value={c.sectionTitle || ''}
                 onChange={(e) => updateField('sectionTitle', e.target.value)}
                 placeholder="e.g. Program Benefits"
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#4A0E17] focus:outline-none"
               />
             </div>
 
@@ -429,7 +429,7 @@ export default function BlockItemCard({
                       },
                     ]);
                   }}
-                  className="text-xs font-bold text-[#610D17] hover:underline"
+                  className="text-xs font-bold text-[#4A0E17] hover:underline"
                 >
                   + Add Feature
                 </button>
@@ -487,7 +487,7 @@ export default function BlockItemCard({
                 value={c.sectionTitle || ''}
                 onChange={(e) => updateField('sectionTitle', e.target.value)}
                 placeholder="e.g. Frequently Asked Questions"
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#4A0E17] focus:outline-none"
               />
             </div>
 
@@ -507,7 +507,7 @@ export default function BlockItemCard({
                       },
                     ]);
                   }}
-                  className="text-xs font-bold text-[#610D17] hover:underline"
+                  className="text-xs font-bold text-[#4A0E17] hover:underline"
                 >
                   + Add Question
                 </button>
@@ -565,7 +565,7 @@ export default function BlockItemCard({
                 value={c.title || ''}
                 onChange={(e) => updateField('title', e.target.value)}
                 placeholder="e.g. Join The Movement Today"
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-bold focus:border-[#4A0E17] focus:outline-none"
               />
             </div>
             <div>
@@ -575,7 +575,7 @@ export default function BlockItemCard({
                 onChange={(e) => updateField('description', e.target.value)}
                 rows={2}
                 placeholder="Short motivating description..."
-                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
               />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -586,7 +586,7 @@ export default function BlockItemCard({
                   value={c.primaryButtonText || ''}
                   onChange={(e) => updateField('primaryButtonText', e.target.value)}
                   placeholder="e.g. Get Started Now"
-                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                 />
               </div>
               <div>
@@ -596,7 +596,7 @@ export default function BlockItemCard({
                   value={c.primaryButtonLink || ''}
                   onChange={(e) => updateField('primaryButtonLink', e.target.value)}
                   placeholder="e.g. /register or #section"
-                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm focus:border-[#4A0E17] focus:outline-none"
                 />
               </div>
             </div>
@@ -623,7 +623,7 @@ export default function BlockItemCard({
           </div>
 
           <div className="min-w-0 flex-1">
-            <span className="block text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-[#610D17]">
+            <span className="block text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-[#4A0E17]">
               {block.type} BLOCK
             </span>
             <p className="truncate text-xs sm:text-base font-bold text-zinc-900">
@@ -692,7 +692,7 @@ export default function BlockItemCard({
           <button
             type="button"
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-100 text-zinc-600 hover:bg-[#610D17] hover:text-white transition-colors ml-1"
+            className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-100 text-zinc-600 hover:bg-[#4A0E17] hover:text-white transition-colors ml-1"
             title={isExpanded ? 'Collapse' : 'Edit Content'}
           >
             {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}

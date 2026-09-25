@@ -77,7 +77,7 @@ export default function AllPagesPage() {
         status: 'DRAFT',
         blocks: [],
       });
-      router.push(`/cms/builder/${created.id}`);
+      router.push(`/portal/cms/builder/${created.id}`);
     } catch (err: any) {
       setCreateError(err.message || 'Failed to create page');
     }
@@ -99,7 +99,7 @@ export default function AllPagesPage() {
         <button
           type="button"
           onClick={() => setIsCreateModalOpen(true)}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#610D17] hover:bg-[#4D0911] text-white px-4 py-2.5 text-sm font-bold shadow-sm transition-all duration-150 active:scale-95 self-start sm:self-auto"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#4A0E17] hover:bg-[#380910] text-white px-4 py-2.5 text-sm font-bold shadow-sm transition-all duration-150 active:scale-95 self-start sm:self-auto"
         >
           <Plus className="h-4 w-4" />
           Create New Page
@@ -117,7 +117,7 @@ export default function AllPagesPage() {
               onClick={() => setFilter(statusKey)}
               className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-colors ${
                 filter === statusKey
-                  ? 'bg-[#610D17] text-white'
+                  ? 'bg-[#4A0E17] text-white'
                   : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
               }`}
             >
@@ -134,7 +134,7 @@ export default function AllPagesPage() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search pages or slug..."
-            className="w-full rounded-xl border border-zinc-200 pl-9 pr-3.5 py-1.5 text-xs sm:text-sm text-zinc-800 placeholder:text-zinc-400 focus:border-[#610D17] focus:outline-none"
+            className="w-full rounded-xl border border-zinc-200 pl-9 pr-3.5 py-1.5 text-xs sm:text-sm text-zinc-800 placeholder:text-zinc-400 focus:border-[#4A0E17] focus:outline-none"
           />
         </div>
       </div>
@@ -166,13 +166,13 @@ export default function AllPagesPage() {
                   <tr key={page.id} className="hover:bg-zinc-50/80 transition-colors">
                     <td className="py-4 px-5">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#fbf2f3] text-[#610D17]">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#4A0E17]/10 text-[#4A0E17]">
                           <FileText className="h-4 w-4" />
                         </div>
                         <div>
                           <Link
-                            href={`/cms/builder/${page.id}`}
-                            className="font-bold text-zinc-900 hover:text-[#610D17] transition-colors"
+                            href={`/portal/cms/builder/${page.id}`}
+                            className="font-bold text-zinc-900 hover:text-[#4A0E17] transition-colors"
                           >
                             {page.title}
                           </Link>
@@ -224,8 +224,8 @@ export default function AllPagesPage() {
                         </Link>
 
                         <Link
-                          href={`/cms/builder/${page.id}`}
-                          className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#610D17] text-white hover:bg-[#4D0911] transition-colors"
+                          href={`/portal/cms/builder/${page.id}`}
+                          className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#4A0E17] text-white hover:bg-[#380910] transition-colors"
                           title="Open Page Builder"
                         >
                           <Edit3 className="h-3.5 w-3.5" />
@@ -282,7 +282,7 @@ export default function AllPagesPage() {
                     setNewPageSlug(e.target.value.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-_]/g, ''));
                   }}
                   placeholder="e.g. My Favourite Teacher"
-                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#4A0E17] focus:outline-none"
                   autoFocus
                 />
               </div>
@@ -314,7 +314,7 @@ export default function AllPagesPage() {
                 </button>
                 <button
                   type="submit"
-                  className="rounded-xl bg-[#610D17] hover:bg-[#4D0911] text-white px-4 py-2 text-xs font-bold shadow-xs transition-colors"
+                  className="rounded-xl bg-[#4A0E17] hover:bg-[#380910] text-white px-4 py-2 text-xs font-bold shadow-xs transition-colors"
                 >
                   Create & Open Builder
                 </button>

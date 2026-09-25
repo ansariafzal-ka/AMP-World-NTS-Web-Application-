@@ -38,7 +38,7 @@ export default function CmsBuilderPage({
     return (
       <div className="flex h-[70vh] w-full items-center justify-center">
         <div className="flex items-center gap-3 text-zinc-500 font-medium">
-          <div className="h-6 w-6 animate-spin rounded-full border-2 border-[#610D17] border-t-transparent" />
+          <div className="h-6 w-6 animate-spin rounded-full border-2 border-[#4A0E17] border-t-transparent" />
           <span>Loading Page Builder...</span>
         </div>
       </div>
@@ -50,8 +50,8 @@ export default function CmsBuilderPage({
       <div className="p-12 text-center space-y-4">
         <p className="text-zinc-500">Page not found.</p>
         <button
-          onClick={() => router.push('/cms/pages')}
-          className="rounded-xl bg-[#610D17] text-white px-4 py-2 text-sm font-bold"
+          onClick={() => router.push('/portal/cms/pages')}
+          className="rounded-xl bg-[#4A0E17] text-white px-4 py-2 text-sm font-bold"
         >
           Return to All Pages
         </button>

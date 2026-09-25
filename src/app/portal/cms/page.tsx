@@ -59,7 +59,7 @@ export default function CmsDashboardPage() {
         status: 'DRAFT',
         blocks: [],
       });
-      router.push(`/cms/builder/${created.id}`);
+      router.push(`/portal/cms/builder/${created.id}`);
     } catch (err) {
       console.error(err);
       setIsCreating(false);
@@ -82,7 +82,7 @@ export default function CmsDashboardPage() {
         <button
           type="button"
           onClick={() => setIsCreateModalOpen(true)}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#610D17] hover:bg-[#4D0911] text-white px-4 py-2.5 text-sm font-bold shadow-sm transition-all duration-150 active:scale-95 self-start sm:self-auto"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#4A0E17] hover:bg-[#380910] text-white px-5 py-2.5 text-sm font-bold shadow-2xs transition-all duration-150 active:scale-95 self-start sm:self-auto cursor-pointer"
         >
           <Plus className="h-4 w-4" />
           Create New Page
@@ -90,49 +90,49 @@ export default function CmsDashboardPage() {
       </div>
 
       {/* Metric Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-2xs">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Total Pages</span>
-            <div className="rounded-lg bg-[#fbf2f3] p-2 text-[#610D17]">
-              <FileText className="h-4 w-4" />
-            </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-2xs flex items-center gap-4">
+          <div className="h-12 w-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+            <FileText className="h-6 w-6" />
           </div>
-          <p className="text-3xl font-extrabold text-zinc-900 mt-3">{pages.length}</p>
-          <span className="text-xs text-zinc-400 mt-1 block">Active managed pages</span>
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Total Pages</span>
+            <p className="text-2xl sm:text-3xl font-extrabold text-zinc-900 leading-tight">{pages.length}</p>
+            <span className="text-[11px] text-zinc-500 font-medium mt-0.5 block">{publishedCount} published · {draftCount} draft</span>
+          </div>
         </div>
 
-        <div className="rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-2xs">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Published</span>
-            <div className="rounded-lg bg-emerald-50 p-2 text-emerald-600">
-              <Globe className="h-4 w-4" />
-            </div>
+        <div className="rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-2xs flex items-center gap-4">
+          <div className="h-12 w-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
+            <Globe className="h-6 w-6" />
           </div>
-          <p className="text-3xl font-extrabold text-zinc-900 mt-3">{publishedCount}</p>
-          <span className="text-xs text-emerald-600 mt-1 block">Live on website</span>
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Published</span>
+            <p className="text-2xl sm:text-3xl font-extrabold text-zinc-900 leading-tight">{publishedCount}</p>
+            <span className="text-[11px] text-emerald-600 font-semibold mt-0.5 block">Live on public site</span>
+          </div>
         </div>
 
-        <div className="rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-2xs">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Drafts</span>
-            <div className="rounded-lg bg-amber-50 p-2 text-amber-600">
-              <Clock className="h-4 w-4" />
-            </div>
+        <div className="rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-2xs flex items-center gap-4">
+          <div className="h-12 w-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+            <Clock className="h-6 w-6" />
           </div>
-          <p className="text-3xl font-extrabold text-zinc-900 mt-3">{draftCount}</p>
-          <span className="text-xs text-amber-600 mt-1 block">In preparation</span>
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Drafts</span>
+            <p className="text-2xl sm:text-3xl font-extrabold text-zinc-900 leading-tight">{draftCount}</p>
+            <span className="text-[11px] text-amber-600 font-semibold mt-0.5 block">Preview only</span>
+          </div>
         </div>
 
-        <div className="rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-2xs">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Content Blocks</span>
-            <div className="rounded-lg bg-indigo-50 p-2 text-indigo-600">
-              <Layers className="h-4 w-4" />
-            </div>
+        <div className="rounded-2xl border border-zinc-200/80 bg-white p-5 shadow-2xs flex items-center gap-4">
+          <div className="h-12 w-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+            <Layers className="h-6 w-6" />
           </div>
-          <p className="text-3xl font-extrabold text-zinc-900 mt-3">{totalBlocks}</p>
-          <span className="text-xs text-zinc-400 mt-1 block">Across all pages</span>
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Content Blocks</span>
+            <p className="text-2xl sm:text-3xl font-extrabold text-zinc-900 leading-tight">{totalBlocks}</p>
+            <span className="text-[11px] text-zinc-400 font-medium mt-0.5 block">Across all pages</span>
+          </div>
         </div>
       </div>
 
@@ -140,13 +140,13 @@ export default function CmsDashboardPage() {
       <div className="rounded-2xl border border-zinc-200/90 bg-white overflow-hidden shadow-2xs">
         <div className="p-5 sm:p-6 border-b border-zinc-100 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-[#610D17]" />
+            <Sparkles className="h-4 w-4 text-[#4A0E17]" />
             <h2 className="text-base font-bold text-zinc-900">Recent CMS Pages</h2>
           </div>
 
           <Link
-            href="/cms/pages"
-            className="text-xs font-bold text-[#610D17] hover:underline flex items-center gap-1"
+            href="/portal/cms/pages"
+            className="text-xs font-bold text-[#4A0E17] hover:underline flex items-center gap-1"
           >
             View All Pages
             <ArrowRight className="h-3 w-3" />
@@ -160,7 +160,7 @@ export default function CmsDashboardPage() {
             <p>No CMS pages created yet.</p>
             <button
               onClick={() => setIsCreateModalOpen(true)}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#610D17] hover:underline"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#4A0E17] hover:underline"
             >
               <Plus className="h-3.5 w-3.5" />
               Create your first page
@@ -176,8 +176,8 @@ export default function CmsDashboardPage() {
                 <div className="space-y-1">
                   <div className="flex items-center gap-2.5">
                     <Link
-                      href={`/cms/builder/${page.id}`}
-                      className="text-sm sm:text-base font-bold text-zinc-900 hover:text-[#610D17] transition-colors"
+                      href={`/portal/cms/builder/${page.id}`}
+                      className="text-sm sm:text-base font-bold text-zinc-900 hover:text-[#4A0E17] transition-colors"
                     >
                       {page.title}
                     </Link>
@@ -209,8 +209,8 @@ export default function CmsDashboardPage() {
                   </Link>
 
                   <Link
-                    href={`/cms/builder/${page.id}`}
-                    className="inline-flex items-center gap-1 rounded-lg bg-[#610D17] text-white px-3.5 py-1.5 text-xs font-bold hover:bg-[#4D0911] transition-colors"
+                    href={`/portal/cms/builder/${page.id}`}
+                    className="inline-flex items-center gap-1 rounded-lg bg-[#4A0E17] text-white px-3.5 py-1.5 text-xs font-bold hover:bg-[#380910] transition-colors"
                   >
                     Open Builder
                   </Link>
@@ -243,7 +243,7 @@ export default function CmsDashboardPage() {
                   value={newPageTitle}
                   onChange={(e) => handleTitleChange(e.target.value)}
                   placeholder="e.g. Student Leadership Summit"
-                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#610D17] focus:outline-none"
+                  className="w-full rounded-xl border border-zinc-200 px-3.5 py-2 text-sm text-zinc-900 focus:border-[#4A0E17] focus:outline-none"
                   autoFocus
                 />
               </div>
@@ -276,7 +276,7 @@ export default function CmsDashboardPage() {
                 <button
                   type="submit"
                   disabled={isCreating}
-                  className="rounded-xl bg-[#610D17] hover:bg-[#4D0911] text-white px-4 py-2 text-xs font-bold shadow-xs transition-colors"
+                  className="rounded-xl bg-[#4A0E17] hover:bg-[#380910] text-white px-4 py-2 text-xs font-bold shadow-xs transition-colors cursor-pointer"
                 >
                   {isCreating ? 'Creating...' : 'Create & Open Builder'}
                 </button>

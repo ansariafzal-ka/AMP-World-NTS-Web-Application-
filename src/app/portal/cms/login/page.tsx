@@ -36,7 +36,7 @@ export default function CmsLoginPage() {
         setAuth(token, user);
       }
 
-      window.location.href = '/cms';
+      window.location.href = '/portal/cms';
     } catch (err: any) {
       setError(err.message || 'Invalid email or password. Access denied.');
       setIsLoading(false);
@@ -83,7 +83,7 @@ export default function CmsLoginPage() {
             <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1.5">
               Email Address
             </label>
-            <div className="flex items-center rounded-xl border border-zinc-200 px-3.5 py-2.5 focus-within:border-[#610D17] focus-within:ring-1 focus-within:ring-[#610D17]">
+            <div className="flex items-center rounded-xl border border-zinc-200 px-3.5 py-2.5 focus-within:border-[#4A0E17] focus-within:ring-1 focus-within:ring-[#4A0E17]">
               <Mail className="h-4 w-4 text-zinc-400 mr-2 shrink-0" />
               <input
                 type="email"
@@ -100,7 +100,7 @@ export default function CmsLoginPage() {
             <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1.5">
               Password
             </label>
-            <div className="flex items-center rounded-xl border border-zinc-200 px-3.5 py-2.5 focus-within:border-[#610D17] focus-within:ring-1 focus-within:ring-[#610D17]">
+            <div className="flex items-center rounded-xl border border-zinc-200 px-3.5 py-2.5 focus-within:border-[#4A0E17] focus-within:ring-1 focus-within:ring-[#4A0E17]">
               <Lock className="h-4 w-4 text-zinc-400 mr-2 shrink-0" />
               <input
                 type="password"
@@ -116,7 +116,7 @@ export default function CmsLoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#610D17] hover:bg-[#4D0911] text-white py-3 text-sm font-bold shadow-md transition-all active:scale-[0.99] disabled:opacity-70"
+            className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#4A0E17] hover:bg-[#380910] text-white py-3 text-sm font-bold shadow-md transition-all active:scale-[0.99] disabled:opacity-70"
           >
             {isLoading ? (
               'Verifying...'
