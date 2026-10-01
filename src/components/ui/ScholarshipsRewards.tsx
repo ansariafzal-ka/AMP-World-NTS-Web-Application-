@@ -367,10 +367,7 @@ export default function ScholarshipsRewards() {
         <div className="mt-6 sm:mt-8">
           <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 lg:p-9 shadow-xs">
             <div className="max-w-3xl pb-4 border-b border-zinc-100">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-[#610D17]">
-                Beyond The Exam
-              </span>
-              <h3 className="mt-2 text-xl sm:text-2xl font-bold font-serif text-[#610D17] tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#610D17] tracking-tight">
                 Additional Benefits for Students
               </h3>
               <p className="mt-1 text-xs sm:text-sm text-zinc-600 leading-relaxed">
