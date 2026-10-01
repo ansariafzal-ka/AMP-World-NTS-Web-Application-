@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Button from "@/components/common/Button";
 
@@ -8,12 +8,53 @@ export default function NTSDetailsContent() {
   const [syllabusTab, setSyllabusTab] = useState<"school" | "college">("school");
   const [booksTab, setBooksTab] = useState<"school" | "college">("school");
 
+  useEffect(() => {
+    let scrolled = false;
+
+    const scrollToHash = (smooth = true) => {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const id = decodeURIComponent(hash.replace("#", ""));
+      if (id === "highlights") {
+        window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+        scrolled = true;
+        return;
+      }
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+        scrolled = true;
+      }
+    };
+
+    // Check immediately, with short fallbacks to wait for DOM paint/hydration
+    scrollToHash(false);
+    const t1 = setTimeout(() => {
+      if (!scrolled) scrollToHash(true);
+    }, 100);
+    const t2 = setTimeout(() => {
+      if (!scrolled) scrollToHash(true);
+    }, 300);
+
+    const onHashChange = () => {
+      scrollToHash(true);
+    };
+
+    window.addEventListener("hashchange", onHashChange);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col w-full">
       {/* =========================================================
           SECTION 1: HERO & SCALE HIGHLIGHTS (PDF Page 1)
       ========================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-14 sm:py-20 lg:py-24">
+      <section id="highlights" className="relative overflow-hidden bg-gradient-to-b from-[#420B13] via-[#5E0E1C] to-[#911628] text-white py-14 sm:py-20 lg:py-24 scroll-mt-20 sm:scroll-mt-24">
         <div
           className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-[380px] w-full max-w-7xl rounded-full bg-[#B81E34]/30 blur-[130px]"
           aria-hidden="true"
@@ -50,7 +91,7 @@ export default function NTSDetailsContent() {
       {/* =========================================================
           SECTION 2: 8 OBJECTIVES OF THE COMPETITION (PDF Pages 1–2)
       ========================================================= */}
-      <section className="py-14 sm:py-20 bg-white border-b border-zinc-200">
+      <section id="objectives" className="py-14 sm:py-20 bg-white border-b border-zinc-200 scroll-mt-20 sm:scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#610D17]">
@@ -123,7 +164,7 @@ export default function NTSDetailsContent() {
       {/* =========================================================
           SECTION 3: ELIGIBILITY CRITERIA & AGE MATRIX (PDF Page 2)
       ========================================================= */}
-      <section className="py-14 sm:py-20 bg-zinc-50 border-b border-zinc-200">
+      <section id="eligibility" className="py-14 sm:py-20 bg-zinc-50 border-b border-zinc-200 scroll-mt-20 sm:scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#610D17]">
@@ -227,7 +268,7 @@ export default function NTSDetailsContent() {
       {/* =========================================================
           SECTION 4: EXAM MODE & TEST SPECIFICATIONS (PDF Page 2)
       ========================================================= */}
-      <section className="py-14 sm:py-20 bg-white border-b border-zinc-200">
+      <section id="exam-mode" className="py-14 sm:py-20 bg-white border-b border-zinc-200 scroll-mt-20 sm:scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#610D17]">

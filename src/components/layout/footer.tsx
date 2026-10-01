@@ -68,79 +68,160 @@ interface FooterProps {
 export default function Footer({ hidePreFooter = false }: FooterProps = {}) {
   return (
     <>
-      {/* Pre-Footer Callout Strip with Download AMP World App & Student Registration */}
+      {/* Pre-Footer: About the AMP World App Full Section */}
       {!hidePreFooter && (
-        <aside aria-label="AMP World App Download and Student Registration" className="border-t border-zinc-200 bg-zinc-50 py-10 sm:py-14">
+        <aside id="about-amp-world-app" aria-label="About the AMP World App" className="border-t border-zinc-200 bg-zinc-50 py-12 sm:py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="relative flex flex-col xl:flex-row xl:items-center justify-between gap-6 lg:gap-8 rounded-3xl border border-zinc-200/90 bg-white p-6 sm:p-8 lg:p-10 shadow-sm">
-              <div className="flex items-start sm:items-center gap-5 sm:gap-6 min-w-0">
-                {/* Large App Phone Icon Emblem */}
-                <div className="flex h-16 w-16 sm:h-20 sm:w-20 shrink-0 items-center justify-center rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#7D111E] via-[#610D17] to-[#420B13] text-white shadow-lg shadow-[#610D17]/25">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                  </svg>
+            <div className="relative rounded-3xl border border-zinc-200/90 bg-white p-6 sm:p-8 lg:p-10 shadow-sm overflow-hidden">
+              {/* Subtle crimson accent flare */}
+              <div
+                className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-[#610D17]/5 blur-3xl"
+                aria-hidden="true"
+              />
+
+              {/* Header: Emblem + Title + Badge */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-100">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7D111E] via-[#610D17] to-[#420B13] text-white shadow-md shadow-[#610D17]/25">
+                    <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center rounded-full bg-rose-50 border border-rose-200/80 px-3 py-0.5 text-xs font-bold text-[#610D17] uppercase tracking-wider mb-1.5">
+                      Official Mobile App
+                    </span>
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#610D17] tracking-tight">
+                      About the AMP World App
+                    </h2>
+                  </div>
                 </div>
 
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-zinc-900 tracking-tight">
-                      NTS 2026 Student Registration
-                    </h3>
-                    <span className="inline-flex items-center rounded-full bg-rose-50 border border-rose-200/80 px-3 py-0.5 text-xs font-bold text-[#610D17] uppercase tracking-wider">
-                      Official Mobile App
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-zinc-500">
+                  <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>2.5 Lakh+ Student Community</span>
+                </div>
+              </div>
+
+              {/* Paragraph 1: Scale & History */}
+              <p className="mt-6 text-sm sm:text-base lg:text-lg text-zinc-700 leading-relaxed">
+                The <strong className="font-bold text-zinc-900">AMP World App</strong> has successfully hosted all previous editions of the National Talent Search, with over <strong className="font-bold text-[#610D17]">2.5 lakh students</strong> from across India registering and participating.
+              </p>
+
+              {/* Student-Focused Programs Introduction */}
+              <div className="mt-8">
+                <h3 className="text-sm sm:text-base font-bold text-zinc-900 tracking-tight flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#610D17]" />
+                  The app also offers access to several student-focused programs by AMP, including:
+                </h3>
+
+                {/* 5 Program Cards */}
+                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4">
+                  {/* 1. Career Counselling */}
+                  <div className="group rounded-2xl border border-zinc-200/80 bg-zinc-50/70 p-4 transition-all duration-200 hover:bg-white hover:border-[#610D17]/40 hover:shadow-md flex flex-col justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#610D17]/10 text-[#610D17] transition-colors group-hover:bg-[#610D17] group-hover:text-white mb-3">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.516 0c.85.493 1.508 1.333 1.508 2.316V18" />
+                      </svg>
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold text-zinc-900 leading-snug">
+                      Career Counselling
                     </span>
                   </div>
 
-                  <p className="text-sm sm:text-base lg:text-lg text-zinc-600 font-normal mt-1.5 sm:mt-2 leading-relaxed">
-                    Register &amp; choose from 1,500+ centres across 1,200+ locations on the AMP World App or website
-                  </p>
+                  {/* 2. Scholarship Guidance */}
+                  <div className="group rounded-2xl border border-zinc-200/80 bg-zinc-50/70 p-4 transition-all duration-200 hover:bg-white hover:border-[#610D17]/40 hover:shadow-md flex flex-col justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#610D17]/10 text-[#610D17] transition-colors group-hover:bg-[#610D17] group-hover:text-white mb-3">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.496m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.496 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492c.981.142 1.954.317 2.916.52a6.003 6.003 0 0 1-5.395 4.972m-2.749 1.35a6.726 6.726 0 0 1-2.748 1.35" />
+                      </svg>
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold text-zinc-900 leading-snug">
+                      Scholarship Guidance
+                    </span>
+                  </div>
 
-                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm text-zinc-500 font-medium">
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  {/* 3. Employment Training */}
+                  <div className="group rounded-2xl border border-zinc-200/80 bg-zinc-50/70 p-4 transition-all duration-200 hover:bg-white hover:border-[#610D17]/40 hover:shadow-md flex flex-col justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#610D17]/10 text-[#610D17] transition-colors group-hover:bg-[#610D17] group-hover:text-white mb-3">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v1.069m7.5 0c1.238.09 2.45.228 3.637.411m-14.774.411c1.237-.183 2.45-.321 3.637-.411m7.5 0a47.382 47.382 0 0 1-7.5 0" />
                       </svg>
-                      Instant Registration
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold text-zinc-900 leading-snug">
+                      Employment Training
                     </span>
-                    <span className="hidden sm:inline text-zinc-300">•</span>
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </div>
+
+                  {/* 4. Financial Assistance */}
+                  <div className="group rounded-2xl border border-zinc-200/80 bg-zinc-50/70 p-4 transition-all duration-200 hover:bg-white hover:border-[#610D17]/40 hover:shadow-md flex flex-col justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#610D17]/10 text-[#610D17] transition-colors group-hover:bg-[#610D17] group-hover:text-white mb-3">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                       </svg>
-                      1,500+ Centres across 1,200+ Locations
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold text-zinc-900 leading-snug">
+                      Financial Assistance for Higher Education
                     </span>
-                    <span className="hidden sm:inline text-zinc-300">•</span>
-                    <span className="flex items-center gap-1.5">
-                      <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </div>
+
+                  {/* 5. College Admissions Support */}
+                  <div className="group rounded-2xl border border-zinc-200/80 bg-zinc-50/70 p-4 transition-all duration-200 hover:bg-white hover:border-[#610D17]/40 hover:shadow-md flex flex-col justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#610D17]/10 text-[#610D17] transition-colors group-hover:bg-[#610D17] group-hover:text-white mb-3">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-5.25 6.557c0 1.657 1.343 3 3 3h4.5" />
                       </svg>
-                      Direct Admit Card Download
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold text-zinc-900 leading-snug">
+                      Support in College Admissions
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Action Buttons: Download App & Student Registration side-by-side */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start xl:justify-end gap-3 shrink-0 pt-2 xl:pt-0">
-                <Link
-                  href="/AMP_World_App"
-                  className="group/btn inline-flex items-center justify-center gap-2 rounded-2xl bg-[#610D17] px-5 sm:px-6 py-3.5 text-xs sm:text-sm md:text-base font-extrabold text-white shadow-md shadow-[#610D17]/20 transition-all duration-200 hover:bg-[#520A13] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 text-center whitespace-nowrap"
-                >
-                  <span>Download AMP World App</span>
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
+              {/* Concluding Paragraph Highlight */}
+              <div className="mt-8 rounded-2xl bg-[#610D17]/5 border border-[#610D17]/15 p-4 sm:p-5">
+                <p className="text-xs sm:text-sm md:text-base text-zinc-800 leading-relaxed font-medium">
+                  AMP aims to keep students continuously engaged and connected through the <strong className="font-bold text-[#610D17]">AMP World App</strong>, enabling them to benefit from its free educational and career-support programs in the long term.
+                </p>
+              </div>
 
-                <Link
-                  href="/student-registration"
-                  className="group/btn inline-flex items-center justify-center gap-2 rounded-2xl bg-[#610D17] px-5 sm:px-6 py-3.5 text-xs sm:text-sm md:text-base font-extrabold text-white shadow-md shadow-[#610D17]/20 transition-all duration-200 hover:bg-[#520A13] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 text-center whitespace-nowrap"
-                >
-                  <span>Student Registration</span>
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
+              {/* Action Buttons Row */}
+              <div className="mt-8 pt-6 border-t border-zinc-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-500 font-medium">
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Instant Registration
+                  </span>
+                  <span>•</span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    1,500+ Centres
+                  </span>
+                  <span>•</span>
+                  <span className="flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Free Educational Programs
+                  </span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                  <Link
+                    href="/AMP_World_App"
+                    className="group/btn inline-flex items-center justify-center gap-2 rounded-xl bg-[#610D17] px-5 sm:px-6 py-3 text-xs sm:text-sm font-extrabold text-white shadow-md shadow-[#610D17]/20 transition-all duration-200 hover:bg-[#520A13] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 text-center whitespace-nowrap"
+                  >
+                    <span>Download AMP World App</span>
+                    <svg className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

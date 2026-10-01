@@ -24,6 +24,7 @@ const glanceCards: GlanceCard[] = [
       "1,500+ Exam Centres in 600+ Districts across all states.",
       "₹10 Crore+ scholarships & ₹5 Lakh+ cash awards for top performers.",
     ],
+    href: "/NTS_Details#highlights",
   },
   {
     id: "objectives",
@@ -39,6 +40,7 @@ const glanceCards: GlanceCard[] = [
       "Prepare students for IIT-JEE, NEET, UPSC, CAT, CLAT & NDA.",
       "Provide career mentorship, counselling, and national recognition.",
     ],
+    href: "/NTS_Details#objectives",
   },
   {
     id: "eligibility",
@@ -53,6 +55,7 @@ const glanceCards: GlanceCard[] = [
       "College Students: Junior College (11th & 12th) & Senior Degree Colleges.",
       "Diploma, ITI, and NIOS students in India are eligible.",
     ],
+    href: "/NTS_Details#eligibility",
   },
   {
     id: "exam-mode",
@@ -67,6 +70,7 @@ const glanceCards: GlanceCard[] = [
       "90-minute paper featuring 100 Multiple Choice Questions (MCQs).",
       "No negative marking; crafted by distinguished national academicians.",
     ],
+    href: "/NTS_Details#exam-mode",
   },
   {
     id: "syllabus",

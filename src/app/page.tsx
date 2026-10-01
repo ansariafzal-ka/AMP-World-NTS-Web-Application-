@@ -3,13 +3,11 @@ import HeroSection from "@/components/ui/hero-section";
 import HomeQuickNav from "@/components/ui/HomeQuickNav";
 import HomeVideoSection from "@/components/ui/HomeVideoSection";
 import ScholarshipsRewards from "@/components/ui/ScholarshipsRewards";
-import CertificatesBeyond from "@/components/ui/CertificatesBeyond";
 import NTSAtAGlance from "@/components/ui/NTSAtAGlance";
 import HowToParticipate from "@/components/ui/HowToParticipate";
 import VideoHighlights from "@/components/ui/VideoHighlights";
 import CtaBanner from "@/components/ui/CtaBanner";
 import Footer from "@/components/layout/footer";
-import ImageCard from "@/components/common/ImageCard";
 
 export default function Home() {
   return (
@@ -28,46 +26,12 @@ export default function Home() {
           <ScholarshipsRewards />
         </div>
 
-        <div id="certificates-beyond" className="scroll-mt-32 sm:scroll-mt-36">
-          <CertificatesBeyond />
-        </div>
-
         <div id="glance" className="scroll-mt-32 sm:scroll-mt-36">
           <NTSAtAGlance />
         </div>
 
         <div id="how-to-participate" className="scroll-mt-32 sm:scroll-mt-36">
           <HowToParticipate />
-        </div>
-
-        <div id="registration" className="scroll-mt-32 sm:scroll-mt-36">
-          <section className="w-full bg-zinc-50 py-10 sm:py-14 lg:py-16">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full">
-                <ImageCard
-                  title="Student Registration"
-                  imageSrc="/student-registration.jpg"
-                  imageAlt="Student Registration"
-                  buttonText="REGISTER"
-                  buttonHref="/student-registration"
-                />
-                <ImageCard
-                  title="Exam Center Registration"
-                  imageSrc="/exam-centre.jpg"
-                  imageAlt="Exam Center Registration"
-                  buttonText="REGISTER"
-                  buttonHref="/exam-centre-registration"
-                />
-                <ImageCard
-                  title="Participating Institution Registration"
-                  imageSrc="/nts-hero banner.jpg"
-                  imageAlt="Participating Institution Registration"
-                  buttonText="REGISTER"
-                  buttonHref="/institution-registration"
-                />
-              </div>
-            </div>
-          </section>
         </div>
 
         <div id="highlights" className="scroll-mt-32 sm:scroll-mt-36">

@@ -9,7 +9,7 @@ export default function HomeVideoSection() {
           {/* Left Column: Text Content */}
           <div className="lg:col-span-6 flex flex-col space-y-4">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
-              India&apos;s Largest Community Talent Search
+              AMP National Talent Search 2026
             </h2>
 
             <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
@@ -18,7 +18,7 @@ export default function HomeVideoSection() {
 
             <div className="pt-2">
               <Link
-                href="/About_NTS"
+                href="/NTS_Details"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#610D17] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#520A13]"
               >
                 <span>Learn More About NTS</span>

@@ -20,11 +20,11 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     label: "About NTS",
-    href: "/About_NTS",
     children: [
       { label: "NTS Details", href: "/NTS_Details" },
-      { label: "Become an Exam Center", href: "/Become_An_Exam_Center" },
+      { label: "FAQ", href: "/FAQs" },
       { label: "Mock Papers", href: "/Mock_Papers" },
+      { label: "Helpline", href: "/Contact" },
     ],
   },
   { label: "Important Dates", href: "/Important_Dates" },
@@ -32,12 +32,16 @@ const navItems: NavItem[] = [
     label: "Registration",
     children: [
       { label: "Student Registration", href: "/student-registration" },
-      { label: "Exam Centre Registration", href: "/exam-centre-registration" },
+      { label: "Bulk Registration", href: "#" },
+    ],
+  },
+  {
+    label: "Institute Registration",
+    children: [
+      { label: "Exam Center Registration", href: "/exam-centre-registration" },
       { label: "Participating Institution Registration", href: "/institution-registration" },
     ],
   },
-  { label: "FAQs", href: "/FAQs" },
-  { label: "Contact", href: "/Contact" },
 ];
 
 export default function Navbar() {
@@ -46,6 +50,7 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({
     "About NTS": true,
     Registration: true,
+    "Institute Registration": true,
   });
   const pathname = usePathname();
 
@@ -77,8 +82,8 @@ export default function Navbar() {
           {navItems.map((item) => {
             if (item.children) {
               const isParentActive =
-                (item.href && pathname === item.href) ||
-                item.children.some((child) => pathname === child.href);
+                Boolean(item.href && pathname === item.href) ||
+                item.children.some((child) => child.href !== "#" && pathname === child.href);
               const isDropdownOpen = openDropdown === item.label;
 
               return (
@@ -145,9 +150,9 @@ export default function Navbar() {
                         : "opacity-0 -translate-y-1 pointer-events-none"
                     }`}
                   >
-                    <div className="min-w-[270px] rounded-2xl border border-zinc-200/90 bg-white/95 backdrop-blur-md p-1.5 shadow-xl ring-1 ring-black/5">
+                    <div className="min-w-[285px] rounded-2xl border border-zinc-200/90 bg-white/95 backdrop-blur-md p-1.5 shadow-xl ring-1 ring-black/5">
                       {item.children.map((subItem) => {
-                        const isSubActive = pathname === subItem.href;
+                        const isSubActive = subItem.href !== "#" && pathname === subItem.href;
                         return (
                           <Link
                             key={subItem.href}
@@ -276,8 +281,8 @@ export default function Navbar() {
             if (item.children) {
               const isExpanded = !!mobileExpanded[item.label];
               const isParentActive =
-                (item.href && pathname === item.href) ||
-                item.children.some((child) => pathname === child.href);
+                Boolean(item.href && pathname === item.href) ||
+                item.children.some((child) => child.href !== "#" && pathname === child.href);
 
               return (
                 <div key={item.label} className="flex flex-col border-b border-zinc-100 pb-1">
@@ -331,7 +336,7 @@ export default function Navbar() {
                   {isExpanded && (
                     <div className="ml-3 pl-3 border-l-2 border-[#610D17]/25 flex flex-col space-y-1 my-1">
                       {item.children.map((subItem) => {
-                        const isSubActive = pathname === subItem.href;
+                        const isSubActive = subItem.href !== "#" && pathname === subItem.href;
                         return (
                           <Link
                             key={subItem.href}
