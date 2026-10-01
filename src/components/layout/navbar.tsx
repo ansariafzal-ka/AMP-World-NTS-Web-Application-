@@ -32,7 +32,7 @@ const navItems: NavItem[] = [
     label: "Registration",
     children: [
       { label: "Student Registration", href: "/student-registration" },
-      { label: "Bulk Registration", href: "#" },
+      { label: "Bulk Registration", href: "/portal/institution/bulk-student-registration" },
     ],
   },
   {

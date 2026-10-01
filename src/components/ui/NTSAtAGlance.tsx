@@ -116,7 +116,7 @@ export default function NTSAtAGlance() {
             Overview
           </span>
           <h2 className="mt-1.5 text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-zinc-900 tracking-tight">
-            NTS 2026 At a Glance
+            National Talent Search 2026 At a Glance
           </h2>
           <div className="w-12 h-1 bg-[#C89D4B] mx-auto mt-2.5 mb-3 rounded-full" />
           <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">

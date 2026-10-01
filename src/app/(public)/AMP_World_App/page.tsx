@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Button from "@/components/common/Button";
 import Link from "next/link";
+import CtaBanner from "@/components/ui/CtaBanner";
 
 export const metadata = {
   title: "AMP World Mobile App - NTS 2026 Download & Registration",
@@ -333,9 +334,11 @@ export default function AMPWorldAppPage() {
             </div>
           </div>
         </section>
+
+        <CtaBanner />
       </main>
 
-      <Footer />
+      <Footer hidePreFooter={true} />
     </div>
   );
 }
