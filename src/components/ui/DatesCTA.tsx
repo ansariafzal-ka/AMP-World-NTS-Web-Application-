@@ -21,8 +21,8 @@ export default function DatesCTA() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <Button variant="primary" size="md" href="/About_NTS" className="whitespace-nowrap">
-              <span>Explore Syllabus</span>
+            <Button variant="primary" size="md" href="/NTS_Details" className="whitespace-nowrap">
+              <span>View Details</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   strokeLinecap="round"

@@ -16,7 +16,7 @@ const linkClass =
 export const FAQ_CATEGORIES: FaqCategory[] = [
   {
     id: "overview",
-    name: "1. Overview & Eligibility",
+    name: "Overview & Eligibility",
     shortName: "Overview & Eligibility",
     count: 5,
     description: "About AMP, NTS background, official webpage, eligibility criteria, and exam categories/languages.",
@@ -93,7 +93,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
             <ul className="space-y-2.5 pl-1">
               <li className="flex items-start gap-2.5">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#610D17]" />
-                <span>Students who are currently enrolled in a school studying in classes 8th, 9th or 10th</span>
+                <span>Students who are currently enrolled in a school studying in classes 8th, 9th &amp; 10th</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#610D17]" />
@@ -105,9 +105,9 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
                   <span>Madrasa students between the ages 13 to 15 years may participate:</span>
                 </div>
                 <ul className="list-disc list-inside pl-6 space-y-1 text-zinc-600 text-sm">
-                  <li>13 years with class 8,</li>
-                  <li>14 years with class 9,</li>
-                  <li>15 years with class 10.</li>
+                  <li>13 years with class 8th,</li>
+                  <li>14 years with class 9th,</li>
+                  <li>15 years with class 10th.</li>
                 </ul>
               </li>
               <li className="flex flex-col gap-1.5">
@@ -117,7 +117,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
                 </div>
                 <ul className="list-disc list-inside pl-6 space-y-1 text-zinc-600 text-sm">
                   <li>Diploma students with junior college,</li>
-                  <li>NIOS students in the secondary course will take the school paper for class 10, and senior secondary with junior college.</li>
+                  <li>NIOS students in the secondary course will take the school paper for class 10th, and senior secondary with junior college.</li>
                   <li>ITI students will join junior college if 17 years or less, and senior/degree college otherwise.</li>
                 </ul>
               </li>
@@ -176,7 +176,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   },
   {
     id: "registration",
-    name: "2. Registration",
+    name: "Registration",
     shortName: "Registration",
     count: 7,
     description: "Free examination, registration modes, website & app guides, bulk institution registration, mobile number rules, and profile editing.",
@@ -352,10 +352,10 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   },
   {
     id: "syllabus",
-    name: "3. Examination & Syllabus",
+    name: "Examination & Syllabus",
     shortName: "Exam & Syllabus",
     count: 5,
-    description: "Marking scheme, sample mock papers, category syllabi for schools (Classes 8–10) and college categories.",
+    description: "Marking scheme, sample mock papers, category syllabi for schools (Classes 8th, 9th & 10th) and college categories.",
     items: [
       {
         id: "faq-13",
@@ -403,7 +403,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         content: (
           <div className="space-y-4 text-sm sm:text-base text-zinc-700 leading-relaxed">
             <div className="rounded-xl border border-zinc-200 bg-zinc-50/70 p-4 space-y-2">
-              <h4 className="font-bold text-zinc-900">School Students (Classes 8–10):</h4>
+              <h4 className="font-bold text-zinc-900">School Students (Classes 8th, 9th &amp; 10th):</h4>
               <div className="space-y-2 text-sm pl-1">
                 <div>
                   <p className="font-semibold text-zinc-800">Mental Ability Test (MAT):</p>
@@ -423,7 +423,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
             <div className="rounded-xl border border-zinc-200 bg-zinc-50/70 p-4 space-y-1.5">
               <p className="font-bold text-zinc-900">Important Notes:</p>
               <ul className="list-disc list-inside space-y-1 text-sm text-zinc-600 pl-2">
-                <li>There will be a separate question paper for each class: 8, 9, and 10.</li>
+                <li>There will be a separate question paper for each class: 8th, 9th &amp; 10th.</li>
                 <li>The MAT section will be common for all classes.</li>
                 <li>The SAT section will vary depending on the class.</li>
               </ul>
@@ -461,7 +461,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   },
   {
     id: "exam-mode",
-    name: "4. Examination Mode",
+    name: "Examination Mode",
     shortName: "Exam Mode",
     count: 3,
     description: "Offline exam centers pan-India, center selection procedure, and 90-minute exam timing.",
@@ -500,7 +500,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   },
   {
     id: "awards-benefits",
-    name: "5. Awards & Benefits",
+    name: "Awards & Benefits",
     shortName: "Awards & Benefits",
     count: 5,
     description: "₹10 Cr+ coaching scholarships, category-wise cash prizes, IndiaZakat crowdfunding, and flagship programs.",

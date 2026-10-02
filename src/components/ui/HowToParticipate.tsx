@@ -15,43 +15,52 @@ const steps = [
     step: "01",
     title: "Register",
     description: (
-      <>
-        Register via the{" "}
-        <a
-          href="https://www.tinyurl.com/AMPWorldApp"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-bold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
-        >
-          AMP World App
-        </a>{" "}
-        or on the web at{" "}
-        <a
-          href="https://ampworld.in"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-bold text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors"
-        >
-          ampworld.in
-        </a>
-        .
-      </>
+      <div className="space-y-1">
+        <p>Register through either of the following:</p>
+        <div className="flex flex-col gap-0.5 text-xs sm:text-[13px]">
+          <div>
+            <span className="font-semibold text-zinc-700">AMP World Website: </span>
+            <a
+              href="https://www.ampworld.in/StudentRegistration"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors break-all"
+            >
+              www.ampworld.in/StudentRegistration
+            </a>
+          </div>
+          <div>
+            <span className="font-semibold text-zinc-700">AMP World Mobile App: </span>
+            <a
+              href="https://www.tinyurl.com/AMPWorldApp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#610D17] underline decoration-[#610D17]/40 hover:decoration-[#610D17] hover:text-[#4B0A12] transition-colors break-all"
+            >
+              www.tinyurl.com/AMPWorldApp
+            </a>
+          </div>
+        </div>
+      </div>
     ),
   },
   {
     step: "02",
-    title: "Prepare",
-    description: "Check the syllabus, guidelines and preparation resources.",
+    title: "Select Your Exam Centre",
+    description:
+      "During registration, select your preferred Exam Centre from the available options.",
   },
   {
     step: "03",
-    title: "Appear",
-    description: "Attend the examination at your allotted Centre.",
+    title: "Download Your Hall Ticket",
+    description:
+      "After successful registration, your Hall Ticket will be available for download on or after the announced date. Candidates should download and carry their Hall Ticket to the examination centre.",
   },
   {
     step: "04",
-    title: "Achieve",
-    description: "Check your result and access scholarships, certificates and further opportunities.",
+    title: "Appear for the Examination",
+    description:
+      "Examinations for all categories will be conducted on the same day. Appear for the examination at your allotted Exam Centre as mentioned on your Hall Ticket.",
   },
 ];
 

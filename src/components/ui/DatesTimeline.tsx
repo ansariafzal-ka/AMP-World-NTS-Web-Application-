@@ -12,8 +12,8 @@ export interface TimelineEvent {
   step: string;
   title: string;
   schedule: string;
-  status: string;
-  statusType: "live" | "tentative" | "confirmed";
+  status?: string;
+  statusType?: "live" | "tentative" | "confirmed";
   description: string;
   icon: React.ReactNode;
   highlightNote: string;
@@ -55,8 +55,6 @@ export default function DatesTimeline() {
       step: "02",
       title: "Launch Date & Registration Opens",
       schedule: "20th September 2026",
-      status: "Confirmed",
-      statusType: "confirmed",
       description:
         "Official launch of AMP NTS 2026. Online registration portal opens for School, Junior College, and Degree College students across India via the AMP World App.",
       icon: (
@@ -91,8 +89,6 @@ export default function DatesTimeline() {
       step: "03",
       title: "OMR Sheet Distribution",
       schedule: "5th November 2026",
-      status: "Confirmed",
-      statusType: "confirmed",
       description:
         "Physical OMR answer sheets, candidate roll verification lists, and examination materials are dispatched and distributed to 1,500+ verified test centres nationwide.",
       icon: (
@@ -115,8 +111,6 @@ export default function DatesTimeline() {
       step: "04",
       title: "Registration Closes",
       schedule: "20th November 2026",
-      status: "Confirmed",
-      statusType: "confirmed",
       description:
         "Final deadline for submission of student application forms and institutional candidate batches to appear for AMP NTS 2026. Portal closes at midnight.",
       icon: (
@@ -139,8 +133,6 @@ export default function DatesTimeline() {
       step: "05",
       title: "Admit Card Release",
       schedule: "30 November 2026",
-      status: "Confirmed",
-      statusType: "confirmed",
       description:
         "Download your verified hall ticket containing roll number, category code, reporting instructions, and allocated exam center venue.",
       icon: (
@@ -163,8 +155,6 @@ export default function DatesTimeline() {
       step: "06",
       title: "AMP National Talent Search 2026 Exam",
       schedule: "5th December 2026",
-      status: "Confirmed",
-      statusType: "confirmed",
       description:
         "The nationwide physical offline pen & paper examination will be held simultaneously on a single designated day across all categories nationwide.",
       icon: (
@@ -178,8 +168,8 @@ export default function DatesTimeline() {
         </svg>
       ),
       highlightNote: "Flagship milestone — 90-minute offline test with 100 MCQs (No negative marking).",
-      actionLabel: "View Syllabus & Pattern",
-      actionHref: "/About_NTS",
+      actionLabel: null,
+      actionHref: null,
       isExternal: false,
       isMilestone: true,
     },
@@ -188,8 +178,6 @@ export default function DatesTimeline() {
       step: "07",
       title: "Results Announcements",
       schedule: "26th January 2027",
-      status: "Confirmed",
-      statusType: "confirmed",
       description:
         "Official announcement of National, State, and District Merit Lists, followed by distribution of academic scholarships, excellence awards, and verifiable e-certificates.",
       icon: (
@@ -210,10 +198,8 @@ export default function DatesTimeline() {
     {
       id: "counselling",
       step: "08",
-      title: "Career Counselling Session",
+      title: "Counselling Session",
       schedule: "1st February 2027",
-      status: "Confirmed",
-      statusType: "confirmed",
       description:
         "Comprehensive career guidance, NEET/IIT-JEE coaching seat allocations, and higher education mentorship sessions on 1st February 2027.",
       icon: (
@@ -250,14 +236,11 @@ export default function DatesTimeline() {
         </div>
 
         {/* Timeline Cards Container */}
-        <div className="relative space-y-6 sm:space-y-8">
-          {/* Vertical Guide Line (Desktop) */}
-          <div className="hidden sm:block absolute left-[31px] top-6 bottom-6 w-0.5 bg-zinc-200" />
-
+        <div className="space-y-6 sm:space-y-8">
           {events.map((event) => (
             <div
               key={event.id}
-              className={`relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6 rounded-2xl border p-5 sm:p-6 transition-all duration-200 ${
+              className={`flex flex-col sm:flex-row items-start gap-4 sm:gap-6 rounded-2xl border p-5 sm:p-6 transition-all duration-200 ${
                 event.isMilestone
                   ? "border-[#610D17]/30 bg-[#FBF2F3]/40 shadow-xs"
                   : "border-zinc-200 bg-white hover:border-[#610D17]/30 hover:shadow-xs"
@@ -265,7 +248,7 @@ export default function DatesTimeline() {
             >
               {/* Step Badge / Icon Circle */}
               <div
-                className={`relative z-10 shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center font-black text-sm shadow-xs ${
+                className={`shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center font-black text-sm shadow-xs ${
                   event.isMilestone
                     ? "bg-[#610D17] text-white ring-4 ring-[#610D17]/10"
                     : event.statusType === "live"
@@ -279,35 +262,27 @@ export default function DatesTimeline() {
               {/* Event Details */}
               <div className="flex-1 w-full">
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
-                      Phase {event.step}
-                    </span>
-                    <span className="text-zinc-300">•</span>
-                    <h3 className="text-lg sm:text-xl font-bold text-zinc-900">{event.title}</h3>
-                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-zinc-900">{event.title}</h3>
 
                   {/* Status Tag */}
-                  <span
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${
-                      event.statusType === "confirmed"
-                        ? "bg-[#FBF2F3] text-[#610D17] border border-[#610D17]/20"
-                        : event.statusType === "live"
-                        ? "bg-emerald-100 text-emerald-800 border border-emerald-300"
-                        : "bg-zinc-100 text-zinc-700 border border-zinc-200"
-                    }`}
-                  >
+                  {event.status && event.statusType !== "confirmed" && (
                     <span
-                      className={`h-1.5 w-1.5 rounded-full ${
-                        event.statusType === "confirmed"
-                          ? "bg-[#610D17]"
-                          : event.statusType === "live"
-                          ? "bg-emerald-500 animate-pulse"
-                          : "bg-zinc-400"
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${
+                        event.statusType === "live"
+                          ? "bg-emerald-100 text-emerald-800 border border-emerald-300"
+                          : "bg-zinc-100 text-zinc-700 border border-zinc-200"
                       }`}
-                    />
-                    {event.status}
-                  </span>
+                    >
+                      <span
+                        className={`h-1.5 w-1.5 rounded-full ${
+                          event.statusType === "live"
+                            ? "bg-emerald-500 animate-pulse"
+                            : "bg-zinc-400"
+                        }`}
+                      />
+                      {event.status}
+                    </span>
+                  )}
                 </div>
 
                 {/* Schedule Date Callout */}
