@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AMP NTS Web Application — Release Document v0.3.0</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 16mm 14mm 16mm;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #18181b;
+      background-color: #ffffff;
+      line-height: 1.45;
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+    }
+    .header-card {
+      border: 1.5px solid #610D17;
+      border-radius: 8px;
+      padding: 14px 18px;
+      background: linear-gradient(135deg, #fdf8f8 0%, #ffffff 100%);
+      margin-bottom: 16px;
+    }
+    .brand-eyebrow {
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #610D17;
+      margin-bottom: 2px;
+    }
+    h1 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #610D17;
+      margin: 0 0 10px 0;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid #f0d5d8;
+      font-size: 11px;
+    }
+    .meta-item strong {
+      display: block;
+      color: #71717a;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+    .meta-item span {
+      font-weight: 700;
+      color: #18181b;
+    }
+    .version-badge {
+      display: inline-block;
+      background-color: #610D17;
+      color: #ffffff;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+    h2.section-heading {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #610D17;
+      border-bottom: 1.5px solid #610D17;
+      padding-bottom: 3px;
+      margin: 16px 0 10px 0;
+    }
+    .module-item {
+      border: 1px solid #e4e4e7;
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 8px;
+      background: #ffffff;
+      page-break-inside: avoid;
+    }
+    .module-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #18181b;
+      margin-bottom: 6px;
+    }
+    .files-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 10.5px;
+    }
+    .file-row {
+      display: flex;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 8.5px;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin-right: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      width: 62px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .badge-added {
+      background-color: #dcfce7;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+    .badge-modified {
+      background-color: #fef3c7;
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+    .file-path {
+      color: #1e293b;
+    }
+    .manifest-card {
+      border: 1px solid #e2e8f0;
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 9.5px;
+      line-height: 1.5;
+      page-break-inside: avoid;
+    }
+    .manifest-header {
+      color: #94a3b8;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .manifest-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .manifest-section-title {
+      color: #38bdf8;
+      font-weight: 700;
+      margin-bottom: 3px;
+      font-size: 10px;
+    }
+    .manifest-item {
+      color: #cbd5e1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .manifest-item.added {
+      color: #86efac;
+    }
+    .manifest-item.mod {
+      color: #fde047;
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 9.5px;
+      color: #a1a1aa;
+      border-top: 1px solid #e4e4e7;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Card -->
+  <div class="header-card">
+    <div class="brand-eyebrow">Association of Muslim Professionals (AMP)</div>
+    <h1>NTS 2026 Release Document</h1>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <strong>Release Name</strong>
+        <span>NTS 2026 Feature Updates</span>
+      </div>
+      <div class="meta-item">
+        <strong>Release Version</strong>
+        <span class="version-badge">v0.3.0</span>
+      </div>
+      <div class="meta-item">
+        <strong>Release Date</strong>
+        <span>October 2, 2026</span>
+      </div>
+      <div class="meta-item">
+        <strong>Total Files</strong>
+        <span>29 (11 Added, 18 Modified)</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-heading">Modules &amp; File Paths</h2>
+
+  <!-- Module 1 -->
+  <div class="module-item">
+    <div class="module-title">1. NTS Details — Exam Day Guidelines (Section 11)</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/components/nts-details/NTSDetailsContent.tsx</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 2 -->
+  <div class="module-item">
+    <div class="module-title">2. Participating Institution Page</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/Participating_Institution/page.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/Participating_Institution/layout.tsx</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 3 -->
+  <div class="module-item">
+    <div class="module-title">3. Student Registration Guide Page</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/Student_Registration_Guide/page.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/Student_Registration_Guide/layout.tsx</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 4 -->
+  <div class="module-item">
+    <div class="module-title">4. Become An Exam Centre / Center</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/Become_An_Exam_Centre/page.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/Become_An_Exam_Centre/layout.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/app/(public)/Become_An_Exam_Center/page.tsx</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 5 -->
+  <div class="module-item">
+    <div class="module-title">5. Sponsorship &amp; Partnership Page</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/Sponsorship_And_Partnership/page.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/Sponsors_And_Partners/page.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/app/(public)/sponsors-and-partners/page.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/components/ui/TrainingPartnersSection.tsx</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 6 -->
+  <div class="module-item">
+    <div class="module-title">6. Important Dates &amp; Timeline</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/components/ui/DatesHero.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/components/ui/DatesTimeline.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/components/ui/DatesCTA.tsx</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 7 -->
+  <div class="module-item">
+    <div class="module-title">7. FAQs Data</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/components/faqs/FaqData.tsx</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 8 -->
+  <div class="module-item">
+    <div class="module-title">8. Home Page &amp; Navigation Components</div>
+    <div class="files-list">
+      <div class="file-row"><span class="badge badge-added">ADDED</span><span class="file-path">src/components/ui/ParticipateInNTS.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/app/page.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/common/Ribbon.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/layout/navbar.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/layout/footer.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/ui/ScholarshipsRewards.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/ui/hero-section.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/ui/HowToParticipate.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/ui/HomeQuickNav.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/ui/HomeVideoSection.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/ui/NTSAtAGlance.tsx</span></div>
+      <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/app/(public)/AMP_World_App/page.tsx</span></div>
+    </div>
+  </div>
+
+  <!-- Module 9 -->
+  <div class="module-item">
+    <div class="module-title">9. Routing Configuration</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">next.config.ts</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Consolidated File List -->
+  <h2 class="section-heading">Consolidated File List for Merging</h2>
+
+  <div class="manifest-card">
+    <div class="manifest-header">
+      <span>SHARE ONLY THESE 29 FILES AT RELEASE TIME</span>
+      <span>Total: 29 (11 Added, 18 Modified)</span>
+    </div>
+    <div class="manifest-column">
+      <div>
+        <div class="manifest-section-title">+ ADDED FILES (11)</div>
+        <div class="manifest-item added">+ src/app/(public)/Become_An_Exam_Centre/layout.tsx</div>
+        <div class="manifest-item added">+ src/app/(public)/Become_An_Exam_Centre/page.tsx</div>
+        <div class="manifest-item added">+ src/app/(public)/Participating_Institution/layout.tsx</div>
+        <div class="manifest-item added">+ src/app/(public)/Participating_Institution/page.tsx</div>
+        <div class="manifest-item added">+ src/app/(public)/Sponsors_And_Partners/page.tsx</div>
+        <div class="manifest-item added">+ src/app/(public)/Sponsorship_And_Partnership/page.tsx</div>
+        <div class="manifest-item added">+ src/app/(public)/Student_Registration_Guide/layout.tsx</div>
+        <div class="manifest-item added">+ src/app/(public)/Student_Registration_Guide/page.tsx</div>
+        <div class="manifest-item added">+ src/app/(public)/sponsors-and-partners/page.tsx</div>
+        <div class="manifest-item added">+ src/components/ui/ParticipateInNTS.tsx</div>
+        <div class="manifest-item added">+ src/components/ui/TrainingPartnersSection.tsx</div>
+      </div>
+      <div>
+        <div class="manifest-section-title">~ MODIFIED FILES (18)</div>
+        <div class="manifest-item mod">~ next.config.ts</div>
+        <div class="manifest-item mod">~ src/app/(public)/AMP_World_App/page.tsx</div>
+        <div class="manifest-item mod">~ src/app/(public)/Become_An_Exam_Center/page.tsx</div>
+        <div class="manifest-item mod">~ src/app/page.tsx</div>
+        <div class="manifest-item mod">~ src/components/common/Ribbon.tsx</div>
+        <div class="manifest-item mod">~ src/components/faqs/FaqData.tsx</div>
+        <div class="manifest-item mod">~ src/components/layout/footer.tsx</div>
+        <div class="manifest-item mod">~ src/components/layout/navbar.tsx</div>
+        <div class="manifest-item mod">~ src/components/nts-details/NTSDetailsContent.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/DatesCTA.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/DatesHero.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/DatesTimeline.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/HomeQuickNav.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/HomeVideoSection.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/HowToParticipate.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/NTSAtAGlance.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/ScholarshipsRewards.tsx</div>
+        <div class="manifest-item mod">~ src/components/ui/hero-section.tsx</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    AMP National Talent Search (NTS) 2026 Web Application &bull; Release Manifest &bull; Internal Use Only
+  </div>
+
+</body>
+</html>
