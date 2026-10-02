@@ -6,7 +6,6 @@ import Button from "@/components/common/Button";
 
 export default function NTSDetailsContent() {
   const [syllabusTab, setSyllabusTab] = useState<"school" | "college">("school");
-  const [booksTab, setBooksTab] = useState<"school" | "college">("school");
 
   useEffect(() => {
     let scrolled = false;
@@ -190,17 +189,15 @@ export default function NTSDetailsContent() {
               <ul className="mt-5 space-y-3 text-xs sm:text-sm text-zinc-600">
                 <li className="flex items-start gap-2">
                   <span className="text-[#610D17] font-bold mt-0.5">•</span>
-                  <span>Enrolled in recognized schools or madrasas across India.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#610D17] font-bold mt-0.5">•</span>
                   <span>
-                    <strong className="text-zinc-900">Age Alignment:</strong> 13 years with Class 8th, 14 years with Class 9th, and 15 years with Class 10th.
+                    Students currently enrolled in classes 8th, 9th, or 10th at schools or madrasas (age alignment - 13 years with class 8th, 14 years with class 9th, and 15 years with class 10th).
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#610D17] font-bold mt-0.5">•</span>
-                  <span>NIOS Secondary (Class 10th) students take this school-level exam.</span>
+                  <span>
+                    NIOS students take the school-level exam for secondary (class 10th).
+                  </span>
                 </li>
               </ul>
             </div>
@@ -1103,159 +1100,7 @@ export default function NTSDetailsContent() {
         </div>
       </section>
 
-      {/* =========================================================
-          SECTION 10: RECOMMENDED PREPARATION BOOKS (PDF Pages 9–10 & 13)
-      ========================================================= */}
-      <section className="py-14 sm:py-20 bg-white border-b border-zinc-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#610D17]">
-                Study Toolkit
-              </span>
-              <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-900 tracking-tight">
-                Recommended Reference Books
-              </h2>
-              <p className="mt-2 text-sm sm:text-base text-zinc-600">
-                Curated by subject matter experts to support structured preparation.
-              </p>
-            </div>
 
-            <div className="inline-flex rounded-xl bg-zinc-100 p-1">
-              <button
-                onClick={() => setBooksTab("school")}
-                className={`rounded-lg px-4 py-2 text-xs font-bold transition-all ${
-                  booksTab === "school"
-                    ? "bg-white text-[#610D17] shadow-xs"
-                    : "text-zinc-600 hover:text-zinc-900"
-                }`}
-              >
-                School Books
-              </button>
-              <button
-                onClick={() => setBooksTab("college")}
-                className={`rounded-lg px-4 py-2 text-xs font-bold transition-all ${
-                  booksTab === "college"
-                    ? "bg-white text-[#610D17] shadow-xs"
-                    : "text-zinc-600 hover:text-zinc-900"
-                }`}
-              >
-                College Books
-              </button>
-            </div>
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {booksTab === "school" ? (
-              <>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">Mental Ability</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Reasoning & Problem Solving</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• A Modern Approach to Verbal & Non-Verbal Reasoning – R.S. Aggarwal</li>
-                    <li>• NTSE Mental Ability Test Workbook – McGraw Hill</li>
-                    <li>• Objective Reasoning for Competitive Exams – Arihant</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">Mathematics</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">NCERT & Foundation Guides</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• NCERT Mathematics Textbooks (Class 8th, 9th & 10th)</li>
-                    <li>• Mathematics for Class 9 & 10 – R.D. Sharma</li>
-                    <li>• Comprehensive Mathematics for NTSE – Tata McGraw Hill</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">Science</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Physics, Chemistry, Biology</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• NCERT Science Textbooks (Class 8th, 9th & 10th)</li>
-                    <li>• Foundation Science – Lakhmir Singh & Manjit Kaur</li>
-                    <li>• Concepts of Physics (Vol I & II) – H.C. Verma</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">Social Science</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">History, Civics, Geography</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• NCERT Social Science Textbooks (Class 8th, 9th & 10th)</li>
-                    <li>• Guide to NTSE Social Science – Arihant</li>
-                    <li>• Comprehensive Social Science for NTSE – McGraw Hill</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">English</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Grammar & Vocabulary</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• High School English Grammar – Wren & Martin</li>
-                    <li>• Word Power Made Easy – Norman Lewis</li>
-                    <li>• Objective English for Competitive Exams – S.P. Bakshi</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">GK & Current Affairs</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Yearbooks & Periodicals</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• Manorama Yearbook (Latest Edition)</li>
-                    <li>• Lucent&apos;s General Knowledge</li>
-                    <li>• The Hindu / Indian Express Daily</li>
-                  </ul>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">Quantitative Analysis</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Aptitude & Speed Math</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• Quantitative Aptitude – R.S. Aggarwal</li>
-                    <li>• Fast Track Objective Arithmetic – Rajesh Verma</li>
-                    <li>• Quantitative Aptitude for CAT – Arun Sharma</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">Logical Reasoning & DI</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Data Interpretation & Logic</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• Modern Approach to Logical Reasoning – R.S. Aggarwal</li>
-                    <li>• LR & DI for CAT – Nishit Sinha (Pearson)</li>
-                    <li>• Analytical Reasoning – M.K. Pandey</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">Verbal Ability</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Comprehension & Vocabulary</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• Word Power Made Easy – Norman Lewis</li>
-                    <li>• Objective General English – S.P. Bakshi</li>
-                    <li>• Editorials from The Hindu & Indian Express</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">Current Affairs</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Magazines & Updates</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• Manorama Yearbook & Pratiyogita Darpan</li>
-                    <li>• Monthly Current Affairs PDFs (Vision IAS / Drishti IAS)</li>
-                    <li>• Daily National & Global News Updates</li>
-                  </ul>
-                </div>
-                <div className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 col-span-1 md:col-span-2 flex flex-col">
-                  <span className="text-xs font-bold text-[#610D17] uppercase">General Knowledge & Deeniyat</span>
-                  <h3 className="mt-1 font-bold text-zinc-900 text-sm">Ethics, Seerah & Society</h3>
-                  <ul className="mt-3 space-y-1.5 text-xs text-zinc-600">
-                    <li>• Lucent&apos;s General Knowledge & Arihant GK 2026</li>
-                    <li>• The Sealed Nectar (Ar-Raheeq Al-Makhtum) – Biography of Prophet Muhammad (PBUH)</li>
-                    <li>• Selected Ahadith from Riyadh-us-Saliheen (Ethics & Social Values)</li>
-                    <li>• Islamic Studies for Competitive Exams – Maulana Wahiduddin Khan</li>
-                  </ul>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* =========================================================
           SECTION 11: EXAM GUIDELINES (PDF Page 14)
@@ -1286,7 +1131,27 @@ export default function NTSDetailsContent() {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#610D17] text-white font-bold text-xs">
                   2
                 </span>
-                <span>All announcements are shared on <strong>ampworld.in</strong>, <strong>ampindia.org</strong>, and the mobile app.</span>
+                <span>
+                  All announcements are shared on{" "}
+                  <a
+                    href="https://ampworld.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-[#610D17] underline hover:text-[#420B13]"
+                  >
+                    ampworld.in
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://ampindia.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-[#610D17] underline hover:text-[#420B13]"
+                  >
+                    ampindia.org
+                  </a>
+                  , and the mobile app.
+                </span>
               </div>
               <div className="flex items-start gap-3 p-3 rounded-xl bg-zinc-50">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#610D17] text-white font-bold text-xs">
@@ -1314,19 +1179,10 @@ export default function NTSDetailsContent() {
               </div>
             </div>
 
-            <div className="mt-6 pt-5 border-t border-zinc-100 flex flex-wrap items-center justify-between gap-4">
+            <div className="mt-6 pt-5 border-t border-zinc-100">
               <span className="text-xs text-zinc-500">
                 For complete rules, please consult the official guidelines document.
               </span>
-              <Button
-                href="https://drive.google.com/drive/folders/1qzirip8K-OzIRuexnOa7XXH2CAo_B0At"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="outline"
-                size="sm"
-              >
-                Read Full Guidelines Document →
-              </Button>
             </div>
           </div>
         </div>
@@ -1565,7 +1421,7 @@ export default function NTSDetailsContent() {
 
               <div className="mt-5 pt-4 border-t border-zinc-100">
                 <Button
-                  href="/Become_An_Exam_Center"
+                  href="/Become_An_Exam_Centre"
                   variant="outline"
                   size="sm"
                   className="w-full justify-center"

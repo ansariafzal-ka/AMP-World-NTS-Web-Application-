@@ -53,7 +53,7 @@ export default function DatesTimeline() {
     {
       id: "launch-date",
       step: "02",
-      title: "Launch Date & Registration Opens",
+      title: "Registration Open Date",
       schedule: "20th September 2026",
       description:
         "Official launch of AMP NTS 2026. Online registration portal opens for School, Junior College, and Degree College students across India via the AMP World App.",
@@ -132,9 +132,9 @@ export default function DatesTimeline() {
       id: "admit-card",
       step: "05",
       title: "Admit Card Release",
-      schedule: "30 November 2026",
+      schedule: "30th November 2026",
       description:
-        "Download your verified hall ticket containing roll number, category code, reporting instructions, and allocated exam center venue.",
+        "Download your hall ticket containing roll number, category code, reporting instructions, and allocated exam center venue.",
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path

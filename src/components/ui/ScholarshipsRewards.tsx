@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 const scholarshipDetails = [
   {
@@ -105,24 +104,13 @@ export default function ScholarshipsRewards() {
           {/* Card 1: Scholarships */}
           <div className="h-full rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-xs flex flex-col justify-between">
             <div>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-4 border-b border-zinc-100">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#610D17] tracking-tight">
-                    Scholarships
-                  </h3>
-                  <p className="text-xs sm:text-sm font-semibold text-amber-700 mt-0.5">
-                    Scholarships Worth ₹10 Crore+ for Top 5,000+ Students!
-                  </p>
-                </div>
-                <Link
-                  href="/NTS_Details#scholarships"
-                  className="self-start sm:self-center inline-flex items-center gap-1.5 rounded-full bg-[#610D17] px-4 py-1.5 text-xs font-bold text-white shadow-xs hover:bg-[#520A13] transition-all whitespace-nowrap"
-                >
-                  <span>SCHOLARSHIP</span>
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
+              <div className="pb-4 border-b border-zinc-100">
+                <h3 className="text-xl sm:text-2xl font-bold font-serif text-[#610D17] tracking-tight">
+                  Scholarships
+                </h3>
+                <p className="text-xs sm:text-sm font-semibold text-amber-700 mt-0.5">
+                  Scholarships Worth ₹10 Crore+ for Top 5,000+ Students!
+                </p>
               </div>
 
               {/* Scholarship Detail Points */}
