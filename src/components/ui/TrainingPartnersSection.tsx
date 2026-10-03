@@ -11,50 +11,54 @@ interface TrainingPartner {
 }
 
 const trainingPartnersData: TrainingPartner[] = [
-  { id: 1, name: "Gravity Classes", location: "Lucknow, UP", fullText: "Gravity Classes, Lucknow, UP" },
-  { id: 2, name: "Shaheen Group of Institutions", location: "Bidar, Karnataka", tag: "Multiple States", fullText: "Shaheen Group of Institutions, Bidar, Karnataka (Multiple States)" },
-  { id: 3, name: "The Hind Guru Academy", location: "New Delhi", tag: "Multiple States", fullText: "The Hind Guru Academy, New Delhi (Multiple States)" },
-  { id: 4, name: "Rahmani30", location: "Bangalore, Karnataka", tag: "Multiple States", fullText: "Rahmani30, Bangalore, Karnataka (Multiple States)" },
-  { id: 5, name: "Grace Residential Academy", location: "Lucknow, UP", fullText: "Grace Residential Academy, Lucknow, UP" },
-  { id: 6, name: "Sethu Institute of Technology", location: "Virudhunagar, Tamil Nadu", fullText: "Sethu Institute of Technology, Virudhunagar, Tamil Nadu" },
-  { id: 7, name: "Beary Group of Institutions", location: "Mangaluru, Karnataka", fullText: "Beary Group of Institutions, Mangaluru, Karnataka" },
-  { id: 8, name: "Falcon Group of Institutions", location: "Bangalore, Karnataka", tag: "Multiple States", fullText: "Falcon Group of Institutions, Bangalore, Karnataka (Multiple States)" },
-  { id: 9, name: "Ajmal Super 40", location: "Hojai, Assam", fullText: "Ajmal Super 40, Hojai, Assam" },
-  { id: 10, name: "AMD Academy", location: "Patna, Bihar", fullText: "AMD Academy, Patna, Bihar" },
-  { id: 11, name: "Gravity +", location: "Mumbai, Maharashtra", fullText: "Gravity +, Mumbai, Maharashtra" },
-  { id: 12, name: "Kalam Learning Center", location: "Lucknow, UP", fullText: "Kalam Learning Center, Lucknow, UP" },
-  { id: 13, name: "Anees Defence Career Institute", location: "Pune, Maharashtra", fullText: "Anees Defence Career Institute, Pune, Maharashtra" },
-  { id: 14, name: "HighQ Professional Academy", location: "Chennai, Tamil Nadu", fullText: "HighQ Professional Academy, Chennai, Tamil Nadu" },
-  { id: 15, name: "GuruCool", location: "New Delhi", fullText: "GuruCool, New Delhi" },
-  { id: 16, name: "Talent Zone Academy", location: "New Delhi", fullText: "Talent Zone Academy, New Delhi" },
-  { id: 17, name: "Superb30", location: "Jammu, JK", fullText: "Superb30, Jammu, JK" },
-  { id: 18, name: "ZFI's Sir Syed Coaching & Guidance Center", location: "Lucknow, UP", fullText: "ZFI's Sir Syed Coaching & Guidance Center, Lucknow, UP" },
-  { id: 19, name: "Delta Classes", location: "Bareilly, Uttar Pradesh", fullText: "Delta Classes, Bareilly, Uttar Pradesh" },
-  { id: 20, name: "Full Stack Academy", location: "Hyderabad, Telangana", fullText: "Full Stack Academy, Hyderabad, Telangana" },
-  { id: 21, name: "Gravity Residential Academy", location: "Lucknow, Uttar Pradesh", fullText: "Gravity Residential Academy, Lucknow, Uttar Pradesh" },
-  { id: 22, name: "Modulus Academy", location: "Alwar, Rajasthan", fullText: "Modulus Academy, Alwar, Rajasthan" },
-  { id: 23, name: "Kawish Foundation", location: "Aurangabad, Maharashtra", fullText: "Kawish Foundation, Aurangabad, Maharashtra" },
-  { id: 24, name: "Faizan Scholar Institute", location: "Ahmedabad, Gujarat", fullText: "Faizan Scholar Institute, Ahmedabad, Gujarat" },
-  { id: 25, name: "SCANIK", location: "Mahesana, Gujarat", fullText: "SCANIK, Mahesana, Gujarat" },
-  { id: 26, name: "Lukmaan IAS", location: "New Delhi", fullText: "Lukmaan IAS, New Delhi" },
-  { id: 27, name: "Dars 40", location: "Patna, Bihar", fullText: "Dars 40, Patna, Bihar" },
-  { id: 28, name: "Hera Public School", location: "Azamgarh, UP", fullText: "Hera Public School, Azamgarh, UP" },
-  { id: 29, name: "Iklas IAS Academy", location: "Chennai, Tamil Nadu", tag: "Multiple States", fullText: "Iklas IAS Academy, Chennai, Tamil Nadu (Multiple States)" },
-  { id: 30, name: "Innovative Coaching Center", location: "Bangalore, Karnataka", fullText: "Innovative Coaching Center, Bangalore, Karnataka" },
-  { id: 31, name: "Maulana Azad University", location: "Jodhpur, Rajasthan", fullText: "Maulana Azad University, Jodhpur, Rajasthan" },
-  { id: 32, name: "Minority Career Dream Trust", location: "Haridwar, Uttarakhand", fullText: "Minority Career Dream Trust, Haridwar, Uttarakhand" },
-  { id: 33, name: "Zia International School", location: "Bangalore, Karnataka", fullText: "Zia International School, Bangalore, Karnataka" },
-  { id: 34, name: "Synetic Business School", location: "Ludhiana, Punjab, Karnataka", fullText: "Synetic Business School, Ludhiana, Punjab, Karnataka" },
-  { id: 35, name: "Bano IAS", location: "New Delhi", fullText: "Bano IAS, New Delhi" },
-  { id: 36, name: "Islamic Mission School (IMS)", location: "Aligarh, Uttar Pradesh", fullText: "Islamic Mission School (IMS), Aligarh, Uttar Pradesh" },
-  { id: 37, name: "Arastu Junior College", location: "Hyderabad, Telangana", fullText: "Arastu Junior College, Hyderabad, Telangana" },
-  { id: 38, name: "Brainy & Bright Academy", location: "Lucknow, Uttar Pradesh", fullText: "Brainy & Bright Academy, Lucknow, Uttar Pradesh" },
-  { id: 39, name: "Dawatul Haq Coaching Center", location: "Ajmer, Rajasthan", fullText: "Dawatul Haq Coaching Center, Ajmer, Rajasthan" },
-  { id: 40, name: "Rajasthan Institute", location: "Alwar, Rajasthan", fullText: "Rajasthan Institute, Alwar, Rajasthan" },
-  { id: 41, name: "Shakeel Institute", location: "Jaunpur, Uttar Pradesh", fullText: "Shakeel Institute, Jaunpur, Uttar Pradesh" },
-  { id: 42, name: "Zaitoon International School", location: "Malappuram, Kerala", fullText: "Zaitoon International School, Malappuram, Keral" },
-  { id: 43, name: "Olive Mission", location: "Lucknow, Uttar Pradesh", fullText: "Olive Mission, Lucknow, Uttar Pradesh" },
-  { id: 44, name: "Rahman Education Foundation", location: "Ramanagara, Karnataka", fullText: "Rahman Education Foundation, Ramanagra, Karnataka" },
+  { id: 1, name: "ZIA Academy", location: "Bangalore, Karnataka", fullText: "ZIA Academy, Bangalore, Karnataka" },
+  { id: 2, name: "Grace Residential Academy", location: "Lucknow, UP", fullText: "Grace Residential Academy, Lucknow, UP" },
+  { id: 3, name: "Bearys Group of Institutions", location: "Mangalore, Karnataka", fullText: "Bearys Group of Institutions, Mangalore, Karnataka" },
+  { id: 4, name: "Anfar40", location: "Hojai, Assam", fullText: "Anfar40, Hojai, Assam" },
+  { id: 5, name: "Ajmal Super 40", location: "Hojai, Assam", fullText: "Ajmal Super 40, Hojai, Assam" },
+  { id: 6, name: "Anees Defence Career Institute", location: "Pune, Maharashtra", fullText: "Anees Defence Career Institute, Pune, Maharashtra" },
+  { id: 7, name: "Arastu Junior College", location: "Hyderabad, Telangana", fullText: "Arastu Junior College, Hyderabad, Telangana" },
+  { id: 8, name: "Bano IAS", location: "New Delhi", fullText: "Bano IAS, New Delhi" },
+  { id: 9, name: "Beacon IAS Academy", location: "Kalaburagi, Karnataka", fullText: "Beacon IAS Academy, Kalaburagi, Karnataka" },
+  { id: 10, name: "Brainy & Bright Academy", location: "Lucknow, Uttar Pradesh", fullText: "Brainy & Bright Academy, Lucknow, Uttar Pradesh" },
+  { id: 11, name: "City IAS Academy", location: "Aligarh, Uttar Pradesh", fullText: "City IAS Academy, Aligarh, Uttar Pradesh" },
+  { id: 12, name: "Dars 40", location: "Patna, Bihar", fullText: "Dars 40, Patna, Bihar" },
+  { id: 13, name: "Dawatul Haq Coaching Centre", location: "Ajmer, Rajasthan", fullText: "Dawatul Haq Coaching Centre, Ajmer, Rajasthan" },
+  { id: 14, name: "Delta Classes", location: "Bareilly, Uttar Pradesh", fullText: "Delta Classes, Bareilly, Uttar Pradesh" },
+  { id: 15, name: "Dhaanish Ahmed College of Engineering", location: "Chennai, Tamil Nadu", fullText: "Dhaanish Ahmed College of Engineering, Chennai, Tamil Nadu" },
+  { id: 16, name: "DIO Group, Durrani Classes", location: "Bhopal, MP", fullText: "DIO Group, Durrani Classes, Bhopal, MP" },
+  { id: 17, name: "Faizan Scholar Institute", location: "Ahmedabad, Gujarat", fullText: "Faizan Scholar Institute, Ahmedabad, Gujarat" },
+  { id: 18, name: "Falcon Group of Institutions", location: "Bangalore, Karnataka", tag: "pan-India", fullText: "Falcon Group of Institutions, Bangalore, Karnataka (pan-India)" },
+  { id: 19, name: "Full Stack Academy", location: "Hyderabad, Telangana", fullText: "Full Stack Academy, Hyderabad, Telangana" },
+  { id: 20, name: "Gravity +", location: "Mumbai, Maharashtra", fullText: "Gravity +, Mumbai, Maharashtra" },
+  { id: 21, name: "Gravity Classes", location: "Lucknow, UP", fullText: "Gravity Classes, Lucknow, UP" },
+  { id: 22, name: "Gurucool", location: "New Delhi", fullText: "Gurucool, New Delhi" },
+  { id: 23, name: "Gyan Shikhar Academy", location: "Bhopal, MP", fullText: "Gyan Shikhar Academy, Bhopal, MP" },
+  { id: 24, name: "Hera Public School", location: "Azamgarh, UP", fullText: "Hera Public School, Azamgarh, UP" },
+  { id: 25, name: "HighQ Professional Academy", location: "Chennai, Tamil Nadu", fullText: "HighQ Professional Academy, Chennai, Tamil Nadu" },
+  { id: 26, name: "IKLAS IAS Academy", location: "Chennai, Tamil Nadu", tag: "pan-Tamil Nadu", fullText: "IKLAS IAS Academy, Chennai, Tamil Nadu (pan- Tamil Nadu)" },
+  { id: 27, name: "Innovative Coaching Center", location: "Bangalore, Karnataka", fullText: "Innovative Coaching Center, Bangalore, Karnataka" },
+  { id: 28, name: "Islamic Mission School (IMS)", location: "Aligarh, UP", fullText: "Islamic Mission School (IMS), Aligarh, UP" },
+  { id: 29, name: "Justice M.S.A.Foundation", location: "Jabalpur, MP", fullText: "Justice M.S.A.Foundation, Jabalpur, MP" },
+  { id: 30, name: "Kawish Foundation", location: "Aurangabad, Maharashtra", fullText: "Kawish Foundation, Aurangabad, Maharashtra" },
+  { id: 31, name: "Lukmaan IAS", location: "New Delhi", fullText: "Lukmaan IAS, New Delhi" },
+  { id: 32, name: "Maulana Azad University", location: "Jodhpur, Rajasthan", fullText: "Maulana Azad University, Jodhpur, Rajasthan" },
+  { id: 33, name: "Minority Career Dream Trust", location: "Roorkee, Uttarakhand", fullText: "Minority Career Dream Trust, Roorkee, Uttarakhand" },
+  { id: 34, name: "Modulus Academy", location: "Alwar, Rajasthan", fullText: "Modulus Academy, Alwar, Rajasthan" },
+  { id: 35, name: "Olive Mission", location: "Lucknow, UP", fullText: "Olive Mission, Lucknow, UP" },
+  { id: 36, name: "Rahman Education Foundation", location: "Ramanagra, Karnataka", fullText: "Rahman Education Foundation, Ramanagra, Karnataka" },
+  { id: 37, name: "Rahmani30", location: "", tag: "Pan-India", fullText: "Rahmani30 (Pan-India)" },
+  { id: 38, name: "Rajasthan Institute", location: "Alwar, Rajasthan", fullText: "Rajasthan Institute, Alwar, Rajasthan" },
+  { id: 39, name: "SCANIK", location: "Mahesana, Gujarat", fullText: "SCANIK, Mahesana, Gujarat" },
+  { id: 40, name: "Sethu Institute of Technology", location: "Virudhunagar, Tamil Nadu", fullText: "Sethu Institute of Technology, Virudhunagar, Tamil Nadu" },
+  { id: 41, name: "Shaheen Group of Institutions", location: "", tag: "pan-India", fullText: "Shaheen Group of Institutions (pan-India)" },
+  { id: 42, name: "Shakeel Institute", location: "Jaunpur, Uttar Pradesh", fullText: "Shakeel Institute, Jaunpur, Uttar Pradesh" },
+  { id: 43, name: "Superb30", location: "Jammu, JK", fullText: "Superb30, Jammu, JK" },
+  { id: 44, name: "Synetic Business School", location: "Ludhiana, Punjab", fullText: "Synetic Business School, Ludhiana, Punjab" },
+  { id: 45, name: "Talent Zone Academy", location: "New Delhi", fullText: "Talent Zone Academy, New Delhi" },
+  { id: 46, name: "The Hind Guru Academy", location: "New Delhi", fullText: "The Hind Guru Academy, New Delhi" },
+  { id: 47, name: "Zaitoon International School", location: "Malappuram, Kerala", fullText: "Zaitoon International School, Malappuram, Kerala" },
+  { id: 48, name: "ZFI's Sir Syed Coaching & Guidance Center", location: "Lucknow, UP", fullText: "ZFI's Sir Syed Coaching & Guidance Center, Lucknow, UP" },
 ];
 
 export default function TrainingPartnersSection() {
@@ -74,9 +78,9 @@ export default function TrainingPartnersSection() {
 
   const isSearching = searchQuery.trim().length > 0;
 
-  // Preserve the exact 2-column split (1-22 and 23-44) from the poster
-  const leftColumn = useMemo(() => trainingPartnersData.slice(0, 22), []);
-  const rightColumn = useMemo(() => trainingPartnersData.slice(22), []);
+  // Preserve the exact 2-column split (1-24 and 25-48)
+  const leftColumn = useMemo(() => trainingPartnersData.slice(0, 24), []);
+  const rightColumn = useMemo(() => trainingPartnersData.slice(24), []);
 
   return (
     <section
@@ -95,7 +99,7 @@ export default function TrainingPartnersSection() {
             <div className="w-16 h-1 bg-[#C89D4B] rounded-full mx-auto mt-3 mb-3.5" />
 
             <p className="text-xs sm:text-sm text-zinc-500 max-w-xl mx-auto">
-              Distinguished network of 44 institutions, coaching academies, and educational foundations across India collaborating with AMP.
+              Distinguished network of 48 institutions, coaching academies, and educational foundations across India collaborating with AMP.
             </p>
 
             {/* Quick Search */}
@@ -170,14 +174,14 @@ export default function TrainingPartnersSection() {
             ) : (
               /* Default 2-Column Poster View */
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 lg:gap-x-14 gap-y-1">
-                {/* Column 1 (1 to 22) */}
+                {/* Column 1 (1 to 24) */}
                 <div className="flex flex-col">
                   {leftColumn.map((partner) => (
                     <PartnerListItem key={partner.id} partner={partner} />
                   ))}
                 </div>
 
-                {/* Column 2 (23 to 44) */}
+                {/* Column 2 (25 to 48) */}
                 <div className="flex flex-col pt-1 lg:pt-0">
                   {rightColumn.map((partner) => (
                     <PartnerListItem key={partner.id} partner={partner} />

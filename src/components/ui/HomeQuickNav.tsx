@@ -68,7 +68,7 @@ const navItems: QuickNavItem[] = [
   },
   {
     id: "participate",
-    label: "Participate in AMP NTS",
+    label: "Be a part of AMP NTS",
     icon: (props) => (
       <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" {...props}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-1.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 21c-2.17 0-4.207-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" />
@@ -88,6 +88,35 @@ const navItems: QuickNavItem[] = [
 ];
 
 export default function HomeQuickNav() {
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
+  const [canScrollRight, setCanScrollRight] = React.useState(false);
+
+  const checkScroll = React.useCallback(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 8);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 8);
+  }, []);
+
+  React.useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    checkScroll();
+    el.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      el.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, [checkScroll]);
+
+  const scrollByAmount = (direction: "left" | "right") => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    el.scrollBy({ left: direction === "left" ? -280 : 280, behavior: "smooth" });
+  };
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -100,11 +129,28 @@ export default function HomeQuickNav() {
   return (
     <nav
       aria-label="Quick Section Navigation"
-      className="sticky top-20 z-30 border-y border-zinc-200/90 bg-white/95 backdrop-blur-md shadow-xs py-3 sm:py-3.5 transition-all"
+      className="sticky top-20 z-30 border-y border-zinc-200/90 bg-white/95 backdrop-blur-md shadow-xs py-2.5 sm:py-3 transition-all"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Nav Pills Container - centered on tablet, laptop & desktop */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 w-full scroll-smooth">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Left Scroll Arrow */}
+        {canScrollLeft && (
+          <button
+            type="button"
+            onClick={() => scrollByAmount("left")}
+            aria-label="Scroll left"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 border border-zinc-200 text-zinc-700 shadow-md hover:bg-zinc-100 hover:text-zinc-900 transition-all cursor-pointer"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+        )}
+
+        {/* Nav Pills Container */}
+        <div
+          ref={scrollContainerRef}
+          className="flex items-center justify-start gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 w-full scroll-smooth"
+        >
           {navItems.map((item) => {
             const Icon = item.icon;
             const commonClasses =
@@ -140,6 +186,20 @@ export default function HomeQuickNav() {
             );
           })}
         </div>
+
+        {/* Right Scroll Arrow */}
+        {canScrollRight && (
+          <button
+            type="button"
+            onClick={() => scrollByAmount("right")}
+            aria-label="Scroll right"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 border border-zinc-200 text-zinc-700 shadow-md hover:bg-zinc-100 hover:text-zinc-900 transition-all cursor-pointer"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+        )}
       </div>
     </nav>
   );

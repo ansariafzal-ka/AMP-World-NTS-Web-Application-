@@ -5,6 +5,7 @@ import HomeVideoSection from "@/components/ui/HomeVideoSection";
 import ScholarshipsRewards from "@/components/ui/ScholarshipsRewards";
 import NTSAtAGlance from "@/components/ui/NTSAtAGlance";
 import HowToParticipate from "@/components/ui/HowToParticipate";
+import ExamDayGuidelines from "@/components/ui/ExamDayGuidelines";
 import VideoHighlights from "@/components/ui/VideoHighlights";
 import MobilizationPartnerSection from "@/components/ui/MobilizationPartnerSection";
 import ParticipateInNTS from "@/components/ui/ParticipateInNTS";
@@ -34,6 +35,10 @@ export default function Home() {
 
         <div id="how-to-participate" className="scroll-mt-32 sm:scroll-mt-36">
           <HowToParticipate />
+        </div>
+
+        <div id="exam-day-instructions" className="scroll-mt-32 sm:scroll-mt-36">
+          <ExamDayGuidelines />
         </div>
 
         <div id="highlights" className="scroll-mt-32 sm:scroll-mt-36">
