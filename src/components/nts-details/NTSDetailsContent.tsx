@@ -672,78 +672,98 @@ export default function NTSDetailsContent() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Scholarships Breakdown */}
-            <div className="lg:col-span-7 rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-xs flex flex-col">
-              <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
-                <span>🎓</span>
-                <span>Higher Education Coaching Scholarships</span>
-              </h3>
-              <p className="mt-2 text-xs sm:text-sm text-zinc-600">
-                Partner institutes offer fee waivers on their annual tuition for NEET, IIT-JEE, CLAT, UPSC, and competitive foundation batches.
-              </p>
+            <div className="lg:col-span-7 rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
+                  <span>🎓</span>
+                  <span>Higher Education Coaching Scholarships</span>
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-zinc-600">
+                  Partner institutes offer fee waivers on their annual tuition for NEET, IIT-JEE, CLAT, UPSC, and competitive foundation batches.
+                </p>
 
-              <div className="mt-6 space-y-4">
-                <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-emerald-900 text-sm">Top 1,500+ Rankers</span>
-                    <span className="rounded-full bg-emerald-600 text-white px-2.5 py-0.5 text-xs font-bold">
-                      100% to 75% Scholarship
-                    </span>
+                <div className="mt-6 space-y-4">
+                  <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-emerald-900 text-sm">Top 1,500+ Rankers</span>
+                      <span className="rounded-full bg-emerald-600 text-white px-2.5 py-0.5 text-xs font-bold">
+                        100% to 75% Scholarship
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-emerald-800">
+                      Full or near-full tuition waiver at premier coaching academies across India.
+                    </p>
                   </div>
-                  <p className="mt-1 text-xs text-emerald-800">
-                    Full or near-full tuition waiver at premier coaching academies across India.
-                  </p>
+
+                  <div className="rounded-xl border border-blue-200 bg-blue-50/50 p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-blue-900 text-sm">Next 2,500+ High Performers</span>
+                      <span className="rounded-full bg-blue-600 text-white px-2.5 py-0.5 text-xs font-bold">
+                        75% to 50% Scholarship
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-blue-800">
+                      Partial tuition assistance through AMP partner coaching institutions nationwide.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="rounded-xl border border-blue-200 bg-blue-50/50 p-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-blue-900 text-sm">Next 2,500+ High Performers</span>
-                    <span className="rounded-full bg-blue-600 text-white px-2.5 py-0.5 text-xs font-bold">
-                      75% to 50% Scholarship
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs text-blue-800">
-                    Partial tuition assistance through AMP partner coaching institutions nationwide.
-                  </p>
+                <div className="mt-6 text-xs text-zinc-500 space-y-1 bg-zinc-50 p-4 rounded-xl">
+                  <p>• Scholarships apply exclusively to annual tuition fees (residential facilities may vary).</p>
+                  <p>• Final selection adheres to established national admission authority screening procedures.</p>
                 </div>
               </div>
 
-              <div className="mt-6 text-xs text-zinc-500 space-y-1 bg-zinc-50 p-4 rounded-xl">
-                <p>• Scholarships apply exclusively to annual tuition fees (residential facilities may vary).</p>
-                <p>• Final selection adheres to established national admission authority screening procedures.</p>
+              {/* Scholarships List Link */}
+              <div className="mt-6 pt-4 border-t border-zinc-100 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span className="text-zinc-600 font-medium">Coaching Partners &amp; Scholarships List:</span>
+                <a
+                  href="https://www.tinyurl.com/ampntsscholarshipslist"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-bold text-[#610D17] hover:text-[#801322] hover:underline"
+                >
+                  <span>www.tinyurl.com/ampntsscholarshipslist</span>
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                </a>
               </div>
             </div>
 
             {/* Cash Prizes Table */}
-            <div className="lg:col-span-5 rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-xs flex flex-col">
-              <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
-                <span>🏆</span>
-                <span>Cash Awards (₹5 Lakh+ Total)</span>
-              </h3>
-              <p className="mt-1 text-xs text-zinc-500">Awarded to top rankers in each category</p>
+            <div className="lg:col-span-5 rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-zinc-900 flex items-center gap-2">
+                  <span>🏆</span>
+                  <span>Cash Awards (₹5 Lakh+ Total)</span>
+                </h3>
+                <p className="mt-1 text-xs text-zinc-500">Awarded to top rankers in each category</p>
 
-              <div className="mt-5 space-y-2.5">
-                {[
-                  { rank: "1st Position Winner", prize: "₹30,000", highlight: true },
-                  { rank: "2nd Position Winner", prize: "₹20,000", highlight: true },
-                  { rank: "3rd Position Winner", prize: "₹10,000", highlight: true },
-                  { rank: "4th to 10th Position", prize: "₹2,000 each" },
-                  { rank: "11th to 50th Position", prize: "₹1,000 each" },
-                  { rank: "State Toppers (in each category)", prize: "₹1,000 each" },
-                ].map((row, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex items-center justify-between p-2.5 rounded-lg text-xs sm:text-sm ${
-                      row.highlight
-                        ? "bg-[#fbf2f3] text-[#610D17] font-bold border border-[#610D17]/20"
-                        : "bg-zinc-50 text-zinc-800"
-                    }`}
-                  >
-                    <span>{row.rank}</span>
-                    <span className="font-extrabold">{row.prize}</span>
-                  </div>
-                ))}
+                <div className="mt-5 space-y-2.5">
+                  {[
+                    { rank: "1st Position Winner", prize: "₹30,000", highlight: true },
+                    { rank: "2nd Position Winner", prize: "₹20,000", highlight: true },
+                    { rank: "3rd Position Winner", prize: "₹10,000", highlight: true },
+                    { rank: "4th to 10th Position", prize: "₹2,000 each" },
+                    { rank: "11th to 50th Position", prize: "₹1,000 each" },
+                    { rank: "State Toppers (in each category)", prize: "₹1,000 each" },
+                  ].map((row, idx) => (
+                    <div
+                      key={idx}
+                      className={`flex items-center justify-between p-2.5 rounded-lg text-xs sm:text-sm ${
+                        row.highlight
+                          ? "bg-[#fbf2f3] text-[#610D17] font-bold border border-[#610D17]/20"
+                          : "bg-zinc-50 text-zinc-800"
+                      }`}
+                    >
+                      <span>{row.rank}</span>
+                      <span className="font-extrabold">{row.prize}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="mt-4 pt-3 border-t border-zinc-100 text-center text-xs text-zinc-500">

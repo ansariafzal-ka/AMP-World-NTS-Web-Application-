@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AMP NTS Web Application — Release Document v0.3.0</title>
+  <title>AMP NTS Web Application — Release Document v0.3.1</title>
   <style>
     @page {
       size: A4;
@@ -18,7 +18,7 @@
       color: #18181b;
       background-color: #ffffff;
       line-height: 1.45;
-      font-size: 12px;
+      font-size: 11.5px;
       margin: 0;
       padding: 0;
     }
@@ -27,7 +27,7 @@
       border-radius: 8px;
       padding: 14px 18px;
       background: linear-gradient(135deg, #fdf8f8 0%, #ffffff 100%);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .brand-eyebrow {
       font-size: 9.5px;
@@ -38,7 +38,7 @@
       margin-bottom: 2px;
     }
     h1 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
       color: #610D17;
       margin: 0 0 10px 0;
@@ -72,36 +72,62 @@
       font-size: 10.5px;
       font-weight: 700;
     }
+    .summary-card {
+      border: 1px solid #e4e4e7;
+      border-left: 3px solid #610D17;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      background: #fafafa;
+    }
+    .summary-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #610D17;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+    }
+    .summary-list {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 10.5px;
+      color: #3f3f46;
+      line-height: 1.5;
+    }
+    .summary-list li {
+      margin-bottom: 3px;
+    }
     h2.section-heading {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #610D17;
       border-bottom: 1.5px solid #610D17;
       padding-bottom: 3px;
-      margin: 16px 0 10px 0;
+      margin: 14px 0 8px 0;
     }
     .module-item {
       border: 1px solid #e4e4e7;
       border-radius: 6px;
-      padding: 9px 12px;
-      margin-bottom: 8px;
+      padding: 8px 12px;
+      margin-bottom: 6px;
       background: #ffffff;
       page-break-inside: avoid;
     }
     .module-title {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: #18181b;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .files-list {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2.5px;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 10.5px;
+      font-size: 10px;
     }
     .file-row {
       display: flex;
@@ -109,14 +135,14 @@
     }
     .badge {
       display: inline-block;
-      font-size: 8.5px;
+      font-size: 8px;
       font-weight: 800;
       padding: 1px 5px;
       border-radius: 3px;
       margin-right: 8px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      width: 62px;
+      width: 58px;
       text-align: center;
       flex-shrink: 0;
     }
@@ -180,11 +206,11 @@
     }
     .footer-note {
       text-align: center;
-      margin-top: 16px;
-      font-size: 9.5px;
+      margin-top: 14px;
+      font-size: 9px;
       color: #a1a1aa;
       border-top: 1px solid #e4e4e7;
-      padding-top: 8px;
+      padding-top: 6px;
     }
   </style>
 </head>
@@ -201,24 +227,37 @@
       </div>
       <div class="meta-item">
         <strong>Release Version</strong>
-        <span class="version-badge">v0.3.0</span>
+        <span class="version-badge">v0.3.1</span>
       </div>
       <div class="meta-item">
         <strong>Release Date</strong>
-        <span>October 2, 2026</span>
+        <span>October 3, 2026</span>
       </div>
       <div class="meta-item">
         <strong>Total Files</strong>
-        <span>29 (11 Added, 18 Modified)</span>
+        <span>33 (13 Added, 20 Modified)</span>
       </div>
     </div>
+  </div>
+
+  <!-- Key Updates Summary -->
+  <div class="summary-card">
+    <div class="summary-title">Summary of Key Features &amp; Updates</div>
+    <ul class="summary-list">
+      <li><strong>Student's Instructions &amp; Guidelines:</strong> Standalone guidelines component with complete schedule, reporting times, prohibited items, and FAQs mounted on Home Page with QuickNav tab badge.</li>
+      <li><strong>Scholarships List Integration:</strong> Integrated direct link (<code>www.tinyurl.com/ampntsscholarshipslist</code>) to both Home Page and NTS Details scholarship cards.</li>
+      <li><strong>Be a Part of AMP NTS:</strong> Redesigned compact role coordination banner with dedicated contacts for Ms. Nasim Ma'am and Ms. Zainab Batool.</li>
+      <li><strong>Helpline &amp; Navigation Alignment:</strong> Repositioned top navbar Helpline redirection next to Institute Registration.</li>
+      <li><strong>Contact Page:</strong> Reordered sections to prioritize the Daily Helpline Meeting directly above Helpline Numbers.</li>
+      <li><strong>Mobilization &amp; Registration:</strong> Added MobilizationPartnerSection and streamlined exam center registration flows.</li>
+    </ul>
   </div>
 
   <h2 class="section-heading">Modules &amp; File Paths</h2>
 
   <!-- Module 1 -->
   <div class="module-item">
-    <div class="module-title">1. NTS Details — Exam Day Guidelines (Section 11)</div>
+    <div class="module-title">1. NTS Details — Coaching Scholarships List &amp; Guidelines</div>
     <div class="files-list">
       <div class="file-row">
         <span class="badge badge-modified">MODIFIED</span>
@@ -233,11 +272,11 @@
     <div class="files-list">
       <div class="file-row">
         <span class="badge badge-added">ADDED</span>
-        <span class="file-path">src/app/(public)/Participating_Institution/page.tsx</span>
+        <span class="file-path">src/app/(public)/Participating_Institution/layout.tsx</span>
       </div>
       <div class="file-row">
         <span class="badge badge-added">ADDED</span>
-        <span class="file-path">src/app/(public)/Participating_Institution/layout.tsx</span>
+        <span class="file-path">src/app/(public)/Participating_Institution/page.tsx</span>
       </div>
     </div>
   </div>
@@ -248,11 +287,11 @@
     <div class="files-list">
       <div class="file-row">
         <span class="badge badge-added">ADDED</span>
-        <span class="file-path">src/app/(public)/Student_Registration_Guide/page.tsx</span>
+        <span class="file-path">src/app/(public)/Student_Registration_Guide/layout.tsx</span>
       </div>
       <div class="file-row">
         <span class="badge badge-added">ADDED</span>
-        <span class="file-path">src/app/(public)/Student_Registration_Guide/layout.tsx</span>
+        <span class="file-path">src/app/(public)/Student_Registration_Guide/page.tsx</span>
       </div>
     </div>
   </div>
@@ -263,11 +302,11 @@
     <div class="files-list">
       <div class="file-row">
         <span class="badge badge-added">ADDED</span>
-        <span class="file-path">src/app/(public)/Become_An_Exam_Centre/page.tsx</span>
+        <span class="file-path">src/app/(public)/Become_An_Exam_Centre/layout.tsx</span>
       </div>
       <div class="file-row">
         <span class="badge badge-added">ADDED</span>
-        <span class="file-path">src/app/(public)/Become_An_Exam_Centre/layout.tsx</span>
+        <span class="file-path">src/app/(public)/Become_An_Exam_Centre/page.tsx</span>
       </div>
       <div class="file-row">
         <span class="badge badge-modified">MODIFIED</span>
@@ -333,6 +372,8 @@
   <div class="module-item">
     <div class="module-title">8. Home Page &amp; Navigation Components</div>
     <div class="files-list">
+      <div class="file-row"><span class="badge badge-added">ADDED</span><span class="file-path">src/components/ui/ExamDayGuidelines.tsx</span></div>
+      <div class="file-row"><span class="badge badge-added">ADDED</span><span class="file-path">src/components/ui/MobilizationPartnerSection.tsx</span></div>
       <div class="file-row"><span class="badge badge-added">ADDED</span><span class="file-path">src/components/ui/ParticipateInNTS.tsx</span></div>
       <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/app/page.tsx</span></div>
       <div class="file-row"><span class="badge badge-modified">MODIFIED</span><span class="file-path">src/components/common/Ribbon.tsx</span></div>
@@ -350,11 +391,26 @@
 
   <!-- Module 9 -->
   <div class="module-item">
-    <div class="module-title">9. Routing Configuration</div>
+    <div class="module-title">9. Contact Page</div>
+    <div class="files-list">
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/app/(public)/Contact/page.tsx</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 10 -->
+  <div class="module-item">
+    <div class="module-title">10. Routing Configuration &amp; Dynamic Slugs</div>
     <div class="files-list">
       <div class="file-row">
         <span class="badge badge-modified">MODIFIED</span>
         <span class="file-path">next.config.ts</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/app/[slug]/page.tsx</span>
       </div>
     </div>
   </div>
@@ -364,12 +420,12 @@
 
   <div class="manifest-card">
     <div class="manifest-header">
-      <span>SHARE ONLY THESE 29 FILES AT RELEASE TIME</span>
-      <span>Total: 29 (11 Added, 18 Modified)</span>
+      <span>SHARE ONLY THESE 33 FILES AT RELEASE TIME</span>
+      <span>Total: 33 (13 Added, 20 Modified)</span>
     </div>
     <div class="manifest-column">
       <div>
-        <div class="manifest-section-title">+ ADDED FILES (11)</div>
+        <div class="manifest-section-title">+ ADDED FILES (13)</div>
         <div class="manifest-item added">+ src/app/(public)/Become_An_Exam_Centre/layout.tsx</div>
         <div class="manifest-item added">+ src/app/(public)/Become_An_Exam_Centre/page.tsx</div>
         <div class="manifest-item added">+ src/app/(public)/Participating_Institution/layout.tsx</div>
@@ -379,14 +435,18 @@
         <div class="manifest-item added">+ src/app/(public)/Student_Registration_Guide/layout.tsx</div>
         <div class="manifest-item added">+ src/app/(public)/Student_Registration_Guide/page.tsx</div>
         <div class="manifest-item added">+ src/app/(public)/sponsors-and-partners/page.tsx</div>
+        <div class="manifest-item added">+ src/components/ui/ExamDayGuidelines.tsx</div>
+        <div class="manifest-item added">+ src/components/ui/MobilizationPartnerSection.tsx</div>
         <div class="manifest-item added">+ src/components/ui/ParticipateInNTS.tsx</div>
         <div class="manifest-item added">+ src/components/ui/TrainingPartnersSection.tsx</div>
       </div>
       <div>
-        <div class="manifest-section-title">~ MODIFIED FILES (18)</div>
+        <div class="manifest-section-title">~ MODIFIED FILES (20)</div>
         <div class="manifest-item mod">~ next.config.ts</div>
         <div class="manifest-item mod">~ src/app/(public)/AMP_World_App/page.tsx</div>
         <div class="manifest-item mod">~ src/app/(public)/Become_An_Exam_Center/page.tsx</div>
+        <div class="manifest-item mod">~ src/app/(public)/Contact/page.tsx</div>
+        <div class="manifest-item mod">~ src/app/[slug]/page.tsx</div>
         <div class="manifest-item mod">~ src/app/page.tsx</div>
         <div class="manifest-item mod">~ src/components/common/Ribbon.tsx</div>
         <div class="manifest-item mod">~ src/components/faqs/FaqData.tsx</div>

@@ -8,13 +8,13 @@ export default function ExamDayGuidelines() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-black tracking-tight">
-            Exam Day Guidelines
+            Student&apos;s Instructions
           </h2>
           <div className="w-12 h-1 bg-[#C89D4B] mx-auto mt-2.5 mb-3.5 rounded-full" />
 
           <div className="mt-5 space-y-3">
             <h3 className="text-lg sm:text-xl font-bold text-zinc-900">
-              About AMP NTS 2026
+              Exam Day Guidelines
             </h3>
             <p className="text-sm sm:text-base text-zinc-700 leading-relaxed font-normal">
               National Talent Search NTS 2026 is a national-level scholarship examination conducted by the{" "}
