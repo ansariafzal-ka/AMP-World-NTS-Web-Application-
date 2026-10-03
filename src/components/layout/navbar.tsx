@@ -24,7 +24,6 @@ const navItems: NavItem[] = [
       { label: "NTS Details", href: "/NTS_Details" },
       { label: "FAQ", href: "/FAQs" },
       { label: "Mock Papers", href: "/Mock_Papers" },
-      { label: "Helpline", href: "/Contact" },
     ],
   },
   { label: "Important Dates", href: "/Important_Dates" },
@@ -42,6 +41,7 @@ const navItems: NavItem[] = [
       { label: "Participating Institution Registration", href: "/Participating_Institution" },
     ],
   },
+  { label: "Helpline", href: "/Contact" },
 ];
 
 export default function Navbar() {
