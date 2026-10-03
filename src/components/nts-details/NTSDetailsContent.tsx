@@ -275,7 +275,7 @@ export default function NTSDetailsContent() {
               Centre-Based Written Exam
             </h2>
             <p className="mt-2 text-sm sm:text-base text-zinc-600 leading-relaxed">
-              To guarantee fairness, integrity, and equal accessibility across all urban and rural talukas, <strong className="text-zinc-900 font-semibold">there will be NO Online Exam</strong> for NTS 2026.
+              Ensuring fairness, integrity, and equal accessibility for all students across urban and rural talukas nationwide.
             </p>
           </div>
 
@@ -826,7 +826,7 @@ export default function NTSDetailsContent() {
       {/* =========================================================
           SECTION 9: SYLLABUS & PREPARATION GUIDE (PDF Pages 6–13)
       ========================================================= */}
-      <section className="py-14 sm:py-20 bg-zinc-50 border-b border-zinc-200">
+      <section id="syllabus" className="py-14 sm:py-20 bg-zinc-50 border-b border-zinc-200 scroll-mt-20 sm:scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>

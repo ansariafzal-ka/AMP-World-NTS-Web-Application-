@@ -85,7 +85,7 @@ const glanceCards: GlanceCard[] = [
       "Scholastic Aptitude (SAT): 50 MCQs tailored to School & College levels.",
       "Comprehensive guidelines & curriculum breakdowns across all tiers.",
     ],
-    href: "https://drive.google.com/drive/folders/1h7BPRDirEHcqX-VKZhrcBpoJP2W_F7gB",
+    href: "/NTS_Details#syllabus",
     linkText: "View Syllabus",
   },
   {

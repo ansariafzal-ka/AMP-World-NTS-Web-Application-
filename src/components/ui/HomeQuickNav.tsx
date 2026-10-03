@@ -58,6 +58,24 @@ const navItems: QuickNavItem[] = [
     ),
   },
   {
+    id: "mobilization-partner",
+    label: "Become a Mobilization Partner",
+    icon: (props) => (
+      <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.5A2.25 2.25 0 0 1 2.25 13.5v-3a2.25 2.25 0 0 1 2.25-2.25h2.25Z" />
+      </svg>
+    ),
+  },
+  {
+    id: "participate",
+    label: "Participate in AMP NTS",
+    icon: (props) => (
+      <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-1.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 21c-2.17 0-4.207-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" />
+      </svg>
+    ),
+  },
+  {
     id: "mobile-app",
     label: "Mobile App",
     href: "/AMP_World_App",

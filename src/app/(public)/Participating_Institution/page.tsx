@@ -78,11 +78,6 @@ export default function ParticipatingInstitutionPage() {
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
             <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-semibold tracking-wider text-zinc-200 uppercase backdrop-blur-sm mb-3">
-                <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
-                <span>INSTITUTIONAL PARTNERSHIP · NTS 2026</span>
-              </div>
-
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
                 Institution Partner
               </h1>
@@ -97,10 +92,31 @@ export default function ParticipatingInstitutionPage() {
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button
-                  href="/AMP_World_App"
+                  href="/institution-registration"
                   variant="secondary"
                   size="md"
-                  className="font-bold shadow-xs"
+                  className="font-bold shadow-md hover:shadow-lg whitespace-nowrap"
+                >
+                  <span>Register Institution</span>
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </Button>
+                <Button
+                  href="/AMP_World_App"
+                  variant="frosted"
+                  size="md"
+                  className="font-bold whitespace-nowrap"
                 >
                   Download AMP World App →
                 </Button>
@@ -108,7 +124,7 @@ export default function ParticipatingInstitutionPage() {
                   href="/portal/institution/bulk-student-registration"
                   variant="frosted"
                   size="md"
-                  className="font-bold"
+                  className="font-bold whitespace-nowrap"
                 >
                   Bulk Student Registration
                 </Button>

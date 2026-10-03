@@ -43,7 +43,7 @@ const observerPoints = [
 
 export default function ParticipateInNTS() {
   return (
-    <section id="participate" className="py-14 sm:py-18 lg:py-22 bg-zinc-50/70 border-b border-zinc-200/80 scroll-mt-24 sm:scroll-mt-28">
+    <section id="participate" className="py-14 sm:py-18 lg:py-22 bg-zinc-50/70 border-b border-zinc-200/80 scroll-mt-32 sm:scroll-mt-36">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -56,7 +56,7 @@ export default function ParticipateInNTS() {
           </h2>
           <div className="w-12 h-1 bg-[#C89D4B] mx-auto mt-2.5 mb-3.5 rounded-full" />
           <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
-            As an individual, contribute to the National Talent Search by joining AMP NTS in one of the following roles:
+            As an individual, contribute to the National Talent Search by participating in one of the following roles:
           </p>
 
           {/* Roles Summary Badges */}

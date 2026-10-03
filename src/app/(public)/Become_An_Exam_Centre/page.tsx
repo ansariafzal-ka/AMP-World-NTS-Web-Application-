@@ -55,14 +55,8 @@ export default function BecomeAnExamCentrePage() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-center my-auto">
             {/* Top Text Block (Left-Aligned) */}
             <div className="max-w-5xl">
-              {/* Pill Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-semibold tracking-wider text-zinc-200 uppercase backdrop-blur-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
-                <span>INSTITUTIONAL PARTNERSHIP · NTS 2026</span>
-              </div>
-
               {/* Main Heading */}
-              <h1 className="mt-3 sm:mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight">
                 Become an Exam Centre
               </h1>
 
@@ -70,6 +64,31 @@ export default function BecomeAnExamCentrePage() {
               <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-zinc-200 leading-relaxed font-normal max-w-3xl">
                 Partner with AMP to host the National Talent Search 2026 in your Block or Taluka. Empower your students, foster academic excellence, and position your institution as a premier regional talent hub.
               </p>
+
+              {/* Redirection Button */}
+              <div className="mt-6 flex flex-wrap items-center gap-3.5">
+                <Button
+                  href="/exam-centre-registration"
+                  variant="secondary"
+                  size="md"
+                  className="font-bold shadow-md hover:shadow-lg"
+                >
+                  <span>Register as Exam Centre</span>
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </Button>
+              </div>
             </div>
 
             {/* 4 Bottom Milestone / Metric Cards */}

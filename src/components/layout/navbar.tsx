@@ -38,8 +38,8 @@ const navItems: NavItem[] = [
   {
     label: "Institute Registration",
     children: [
-      { label: "Exam Center Registration", href: "/exam-centre-registration" },
-      { label: "Participating Institution Registration", href: "/institution-registration" },
+      { label: "Exam Center Registration", href: "/Become_An_Exam_Centre" },
+      { label: "Participating Institution Registration", href: "/Participating_Institution" },
     ],
   },
 ];

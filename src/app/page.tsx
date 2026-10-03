@@ -6,6 +6,7 @@ import ScholarshipsRewards from "@/components/ui/ScholarshipsRewards";
 import NTSAtAGlance from "@/components/ui/NTSAtAGlance";
 import HowToParticipate from "@/components/ui/HowToParticipate";
 import VideoHighlights from "@/components/ui/VideoHighlights";
+import MobilizationPartnerSection from "@/components/ui/MobilizationPartnerSection";
 import ParticipateInNTS from "@/components/ui/ParticipateInNTS";
 import CtaBanner from "@/components/ui/CtaBanner";
 import Footer from "@/components/layout/footer";
@@ -38,6 +39,8 @@ export default function Home() {
         <div id="highlights" className="scroll-mt-32 sm:scroll-mt-36">
           <VideoHighlights />
         </div>
+
+        <MobilizationPartnerSection />
 
         <ParticipateInNTS />
 

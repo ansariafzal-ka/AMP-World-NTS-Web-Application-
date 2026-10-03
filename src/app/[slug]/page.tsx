@@ -13,7 +13,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
-  const page = await cmsClient.getPageBySlug(slug);
+  let page = null;
+  try {
+    page = await cmsClient.getPageBySlug(slug);
+  } catch {
+    page = null;
+  }
 
   if (!page) {
     return {
@@ -45,7 +50,12 @@ export default async function DynamicCmsPage({
 }) {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
-  const page = await cmsClient.getPageBySlug(slug);
+  let page = null;
+  try {
+    page = await cmsClient.getPageBySlug(slug);
+  } catch {
+    page = null;
+  }
 
   if (!page) {
     return notFound();

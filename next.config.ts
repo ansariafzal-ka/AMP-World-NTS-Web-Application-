@@ -25,11 +25,7 @@ const nextConfig: NextConfig = {
         destination: '/Become_An_Exam_Centre',
         permanent: true,
       },
-      {
-        source: '/institution-registration',
-        destination: '/Participating_Institution',
-        permanent: true,
-      },
+
       {
         source: '/participating-institution',
         destination: '/Participating_Institution',
