@@ -154,21 +154,25 @@ export default function ParticipatingInstitutionPage() {
                   <ul className="mt-6 space-y-5 text-sm sm:text-base text-zinc-700">
                     <li className="flex items-start gap-3">
                       <span className="text-[#610D17] font-bold text-lg leading-none mt-1">•</span>
-                      <div className="space-y-3">
-                        <span>Download the AMP World Mobile App (available on the Google Play Store).</span>
-                        <div className="pt-1">
-                          <Button
-                            href="/AMP_World_App"
-                            variant="primary"
-                            size="md"
-                          >
-                            <span>AMP World App</span>
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                          </Button>
-                        </div>
-                      </div>
+                      <span>
+                        Download the{" "}
+                        <Link
+                          href="/AMP_World_App"
+                          className="font-semibold text-[#610D17] underline hover:text-[#7E1222] transition-colors"
+                        >
+                          AMP World Mobile App
+                        </Link>{" "}
+                        (available on the Google Play Store) or Visit{" "}
+                        <a
+                          href="https://www.ampworld.in"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-[#610D17] underline hover:text-[#7E1222] transition-colors"
+                        >
+                          www.ampworld.in
+                        </a>
+                        .
+                      </span>
                     </li>
 
                     <li className="flex items-start gap-3">

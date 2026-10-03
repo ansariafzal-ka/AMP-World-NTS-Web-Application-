@@ -172,34 +172,98 @@ export default function BecomeAnExamCentrePage() {
             </div>
 
             {/* Two-Column Grid */}
-            <div className="mt-10 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            <div className="mt-10 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               {/* Left Column Card */}
-              <div className="rounded-2xl border border-zinc-200 bg-zinc-50/60 p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-50/60 p-6 sm:p-8 shadow-xs flex flex-col">
                 <div className="space-y-8">
-                  {/* Registration Process */}
+                  {/* Exam Centre Registration Process */}
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-[#610D17]">
-                      Registration Process
+                      Exam Centre Registration Process
                     </h3>
                     <p className="mt-3 text-xs sm:text-sm text-zinc-700 leading-relaxed">
-                      Register with us as an Exam Centre for your block/ taluka and benefit your Institution as well as Students. The Exam Centre will assign an Observer and a Single Point of Contact (SPOC) who will communicate with the AMP NTS Team.
+                      Register your institution as an Exam Centre for your Block/Taluka and contribute to providing students with access to the AMP National Talent Search (NTS) examination.
                     </p>
-                    <p className="mt-3 text-xs sm:text-sm font-bold text-zinc-900 leading-relaxed">
-                      Please provide the required Exam Centre information in the Google Form at the following link:
-                    </p>
-                    <div className="mt-5">
-                      <Button
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSduA3LlbIJsvfUCsfJeocHLifmrju864gwHhdxEZ76LB1b-yA/viewform?pli=1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variant="primary"
-                        size="md"
-                      >
-                        <span>AMP NTS Exam Centre Form</span>
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </Button>
+
+                    <div className="mt-5 pt-4 border-t border-zinc-200/60">
+                      <h4 className="text-sm sm:text-base font-bold text-zinc-900">
+                        How to Register
+                      </h4>
+
+                      <div className="mt-4 space-y-4 text-xs sm:text-sm text-zinc-700">
+                        {/* Step 1 */}
+                        <div className="flex items-start gap-2.5">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#610D17]/10 text-xs font-bold text-[#610D17] mt-0.5">
+                            1
+                          </span>
+                          <div>
+                            <p className="font-semibold text-zinc-900">Visit the AMP World Website</p>
+                            <p className="mt-0.5 text-zinc-600">
+                              Visit{" "}
+                              <a
+                                href="https://www.ampworld.in"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-semibold text-[#610D17] underline hover:text-[#7E1222] transition-colors"
+                              >
+                                www.ampworld.in
+                              </a>{" "}
+                              and select &ldquo;Exam Centre Registration.&rdquo;
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Step 2 */}
+                        <div className="flex items-start gap-2.5">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#610D17]/10 text-xs font-bold text-[#610D17] mt-0.5">
+                            2
+                          </span>
+                          <div>
+                            <p className="font-semibold text-zinc-900">Complete the Registration Form</p>
+                            <p className="mt-0.5 text-zinc-600">
+                              Follow the instructions and provide the required institution and Exam Centre details.
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Step 3 */}
+                        <div className="flex items-start gap-2.5">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#610D17]/10 text-xs font-bold text-[#610D17] mt-0.5">
+                            3
+                          </span>
+                          <div>
+                            <p className="font-semibold text-zinc-900">Nominate SPOC &amp; Observer</p>
+                            <p className="mt-0.5 text-zinc-600">The Exam Centre should nominate:</p>
+                            <ul className="mt-1.5 space-y-1 pl-1">
+                              <li className="flex items-start gap-2">
+                                <span className="text-[#610D17] font-bold">•</span>
+                                <span>
+                                  <strong className="text-zinc-900 font-semibold">Single Point of Contact (SPOC)</strong> – to coordinate and communicate with the AMP NTS Team.
+                                </span>
+                              </li>
+                              <li className="flex items-start gap-2">
+                                <span className="text-[#610D17] font-bold">•</span>
+                                <span>
+                                  <strong className="text-zinc-900 font-semibold">Observer</strong> – to oversee the examination process at the Exam Centre.
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        {/* Step 4 */}
+                        <div className="flex items-start gap-2.5">
+                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#610D17]/10 text-xs font-bold text-[#610D17] mt-0.5">
+                            4
+                          </span>
+                          <div>
+                            <p className="font-semibold text-zinc-900">Submit the Registration</p>
+                            <p className="mt-0.5 text-zinc-600">
+                              Review the details carefully and submit the registration form. Further guidelines and communication will be shared with the registered Exam Centre.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -252,7 +316,7 @@ export default function BecomeAnExamCentrePage() {
               </div>
 
               {/* Right Column Card */}
-              <div className="rounded-2xl border border-zinc-200 bg-zinc-50/60 p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-50/60 p-6 sm:p-8 shadow-xs flex flex-col">
                 <div className="space-y-8">
                   {/* Exam Materials */}
                   <div>
