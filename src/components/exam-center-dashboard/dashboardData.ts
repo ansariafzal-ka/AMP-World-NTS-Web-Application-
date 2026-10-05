@@ -15,6 +15,8 @@ export interface CentreData {
   city: string;
   state: string;
   pincode: string;
+  mapUrl?: string;
+  googleMapLink?: string;
   capacityAllocated: number;
   capacityTotal: number;
   observers: Observer[];
@@ -47,6 +49,7 @@ export const SAMPLE_CENTRES: Record<string, CentreData> = {
     city: "Hyderabad",
     state: "Telangana",
     pincode: "500005",
+    mapUrl: "https://maps.google.com/?q=Titan+School+Borabanda+Hyderabad",
     capacityAllocated: 183,
     capacityTotal: 200,
     observers: [
@@ -70,6 +73,35 @@ export const SAMPLE_CENTRES: Record<string, CentreData> = {
         phone: "9989347226",
         type: "AMP Observer",
         designation: "District Chapter Lead",
+      },
+    ],
+  },
+  AMPNTS25KA0405: {
+    code: "AMPNTS25KA0405",
+    name: "Al-Ameen Pre-University College",
+    pocName: "Prof. Mohammed Farooq",
+    pocPhone: "9845112233",
+    address: "Hosur Road, Near Lalbagh Main Gate, Sudhama Nagar",
+    city: "Bengaluru Urban",
+    state: "Karnataka",
+    pincode: "560027",
+    mapUrl: "https://maps.google.com/?q=Al-Ameen+Pre-University+College+Hosur+Road+Bengaluru",
+    capacityAllocated: 210,
+    capacityTotal: 250,
+    observers: [
+      {
+        id: 1,
+        name: "Dr. Naseer Ahmed",
+        phone: "9845001122",
+        type: "AMP Observer",
+        designation: "State Coordinator - Karnataka",
+      },
+      {
+        id: 2,
+        name: "Syed Imran",
+        phone: "9886334455",
+        type: "Exam Centre Observer",
+        designation: "Vice Principal",
       },
     ],
   },

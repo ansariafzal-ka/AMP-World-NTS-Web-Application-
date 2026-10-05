@@ -221,7 +221,7 @@ export default function Navbar() {
 
           {/* Desktop Login Button (lg+) */}
           <div className="hidden lg:block">
-            <Button href="/login" variant="primary" size="sm">
+            <Button href="/portal" variant="primary" size="sm">
               Login
             </Button>
           </div>
@@ -402,7 +402,7 @@ export default function Navbar() {
               All Documents
             </Button>
             <Button
-              href="/login"
+              href="/portal"
               variant="primary"
               size="md"
               className="w-full justify-center"

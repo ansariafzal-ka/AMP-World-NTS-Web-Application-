@@ -164,6 +164,7 @@ BEGIN
         ContactPerson,
         ContactPhone,
         ContactEmail,
+        GoogleMapLink,
         Capacity,
         ApprovedCapacity,
         Registered,
@@ -181,6 +182,7 @@ BEGIN
         'Afsari Begum',
         '9390638371',
         'titan.school@ampindia.org',
+        'https://maps.google.com/?q=Titan+School+Borabanda+Hyderabad',
         200,
         200,
         183,
@@ -223,6 +225,48 @@ BEGIN
         300,
         300,
         245,
+        'active'
+    );
+END
+GO
+
+-- 7.3 Seed ExamCentre: Al-Ameen Pre-University College (with GoogleMapLink)
+IF NOT EXISTS (SELECT 1 FROM EXAMCENTRE.ExamCentre WHERE ExamCentreCode = 'AMPNTS25KA0405')
+BEGIN
+    INSERT INTO EXAMCENTRE.ExamCentre (
+        ExamCentreId,
+        ExamCentreCode,
+        CentreName,
+        InstitutionName,
+        Address,
+        DistrictName,
+        StateName,
+        Pincode,
+        ContactPerson,
+        ContactPhone,
+        ContactEmail,
+        GoogleMapLink,
+        Capacity,
+        ApprovedCapacity,
+        Registered,
+        Status
+    )
+    VALUES (
+        'EC-KA-0405',
+        'AMPNTS25KA0405',
+        'Al-Ameen Pre-University College',
+        'Al-Ameen Educational Society',
+        'Hosur Road, Near Lalbagh Main Gate, Sudhama Nagar',
+        'Bengaluru Urban',
+        'Karnataka',
+        '560027',
+        'Prof. Mohammed Farooq',
+        '9845112233',
+        'alameen.bangalore@ampindia.org',
+        'https://maps.google.com/?q=Al-Ameen+Pre-University+College+Hosur+Road+Bengaluru',
+        250,
+        250,
+        210,
         'active'
     );
 END

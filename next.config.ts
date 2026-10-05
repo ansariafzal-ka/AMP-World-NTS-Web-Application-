@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        source: '/login',
+        destination: '/portal',
+        permanent: false,
+      },
+      {
         source: '/Become_An_Exam_Center',
         destination: '/Become_An_Exam_Centre',
         permanent: true,

@@ -42,6 +42,8 @@ class ExamCenterService {
       city: centre.DistrictName || '',
       state: centre.StateName || '',
       pincode: centre.Pincode,
+      mapUrl: centre.GoogleMapLink || '',
+      googleMapLink: centre.GoogleMapLink || '',
       capacityAllocated: centre.Registered || 0,
       capacityTotal: centre.ApprovedCapacity || centre.Capacity || 0,
       observers: observerRows.map((obs) => ({
