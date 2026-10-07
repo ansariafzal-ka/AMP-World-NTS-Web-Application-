@@ -1,5 +1,50 @@
 # AMP National Talent Search (NTS) Web Application
 
+## Release Notes — Version 0.3.4 (Interactive Online Mock Papers & Mock Papers Page Refinements)
+**Release Date:** October 7, 2026
+
+---
+
+### 📌 Version 0.3.4 Overview
+**AMP NTS Web Application (v0.3.4)** introduces the new **Practice Mock Papers Online** interactive portal on the Mock Papers page (`/Mock_Papers`), providing students direct access to 79 verified Microsoft Forms practice tests across Schools, Junior Colleges, and Senior/Degree Colleges. This release also comprehensively refines and modernizes the Mock Papers page layout, hero statistics, category naming, pattern structure, and call-to-action sections.
+
+---
+
+### 🚀 What's New in Version 0.3.4
+
+#### 1. Interactive Online Mock Papers Section (`/Mock_Papers`)
+* **New Dedicated Section (`OnlineMockPapersSection.tsx`):** Added a streamlined **"Practice Mock Papers Online"** interactive module positioned directly above the PDF repository.
+* **79 Practice Papers Integrated (`mockLinksData.ts`):** Complete collection of authentic online test links extracted and structured from `Mock Paper Links.xlsx`:
+  * **Schools (Class 8th, 9th, 10th — 61 Papers):**
+    * **Class 8th (19 papers):** English (6), Hindi (4), Urdu (4), Gujarati (3), Bengali (2)
+    * **Class 9th (18 papers):** English (5), Hindi (4), Urdu (4), Gujarati (3), Bengali (2)
+    * **Class 10th (24 papers):** English (7), Hindi (6), Urdu (6), Gujarati (3), Bengali (2)
+  * **Junior / Intermediate Colleges — 11th & 12th (9 Papers):** English Medium
+  * **Senior / Degree Colleges — Undergraduates (9 Papers):** English Medium
+* **Multi-Tier Filtering & Compact Card Design:**
+  * Interactive category tabs: *Schools (8th, 9th & 10th)*, *Junior / Intermediate Colleges (11th & 12th)*, and *Senior / Degree Colleges (Undergraduates)*.
+  * For Schools, responsive sub-filter pills for Class (`8th`, `9th`, `10th`) and Medium (`English`, `Hindi`, `Urdu`, `Gujarati`, `Bengali`) with live paper counts.
+  * Ultra-compact single-row card layout featuring bold `Mock Paper [number]` titles, medium indicators, and inline `Attempt Test →` external links opening safely in a new tab (`target="_blank"`, `rel="noopener noreferrer"`).
+
+#### 2. Mock Papers Page Content & Layout Refinements (`MockPapersContent.tsx`)
+* **Hero Cards Alignment:**
+  * Updated Card 2 to **"3 Categories"** with single-line non-breaking layout for `Junior / Intermediate Colleges (11th & 12th)`.
+  * Updated Card 3 to **"6 Mediums for schools"**.
+  * Removed obsolete bottom tags across hero stat cards.
+* **Archive & Category Heading Updates:**
+  * Renamed official archive section to **"PDF Papers Available for Download"**.
+  * Updated academic tier headings to **"Junior / Intermediate Colleges (11th & 12th)"** and **"Senior / Degree Colleges (Undergraduates)"**.
+  * Updated 2025 edition card title to **"AMP NTS 2025 Latest Edition"**.
+  * Updated exam pattern section heading to **"Standard Pattern for Practice"** (removed redundant "NTS").
+* **Section Cleanup:**
+  * Completely removed the legacy *Individual Question Papers & Keys* vault section, clearing unused state and arrays.
+  * Streamlined Call-To-Action (CTA) section by removing the "Upcoming NTS 2026" badge and the redundant "Read Complete Syllabus" button.
+
+#### 3. Update Distribution Archive
+* **Standalone Update Archive:** Generated `AMP_NTS_Mock_Papers_Update.zip` containing all modified components, route pages, and the mock links dataset.
+
+---
+
 ## Release Notes — Version 0.3.3 (Home Video, Exam Center Dashboard Map & Portal Login)
 **Release Date:** October 7, 2026
 

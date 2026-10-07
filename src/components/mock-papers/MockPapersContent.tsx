@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Button from "@/components/common/Button";
 import OnlineMockPapersSection from "./OnlineMockPapersSection";
+import CtaBanner from "@/components/ui/CtaBanner";
 
 export default function MockPapersContent() {
   return (
@@ -507,31 +507,9 @@ export default function MockPapersContent() {
       </section>
 
       {/* =========================================================
-          5. CALL TO ACTION
+          5. CALL TO ACTION (RED BANNER)
       ========================================================= */}
-      <section className="bg-zinc-50 py-14 sm:py-20 border-t border-zinc-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
-            Ready to Take the Actual Examination?
-          </h2>
-          <p className="mt-3 text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-            Practice with past papers, master the OMR format, and enroll online for the nationwide offline test across 600+ districts.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3.5">
-            <Button href="/student-registration" variant="primary" size="md">
-              Register as Student
-            </Button>
-            <a
-              href="https://drive.google.com/drive/folders/1wKE-nYBvp3_xRPoR_Tjm-bwDGJoF7oFM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl border border-zinc-300 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-50 transition-colors"
-            >
-              Browse Master Repository ↗
-            </a>
-          </div>
-        </div>
-      </section>
+      <CtaBanner />
     </div>
   );
 }

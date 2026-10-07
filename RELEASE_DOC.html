@@ -223,11 +223,11 @@
     <div class="meta-grid">
       <div class="meta-item">
         <strong>Release Name</strong>
-        <span>NTS 2026 Feature Updates</span>
+        <span>NTS 2026 Feature Updates &amp; Mock Papers Portal</span>
       </div>
       <div class="meta-item">
         <strong>Release Version</strong>
-        <span class="version-badge">v0.3.3</span>
+        <span class="version-badge">v0.3.4</span>
       </div>
       <div class="meta-item">
         <strong>Release Date</strong>
@@ -235,7 +235,7 @@
       </div>
       <div class="meta-item">
         <strong>Total Files</strong>
-        <span>37 (13 Added, 24 Modified)</span>
+        <span>40 (15 Added, 25 Modified)</span>
       </div>
     </div>
   </div>
@@ -253,6 +253,7 @@
       <li><strong>Exam Center Dashboard &amp; Map Option:</strong> Updated Single Point of Contact label and added an optional "Map:" field rendering a direct Google Maps link if configured. Updated SQL Server schema, stored procedure, Express API, and dashboard data types.</li>
       <li><strong>Global Portal Redirection:</strong> Updated navbar Login buttons (desktop &amp; mobile) to link to <code>/portal</code>, and added route redirect from <code>/login</code> to <code>/portal</code> in <code>next.config.ts</code>.</li>
       <li><strong>Home Page NTS Video Embed:</strong> Updated the introductory YouTube embed with the official video (<code>SL7EeShaX0Q</code>) in <code>HomeVideoSection.tsx</code>.</li>
+      <li><strong>Practice Mock Papers Online &amp; Archive Modernization:</strong> Integrated 79 interactive Microsoft Forms practice tests across Schools (5 mediums), Junior Colleges, and Senior Colleges. Added <code>OnlineMockPapersSection.tsx</code> and <code>mockLinksData.ts</code>, modernized Mock Papers page cards, updated category titles, and cleaned up legacy sections.</li>
     </ul>
   </div>
 
@@ -441,17 +442,35 @@
     </div>
   </div>
 
+  <div class="module-card">
+    <div class="module-title">11. Mock Papers Practice Portal &amp; Downloads Archive</div>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/components/mock-papers/OnlineMockPapersSection.tsx</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-added">ADDED</span>
+        <span class="file-path">src/components/mock-papers/mockLinksData.ts</span>
+      </div>
+      <div class="file-row">
+        <span class="badge badge-modified">MODIFIED</span>
+        <span class="file-path">src/components/mock-papers/MockPapersContent.tsx</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Consolidated File List -->
   <h2 class="section-heading">Consolidated File List for Merging</h2>
 
   <div class="manifest-card">
     <div class="manifest-header">
-      <span>SHARE ONLY THESE 37 FILES AT RELEASE TIME</span>
-      <span>Total: 37 (13 Added, 24 Modified)</span>
+      <span>SHARE ONLY THESE 40 FILES AT RELEASE TIME</span>
+      <span>Total: 40 (15 Added, 25 Modified)</span>
     </div>
     <div class="manifest-column">
       <div>
-        <div class="manifest-section-title">+ ADDED FILES (13)</div>
+        <div class="manifest-section-title">+ ADDED FILES (15)</div>
         <div class="manifest-item added">+ src/app/(public)/Become_An_Exam_Centre/layout.tsx</div>
         <div class="manifest-item added">+ src/app/(public)/Become_An_Exam_Centre/page.tsx</div>
         <div class="manifest-item added">+ src/app/(public)/Participating_Institution/layout.tsx</div>
@@ -461,13 +480,15 @@
         <div class="manifest-item added">+ src/app/(public)/Student_Registration_Guide/layout.tsx</div>
         <div class="manifest-item added">+ src/app/(public)/Student_Registration_Guide/page.tsx</div>
         <div class="manifest-item added">+ src/app/(public)/sponsors-and-partners/page.tsx</div>
+        <div class="manifest-item added">+ src/components/mock-papers/OnlineMockPapersSection.tsx</div>
+        <div class="manifest-item added">+ src/components/mock-papers/mockLinksData.ts</div>
         <div class="manifest-item added">+ src/components/ui/ExamDayGuidelines.tsx</div>
         <div class="manifest-item added">+ src/components/ui/MobilizationPartnerSection.tsx</div>
         <div class="manifest-item added">+ src/components/ui/ParticipateInNTS.tsx</div>
         <div class="manifest-item added">+ src/components/ui/TrainingPartnersSection.tsx</div>
       </div>
       <div>
-        <div class="manifest-section-title">~ MODIFIED FILES (24)</div>
+        <div class="manifest-section-title">~ MODIFIED FILES (25)</div>
         <div class="manifest-item mod">~ API/src/services/examCenter.service.js</div>
         <div class="manifest-item mod">~ database/exam_center_dashboard_schema.sql</div>
         <div class="manifest-item mod">~ next.config.ts</div>
@@ -482,6 +503,7 @@
         <div class="manifest-item mod">~ src/components/faqs/FaqData.tsx</div>
         <div class="manifest-item mod">~ src/components/layout/footer.tsx</div>
         <div class="manifest-item mod">~ src/components/layout/navbar.tsx</div>
+        <div class="manifest-item mod">~ src/components/mock-papers/MockPapersContent.tsx</div>
         <div class="manifest-item mod">~ src/components/nts-details/NTSDetailsContent.tsx</div>
         <div class="manifest-item mod">~ src/components/ui/DatesCTA.tsx</div>
         <div class="manifest-item mod">~ src/components/ui/DatesHero.tsx</div>

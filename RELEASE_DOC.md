@@ -1,7 +1,7 @@
 # AMP NTS Web Application — Release Document
 
-**Release Name:** NTS 2026 Feature Updates  
-**Release Version:** v0.3.3  
+**Release Name:** NTS 2026 Feature Updates & Mock Papers Portal  
+**Release Version:** v0.3.4  
 **Release Date:** October 7, 2026  
 
 ---
@@ -34,6 +34,10 @@
    - Added route redirect in `next.config.ts` mapping `/login` to `/portal` (`permanent: false`).
 9. **Home Page NTS Video Embed Update:**
    - Replaced promotional video embed with the updated official AMP National Talent Search introductory video (`https://www.youtube.com/watch?v=SL7EeShaX0Q`) via `src/components/ui/HomeVideoSection.tsx` (`https://www.youtube.com/embed/SL7EeShaX0Q`).
+10. **Practice Mock Papers Online & Archive Modernization:**
+    - Integrated **79 interactive online mock practice papers** (Microsoft Forms) structured across Schools (Classes 8th, 9th, 10th in 5 mediums: English, Urdu, Hindi, Gujarati, Bengali), Junior Colleges (11th & 12th), and Senior / Degree Colleges.
+    - Added dedicated component `OnlineMockPapersSection.tsx` and dataset `mockLinksData.ts` mounted above PDF downloads archive on `/Mock_Papers`.
+    - Modernized Mock Papers page (`MockPapersContent.tsx`): Updated hero stats to "3 Categories" and "6 Mediums for schools", updated archive heading to "PDF Papers Available for Download", updated 2025 edition card to "AMP NTS 2025 Latest Edition", and cleaned up legacy sections.
 
 ---
 
@@ -98,11 +102,16 @@
 * `[MODIFIED]` `src/components/exam-center-dashboard/CentreDetailsSection.tsx`
 * `[MODIFIED]` `src/components/exam-center-dashboard/dashboardData.ts`
 
+### 11. Mock Papers Practice Portal & Downloads Archive
+* `[ADDED]` `src/components/mock-papers/OnlineMockPapersSection.tsx`
+* `[ADDED]` `src/components/mock-papers/mockLinksData.ts`
+* `[MODIFIED]` `src/components/mock-papers/MockPapersContent.tsx`
+
 ---
 
-## Consolidated File List for Merging (37 Files)
+## Consolidated File List for Merging (40 Files)
 
-### Added Files (13)
+### Added Files (15)
 ```text
 src/app/(public)/Become_An_Exam_Centre/layout.tsx
 src/app/(public)/Become_An_Exam_Centre/page.tsx
@@ -113,13 +122,15 @@ src/app/(public)/Sponsorship_And_Partnership/page.tsx
 src/app/(public)/Student_Registration_Guide/layout.tsx
 src/app/(public)/Student_Registration_Guide/page.tsx
 src/app/(public)/sponsors-and-partners/page.tsx
+src/components/mock-papers/OnlineMockPapersSection.tsx
+src/components/mock-papers/mockLinksData.ts
 src/components/ui/ExamDayGuidelines.tsx
 src/components/ui/MobilizationPartnerSection.tsx
 src/components/ui/ParticipateInNTS.tsx
 src/components/ui/TrainingPartnersSection.tsx
 ```
 
-### Modified Files (24)
+### Modified Files (25)
 ```text
 API/src/services/examCenter.service.js
 database/exam_center_dashboard_schema.sql
@@ -135,6 +146,7 @@ src/components/exam-center-dashboard/dashboardData.ts
 src/components/faqs/FaqData.tsx
 src/components/layout/footer.tsx
 src/components/layout/navbar.tsx
+src/components/mock-papers/MockPapersContent.tsx
 src/components/nts-details/NTSDetailsContent.tsx
 src/components/ui/DatesCTA.tsx
 src/components/ui/DatesHero.tsx
