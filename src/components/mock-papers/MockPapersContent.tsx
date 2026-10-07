@@ -229,7 +229,7 @@ export default function MockPapersContent() {
                   </span>
                 </div>
                 <h3 className="mt-3.5 text-lg font-bold text-zinc-900 group-hover:text-emerald-900 transition-colors">
-                  NTS 2025 Latest Edition
+                  AMP NTS 2025 Latest Edition
                 </h3>
                 <p className="mt-1.5 text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   The latest examination papers with official master solutions and verified scoring keys.
