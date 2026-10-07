@@ -1,16 +1,16 @@
 # AMP National Talent Search (NTS) Web Application
 
-## Release Notes — Version 0.3.2 (Exam Center Dashboard Map & Portal Login Navigation)
-**Release Date:** October 5, 2026
+## Release Notes — Version 0.3.3 (Home Video, Exam Center Dashboard Map & Portal Login)
+**Release Date:** October 7, 2026
 
 ---
 
-### 📌 Version 0.3.2 Overview
-**AMP NTS Web Application (v0.3.2)** introduces the Single Point of Contact & Map location integration for the Exam Center Dashboard (`/Exam_Center_Dashboard_Prewiew`), enhancements to SQL Server schema and Express API services for Exam Centre Google Map links, and updates the global site navigation and route redirection to point directly to the Unified Portal (`/portal`).
+### 📌 Version 0.3.3 Overview
+**AMP NTS Web Application (v0.3.3)** introduces the Single Point of Contact & Map location integration for the Exam Center Dashboard (`/Exam_Center_Dashboard_Prewiew`), enhancements to SQL Server schema and Express API services for Exam Centre Google Map links, updates the global site navigation and route redirection to point directly to the Unified Portal (`/portal`), and embeds the official promotional video on the Home Page (`HomeVideoSection.tsx`).
 
 ---
 
-### 🚀 What's New in Version 0.3.2
+### 🚀 What's New in Version 0.3.3
 
 #### 1. Exam Center Dashboard (`/Exam_Center_Dashboard_Prewiew`)
 * **Single Point of Contact:** Renamed the coordinator label from "Point of contact:" to **"Single Point of Contact:"** in `CentreDetailsSection.tsx`.
@@ -26,6 +26,9 @@
 #### 3. Global Navbar & Authentication Redirection
 * **Header Login Navigation (`src/components/layout/navbar.tsx`):** Updated both desktop and mobile header **Login** buttons to link directly to `/portal`.
 * **Next.js Config Redirection (`next.config.ts`):** Added route-level redirect from `/login` to `/portal` (`permanent: false`).
+
+#### 4. Home Page Video Embed Update
+* **Official Video Embed (`src/components/ui/HomeVideoSection.tsx`):** Updated the introductory YouTube embed to the official AMP National Talent Search introductory video (`https://www.youtube.com/embed/SL7EeShaX0Q`).
 
 ---
 

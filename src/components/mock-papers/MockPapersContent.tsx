@@ -1,341 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Button from "@/components/common/Button";
-
-interface PaperItem {
-  id: string;
-  title: string;
-  category: "school" | "junior" | "senior" | "key";
-  subCategory?: string;
-  year: string;
-  language?: string;
-  url: string;
-  isFolder?: boolean;
-}
-
-const ALL_PAPERS: PaperItem[] = [
-  // 2025 Edition
-  {
-    id: "key-2025",
-    title: "AMP NTS 2025 Official Answer Key (Master)",
-    category: "key",
-    subCategory: "All Categories",
-    year: "2025",
-    url: "https://drive.google.com/file/d/1XqQflG4hy0loE_2UkEV6jJ-x1t54IRw6/view?usp=drive_web",
-  },
-  {
-    id: "junior-2025",
-    title: "NTS 2025 Junior College Question Paper (XI & XII)",
-    category: "junior",
-    subCategory: "Classes XI & XII",
-    year: "2025",
-    url: "https://drive.google.com/file/d/1i259J66UFkGRTo0vAfQ5sRbU_zab3v2w/view?usp=drive_web",
-  },
-  {
-    id: "senior-2025",
-    title: "NTS 2025 Senior College Question Paper (Undergraduates)",
-    category: "senior",
-    subCategory: "Degree College",
-    year: "2025",
-    url: "https://drive.google.com/file/d/1QaU8yszNR6G5OJhAROVyHkQELmv0R1iI/view?usp=drive_web",
-  },
-  {
-    id: "school-2025-folder",
-    title: "NTS 2025 School Question Papers (8th, IX & X)",
-    category: "school",
-    subCategory: "Class 8th, 9th & 10th",
-    year: "2025",
-    url: "https://drive.google.com/drive/folders/18Co76WOjdOIdsvlwtoeez5OEsNqjvSCh",
-    isFolder: true,
-  },
-
-  // 2024 Edition - Answer Key & Categories
-  {
-    id: "key-2024",
-    title: "AMP NTS 2024 Official Master Answer Keys",
-    category: "key",
-    subCategory: "All Categories",
-    year: "2024",
-    url: "https://drive.google.com/file/d/1So3iXh28VHmvXHHh69_pMZM3v5f-Md1W/view?usp=drive_web",
-  },
-  {
-    id: "junior-2024",
-    title: "Junior-Intermediate Colleges (XI & XII) Paper 2024",
-    category: "junior",
-    subCategory: "Classes XI & XII",
-    year: "2024",
-    url: "https://drive.google.com/file/d/1xdT-N67Hf9gusJTXgJlIOuPz7BK2gsrz/view?usp=drive_web",
-  },
-  {
-    id: "senior-2024",
-    title: "Senior-Degree Colleges (Undergraduates) Paper 2024",
-    category: "senior",
-    subCategory: "Undergraduates",
-    year: "2024",
-    url: "https://drive.google.com/file/d/1v9nFa7h708paKm60E6GLMTq0KKYujJ5F/view?usp=drive_web",
-  },
-
-  // 2024 School Class 10th
-  {
-    id: "s10-en-2024",
-    title: "Class 10th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 10",
-    year: "2024",
-    language: "English",
-    url: "https://drive.google.com/file/d/1jCDHoZVUdhtHxXR-6V8WUdohsaDTm-fT/view?usp=drive_web",
-  },
-  {
-    id: "s10-ur-2024",
-    title: "Class 10th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 10",
-    year: "2024",
-    language: "Urdu",
-    url: "https://drive.google.com/file/d/1TO2XdHhdnbXwJ-1TLr8uGw17j38uo8tF/view?usp=drive_web",
-  },
-  {
-    id: "s10-hi-2024",
-    title: "Class 10th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 10",
-    year: "2024",
-    language: "Hindi",
-    url: "https://drive.google.com/file/d/13uxaJ8iKXlZ3CqDTJKdEKPTWK-hHPhne/view?usp=drive_web",
-  },
-  {
-    id: "s10-gu-2024",
-    title: "Class 10th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 10",
-    year: "2024",
-    language: "Gujarati",
-    url: "https://drive.google.com/file/d/1xyXV_6glKwXKldZ1U6iVxgLvgr6axD-M/view?usp=drive_web",
-  },
-  {
-    id: "s10-bn-2024",
-    title: "Class 10th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 10",
-    year: "2024",
-    language: "Bengali",
-    url: "https://drive.google.com/file/d/1_uv3TfdSheLgFf3lDrjLtgTOJbwESe1V/view?usp=drive_web",
-  },
-
-  // 2024 School Class 9th
-  {
-    id: "s9-en-2024",
-    title: "Class 9th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 9",
-    year: "2024",
-    language: "English",
-    url: "https://drive.google.com/file/d/1sIxD6RXsH7C8iKPhY5Xedb_qhiYRzYK_/view?usp=drive_web",
-  },
-  {
-    id: "s9-ur-2024",
-    title: "Class 9th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 9",
-    year: "2024",
-    language: "Urdu",
-    url: "https://drive.google.com/file/d/1G9mYVlliK_cizFOEp0a23QfswsgaGbUd/view?usp=drive_web",
-  },
-  {
-    id: "s9-hi-2024",
-    title: "Class 9th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 9",
-    year: "2024",
-    language: "Hindi",
-    url: "https://drive.google.com/file/d/19Mmjxj8o946ivuPveuEtV_fDPmkLhWes/view?usp=drive_web",
-  },
-  {
-    id: "s9-gu-2024",
-    title: "Class 9th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 9",
-    year: "2024",
-    language: "Gujarati",
-    url: "https://drive.google.com/file/d/1e7HnQZQVoIt8PHY5AESptzt6gudv7fMi/view?usp=drive_web",
-  },
-  {
-    id: "s9-bn-2024",
-    title: "Class 9th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 9",
-    year: "2024",
-    language: "Bengali",
-    url: "https://drive.google.com/file/d/1eeac1-qPdwPPaxtOwkRqP5pIomsYgr9X/view?usp=drive_web",
-  },
-
-  // 2024 School Class 8th
-  {
-    id: "s8-en-2024",
-    title: "Class 8th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 8",
-    year: "2024",
-    language: "English",
-    url: "https://drive.google.com/file/d/1it6_biNzwmx6UylS9XAsvCiyyvjK4iNq/view?usp=drive_web",
-  },
-  {
-    id: "s8-ur-2024",
-    title: "Class 8th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 8",
-    year: "2024",
-    language: "Urdu",
-    url: "https://drive.google.com/file/d/1y3yTE_yvkcU7oAdI2SeytsdHPn2vW-fM/view?usp=drive_web",
-  },
-  {
-    id: "s8-hi-2024",
-    title: "Class 8th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 8",
-    year: "2024",
-    language: "Hindi",
-    url: "https://drive.google.com/file/d/1PnKR6QmYyBRVlrBq1hKSt_IcSH3CM2dL/view?usp=drive_web",
-  },
-  {
-    id: "s8-gu-2024",
-    title: "Class 8th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 8",
-    year: "2024",
-    language: "Gujarati",
-    url: "https://drive.google.com/file/d/1qwNBwtt9FdJAnlpw5na9fBp_qRDb8EEk/view?usp=drive_web",
-  },
-  {
-    id: "s8-bn-2024",
-    title: "Class 8th Question Paper 2024",
-    category: "school",
-    subCategory: "Class 8",
-    year: "2024",
-    language: "Bengali",
-    url: "https://drive.google.com/file/d/1l8O62pr8_8db4phQszjR8TzBR29oF_It/view?usp=drive_web",
-  },
-
-  // Junior College Archives (2020-2023)
-  {
-    id: "jr-2023-dec25",
-    title: "Junior Intermediate College Paper (25 Dec 2023)",
-    category: "junior",
-    subCategory: "Classes XI & XII",
-    year: "2023",
-    url: "https://drive.google.com/file/d/1ecUS8waYBmGRn02NzzLlWRPkSGsnxf2B/view?usp=drive_web",
-  },
-  {
-    id: "jr-2023-dec2",
-    title: "Junior Intermediate College Paper (2 Dec 2023)",
-    category: "junior",
-    subCategory: "Classes XI & XII",
-    year: "2023",
-    url: "https://drive.google.com/file/d/1d6LboG7p8l1nQKYjlP26csGF76mD5Seo/view?usp=drive_web",
-  },
-  {
-    id: "jr-2022",
-    title: "Junior Intermediate College Question Paper 2022",
-    category: "junior",
-    subCategory: "Classes XI & XII",
-    year: "2022",
-    url: "https://drive.google.com/file/d/16iz8Jyb9uqznUCLciH-6lSK14hvsw17h/view?usp=drive_web",
-  },
-  {
-    id: "jr-2021",
-    title: "Junior Intermediate College Question Paper 2021",
-    category: "junior",
-    subCategory: "Classes XI & XII",
-    year: "2021",
-    url: "https://drive.google.com/file/d/17eebA5o1cB0GnW0cfsyPDPTnV4XGEpSN/view?usp=drive_web",
-  },
-  {
-    id: "jr-2020-a",
-    title: "Junior Intermediate College Paper 2020 (Set A)",
-    category: "junior",
-    subCategory: "Classes XI & XII",
-    year: "2020",
-    url: "https://drive.google.com/file/d/15oND6IHUNPcHe_lJB2fxkCoCGG-QE8EZ/view?usp=drive_web",
-  },
-  {
-    id: "jr-2020-b",
-    title: "Junior Intermediate College Paper 2020 (Set B)",
-    category: "junior",
-    subCategory: "Classes XI & XII",
-    year: "2020",
-    url: "https://drive.google.com/file/d/1sAMwNgHYxJ92DoSu0ivoZ5cDaqapVmva/view?usp=drive_web",
-  },
-
-  // Senior College Archives (2020-2023)
-  {
-    id: "sr-2023-dec2",
-    title: "Senior-Degree College Paper (2 Dec 2023)",
-    category: "senior",
-    subCategory: "Undergraduates",
-    year: "2023",
-    url: "https://drive.google.com/file/d/1HDqMvzqFMOKYzUfAFuVQ4nibMnp9471j/view?usp=drive_web",
-  },
-  {
-    id: "sr-2023-nov25",
-    title: "Senior-Degree College Paper (25 Nov 2023)",
-    category: "senior",
-    subCategory: "Undergraduates",
-    year: "2023",
-    url: "https://drive.google.com/file/d/1_z88hTg9rSLzqQ1SNsM5VzVMv9Dqh9Xb/view?usp=drive_web",
-  },
-  {
-    id: "sr-2022",
-    title: "Senior-Degree College Question Paper 2022",
-    category: "senior",
-    subCategory: "Undergraduates",
-    year: "2022",
-    url: "https://drive.google.com/file/d/1NnWH1iuhy0wA1inxDXWDZ_CBcelaITmk/view?usp=drive_web",
-  },
-  {
-    id: "sr-2021",
-    title: "Senior-Degree College Question Paper 2021",
-    category: "senior",
-    subCategory: "Undergraduates",
-    year: "2021",
-    url: "https://drive.google.com/file/d/1cc97qWejxLA__rNexjM3MHoMzUjtmFty/view?usp=drive_web",
-  },
-  {
-    id: "sr-2020-a",
-    title: "Senior-Degree College Paper 2020 (Set A)",
-    category: "senior",
-    subCategory: "Undergraduates",
-    year: "2020",
-    url: "https://drive.google.com/file/d/1Tst_UGwT4BK-nsz_E1dfG_iEBOIqI8qc/view?usp=drive_web",
-  },
-  {
-    id: "sr-2020-b",
-    title: "Senior-Degree College Paper 2020 (Set B)",
-    category: "senior",
-    subCategory: "Undergraduates",
-    year: "2020",
-    url: "https://drive.google.com/file/d/1lM-T7oKIIVSczEHNZNQ532XkZyUpIsKP/view?usp=drive_web",
-  },
-];
+import OnlineMockPapersSection from "./OnlineMockPapersSection";
 
 export default function MockPapersContent() {
-  const [activeTab, setActiveTab] = useState<"all" | "school" | "junior" | "senior" | "key">("all");
-  const [selectedYear, setSelectedYear] = useState<string>("all");
-  const [searchQuery, setSearchQuery] = useState<string>("");
-
-  const filteredPapers = ALL_PAPERS.filter((paper) => {
-    const matchesTab = activeTab === "all" || paper.category === activeTab;
-    const matchesYear = selectedYear === "all" || paper.year === selectedYear;
-    const matchesSearch =
-      searchQuery === "" ||
-      paper.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (paper.language && paper.language.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      (paper.subCategory && paper.subCategory.toLowerCase().includes(searchQuery.toLowerCase()));
-
-    return matchesTab && matchesYear && matchesSearch;
-  });
-
   return (
     <div className="flex flex-col">
       {/* =========================================================
@@ -394,9 +63,9 @@ export default function MockPapersContent() {
           </div>
 
           {/* 4 Bottom Stat / Highlight Cards */}
-          <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-stretch">
             {/* Card 1: Featured White Card */}
-            <div className="rounded-2xl bg-white p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center shadow-md">
+            <div className="rounded-2xl bg-white p-5 lg:p-6 flex flex-col justify-center text-center shadow-md min-h-[140px] sm:min-h-[155px]">
               <div>
                 <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold tracking-tight text-zinc-900 leading-tight block">
                   2020 – 2025
@@ -405,73 +74,56 @@ export default function MockPapersContent() {
                   6 years of verified nationwide actual papers & answer keys
                 </p>
               </div>
-              <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-zinc-100">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#610D17] shrink-0" />
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-zinc-600">
-                  ARCHIVE TIMELINE
-                </span>
-              </div>
             </div>
 
             {/* Card 2: Translucent Maroon Card */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:px-2.5 xl:px-4 flex flex-col justify-center text-center backdrop-blur-xs min-h-[140px] sm:min-h-[155px]">
               <div>
-                <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold tracking-tight text-white leading-tight block">
-                  3 Tiers
+                <span className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-white leading-tight block">
+                  3 Categories
                 </span>
-                <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                  Schools (8th–X), Junior College & Degree (UG) levels
-                </p>
-              </div>
-              <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
-                  STUDENT CATEGORIES
-                </span>
+                <div className="mt-2 text-[11px] sm:text-xs xl:text-[12.5px] text-zinc-200/90 leading-snug font-medium space-y-0.5">
+                  <p>Schools (8th, 9th &amp; 10th)</p>
+                  <p className="whitespace-nowrap">Junior / Intermediate Colleges (11th &amp; 12th)</p>
+                  <p>Senior / Degree Colleges (Undergraduates)</p>
+                </div>
               </div>
             </div>
 
             {/* Card 3: Translucent Maroon Card */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-5 lg:p-6 flex flex-col justify-center text-center backdrop-blur-xs min-h-[140px] sm:min-h-[155px]">
               <div>
-                <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold tracking-tight text-white leading-tight block">
-                  5 Mediums
+                <span className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-bold tracking-tight text-white leading-tight block">
+                  6 Mediums for schools
                 </span>
                 <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                  English, Hindi, Urdu, Bengali & Gujarati languages
+                  English, Hindi, Urdu, Bengali &amp; Gujarati languages
                 </p>
-              </div>
-              <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
-                  QUESTION PAPERS
-                </span>
               </div>
             </div>
 
             {/* Card 4: Translucent Maroon Card */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 sm:p-5 lg:p-6 min-h-[150px] sm:min-h-[165px] lg:h-48 flex flex-col justify-between text-center backdrop-blur-xs">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-5 lg:p-6 flex flex-col justify-center text-center backdrop-blur-xs min-h-[140px] sm:min-h-[155px]">
               <div>
                 <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold tracking-tight text-white leading-tight block">
                   100% Free
                 </span>
                 <p className="mt-2 text-xs sm:text-sm text-zinc-200/90 leading-snug font-medium max-w-[220px] mx-auto">
-                  Instant PDF downloads & offline practice sets for every student
+                  Instant PDF downloads &amp; offline practice sets for every student
                 </p>
-              </div>
-              <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/10">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#E06D7A] shrink-0" />
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/70">
-                  OPEN ACCESS
-                </span>
               </div>
             </div>
           </div>
         </div>
       </section>
+ 
+      {/* =========================================================
+          2. ONLINE MOCK PAPERS (PRACTICE MOCK PAPERS ONLINE)
+      ========================================================= */}
+      <OnlineMockPapersSection />
 
       {/* =========================================================
-          2. CORE REPOSITORIES (PROFESSIONAL CATEGORY CARDS)
+          3. CORE REPOSITORIES (PROFESSIONAL CATEGORY CARDS)
       ========================================================= */}
       <section className="py-12 sm:py-16 bg-white border-b border-zinc-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -481,7 +133,7 @@ export default function MockPapersContent() {
                 Resource Collections
               </span>
               <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
-                Official Category Collections
+                PDF Papers Available for Download
               </h2>
               <p className="mt-1 text-sm text-zinc-600 max-w-2xl">
                 Select your academic tier below to access verified previous years&apos; question papers, marking keys, and test packages.
@@ -687,209 +339,7 @@ export default function MockPapersContent() {
       </section>
 
       {/* =========================================================
-          3. INTERACTIVE FILTERABLE PAPERS VAULT
-      ========================================================= */}
-      <section className="py-12 sm:py-16 bg-zinc-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#610D17]">
-              Download Vault
-            </span>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
-              Individual Question Papers & Keys
-            </h2>
-            <p className="mt-1 text-sm text-zinc-600">
-              Filter by category, academic year, or search by subject or language.
-            </p>
-          </div>
-
-          {/* Controls: Tabs & Filters */}
-          <div className="mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            {/* Category Tabs */}
-            <div className="flex flex-wrap items-center gap-1.5 bg-white p-1.5 rounded-xl border border-zinc-200">
-              <button
-                onClick={() => setActiveTab("all")}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  activeTab === "all"
-                    ? "bg-[#610D17] text-white shadow-xs"
-                    : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100"
-                }`}
-              >
-                All ({ALL_PAPERS.length})
-              </button>
-              <button
-                onClick={() => setActiveTab("school")}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  activeTab === "school"
-                    ? "bg-[#610D17] text-white shadow-xs"
-                    : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100"
-                }`}
-              >
-                Schools (8th–X)
-              </button>
-              <button
-                onClick={() => setActiveTab("junior")}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  activeTab === "junior"
-                    ? "bg-[#610D17] text-white shadow-xs"
-                    : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100"
-                }`}
-              >
-                Junior College (XI–XII)
-              </button>
-              <button
-                onClick={() => setActiveTab("senior")}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  activeTab === "senior"
-                    ? "bg-[#610D17] text-white shadow-xs"
-                    : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100"
-                }`}
-              >
-                Senior College (UG)
-              </button>
-              <button
-                onClick={() => setActiveTab("key")}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  activeTab === "key"
-                    ? "bg-[#610D17] text-white shadow-xs"
-                    : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100"
-                }`}
-              >
-                Answer Keys
-              </button>
-            </div>
-
-            {/* Year & Search Filters */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
-              <select
-                value={selectedYear}
-                onChange={(e) => setSelectedYear(e.target.value)}
-                className="w-full sm:w-auto bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs font-semibold text-zinc-700 focus:outline-none focus:border-[#610D17]"
-              >
-                <option value="all">All Years (2020–2025)</option>
-                <option value="2025">2025</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-              </select>
-
-              <div className="relative w-full sm:w-60">
-                <input
-                  type="text"
-                  placeholder="Search papers (e.g. Urdu, 10th)..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white border border-zinc-200 rounded-xl pl-8 pr-3 py-2 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-[#610D17]"
-                />
-                <svg
-                  className="w-4 h-4 text-zinc-400 absolute left-2.5 top-1/2 -translate-y-1/2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          {/* Results Grid */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredPapers.map((paper) => {
-              const isKey = paper.category === "key";
-              const isFolder = paper.isFolder;
-
-              return (
-                <div
-                  key={paper.id}
-                  className={`rounded-2xl border p-5 flex flex-col justify-between transition-all ${
-                    isKey
-                      ? "border-emerald-200 bg-white hover:border-emerald-400 hover:shadow-xs"
-                      : isFolder
-                      ? "border-[#610D17]/25 bg-white hover:border-[#610D17] hover:shadow-xs"
-                      : "border-zinc-200 bg-white hover:border-zinc-400 hover:shadow-xs"
-                  }`}
-                >
-                  <div>
-                    {/* Badge Row */}
-                    <div className="flex items-center justify-between text-[11px] font-bold">
-                      <span
-                        className={`rounded-full px-2.5 py-0.5 ${
-                          isKey
-                            ? "bg-emerald-100 text-emerald-800"
-                            : paper.category === "school"
-                            ? "bg-amber-100 text-amber-800"
-                            : paper.category === "junior"
-                            ? "bg-blue-100 text-blue-800"
-                            : "bg-purple-100 text-purple-800"
-                        }`}
-                      >
-                        {paper.subCategory || paper.category.toUpperCase()}
-                      </span>
-                      <span className="text-zinc-500 font-semibold">{paper.year} Edition</span>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="mt-3 text-base font-bold text-zinc-900 leading-snug">
-                      {paper.title}
-                    </h3>
-
-                    {/* Metadata */}
-                    <div className="mt-2.5 flex items-center gap-2 text-xs text-zinc-500">
-                      {paper.language && (
-                        <span className="inline-flex items-center gap-1 rounded bg-zinc-100 px-2 py-0.5 text-[11px] font-medium text-zinc-700">
-                          {paper.language} Medium
-                        </span>
-                      )}
-                      <span className="inline-flex items-center gap-1 rounded bg-zinc-100 px-2 py-0.5 text-[11px] font-medium text-zinc-700">
-                        {isFolder ? "Full Collection" : "PDF Document"}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* CTA Link */}
-                  <div className="mt-5 pt-3 border-t border-zinc-100 flex items-center">
-                    <a
-                      href={paper.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-lg transition-colors ${
-                        isKey
-                          ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200"
-                          : "bg-zinc-50 text-[#610D17] hover:bg-[#610D17] hover:text-white border border-zinc-200"
-                      }`}
-                    >
-                      <span>{isFolder ? "View Collection" : isKey ? "View Answer Key" : "View Paper"}</span>
-                      <span>↗</span>
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {filteredPapers.length === 0 && (
-            <div className="text-center py-12 bg-white rounded-2xl border border-zinc-200 mt-6">
-              <p className="text-sm font-semibold text-zinc-600">No mock papers match your filter criteria.</p>
-              <button
-                onClick={() => {
-                  setActiveTab("all");
-                  setSelectedYear("all");
-                  setSearchQuery("");
-                }}
-                className="mt-3 text-xs font-bold text-[#610D17] underline"
-              >
-                Reset all filters
-              </button>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* =========================================================
-          4. EXAM PATTERN & PREPARATION TIPS
+          3. EXAM PATTERN & PREPARATION TIPS
       ========================================================= */}
       {/* 4A. School Structure */}
       <section className="py-12 sm:py-16 bg-white border-t border-zinc-200">
@@ -899,7 +349,7 @@ export default function MockPapersContent() {
               School Structure
             </span>
             <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
-              Standard NTS Pattern for Practice
+              Standard Pattern for Practice
             </h2>
             <p className="mt-1 text-sm text-zinc-600">
               When solving these mock test papers, simulate real exam conditions following this exact distribution.
@@ -954,7 +404,7 @@ export default function MockPapersContent() {
               Junior College Structure
             </span>
             <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
-              Junior College Pattern (Classes 11th & 12th)
+              Junior / Intermediate Colleges (11th &amp; 12th)
             </h2>
             <p className="mt-1 text-sm text-zinc-600">
               Benchmarked on CUET (UG) and national entrance aptitude examinations (100 MCQs in 90 Minutes).
@@ -1009,7 +459,7 @@ export default function MockPapersContent() {
               Senior College Structure
             </span>
             <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-zinc-900 tracking-tight">
-              Senior College Pattern (Undergraduate / Degree)
+              Senior / Degree Colleges (Undergraduates)
             </h2>
             <p className="mt-1 text-sm text-zinc-600">
               Benchmarked on UPSC CSAT, CAT, CUET-PG, GRE, and IT Campus Placement Aptitude (TCS, Infosys, Wipro).
@@ -1061,10 +511,7 @@ export default function MockPapersContent() {
       ========================================================= */}
       <section className="bg-zinc-50 py-14 sm:py-20 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#610D17]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#610D17]">
-            Upcoming NTS 2026
-          </span>
-          <h2 className="mt-3 text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
             Ready to Take the Actual Examination?
           </h2>
           <p className="mt-3 text-sm sm:text-base text-zinc-600 max-w-2xl mx-auto leading-relaxed">
@@ -1073,9 +520,6 @@ export default function MockPapersContent() {
           <div className="mt-8 flex flex-wrap justify-center gap-3.5">
             <Button href="/student-registration" variant="primary" size="md">
               Register as Student
-            </Button>
-            <Button href="/About_NTS" variant="outline" size="md">
-              Read Complete Syllabus
             </Button>
             <a
               href="https://drive.google.com/drive/folders/1wKE-nYBvp3_xRPoR_Tjm-bwDGJoF7oFM"

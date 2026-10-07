@@ -1,8 +1,8 @@
 # AMP NTS Web Application — Release Document
 
 **Release Name:** NTS 2026 Feature Updates  
-**Release Version:** v0.3.2  
-**Release Date:** October 5, 2026  
+**Release Version:** v0.3.3  
+**Release Date:** October 7, 2026  
 
 ---
 
@@ -32,6 +32,8 @@
 8. **Global Login Navigation & Portal Redirection:**
    - Updated desktop and mobile header **Login** buttons in `src/components/layout/navbar.tsx` to link to `/portal`.
    - Added route redirect in `next.config.ts` mapping `/login` to `/portal` (`permanent: false`).
+9. **Home Page NTS Video Embed Update:**
+   - Replaced promotional video embed with the updated official AMP National Talent Search introductory video (`https://www.youtube.com/watch?v=SL7EeShaX0Q`) via `src/components/ui/HomeVideoSection.tsx` (`https://www.youtube.com/embed/SL7EeShaX0Q`).
 
 ---
 
