@@ -1,8 +1,8 @@
 # AMP NTS Web Application — Release Document
 
 **Release Name:** NTS 2026 Feature Updates  
-**Release Version:** v0.3.1  
-**Release Date:** October 3, 2026  
+**Release Version:** v0.3.2  
+**Release Date:** October 5, 2026  
 
 ---
 
@@ -24,6 +24,14 @@
 6. **Mobilization Partner & Registration Workflows:**
    - Added `MobilizationPartnerSection.tsx` to Home Page.
    - Updated guidelines and flows in `/Become_An_Exam_Centre` and `/Participating_Institution`.
+7. **Exam Center Dashboard — Single Point of Contact & Map Option:**
+   - Renamed label from "Point of contact:" to **"Single Point of Contact:"** in `CentreDetailsSection.tsx`.
+   - Added an optional **Map** row underneath Pincode. If a map URL (`GoogleMapLink` / `mapUrl`) is provided, displays a clickable **"View on Google Maps"** link opening securely in a new tab; otherwise remains empty.
+   - Updated SQL Server stored procedure `EXAMCENTRE.GetExamCentreDashboardDetails` and schema to include `GoogleMapLink NVARCHAR(500) NULL` in `EXAMCENTRE.ExamCentre`.
+   - Updated Express API service (`API/src/services/examCenter.service.js`) and frontend dashboard data fallback (`dashboardData.ts`) to return and map `GoogleMapLink`.
+8. **Global Login Navigation & Portal Redirection:**
+   - Updated desktop and mobile header **Login** buttons in `src/components/layout/navbar.tsx` to link to `/portal`.
+   - Added route redirect in `next.config.ts` mapping `/login` to `/portal` (`permanent: false`).
 
 ---
 
@@ -82,9 +90,15 @@
 * `[MODIFIED]` `next.config.ts`
 * `[MODIFIED]` `src/app/[slug]/page.tsx`
 
+### 11. Exam Center Dashboard & Backend Services
+* `[MODIFIED]` `API/src/services/examCenter.service.js`
+* `[MODIFIED]` `database/exam_center_dashboard_schema.sql`
+* `[MODIFIED]` `src/components/exam-center-dashboard/CentreDetailsSection.tsx`
+* `[MODIFIED]` `src/components/exam-center-dashboard/dashboardData.ts`
+
 ---
 
-## Consolidated File List for Merging (33 Files)
+## Consolidated File List for Merging (37 Files)
 
 ### Added Files (13)
 ```text
@@ -103,8 +117,10 @@ src/components/ui/ParticipateInNTS.tsx
 src/components/ui/TrainingPartnersSection.tsx
 ```
 
-### Modified Files (20)
+### Modified Files (24)
 ```text
+API/src/services/examCenter.service.js
+database/exam_center_dashboard_schema.sql
 next.config.ts
 src/app/(public)/AMP_World_App/page.tsx
 src/app/(public)/Become_An_Exam_Center/page.tsx
@@ -112,6 +128,8 @@ src/app/(public)/Contact/page.tsx
 src/app/[slug]/page.tsx
 src/app/page.tsx
 src/components/common/Ribbon.tsx
+src/components/exam-center-dashboard/CentreDetailsSection.tsx
+src/components/exam-center-dashboard/dashboardData.ts
 src/components/faqs/FaqData.tsx
 src/components/layout/footer.tsx
 src/components/layout/navbar.tsx

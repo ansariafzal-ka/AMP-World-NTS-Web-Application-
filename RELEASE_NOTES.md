@@ -1,4 +1,34 @@
 # AMP National Talent Search (NTS) Web Application
+
+## Release Notes — Version 0.3.2 (Exam Center Dashboard Map & Portal Login Navigation)
+**Release Date:** October 5, 2026
+
+---
+
+### 📌 Version 0.3.2 Overview
+**AMP NTS Web Application (v0.3.2)** introduces the Single Point of Contact & Map location integration for the Exam Center Dashboard (`/Exam_Center_Dashboard_Prewiew`), enhancements to SQL Server schema and Express API services for Exam Centre Google Map links, and updates the global site navigation and route redirection to point directly to the Unified Portal (`/portal`).
+
+---
+
+### 🚀 What's New in Version 0.3.2
+
+#### 1. Exam Center Dashboard (`/Exam_Center_Dashboard_Prewiew`)
+* **Single Point of Contact:** Renamed the coordinator label from "Point of contact:" to **"Single Point of Contact:"** in `CentreDetailsSection.tsx`.
+* **Map Option & External Navigation:** Added an optional **Map** field underneath Pincode. When a Google Map link is configured for an exam centre, users can click a styled **"View on Google Maps"** link that opens the location in a secure new browser tab (`target="_blank"`, `rel="noopener noreferrer"`). If no link is provided, the field remains empty.
+* **Dashboard Data Types:** Extended `ExamCenterDashboardData` and `CentreDetails` interfaces in `dashboardData.ts` to support `mapUrl` and `googleMapLink`.
+
+#### 2. SQL Server Database & Express Backend API
+* **Schema Migration (`database/exam_center_dashboard_schema.sql`):** Added `GoogleMapLink NVARCHAR(500) NULL` column to `EXAMCENTRE.ExamCentre`.
+* **Stored Procedure Enhancement:** Updated `EXAMCENTRE.GetExamCentreDashboardDetails` stored procedure to return `GoogleMapLink` in the centre details result set.
+* **Express API Service (`API/src/services/examCenter.service.js`):** Mapped `GoogleMapLink` to `mapUrl` and `googleMapLink` in the API response payload.
+* **Exam Centre Records:** Configured Google Map links for centres including Titan School (`AMPNTS25TG0644`).
+
+#### 3. Global Navbar & Authentication Redirection
+* **Header Login Navigation (`src/components/layout/navbar.tsx`):** Updated both desktop and mobile header **Login** buttons to link directly to `/portal`.
+* **Next.js Config Redirection (`next.config.ts`):** Added route-level redirect from `/login` to `/portal` (`permanent: false`).
+
+---
+
 ## Release Notes — Version 0.2.0 (CMS & Backend Architecture Release)
 **Release Date:** September 16, 2026
 

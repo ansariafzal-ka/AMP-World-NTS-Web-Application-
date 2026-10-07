@@ -73,7 +73,7 @@ export default function HomeVideoSection() {
           <div className="lg:col-span-6">
             <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-900 shadow-xl ring-1 ring-black/5">
               <iframe
-                src="https://www.youtube.com/embed/dHoS5WfGT4o"
+                src="https://www.youtube.com/embed/SL7EeShaX0Q"
                 title="AMP National Talent Search Video"
                 className="absolute inset-0 h-full w-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
