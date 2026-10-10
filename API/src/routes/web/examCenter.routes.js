@@ -10,10 +10,10 @@ const optionalAuth = (req, res, next) => {
   if (authHeader && authHeader.startsWith('Bearer ')) {
     const token = authHeader.split(' ')[1];
     try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET || 'fallback-secret-for-dev');
+      const decoded = jwt.verify(token, process.env.JWT_SECRET || 'amp_nts_jwt_secret_key_2026_super_secure');
       req.user = decoded;
     } catch {
-      // Invalid/expired token: continue unauthenticated for public preview
+      // Invalid/expired token: continue unauthenticated
     }
   }
   next();
@@ -21,7 +21,11 @@ const optionalAuth = (req, res, next) => {
 
 router.use(optionalAuth);
 
-// GET & POST /api/web/exam-center/check-mobile
+// OTP & Authentication Endpoints
+router.post('/send-otp', examCenterController.sendOtp);
+router.post('/verify-otp', examCenterController.verifyOtp);
+
+// Mobile Existence Check Endpoint
 router.post('/check-mobile', examCenterController.checkMobile);
 router.get('/check-mobile', examCenterController.checkMobile);
 
