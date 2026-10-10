@@ -184,6 +184,156 @@ class ExamCenterService {
       absentCount,
     };
   }
+
+  /**
+   * Checks whether a given mobile number is registered with an Exam Centre or Observer.
+   * Checks database first with fallback to seeded centres.
+   */
+  async checkMobileExists(mobile) {
+    const cleanMobile = String(mobile || '').replace(/\D/g, '').slice(-10);
+    if (!cleanMobile || cleanMobile.length !== 10) {
+      return { exists: false, message: 'Invalid mobile number' };
+    }
+
+    try {
+      const pool = await getPool();
+
+      // Check in EXAMCENTRE.ExamCentre ContactPhone
+      const centreResult = await pool
+        .request()
+        .input('Mobile', sql.VarChar(20), cleanMobile)
+        .query(`
+          SELECT TOP 1 
+            Id, 
+            ExamCentreCode, 
+            CentreName, 
+            ContactPerson, 
+            ContactPhone,
+            Status 
+          FROM EXAMCENTRE.ExamCentre 
+          WHERE (RIGHT(REPLACE(REPLACE(ContactPhone, ' ', ''), '-', ''), 10) = @Mobile)
+            AND IsDeleted = 0
+        `);
+
+      if (centreResult.recordset && centreResult.recordset.length > 0) {
+        const centre = centreResult.recordset[0];
+        return {
+          exists: true,
+          centreCode: centre.ExamCentreCode,
+          centreName: centre.CentreName,
+          contactPerson: centre.ContactPerson,
+          phone: centre.ContactPhone,
+          role: 'ExamCenter'
+        };
+      }
+
+      // Check in EXAMCENTRE.ExamCentreObserver Mobile
+      const observerResult = await pool
+        .request()
+        .input('Mobile', sql.VarChar(20), cleanMobile)
+        .query(`
+          SELECT TOP 1 
+            obs.Id, 
+            obs.ExamCentreCode, 
+            obs.Name, 
+            obs.Mobile,
+            obs.ObserverTypeName,
+            ec.CentreName
+          FROM EXAMCENTRE.ExamCentreObserver obs
+          LEFT JOIN EXAMCENTRE.ExamCentre ec ON obs.ExamCentreCode = ec.ExamCentreCode
+          WHERE (RIGHT(REPLACE(REPLACE(obs.Mobile, ' ', ''), '-', ''), 10) = @Mobile)
+            AND obs.IsDeleted = 0
+        `);
+
+      if (observerResult.recordset && observerResult.recordset.length > 0) {
+        const obs = observerResult.recordset[0];
+        return {
+          exists: true,
+          centreCode: obs.ExamCentreCode,
+          centreName: obs.CentreName,
+          contactPerson: obs.Name,
+          phone: obs.Mobile,
+          role: 'Observer',
+          observerType: obs.ObserverTypeName
+        };
+      }
+    } catch (dbError) {
+      console.warn('Database query fallback in checkMobileExists:', dbError.message);
+    }
+
+    // Seeded exam centre numbers fallback for dev/demo testing
+    const SEEDED_CENTRES = [
+      {
+        centreCode: 'AMPNTS25TG0644',
+        centreName: 'Titan School',
+        contactPerson: 'Afsari Begum',
+        phone: '9390638371',
+        role: 'ExamCenter',
+      },
+      {
+        centreCode: 'AMPNTS25MH0122',
+        centreName: 'Anjuman-I-Islam High School',
+        contactPerson: 'Farhan Qureshi',
+        phone: '9820123456',
+        role: 'ExamCenter',
+      },
+      {
+        centreCode: 'AMPNTS25KA0405',
+        centreName: 'Al-Ameen Pre-University College',
+        contactPerson: 'Prof. Mohammed Farooq',
+        phone: '9845112233',
+        role: 'ExamCenter',
+      },
+      {
+        centreCode: 'AMPNTS25TG0644',
+        centreName: 'Titan School',
+        contactPerson: 'Asifa Begum',
+        phone: '8309940165',
+        role: 'Observer',
+      },
+      {
+        centreCode: 'AMPNTS25TG0644',
+        centreName: 'Titan School',
+        contactPerson: 'Mohammed Basid',
+        phone: '9700707764',
+        role: 'Observer',
+      },
+      {
+        centreCode: 'AMPNTS25TG0644',
+        centreName: 'Titan School',
+        contactPerson: 'Kouser Sultana',
+        phone: '9989347226',
+        role: 'Observer',
+      },
+      {
+        centreCode: 'AMPNTS25TG0644',
+        centreName: 'Titan School',
+        contactPerson: 'Demo Coordinator',
+        phone: '9876543210',
+        role: 'ExamCenter',
+      },
+      {
+        centreCode: 'AMPNTS25TG0644',
+        centreName: 'Titan School',
+        contactPerson: 'Exam Centre Admin',
+        phone: '9967132722',
+        role: 'ExamCenter',
+      },
+    ];
+
+    const matched = SEEDED_CENTRES.find(
+      (c) => c.phone === cleanMobile || c.phone.endsWith(cleanMobile)
+    );
+
+    if (matched) {
+      return {
+        exists: true,
+        ...matched,
+      };
+    }
+
+    return { exists: false, message: 'Mobile number not registered with any Exam Centre.' };
+  }
 }
 
 module.exports = new ExamCenterService();

@@ -21,6 +21,10 @@ const optionalAuth = (req, res, next) => {
 
 router.use(optionalAuth);
 
+// GET & POST /api/web/exam-center/check-mobile
+router.post('/check-mobile', examCenterController.checkMobile);
+router.get('/check-mobile', examCenterController.checkMobile);
+
 // GET /api/web/exam-center/dashboard
 router.get('/dashboard', examCenterController.getDashboard);
 

@@ -20,6 +20,7 @@ export interface CentreData {
   capacityAllocated: number;
   capacityTotal: number;
   observers: Observer[];
+  allocations?: AllocationRow[];
 }
 
 export interface AllocationRow {

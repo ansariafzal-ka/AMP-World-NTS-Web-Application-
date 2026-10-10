@@ -22,6 +22,7 @@ export const API_ENDPOINTS = {
     PUBLIC_PAGE_BY_SLUG: (slug: string) => `/api/web/admin/cms/public/pages/${slug}`,
   },
   EXAM_CENTER: {
+    CHECK_MOBILE: '/api/web/exam-center/check-mobile',
     DASHBOARD: '/api/web/exam-center/dashboard',
     ATTENDANCE_SUMMARY: '/api/web/exam-center/attendance-summary',
     ATTENDANCE_STUDENTS: '/api/web/exam-center/attendance/students',

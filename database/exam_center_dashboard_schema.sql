@@ -272,6 +272,73 @@ BEGIN
 END
 GO
 
+-- 7.4 Seed ExamCentre: Millat High School & Junior College (9967132722)
+IF NOT EXISTS (SELECT 1 FROM EXAMCENTRE.ExamCentre WHERE ExamCentreCode = 'AMPNTS26MH0555')
+BEGIN
+    INSERT INTO EXAMCENTRE.ExamCentre (
+        ExamCentreId,
+        ExamCentreCode,
+        CentreName,
+        InstitutionName,
+        Address,
+        DistrictName,
+        StateName,
+        Pincode,
+        ContactPerson,
+        ContactPhone,
+        ContactEmail,
+        GoogleMapLink,
+        Capacity,
+        ApprovedCapacity,
+        Registered,
+        Status
+    )
+    VALUES (
+        'EC-MH-0555',
+        'AMPNTS26MH0555',
+        'Millat High School & Junior College',
+        'Millat Education Society',
+        '12, Maulana Azad Road, Nagpada, Byculla',
+        'Mumbai',
+        'Maharashtra',
+        '400008',
+        'Afzal Ansari',
+        '9967132722',
+        'millat.centre@ampindia.org',
+        'https://maps.google.com/?q=Nagpada+Mumbai',
+        250,
+        250,
+        215,
+        'active'
+    );
+END
+GO
+
+-- 7.5 Seed Observers for Millat High School
+DECLARE @MillatCentreId INT = (SELECT Id FROM EXAMCENTRE.ExamCentre WHERE ExamCentreCode = 'AMPNTS26MH0555');
+
+IF @MillatCentreId IS NOT NULL AND NOT EXISTS (SELECT 1 FROM EXAMCENTRE.ExamCentreObserver WHERE ExamCentreCode = 'AMPNTS26MH0555')
+BEGIN
+    INSERT INTO EXAMCENTRE.ExamCentreObserver (ExamCentreRefId, ExamCentreCode, ObserverTypeId, ObserverTypeName, Name, Mobile, Designation) VALUES
+    (@MillatCentreId, 'AMPNTS26MH0555', 1, 'AMP Observer', 'Dr. Aaqil Siddiqui', '9820011223', 'Senior Chapter Lead'),
+    (@MillatCentreId, 'AMPNTS26MH0555', 2, 'Exam Centre Observer', 'Prof. Tariq Sayed', '9819922334', 'Vice Principal & Centre Superintendent');
+END
+GO
+
+-- 7.6 Seed Student Allocations for Millat High School
+DECLARE @MillatCentreId2 INT = (SELECT Id FROM EXAMCENTRE.ExamCentre WHERE ExamCentreCode = 'AMPNTS26MH0555');
+
+IF @MillatCentreId2 IS NOT NULL AND NOT EXISTS (SELECT 1 FROM EXAMCENTRE.ExamCentreStudentAllocation WHERE ExamCentreCode = 'AMPNTS26MH0555')
+BEGIN
+    INSERT INTO EXAMCENTRE.ExamCentreStudentAllocation (ExamCentreRefId, ExamCentreCode, ClassLabel, Urdu, Hindi, English, Gujarati, Bengali, Total) VALUES
+    (@MillatCentreId2, 'AMPNTS26MH0555', '8', '10', '5', '35', '0', '0', 50),
+    (@MillatCentreId2, 'AMPNTS26MH0555', '9', '5', '0', '45', '0', '0', 50),
+    (@MillatCentreId2, 'AMPNTS26MH0555', '10', '0', '2', '48', '0', '0', 50),
+    (@MillatCentreId2, 'AMPNTS26MH0555', 'XI & XII', '10', '0', '40', '0', '0', 50),
+    (@MillatCentreId2, 'AMPNTS26MH0555', 'Senior College', '0', '-', '15', '-', '-', 15);
+END
+GO
+
 -- 7.3 Seed Observers for Titan School
 DECLARE @TitanCentreId INT = (SELECT Id FROM EXAMCENTRE.ExamCentre WHERE ExamCentreCode = 'AMPNTS25TG0644');
 

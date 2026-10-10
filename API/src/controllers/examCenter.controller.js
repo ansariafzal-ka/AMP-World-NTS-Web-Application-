@@ -111,6 +111,27 @@ class ExamCenterController {
       .status(200)
       .json(new ApiResponse(200, result, 'Student attendance saved and synced successfully.'));
   });
+
+  /**
+   * POST or GET /api/web/exam-center/check-mobile
+   */
+  checkMobile = asyncHandler(async (req, res) => {
+    const mobile = req.body.mobile || req.query.mobile;
+    if (!mobile) {
+      throw new ApiError(400, 'Mobile number is required.');
+    }
+
+    const result = await examCenterService.checkMobileExists(mobile);
+    if (!result.exists) {
+      return res
+        .status(200)
+        .json(new ApiResponse(200, { exists: false }, 'Mobile number not registered with any Exam Centre.'));
+    }
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, result, 'Mobile number verified successfully.'));
+  });
 }
 
 module.exports = new ExamCenterController();
